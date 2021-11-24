@@ -1,0 +1,18 @@
+{
+    "sourceFile": "README.md",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1637760769684,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1637760769684,
+            "name": "Commit-0",
+            "content": "# PlantsForFriends\r\nAufgaben für Fallstudie in WWI20DSA\r\n\r\n\r\n\r\n# Link Sammlung:\r\nGoogle-Sheet\r\nhttps://docs.google.com/spreadsheets/d/1H7exbN3OiLaCMXm0Hf311oXitT8pno-ebEf-c7SVLjc/edit#gid=1343610866\r\n\r\nIcons\r\nhttps://fonts.google.com/icons?icon.query=pin&icon.category=maps\r\n\r\nGoogle Cloud Plattform\r\nhttps://console.cloud.google.com/\r\n\r\n### Flask für Web-Dev:\r\nRealpython\r\nhttps://realpython.com/python-web-applications/#deploy-your-python-web-application\r\n\r\nfreeCodeCamp\r\nhttps://www.freecodecamp.org/news/how-to-build-a-web-app-using-pythons-flask-and-google-app-engine-52b1bb82b221/\r\n"
+        }
+    ]
+}
