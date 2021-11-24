@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 3,
+            "activePatchIndex": 4,
             "patches": [
                 {
                     "date": 1637760467204,
@@ -20,6 +20,10 @@
                 {
                     "date": 1637760625328,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,8 @@\n+# Logins\r\n+\r\n+## Google:\r\n+\r\n+Email: plants4firends@google.com \\\r\n+Password: laptop-omen-viselike \\\r\n+Name: Echter Name \\\r\n+Geburstag: 15.6.1995 \\\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1637760656171,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,13 +4,5 @@\n \r\n Email: plants4firends@google.com \\\r\n Password: laptop-omen-viselike \\\r\n Name: Echter Name \\\r\n-Geburstag: 15.6.1995 \\\n-# Logins\r\n-\r\n-## Google:\r\n-\r\n-Email: plants4firends@google.com \\\r\n-Password: laptop-omen-viselike \\\r\n-Name: Echter Name \\ \r\n-Geburstag: 15.6.1995 \\\n\\ No newline at end of file\n+Geburstag: 15.6.1995\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1637760467204,
