@@ -1,0 +1,22 @@
+{
+    "sourceFile": "Logins.md",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1637760467204,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1637760491579,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,6 @@\n+# Logins\r\n+\r\n ## Google:\r\n \r\n Email: plants4firends@google.com\r\n Password: laptop-omen-viselike\r\n"
+                }
+            ],
+            "date": 1637760467204,
+            "name": "Commit-0",
+            "content": "## Google:\r\n\r\nEmail: plants4firends@google.com\r\nPassword: laptop-omen-viselike\r\nName: Echter Name\r\nGeburstag: 15.6.1995"
+        }
+    ]
+}
