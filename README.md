@@ -13,6 +13,9 @@ https://fonts.google.com/icons?icon.query=pin&icon.category=maps
 Google Cloud Plattform
 https://console.cloud.google.com/
 
+GitHub in VSCode integrieren
+https://code.visualstudio.com/docs/editor/github
+
 ### Flask für Web-Dev:
 Realpython
 https://realpython.com/python-web-applications/#deploy-your-python-web-application
