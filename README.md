@@ -19,6 +19,9 @@ https://code.visualstudio.com/docs/editor/github
 Moodle für Fallstudie
 https://moodle.dhbw-mannheim.de/course/view.php?id=8510
 
+Stock-Bilder
+https://unsplash.com
+
 ### Flask für Web-Dev:
 Realpython
 https://realpython.com/python-web-applications/#deploy-your-python-web-application
