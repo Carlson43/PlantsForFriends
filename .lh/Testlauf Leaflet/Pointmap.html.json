@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 22,
+            "activePatchIndex": 25,
             "patches": [
                 {
                     "date": 1638347552681,
@@ -96,6 +96,18 @@
                 {
                     "date": 1638349162577,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n <body>\r\n     <h1>Wo sind Angebote ?</h1>\r\n \r\n     <p>Dies ist nur eine Demo</p>\r\n-    <p>Weitere Feature folgen (hoffentlich)...</p>\r\n+    <p>Weitere Features folgen (hoffentlich)...</p>\r\n \r\n     <div id=\"pointMap\"></div>\r\n \r\n     <script>\r\n"
+                },
+                {
+                    "date": 1638349218052,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,11 +37,9 @@\n     <script>\r\n         // Making a map and tiles\r\n         // Setting a higher initial zoom to make effect more obvious\r\n         const mymap = L.map('pointMap').setView([51.5171, 9.9448], 16);\r\n-        const attribution =\r\n-          '&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors';\r\n-  \r\n+        const attribution = '&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors';\r\n         const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';\r\n         const tiles = L.tileLayer(tileUrl, { attribution });\r\n         tiles.addTo(mymap);\r\n   \r\n"
+                },
+                {
+                    "date": 1638349415410,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -55,10 +55,14 @@\n         var marker2 = L.marker([51.51861, 9.94746]).addTo(mymap);\r\n         var marker3 = L.marker([51.51844, 9.94163]).addTo(mymap);\r\n         var marker4 = L.marker([51.51564, 9.94732]).addTo(mymap);\r\n   \r\n+        //Add Popup / description to markers\r\n+        marker1.bindPopup(\"<b>Angebot 1</b><br>Angebot details. Evtl. eine Adresse\").openPopup();\r\n+        marker2.bindPopup(\"<b>Angebot 1</b><br>Angebot details. Evtl. eine Adresse\").openPopup();\r\n+        marker3.bindPopup(\"<b>Angebot 1</b><br>Angebot details. Evtl. eine Adresse\").openPopup();\r\n+        marker4.bindPopup(\"<b>Angebot 1</b><br>Angebot details. Evtl. eine Adresse\").openPopup();\r\n \r\n-    \r\n       </script>\r\n </body>\r\n \r\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1638349435993,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,11 +57,11 @@\n         var marker4 = L.marker([51.51564, 9.94732]).addTo(mymap);\r\n   \r\n         //Add Popup / description to markers\r\n         marker1.bindPopup(\"<b>Angebot 1</b><br>Angebot details. Evtl. eine Adresse\").openPopup();\r\n-        marker2.bindPopup(\"<b>Angebot 1</b><br>Angebot details. Evtl. eine Adresse\").openPopup();\r\n-        marker3.bindPopup(\"<b>Angebot 1</b><br>Angebot details. Evtl. eine Adresse\").openPopup();\r\n-        marker4.bindPopup(\"<b>Angebot 1</b><br>Angebot details. Evtl. eine Adresse\").openPopup();\r\n+        marker2.bindPopup(\"<b>Angebot 2</b><br>Angebot details. Evtl. eine Adresse\").openPopup();\r\n+        marker3.bindPopup(\"<b>Angebot 3</b><br>Angebot details. Evtl. eine Adresse\").openPopup();\r\n+        marker4.bindPopup(\"<b>Angebot 4</b><br>Angebot details. Evtl. eine Adresse\").openPopup();\r\n \r\n       </script>\r\n </body>\r\n \r\n"
                 }
             ],
             "date": 1638347552681,
