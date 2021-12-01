@@ -43,7 +43,11 @@
         // Setting a higher initial zoom to make effect more obvious
         const mymap = L.map('pointMap').setView([51.5171, 9.9448], 16);
         const attribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
-        const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+        
+        //OSM default style
+        //const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+        //OSM Humanitarian style
+        const tileUrl = 'http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png';
         const tiles = L.tileLayer(tileUrl, { attribution });
         tiles.addTo(mymap);
   
