@@ -1,9 +1,9 @@
-<!-- Done with a Tutorail By the Coding Train -->
+
 
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Leaflet|ISS-Map</title>
+	<title>Leaflet|Pointer-Map</title>
 
     <meta charset="utf-8" />
 
@@ -19,7 +19,7 @@
       crossorigin=""
     ></script>
     <style>
-      #issMap {
+      #pointMap {
         height: 660px;
       }
     </style>
@@ -27,19 +27,17 @@
 </head>
 
 <body>
-    <h1>Where is the ISS?</h1>
+    <h1>Wo sind Angebote ?</h1>
 
-    <p>
-      latitude: <span id="lat"></span>°<br />
-      longitude: <span id="lon"></span>° <br />
-    </p>
+    <p>Dies ist nur eine Demo</p>
+    <p>Weitere Feature folgen (hoffentlich)...</p>
 
-    <div id="issMap"></div>
+    <div id="pointMap"></div>
 
     <script>
         // Making a map and tiles
         // Setting a higher initial zoom to make effect more obvious
-        const mymap = L.map('issMap').setView([0, 0], 5);
+        const mymap = L.map('pointMap').setView([51.5171, 9.9448], 16);
         const attribution =
           '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
   
@@ -53,27 +51,15 @@
           iconSize: [50, 32],
           iconAnchor: [25, 16]
         });
-        let marker = L.marker([0, 0], { icon: issIcon }).addTo(mymap);
+
+        //Add a marker to the map
+        var marker1 = L.marker([51.51792, 9.94451]).addTo(mymap);
+        var marker2 = L.marker([51.51861, 9.94746]).addTo(mymap);
+        var marker3 = L.marker([51.51844, 9.94163]).addTo(mymap);
+        var marker4 = L.marker([51.51564, 9.94732]).addTo(mymap);
   
-        const api_url = 'https://api.wheretheiss.at/v1/satellites/25544';
-  
-        let firstTime = true;
-  
-        async function getISS() {
-          const response = await fetch(api_url);
-          const data = await response.json();
-          const { latitude, longitude } = data;
-  
-          // Always set the view to current lat lon and zoom!
-          mymap.setView([latitude, longitude], mymap.getZoom());
-          marker.setLatLng([latitude, longitude]);
-  
-          document.getElementById('lat').textContent = latitude.toFixed(2);
-          document.getElementById('lon').textContent = longitude.toFixed(2);
-        }
-  
-        getISS();
-        setInterval(getISS, 1000);
+
+    
       </script>
 </body>
 

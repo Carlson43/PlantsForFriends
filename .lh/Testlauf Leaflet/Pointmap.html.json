@@ -1,0 +1,102 @@
+{
+    "sourceFile": "Testlauf Leaflet/Pointmap.html",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 21,
+            "patches": [
+                {
+                    "date": 1638347552681,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1638347622983,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,13 +26,13 @@\n \r\n </head>\r\n \r\n <body>\r\n-    <h1>Where is the ISS?</h1>\r\n+    <h1>Wo sind Angebote</h1>\r\n \r\n     <p>\r\n-      latitude: <span id=\"lat\"></span>°<br />\r\n-      longitude: <span id=\"lon\"></span>° <br />\r\n+      Dies ist nur eine Demo\r\n+      Weitere Feature folgen (hoffentlich)...\r\n     </p>\r\n \r\n     <div id=\"pointMap\"></div>\r\n \r\n"
+                },
+                {
+                    "date": 1638347674399,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,14 +26,12 @@\n \r\n </head>\r\n \r\n <body>\r\n-    <h1>Wo sind Angebote</h1>\r\n+    <h1>Wo sind Angebote ?</h1>\r\n \r\n-    <p>\r\n-      Dies ist nur eine Demo\r\n-      Weitere Feature folgen (hoffentlich)...\r\n-    </p>\r\n+    <p>Dies ist nur eine Demo</p>\r\n+    <p>Weitere Feature folgen (hoffentlich)...</p>\r\n \r\n     <div id=\"pointMap\"></div>\r\n \r\n     <script>\r\n"
+                },
+                {
+                    "date": 1638347768818,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n \r\n     <script>\r\n         // Making a map and tiles\r\n         // Setting a higher initial zoom to make effect more obvious\r\n-        const mymap = L.map('pointMap').setView([0, 0], 5);\r\n+        const mymap = L.map('pointMap').setView([51.5171, 9.9448], 9);\r\n         const attribution =\r\n           '&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors';\r\n   \r\n         const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';\r\n"
+                },
+                {
+                    "date": 1638347778152,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n \r\n     <script>\r\n         // Making a map and tiles\r\n         // Setting a higher initial zoom to make effect more obvious\r\n-        const mymap = L.map('pointMap').setView([51.5171, 9.9448], 9);\r\n+        const mymap = L.map('pointMap').setView([51.5171, 9.9448], 12);\r\n         const attribution =\r\n           '&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors';\r\n   \r\n         const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';\r\n"
+                },
+                {
+                    "date": 1638347787556,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n \r\n     <script>\r\n         // Making a map and tiles\r\n         // Setting a higher initial zoom to make effect more obvious\r\n-        const mymap = L.map('pointMap').setView([51.5171, 9.9448], 12);\r\n+        const mymap = L.map('pointMap').setView([51.5171, 9.9448], 15);\r\n         const attribution =\r\n           '&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors';\r\n   \r\n         const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';\r\n"
+                },
+                {
+                    "date": 1638347798695,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n \r\n     <script>\r\n         // Making a map and tiles\r\n         // Setting a higher initial zoom to make effect more obvious\r\n-        const mymap = L.map('pointMap').setView([51.5171, 9.9448], 15);\r\n+        const mymap = L.map('pointMap').setView([51.5171, 9.9448], 17);\r\n         const attribution =\r\n           '&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors';\r\n   \r\n         const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';\r\n"
+                },
+                {
+                    "date": 1638347807343,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n \r\n     <script>\r\n         // Making a map and tiles\r\n         // Setting a higher initial zoom to make effect more obvious\r\n-        const mymap = L.map('pointMap').setView([51.5171, 9.9448], 17);\r\n+        const mymap = L.map('pointMap').setView([51.5171, 9.9448], 16);\r\n         const attribution =\r\n           '&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors';\r\n   \r\n         const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';\r\n"
+                },
+                {
+                    "date": 1638347840288,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \r\n <!DOCTYPE html>\r\n <html>\r\n <head>\r\n-\t<title>Leaflet - hier ist eine kleine Demo</title>\r\n+\t<title>Leaflet - Pointer-Map</title>\r\n \r\n     <meta charset=\"utf-8\" />\r\n \r\n     <link\r\n"
+                },
+                {
+                    "date": 1638347859922,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \r\n <!DOCTYPE html>\r\n <html>\r\n <head>\r\n-\t<title>Leaflet - Pointer-Map</title>\r\n+\t<title>Leaflet|Pointer-Map</title>\r\n \r\n     <meta charset=\"utf-8\" />\r\n \r\n     <link\r\n"
+                },
+                {
+                    "date": 1638348489390,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -70,9 +70,9 @@\n           document.getElementById('lon').textContent = longitude.toFixed(2);\r\n         }\r\n   \r\n         getISS();\r\n-        setInterval(getISS, 1000);\r\n+        //setInterval(getISS, 1000);\r\n       </script>\r\n </body>\r\n \r\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1638348527376,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,26 +53,9 @@\n         });\r\n         let marker = L.marker([0, 0], { icon: issIcon }).addTo(mymap);\r\n   \r\n         const api_url = 'https://api.wheretheiss.at/v1/satellites/25544';\r\n-  \r\n-        let firstTime = true;\r\n-  \r\n-        async function getISS() {\r\n-          const response = await fetch(api_url);\r\n-          const data = await response.json();\r\n-          const { latitude, longitude } = data;\r\n-  \r\n-          // Always set the view to current lat lon and zoom!\r\n-          mymap.setView([latitude, longitude], mymap.getZoom());\r\n-          marker.setLatLng([latitude, longitude]);\r\n-  \r\n-          document.getElementById('lat').textContent = latitude.toFixed(2);\r\n-          document.getElementById('lon').textContent = longitude.toFixed(2);\r\n-        }\r\n-  \r\n-        getISS();\r\n-        //setInterval(getISS, 1000);\r\n+    \r\n       </script>\r\n </body>\r\n \r\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1638348557630,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,8 +50,10 @@\n           iconUrl: 'iss200.png',\r\n           iconSize: [50, 32],\r\n           iconAnchor: [25, 16]\r\n         });\r\n+\r\n+        //Add a marker to the map\r\n         let marker = L.marker([0, 0], { icon: issIcon }).addTo(mymap);\r\n   \r\n         const api_url = 'https://api.wheretheiss.at/v1/satellites/25544';\r\n     \r\n"
+                },
+                {
+                    "date": 1638348609167,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,9 +52,9 @@\n           iconAnchor: [25, 16]\r\n         });\r\n \r\n         //Add a marker to the map\r\n-        let marker = L.marker([0, 0], { icon: issIcon }).addTo(mymap);\r\n+        let marker = L.marker([9.94451, 51.51792], { icon: issIcon }).addTo(mymap);\r\n   \r\n         const api_url = 'https://api.wheretheiss.at/v1/satellites/25544';\r\n     \r\n       </script>\r\n"
+                },
+                {
+                    "date": 1638348692173,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,9 +54,9 @@\n \r\n         //Add a marker to the map\r\n         let marker = L.marker([9.94451, 51.51792], { icon: issIcon }).addTo(mymap);\r\n   \r\n-        const api_url = 'https://api.wheretheiss.at/v1/satellites/25544';\r\n+\r\n     \r\n       </script>\r\n </body>\r\n \r\n"
+                },
+                {
+                    "date": 1638348749363,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,9 +52,9 @@\n           iconAnchor: [25, 16]\r\n         });\r\n \r\n         //Add a marker to the map\r\n-        let marker = L.marker([9.94451, 51.51792], { icon: issIcon }).addTo(mymap);\r\n+        var marker = L.marker([9.94451, 51.51792], { icon: issIcon }).addTo(mymap);\r\n   \r\n \r\n     \r\n       </script>\r\n"
+                },
+                {
+                    "date": 1638348778060,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,9 +52,9 @@\n           iconAnchor: [25, 16]\r\n         });\r\n \r\n         //Add a marker to the map\r\n-        var marker = L.marker([9.94451, 51.51792], { icon: issIcon }).addTo(mymap);\r\n+        var marker = L.marker([9.94451, 51.51792]).addTo(mymap);\r\n   \r\n \r\n     \r\n       </script>\r\n"
+                },
+                {
+                    "date": 1638348832465,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,9 +52,9 @@\n           iconAnchor: [25, 16]\r\n         });\r\n \r\n         //Add a marker to the map\r\n-        var marker = L.marker([9.94451, 51.51792]).addTo(mymap);\r\n+        var marker = L.marker([51.51792, 9.94451]).addTo(mymap);\r\n   \r\n \r\n     \r\n       </script>\r\n"
+                },
+                {
+                    "date": 1638348891714,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,9 +52,12 @@\n           iconAnchor: [25, 16]\r\n         });\r\n \r\n         //Add a marker to the map\r\n-        var marker = L.marker([51.51792, 9.94451]).addTo(mymap);\r\n+        var marker1 = L.marker([51.51792, 9.94451]).addTo(mymap);\r\n+        var marker2 = L.marker([51.51792, 9.94451]).addTo(mymap);\r\n+        var marker3 = L.marker([51.51792, 9.94451]).addTo(mymap);\r\n+        var marker4 = L.marker([51.51792, 9.94451]).addTo(mymap);\r\n   \r\n \r\n     \r\n       </script>\r\n"
+                },
+                {
+                    "date": 1638348926667,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,9 +53,9 @@\n         });\r\n \r\n         //Add a marker to the map\r\n         var marker1 = L.marker([51.51792, 9.94451]).addTo(mymap);\r\n-        var marker2 = L.marker([51.51792, 9.94451]).addTo(mymap);\r\n+        var marker2 = L.marker([51.51861, 9.94746]).addTo(mymap);\r\n         var marker3 = L.marker([51.51792, 9.94451]).addTo(mymap);\r\n         var marker4 = L.marker([51.51792, 9.94451]).addTo(mymap);\r\n   \r\n \r\n"
+                },
+                {
+                    "date": 1638348959553,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,9 +54,9 @@\n \r\n         //Add a marker to the map\r\n         var marker1 = L.marker([51.51792, 9.94451]).addTo(mymap);\r\n         var marker2 = L.marker([51.51861, 9.94746]).addTo(mymap);\r\n-        var marker3 = L.marker([51.51792, 9.94451]).addTo(mymap);\r\n+        var marker3 = L.marker([51.51844, 9.94163]).addTo(mymap);\r\n         var marker4 = L.marker([51.51792, 9.94451]).addTo(mymap);\r\n   \r\n \r\n     \r\n"
+                },
+                {
+                    "date": 1638348987514,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -55,9 +55,9 @@\n         //Add a marker to the map\r\n         var marker1 = L.marker([51.51792, 9.94451]).addTo(mymap);\r\n         var marker2 = L.marker([51.51861, 9.94746]).addTo(mymap);\r\n         var marker3 = L.marker([51.51844, 9.94163]).addTo(mymap);\r\n-        var marker4 = L.marker([51.51792, 9.94451]).addTo(mymap);\r\n+        var marker4 = L.marker([51.51564, 9.94732]).addTo(mymap);\r\n   \r\n \r\n     \r\n       </script>\r\n"
+                }
+            ],
+            "date": 1638347552681,
+            "name": "Commit-0",
+            "content": "\r\n\r\n<!DOCTYPE html>\r\n<html>\r\n<head>\r\n\t<title>Leaflet - hier ist eine kleine Demo</title>\r\n\r\n    <meta charset=\"utf-8\" />\r\n\r\n    <link\r\n      rel=\"stylesheet\"\r\n      href=\"https://unpkg.com/leaflet@1.4.0/dist/leaflet.css\"\r\n      integrity=\"sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==\"\r\n      crossorigin=\"\"\r\n    />\r\n    <script\r\n      src=\"https://unpkg.com/leaflet@1.4.0/dist/leaflet.js\"\r\n      integrity=\"sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg==\"\r\n      crossorigin=\"\"\r\n    ></script>\r\n    <style>\r\n      #pointMap {\r\n        height: 660px;\r\n      }\r\n    </style>\r\n\r\n</head>\r\n\r\n<body>\r\n    <h1>Where is the ISS?</h1>\r\n\r\n    <p>\r\n      latitude: <span id=\"lat\"></span>°<br />\r\n      longitude: <span id=\"lon\"></span>° <br />\r\n    </p>\r\n\r\n    <div id=\"pointMap\"></div>\r\n\r\n    <script>\r\n        // Making a map and tiles\r\n        // Setting a higher initial zoom to make effect more obvious\r\n        const mymap = L.map('pointMap').setView([0, 0], 5);\r\n        const attribution =\r\n          '&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors';\r\n  \r\n        const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';\r\n        const tiles = L.tileLayer(tileUrl, { attribution });\r\n        tiles.addTo(mymap);\r\n  \r\n        // Making a marker with a custom icon\r\n        const issIcon = L.icon({\r\n          iconUrl: 'iss200.png',\r\n          iconSize: [50, 32],\r\n          iconAnchor: [25, 16]\r\n        });\r\n        let marker = L.marker([0, 0], { icon: issIcon }).addTo(mymap);\r\n  \r\n        const api_url = 'https://api.wheretheiss.at/v1/satellites/25544';\r\n  \r\n        let firstTime = true;\r\n  \r\n        async function getISS() {\r\n          const response = await fetch(api_url);\r\n          const data = await response.json();\r\n          const { latitude, longitude } = data;\r\n  \r\n          // Always set the view to current lat lon and zoom!\r\n          mymap.setView([latitude, longitude], mymap.getZoom());\r\n          marker.setLatLng([latitude, longitude]);\r\n  \r\n          document.getElementById('lat').textContent = latitude.toFixed(2);\r\n          document.getElementById('lon').textContent = longitude.toFixed(2);\r\n        }\r\n  \r\n        getISS();\r\n        setInterval(getISS, 1000);\r\n      </script>\r\n</body>\r\n\r\n</html>"
+        }
+    ]
+}

@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 1,
+            "activePatchIndex": 7,
             "patches": [
                 {
                     "date": 1638347116564,
@@ -12,6 +12,30 @@
                 {
                     "date": 1638347269342,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n \r\n     <script>\r\n         // Making a map and tiles\r\n         // Setting a higher initial zoom to make effect more obvious\r\n-        const mymap = L.map('issMap').setView([0, 0], 4);\r\n+        const mymap = L.map('issMap').setView([0, 0], 5);\r\n         const attribution =\r\n           '&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors';\r\n   \r\n         const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';\r\n"
+                },
+                {
+                    "date": 1638347381790,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,6 @@\n+// Done with tutorial by The Coding Train\r\n+\r\n <!DOCTYPE html>\r\n <html>\r\n <head>\r\n \t<title>Leaflet - hier ist eine kleine Demo</title>\r\n"
+                },
+                {
+                    "date": 1638347414624,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n-// Done with tutorial by The Coding Train\r\n \r\n <!DOCTYPE html>\r\n <html>\r\n+  //Done with tutorial by The Coding Train\r\n <head>\r\n \t<title>Leaflet - hier ist eine kleine Demo</title>\r\n \r\n     <meta charset=\"utf-8\" />\r\n"
+                },
+                {
+                    "date": 1638347464724,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n+<!-- Done with a Tutorail By the Coding Train -->\r\n \r\n <!DOCTYPE html>\r\n <html>\r\n-  //Done with tutorial by The Coding Train\r\n <head>\r\n \t<title>Leaflet - hier ist eine kleine Demo</title>\r\n \r\n     <meta charset=\"utf-8\" />\r\n"
+                },
+                {
+                    "date": 1638348435383,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \r\n <!DOCTYPE html>\r\n <html>\r\n <head>\r\n-\t<title>Leaflet - hier ist eine kleine Demo</title>\r\n+\t<title>Leaflet|ISS-Map</title>\r\n \r\n     <meta charset=\"utf-8\" />\r\n \r\n     <link\r\n"
+                },
+                {
+                    "date": 1638348456134,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -72,9 +72,9 @@\n           document.getElementById('lon').textContent = longitude.toFixed(2);\r\n         }\r\n   \r\n         getISS();\r\n-        setInterval(getISS, 1000);\r\n+        //setInterval(getISS, 1000);\r\n       </script>\r\n </body>\r\n \r\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1638348482844,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -72,9 +72,9 @@\n           document.getElementById('lon').textContent = longitude.toFixed(2);\r\n         }\r\n   \r\n         getISS();\r\n-        //setInterval(getISS, 1000);\r\n+        setInterval(getISS, 1000);\r\n       </script>\r\n </body>\r\n \r\n </html>\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1638347116564,
