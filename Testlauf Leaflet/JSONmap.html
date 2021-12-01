@@ -1,0 +1,62 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Leaflet|GeoJSON-Map</title>
+
+    <meta charset="utf-8" />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+      integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+      integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+      crossorigin=""
+    ></script>
+
+    <style>
+      #pointMap {
+        height: 660px;
+      }
+    </style>
+
+</head>
+
+<body>
+    <h1>Wo sind Angebote ?</h1>
+
+    <p>Dies ist nur eine Demo</p>
+    <p>Weitere Features folgen (hoffentlich)...</p>
+
+    <div id="pointMap"></div>
+
+    <script>
+        // Making a map and tiles
+        // Setting a higher initial zoom to make effect more obvious
+        const mymap = L.map('pointMap').setView([51.5171, 9.9448], 16);
+        const attribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
+        const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+        const tiles = L.tileLayer(tileUrl, { attribution });
+        tiles.addTo(mymap);
+  
+        // Making a marker with a custom icon
+        const issIcon = L.icon({
+          iconUrl: 'iss200.png',
+          iconSize: [50, 32],
+          iconAnchor: [25, 16]
+        });
+
+        // Add GeoJSON to Map
+        var geojsonLayer = {"type":"FeatureCollection","features":[{"type":"Feature","properties":{"marker-color":"#7e7e7e","marker-size":"medium","marker-symbol":"marker-stroked"},"geometry":{"type":"Point","coordinates":[9.946226477622986,51.516264127457944]}},{"type":"Feature","properties":{"marker-size":"","marker-color":""},"geometry":{"type":"Point","coordinates":[9.947170615196228,51.51801666810507]}},{"type":"Feature","properties":{"marker-color":"#7e7e7e","marker-size":"medium","marker-symbol":"circle-stroked"},"geometry":{"type":"Point","coordinates":[9.945030212402344,51.517058620907044]}},{"type":"Feature","properties":{"marker-color":"#7e7e7e","marker-size":"medium","marker-symbol":"marker"},"geometry":{"type":"Point","coordinates":[9.945158958435059,51.51895132887755]}},{"type":"Feature","properties":{"marker-color":"#7e7e7e","marker-size":"medium","marker-symbol":"star"},"geometry":{"type":"Point","coordinates":[9.943077564239502,51.51899472337604]}},{"type":"Feature","properties":{"marker-color":"#7e7e7e","marker-size":"medium","marker-symbol":"park2"},"geometry":{"type":"Point","coordinates":[9.938002824783325,51.51871766548264]}},{"type":"Feature","properties":{"marker-color":"#7e7e7e","marker-size":"medium","marker-symbol":"park"},"geometry":{"type":"Point","coordinates":[9.93986964225769,51.51887789193976]}},{"type":"Feature","properties":{"marker-color":"#7e7e7e","marker-size":"medium","marker-symbol":"garden"},"geometry":{"type":"Point","coordinates":[9.931758642196655,51.51718213334982]}},{"type":"Feature","properties":{"marker-color":"#7e7e7e","marker-size":"medium","marker-symbol":"shop"},"geometry":{"type":"Point","coordinates":[9.928947687149048,51.517015224563856]}},{"type":"Feature","properties":{"marker-color":"#7e7e7e","marker-size":"medium","marker-symbol":"wetland"},"geometry":{"type":"Point","coordinates":[9.92815375328064,51.517863114858024]}},{"type":"Feature","properties":{"marker-color":"#7e7e7e","marker-size":"small","marker-symbol":""},"geometry":{"type":"Point","coordinates":[9.927445650100708,51.51675484563643]}},{"type":"Feature","properties":{"marker-color":"#7e7e7e","marker-size":"medium","marker-symbol":"gift"},"geometry":{"type":"Point","coordinates":[9.934526681900024,51.51774294239052]}},{"type":"Feature","properties":{"marker-color":"#7e7e7e","marker-size":"medium","marker-symbol":"clothing-store"},"geometry":{"type":"Point","coordinates":[9.934977293014526,51.51536613288439]}},{"type":"Feature","properties":{"marker-color":"#7e7e7e","marker-size":"medium","marker-symbol":"square-stroked"},"geometry":{"type":"Point","coordinates":[9.945545196533203,51.515526371131976]}}]}
+        L.geoJSON(geojsonLayer).addTo(mymap);
+
+
+      </script>
+</body>
+
+</html>

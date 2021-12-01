@@ -1,0 +1,26 @@
+{
+    "sourceFile": "JSONmap.html",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1638350572380,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1638350586725,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \r\n <!DOCTYPE html>\r\n <html>\r\n <head>\r\n-\t<title>Leaflet|Pointer-Map</title>\r\n+\t<title>Leaflet|GeoJSON-Map</title>\r\n \r\n     <meta charset=\"utf-8\" />\r\n \r\n     <link\r\n"
+                },
+                {
+                    "date": 1638350743357,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,8 +49,10 @@\n           iconSize: [50, 32],\r\n           iconAnchor: [25, 16]\r\n         });\r\n \r\n+        // Add GeoJSON to Map\r\n+        L.geoJSON(marker.geojson).addTo(mymap);\r\n \r\n       </script>\r\n </body>\r\n \r\n"
+                }
+            ],
+            "date": 1638350572380,
+            "name": "Commit-0",
+            "content": "\r\n\r\n<!DOCTYPE html>\r\n<html>\r\n<head>\r\n\t<title>Leaflet|Pointer-Map</title>\r\n\r\n    <meta charset=\"utf-8\" />\r\n\r\n    <link\r\n      rel=\"stylesheet\"\r\n      href=\"https://unpkg.com/leaflet@1.4.0/dist/leaflet.css\"\r\n      integrity=\"sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==\"\r\n      crossorigin=\"\"\r\n    />\r\n    <script\r\n      src=\"https://unpkg.com/leaflet@1.4.0/dist/leaflet.js\"\r\n      integrity=\"sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg==\"\r\n      crossorigin=\"\"\r\n    ></script>\r\n    <style>\r\n      #pointMap {\r\n        height: 660px;\r\n      }\r\n    </style>\r\n\r\n</head>\r\n\r\n<body>\r\n    <h1>Wo sind Angebote ?</h1>\r\n\r\n    <p>Dies ist nur eine Demo</p>\r\n    <p>Weitere Features folgen (hoffentlich)...</p>\r\n\r\n    <div id=\"pointMap\"></div>\r\n\r\n    <script>\r\n        // Making a map and tiles\r\n        // Setting a higher initial zoom to make effect more obvious\r\n        const mymap = L.map('pointMap').setView([51.5171, 9.9448], 16);\r\n        const attribution = '&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors';\r\n        const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';\r\n        const tiles = L.tileLayer(tileUrl, { attribution });\r\n        tiles.addTo(mymap);\r\n  \r\n        // Making a marker with a custom icon\r\n        const issIcon = L.icon({\r\n          iconUrl: 'iss200.png',\r\n          iconSize: [50, 32],\r\n          iconAnchor: [25, 16]\r\n        });\r\n\r\n\r\n      </script>\r\n</body>\r\n\r\n</html>"
+        }
+    ]
+}
