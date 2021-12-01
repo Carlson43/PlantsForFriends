@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 5,
+            "activePatchIndex": 20,
             "patches": [
                 {
                     "date": 1638285900696,
@@ -28,6 +28,66 @@
                 {
                     "date": 1638286403277,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,5 +9,18 @@\n \r\n <body>\r\n     <b>Dicker Text</b>\r\n </body>\r\n+\r\n+<script>\r\n+    var map = L.map('map').setView([51.505, -0.09], 13);\r\n+\r\n+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {\r\n+        attribution: '&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors'\r\n+    }).addTo(map);\r\n+\r\n+    L.marker([51.5, -0.09]).addTo(map)\r\n+        .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')\r\n+        .openPopup();\r\n+</script>\r\n+\r\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1638346106734,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,24 @@\n+<!DOCTYPE html>\r\n+<html>\r\n+<head>\r\n+\t<title>Leaflet - hier ist eine kleine Demo</title>\r\n+\r\n+    <meta charset=\"utf-8\" />\r\n+\r\n+    <link rel=\"stylesheet\" href=\"https://unpkg.com/leaflet@1.7.1/dist/leaflet.css\"\r\n+   integrity=\"sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==\"\r\n+   crossorigin=\"\"/>\r\n+\r\n+</head>\r\n+\r\n+<body>\r\n+    <b>Dicker Text</b>\r\n+    <div id=\"map\"></div>\r\n+</body>\r\n+\r\n+<script src=\"https://unpkg.com/leaflet@1.7.1/dist/leaflet.js\"\r\n+   integrity=\"sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==\"\r\n+   crossorigin=\"\">\r\n+</script>\r\n+\r\n+</html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1638346200350,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,47 +4,24 @@\n \t<title>Leaflet - hier ist eine kleine Demo</title>\r\n \r\n     <meta charset=\"utf-8\" />\r\n \r\n-    <link rel=\"stylesheet\" href=\"https://unpkg.com/leaflet@1.7.1/dist/leaflet.css\"\r\n-   integrity=\"sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==\"\r\n-   crossorigin=\"\"/>\r\n+    <link\r\n+        rel=\"stylesheet\" href=\"https://unpkg.com/leaflet@1.7.1/dist/leaflet.css\"\r\n+        integrity=\"sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==\"\r\n+        crossorigin=\"\"\r\n+    />\r\n \r\n </head>\r\n \r\n <body>\r\n     <b>Dicker Text</b>\r\n+    <p>Normaler Text</p>\r\n     <div id=\"map\"></div>\r\n </body>\r\n \r\n <script src=\"https://unpkg.com/leaflet@1.7.1/dist/leaflet.js\"\r\n    integrity=\"sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==\"\r\n    crossorigin=\"\">\r\n </script>\r\n \r\n-</html>\n-<!DOCTYPE html>\r\n-<html>\r\n-<head>\r\n-\t<title>Leaflet - hier ist eine kleine Demo</title>\r\n-\r\n-    <meta charset=\"utf-8\" />\r\n-\r\n-</head>\r\n-\r\n-<body>\r\n-    <b>Dicker Text</b>\r\n-</body>\r\n-\r\n-<script>\r\n-    var map = L.map('map').setView([51.505, -0.09], 13);\r\n-\r\n-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {\r\n-        attribution: '&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors'\r\n-    }).addTo(map);\r\n-\r\n-    L.marker([51.5, -0.09]).addTo(map)\r\n-        .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')\r\n-        .openPopup();\r\n-</script>\r\n-\r\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1638346326843,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,14 @@\n         rel=\"stylesheet\" href=\"https://unpkg.com/leaflet@1.7.1/dist/leaflet.css\"\r\n         integrity=\"sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==\"\r\n         crossorigin=\"\"\r\n     />\r\n+    <script\r\n+        src=\"https://unpkg.com/leaflet@1.7.1/dist/leaflet.js\"\r\n+        integrity=\"sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==\"\r\n+        crossorigin=\"\">\r\n+    </script>\r\n+    #mapid{height: 180px }\r\n \r\n </head>\r\n \r\n <body>\r\n@@ -18,10 +24,5 @@\n     <p>Normaler Text</p>\r\n     <div id=\"map\"></div>\r\n </body>\r\n \r\n-<script src=\"https://unpkg.com/leaflet@1.7.1/dist/leaflet.js\"\r\n-   integrity=\"sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==\"\r\n-   crossorigin=\"\">\r\n-</script>\r\n-\r\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1638346369672,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,11 @@\n         src=\"https://unpkg.com/leaflet@1.7.1/dist/leaflet.js\"\r\n         integrity=\"sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==\"\r\n         crossorigin=\"\">\r\n     </script>\r\n-    #mapid{height: 180px }\r\n+    <style\r\n+    #mapid{height: 180px; }\r\n+    </style>\r\n \r\n </head>\r\n \r\n <body>\r\n"
+                },
+                {
+                    "date": 1638346398071,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,11 @@\n         integrity=\"sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==\"\r\n         crossorigin=\"\">\r\n     </script>\r\n     <style\r\n-    #mapid{height: 180px; }\r\n+        #mapid{\r\n+            height: 180px;\r\n+        }\r\n     </style>\r\n \r\n </head>\r\n \r\n"
+                },
+                {
+                    "date": 1638346412224,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n         src=\"https://unpkg.com/leaflet@1.7.1/dist/leaflet.js\"\r\n         integrity=\"sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==\"\r\n         crossorigin=\"\">\r\n     </script>\r\n-    <style\r\n+    <style>\r\n         #mapid{\r\n             height: 180px;\r\n         }\r\n     </style>\r\n"
+                },
+                {
+                    "date": 1638346438432,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n         integrity=\"sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==\"\r\n         crossorigin=\"\">\r\n     </script>\r\n     <style>\r\n-        #mapid{\r\n+        #Testmap{\r\n             height: 180px;\r\n         }\r\n     </style>\r\n \r\n@@ -25,8 +25,8 @@\n \r\n <body>\r\n     <b>Dicker Text</b>\r\n     <p>Normaler Text</p>\r\n-    <div id=\"map\"></div>\r\n+    <div id=\"Testmap\"></div>\r\n </body>\r\n \r\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1638346589479,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,7 +26,11 @@\n <body>\r\n     <b>Dicker Text</b>\r\n     <p>Normaler Text</p>\r\n     <div id=\"Testmap\"></div>\r\n+\r\n+    ><script>\r\n+        var map = L.map('map').setView([51.505, -0.09], 13);\r\n+    </script>\r\n </body>\r\n \r\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1638346611947,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n     <b>Dicker Text</b>\r\n     <p>Normaler Text</p>\r\n     <div id=\"Testmap\"></div>\r\n \r\n-    ><script>\r\n+    <script>\r\n         var map = L.map('map').setView([51.505, -0.09], 13);\r\n     </script>\r\n </body>\r\n \r\n"
+                },
+                {
+                    "date": 1638346711429,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,45 @@\n     <p>Normaler Text</p>\r\n     <div id=\"Testmap\"></div>\r\n \r\n     <script>\r\n-        var map = L.map('map').setView([51.505, -0.09], 13);\r\n-    </script>\r\n+        // Making a map and tiles\r\n+        // Setting a higher initial zoom to make effect more obvious\r\n+        const mymap = L.map('issMap').setView([0, 0], 6);\r\n+        const attribution =\r\n+          '&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors';\r\n+  \r\n+        const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';\r\n+        const tiles = L.tileLayer(tileUrl, { attribution });\r\n+        tiles.addTo(mymap);\r\n+  \r\n+        // Making a marker with a custom icon\r\n+        const issIcon = L.icon({\r\n+          iconUrl: 'iss200.png',\r\n+          iconSize: [50, 32],\r\n+          iconAnchor: [25, 16]\r\n+        });\r\n+        let marker = L.marker([0, 0], { icon: issIcon }).addTo(mymap);\r\n+  \r\n+        const api_url = 'https://api.wheretheiss.at/v1/satellites/25544';\r\n+  \r\n+        let firstTime = true;\r\n+  \r\n+        async function getISS() {\r\n+          const response = await fetch(api_url);\r\n+          const data = await response.json();\r\n+          const { latitude, longitude } = data;\r\n+  \r\n+          // Always set the view to current lat lon and zoom!\r\n+          mymap.setView([latitude, longitude], mymap.getZoom());\r\n+          marker.setLatLng([latitude, longitude]);\r\n+  \r\n+          document.getElementById('lat').textContent = latitude.toFixed(2);\r\n+          document.getElementById('lon').textContent = longitude.toFixed(2);\r\n+        }\r\n+  \r\n+        getISS();\r\n+        setInterval(getISS, 1000);\r\n+      </script>\r\n </body>\r\n \r\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1638346751739,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,21 +5,22 @@\n \r\n     <meta charset=\"utf-8\" />\r\n \r\n     <link\r\n-        rel=\"stylesheet\" href=\"https://unpkg.com/leaflet@1.7.1/dist/leaflet.css\"\r\n-        integrity=\"sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==\"\r\n-        crossorigin=\"\"\r\n+      rel=\"stylesheet\"\r\n+      href=\"https://unpkg.com/leaflet@1.4.0/dist/leaflet.css\"\r\n+      integrity=\"sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==\"\r\n+      crossorigin=\"\"\r\n     />\r\n     <script\r\n-        src=\"https://unpkg.com/leaflet@1.7.1/dist/leaflet.js\"\r\n-        integrity=\"sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==\"\r\n-        crossorigin=\"\">\r\n-    </script>\r\n+      src=\"https://unpkg.com/leaflet@1.4.0/dist/leaflet.js\"\r\n+      integrity=\"sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg==\"\r\n+      crossorigin=\"\"\r\n+    ></script>\r\n     <style>\r\n-        #Testmap{\r\n-            height: 180px;\r\n-        }\r\n+      #issMap {\r\n+        height: 360px;\r\n+      }\r\n     </style>\r\n \r\n </head>\r\n \r\n"
+                },
+                {
+                    "date": 1638346778317,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n \r\n <body>\r\n     <b>Dicker Text</b>\r\n     <p>Normaler Text</p>\r\n-    <div id=\"Testmap\"></div>\r\n+    <div id=\"issMap\"></div>\r\n \r\n     <script>\r\n         // Making a map and tiles\r\n         // Setting a higher initial zoom to make effect more obvious\r\n"
+                },
+                {
+                    "date": 1638346946356,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,10 +24,15 @@\n \r\n </head>\r\n \r\n <body>\r\n-    <b>Dicker Text</b>\r\n-    <p>Normaler Text</p>\r\n+    <h1>Where is the ISS?</h1>\r\n+\r\n+    <p>\r\n+      latitude: <span id=\"lat\"></span>°<br />\r\n+      longitude: <span id=\"lon\"></span>° <br />\r\n+    </p>\r\n+    \r\n     <div id=\"issMap\"></div>\r\n \r\n     <script>\r\n         // Making a map and tiles\r\n"
+                },
+                {
+                    "date": 1638346966919,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n       crossorigin=\"\"\r\n     ></script>\r\n     <style>\r\n       #issMap {\r\n-        height: 360px;\r\n+        height: 660px;\r\n       }\r\n     </style>\r\n \r\n </head>\r\n@@ -30,9 +30,9 @@\n     <p>\r\n       latitude: <span id=\"lat\"></span>°<br />\r\n       longitude: <span id=\"lon\"></span>° <br />\r\n     </p>\r\n-    \r\n+\r\n     <div id=\"issMap\"></div>\r\n \r\n     <script>\r\n         // Making a map and tiles\r\n"
+                },
+                {
+                    "date": 1638346976790,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n \r\n     <script>\r\n         // Making a map and tiles\r\n         // Setting a higher initial zoom to make effect more obvious\r\n-        const mymap = L.map('issMap').setView([0, 0], 6);\r\n+        const mymap = L.map('issMap').setView([0, 0], 4);\r\n         const attribution =\r\n           '&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors';\r\n   \r\n         const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';\r\n"
                 }
             ],
             "date": 1638285900696,
