@@ -1,4 +1,4 @@
-{
+var markerJSON = {
     "type": "FeatureCollection",
     "features": [
       {
