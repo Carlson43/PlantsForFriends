@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 21,
+            "activePatchIndex": 22,
             "patches": [
                 {
                     "date": 1638347552681,
@@ -92,6 +92,10 @@
                 {
                     "date": 1638348987514,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -55,9 +55,9 @@\n         //Add a marker to the map\r\n         var marker1 = L.marker([51.51792, 9.94451]).addTo(mymap);\r\n         var marker2 = L.marker([51.51861, 9.94746]).addTo(mymap);\r\n         var marker3 = L.marker([51.51844, 9.94163]).addTo(mymap);\r\n-        var marker4 = L.marker([51.51792, 9.94451]).addTo(mymap);\r\n+        var marker4 = L.marker([51.51564, 9.94732]).addTo(mymap);\r\n   \r\n \r\n     \r\n       </script>\r\n"
+                },
+                {
+                    "date": 1638349162577,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n <body>\r\n     <h1>Wo sind Angebote ?</h1>\r\n \r\n     <p>Dies ist nur eine Demo</p>\r\n-    <p>Weitere Feature folgen (hoffentlich)...</p>\r\n+    <p>Weitere Features folgen (hoffentlich)...</p>\r\n \r\n     <div id=\"pointMap\"></div>\r\n \r\n     <script>\r\n"
                 }
             ],
             "date": 1638347552681,
