@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 4,
+            "activePatchIndex": 7,
             "patches": [
                 {
                     "date": 1637760467204,
@@ -24,6 +24,18 @@
                 {
                     "date": 1637760656171,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,13 +4,5 @@\n \r\n Email: plants4firends@google.com \\\r\n Password: laptop-omen-viselike \\\r\n Name: Echter Name \\\r\n-Geburstag: 15.6.1995 \\\n-# Logins\r\n-\r\n-## Google:\r\n-\r\n-Email: plants4firends@google.com \\\r\n-Password: laptop-omen-viselike \\\r\n-Name: Echter Name \\ \r\n-Geburstag: 15.6.1995 \\\n\\ No newline at end of file\n+Geburstag: 15.6.1995\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1638393626781,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,5 +4,9 @@\n \r\n Email: plants4firends@google.com \\\r\n Password: laptop-omen-viselike \\\r\n Name: Echter Name \\\r\n-Geburstag: 15.6.1995\n\\ No newline at end of file\n+Geburstag: 15.6.1995\r\n+\r\n+## InfinityFree Hosting:\r\n+Email:plants4firends@google.com \\\r\n+Password: appeasing1-endurable-rectal\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1638393766128,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,12 @@\n # Logins\r\n \r\n ## Google:\r\n \r\n-Email: plants4firends@google.com \\\r\n+Email: plant4firends@google.com \\\r\n Password: laptop-omen-viselike \\\r\n Name: Echter Name \\\r\n Geburstag: 15.6.1995\r\n \r\n ## InfinityFree Hosting:\r\n-Email:plants4firends@google.com \\\r\n+Email:plant4firends@google.com \\\r\n Password: appeasing1-endurable-rectal\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1638393846154,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,12 @@\n # Logins\r\n \r\n ## Google:\r\n \r\n-Email: plant4firends@google.com \\\r\n+Email: plants4firends@google.com \\\r\n Password: laptop-omen-viselike \\\r\n Name: Echter Name \\\r\n Geburstag: 15.6.1995\r\n \r\n ## InfinityFree Hosting:\r\n-Email:plant4firends@google.com \\\r\n+Email: plants4firends@google.com \\\r\n Password: appeasing1-endurable-rectal\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1637760467204,
