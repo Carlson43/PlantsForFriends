@@ -19,9 +19,17 @@ https://code.visualstudio.com/docs/editor/github
 Moodle für Fallstudie
 https://moodle.dhbw-mannheim.de/course/view.php?id=8510
 
+Stock-Bilder
+https://unsplash.com
+
 ### Flask für Web-Dev:
 Realpython
 https://realpython.com/python-web-applications/#deploy-your-python-web-application
 
 freeCodeCamp
 https://www.freecodecamp.org/news/how-to-build-a-web-app-using-pythons-flask-and-google-app-engine-52b1bb82b221/
+
+### Django:
+
+Karten in Django
+https://www.paulox.net/2020/12/08/maps-with-django-part-1-geodjango-spatialite-and-leaflet/
