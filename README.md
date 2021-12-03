@@ -33,3 +33,11 @@ https://www.freecodecamp.org/news/how-to-build-a-web-app-using-pythons-flask-and
 
 Karten in Django
 https://www.paulox.net/2020/12/08/maps-with-django-part-1-geodjango-spatialite-and-leaflet/
+
+### Bootstrap:
+
+Komponenten:
+https://getbootstrap.com/docs/3.3/components
+
+Beispiele:
+https://getbootstrap.com/docs/5.1/examples/
