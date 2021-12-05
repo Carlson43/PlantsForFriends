@@ -1,0 +1,18 @@
+{
+    "sourceFile": "Testlauf Bootstrap/bootstrap-5.1.3-dist/login.html",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1638717483315,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1638717483315,
+            "name": "Commit-0",
+            "content": "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n\t<meta charset=\"utf-8\">\r\n\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n\t<title>Complete Bootstrap 4 Website Layout</title>\r\n\t<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css\">\r\n\t<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js\"></script>\r\n\t<script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js\"></script>\r\n\t<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js\"></script>\r\n\t<script src=\"https://use.fontawesome.com/releases/v5.0.8/js/all.js\"></script>\r\n\t<link href=\"style.css\" rel=\"stylesheet\">\r\n\t<link rel=\"stylesheet\" href=\"https://m.w3newbie.com/you-tube.css\">\r\n</head>\r\n<body>\r\n\r\n<!-- Navigation -->\r\n\r\n\r\n<!--- Image Slider -->\r\n\r\n\r\n<!--- Jumbotron -->\r\n\r\n\r\n<!--- Welcome Section -->\r\n\r\n\r\n<!--- Three Column Section -->\r\n\r\n\r\n<!--- Two Column Section -->\r\n\r\n\r\n<!--- Fixed background -->\r\n\r\n\r\n<!--- Emoji Section -->\r\n\r\n  \r\n<!--- Meet the team -->\r\n\r\n\r\n<!--- Cards -->\r\n\r\n\r\n<!--- Two Column Section -->\r\n\r\n\r\n<!--- Connect -->\r\n\r\n\r\n<!--- Footer -->\r\n\r\n\r\n\r\n\r\n</body>\r\n</html>\r\n\r\n\r\n\r\n\r\n<!-- View in Browser: Drew's #1 Trending YouTube Tutorial -->\r\n<div class=\"youtube-tutorial\">\r\n\t<a href=\"http://w3n.link/bundle-bonus-playlist\" target=\"_blank\" style=\"cursor: pointer!important;\">\r\n    <img src=\"https://w3newbie.com/wp-content/uploads/12-site-bundle-banner.png\" style=\"max-width: 100%; position: absolute; bottom: 0;\">\r\n  </a>\r\n</div>\r\n<!-- End View in Browser: Drew's #1 Trending YouTube Tutorial -->\r\n\r\n\r\n"
+        }
+    ]
+}
