@@ -22,6 +22,9 @@ https://moodle.dhbw-mannheim.de/course/view.php?id=8510
 Stock-Bilder
 https://unsplash.com
 
+Figma
+https://figma.com/login
+
 ### Flask für Web-Dev:
 Realpython
 https://realpython.com/python-web-applications/#deploy-your-python-web-application
