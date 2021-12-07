@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 34,
+            "activePatchIndex": 43,
             "patches": [
                 {
                     "date": 1638779407614,
@@ -144,6 +144,42 @@
                 {
                     "date": 1638885036038,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,9 +50,9 @@\n     \r\n   <div class=\"cover-container d-flex w-100 h-100 p-3 mx-auto flex-column\">\r\n     <header class=\"mb-auto\">\r\n       <div>\r\n-        <h3 class=\"float-md-start mb-0\">Cover</h3>\r\n+        <h3 class=\"float-md-start mb-0\">Plants4Friends</h3>\r\n         <nav class=\"nav nav-masthead justify-content-center float-md-end\">\r\n           <a class=\"nav-link\" href=\"./login.html\">Login</a>\r\n         </nav>\r\n       </div>\r\n"
+                },
+                {
+                    "date": 1638885224628,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -61,9 +61,9 @@\n     <main class=\"px-3\">\r\n       <h1>Cover your page.</h1>\r\n       <p class=\"lead\">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>\r\n       <p class=\"lead\">\r\n-        <a href=\"#\" class=\"btn btn-lg btn-secondary fw-bold border-white bg-white\">Learn more</a>\r\n+        <a href=\"#\" class=\"btn btn-lg btn-secondary fw-bold border-white\">Learn more</a>\r\n       </p>\r\n     </main>\r\n \r\n     <footer class=\"mt-auto text-white-50\">\r\n"
+                },
+                {
+                    "date": 1638885263253,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -61,9 +61,9 @@\n     <main class=\"px-3\">\r\n       <h1>Cover your page.</h1>\r\n       <p class=\"lead\">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>\r\n       <p class=\"lead\">\r\n-        <a href=\"#\" class=\"btn btn-lg btn-secondary fw-bold border-white\">Learn more</a>\r\n+        <a href=\"./login.html\" class=\"btn btn-lg btn-secondary fw-bold border-white\">Learn more</a>\r\n       </p>\r\n     </main>\r\n \r\n     <footer class=\"mt-auto text-white-50\">\r\n"
+                },
+                {
+                    "date": 1638885285412,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -61,9 +61,9 @@\n     <main class=\"px-3\">\r\n       <h1>Cover your page.</h1>\r\n       <p class=\"lead\">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>\r\n       <p class=\"lead\">\r\n-        <a href=\"./login.html\" class=\"btn btn-lg btn-secondary fw-bold border-white\">Learn more</a>\r\n+        <a href=\"./login.html\" class=\"btn btn-lg btn-secondary fw-bold border-white\">Login</a>\r\n       </p>\r\n     </main>\r\n \r\n     <footer class=\"mt-auto text-white-50\">\r\n"
+                },
+                {
+                    "date": 1638885361539,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,9 +66,9 @@\n       </p>\r\n     </main>\r\n \r\n     <footer class=\"mt-auto text-white-50\">\r\n-      <p>Cover template for <a href=\"https://getbootstrap.com/\" class=\"text-white\">Bootstrap</a>, by <a href=\"https://twitter.com/mdo\" class=\"text-white\">@mdo</a>.</p>\r\n+      <p>Footer: <a href=\"./index.html\" class=\"text-white\">Home</a>,  <a href=\"https://twitter.com/mdo\" class=\"text-white\">@mdo</a>.</p>\r\n     </footer>\r\n   </div>\r\n     \r\n   </body>\r\n"
+                },
+                {
+                    "date": 1638885385493,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,9 +66,9 @@\n       </p>\r\n     </main>\r\n \r\n     <footer class=\"mt-auto text-white-50\">\r\n-      <p>Footer: <a href=\"./index.html\" class=\"text-white\">Home</a>,  <a href=\"https://twitter.com/mdo\" class=\"text-white\">@mdo</a>.</p>\r\n+      <p>Footer: <a href=\"./index.html\" class=\"text-white\">Home</a>,  <a href=\"./login.html\" class=\"text-white\">Login</a>.</p>\r\n     </footer>\r\n   </div>\r\n     \r\n   </body>\r\n"
+                },
+                {
+                    "date": 1638885414994,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -59,9 +59,9 @@\n     </header>\r\n \r\n     <main class=\"px-3\">\r\n       <h1>Cover your page.</h1>\r\n-      <p class=\"lead\">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>\r\n+      <p class=\"lead\">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea</p>\r\n       <p class=\"lead\">\r\n         <a href=\"./login.html\" class=\"btn btn-lg btn-secondary fw-bold border-white\">Login</a>\r\n       </p>\r\n     </main>\r\n"
+                },
+                {
+                    "date": 1638885434788,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -58,9 +58,9 @@\n       </div>\r\n     </header>\r\n \r\n     <main class=\"px-3\">\r\n-      <h1>Cover your page.</h1>\r\n+      <h1>Catchy Heading</h1>\r\n       <p class=\"lead\">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea</p>\r\n       <p class=\"lead\">\r\n         <a href=\"./login.html\" class=\"btn btn-lg btn-secondary fw-bold border-white\">Login</a>\r\n       </p>\r\n"
+                },
+                {
+                    "date": 1638885456234,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n     <meta name=\"description\" content=\"\">\r\n     <meta name=\"author\" content=\"Mark Otto, Jacob Thornton, and Bootstrap contributors\">\r\n     <meta name=\"generator\" content=\"Hugo 0.88.1\">\r\n-    <title>Cover Template · Bootstrap v5.1</title>\r\n+    <title>Home</title>\r\n \r\n     <link rel=\"canonical\" href=\"https://getbootstrap.com/docs/5.1/examples/cover/\">\r\n \r\n     \r\n"
+                },
+                {
+                    "date": 1638885512063,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,8 +67,9 @@\n     </main>\r\n \r\n     <footer class=\"mt-auto text-white-50\">\r\n       <p>Footer: <a href=\"./index.html\" class=\"text-white\">Home</a>,  <a href=\"./login.html\" class=\"text-white\">Login</a>.</p>\r\n+      <p class=\"mt-5 mb-3 text-muted\">&copy; 2021</p>\r\n     </footer>\r\n   </div>\r\n     \r\n   </body>\r\n"
                 }
             ],
             "date": 1638779407614,
