@@ -2,7 +2,7 @@
 
 ## Google:
 
-Email: plants4firends@google.com \
+Email: plant4friends@gmail.com \
 Password: laptop-omen-viselike \
 Name: Echter Name \
 Geburstag: 15.6.1995
