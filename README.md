@@ -25,6 +25,9 @@ https://unsplash.com
 Figma
 https://figma.com/login
 
+Cooors Fraben
+https://coolors.co/d7f9f1-a9cdc3-7aa095-2e6636-004b24-8ba569
+
 ### Flask für Web-Dev:
 Realpython
 https://realpython.com/python-web-applications/#deploy-your-python-web-application
