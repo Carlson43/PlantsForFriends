@@ -40,6 +40,9 @@ https://www.freecodecamp.org/news/how-to-build-a-web-app-using-pythons-flask-and
 Karten in Django
 https://www.paulox.net/2020/12/08/maps-with-django-part-1-geodjango-spatialite-and-leaflet/
 
+Django Step-by-step
+https://ordinarycoders.com/build-a-django-web-app
+
 ### Bootstrap:
 
 Komponenten:
