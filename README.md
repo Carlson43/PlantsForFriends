@@ -19,11 +19,15 @@ https://code.visualstudio.com/docs/editor/github
 Moodle für Fallstudie
 https://moodle.dhbw-mannheim.de/course/view.php?id=8510
 
+### Design Links
 Stock-Bilder
 https://unsplash.com
 
 Figma
 https://figma.com/login
+
+Cooors Fraben
+https://coolors.co/d7f9f1-a9cdc3-7aa095-2e6636-004b24-8ba569
 
 ### Flask für Web-Dev:
 Realpython
@@ -36,6 +40,9 @@ https://www.freecodecamp.org/news/how-to-build-a-web-app-using-pythons-flask-and
 
 Karten in Django
 https://www.paulox.net/2020/12/08/maps-with-django-part-1-geodjango-spatialite-and-leaflet/
+
+Django Step-by-step
+https://ordinarycoders.com/build-a-django-web-app
 
 ### Bootstrap:
 
