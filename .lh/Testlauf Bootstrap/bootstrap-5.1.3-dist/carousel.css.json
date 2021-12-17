@@ -1,0 +1,18 @@
+{
+    "sourceFile": "Testlauf Bootstrap/bootstrap-5.1.3-dist/carousel.css",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1639406430210,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1639406430210,
+            "name": "Commit-0",
+            "content": "/* GLOBAL STYLES\r\n-------------------------------------------------- */\r\n/* Padding below the footer and lighter body text */\r\n\r\nbody {\r\n    padding-top: 3rem;\r\n    padding-bottom: 3rem;\r\n    color: #5a5a5a;\r\n  }\r\n  \r\n  \r\n  /* CUSTOMIZE THE CAROUSEL\r\n  -------------------------------------------------- */\r\n  \r\n  /* Carousel base class */\r\n  .carousel {\r\n    margin-bottom: 4rem;\r\n  }\r\n  /* Since positioning the image, we need to help out the caption */\r\n  .carousel-caption {\r\n    bottom: 3rem;\r\n    z-index: 10;\r\n  }\r\n  \r\n  /* Declare heights because of positioning of img element */\r\n  .carousel-item {\r\n    height: 32rem;\r\n  }\r\n  .carousel-item > img {\r\n    position: absolute;\r\n    top: 0;\r\n    left: 0;\r\n    min-width: 100%;\r\n    height: 32rem;\r\n  }\r\n  \r\n  \r\n  /* MARKETING CONTENT\r\n  -------------------------------------------------- */\r\n  \r\n  /* Center align the text within the three columns below the carousel */\r\n  .marketing .col-lg-4 {\r\n    margin-bottom: 1.5rem;\r\n    text-align: center;\r\n  }\r\n  .marketing h2 {\r\n    font-weight: 400;\r\n  }\r\n  /* rtl:begin:ignore */\r\n  .marketing .col-lg-4 p {\r\n    margin-right: .75rem;\r\n    margin-left: .75rem;\r\n  }\r\n  /* rtl:end:ignore */\r\n  \r\n  \r\n  /* Featurettes\r\n  ------------------------- */\r\n  \r\n  .featurette-divider {\r\n    margin: 5rem 0; /* Space out the Bootstrap <hr> more */\r\n  }\r\n  \r\n  /* Thin out the marketing headings */\r\n  .featurette-heading {\r\n    font-weight: 300;\r\n    line-height: 1;\r\n    /* rtl:remove */\r\n    letter-spacing: -.05rem;\r\n  }\r\n  \r\n  \r\n  /* RESPONSIVE CSS\r\n  -------------------------------------------------- */\r\n  \r\n  @media (min-width: 40em) {\r\n    /* Bump up size of carousel content */\r\n    .carousel-caption p {\r\n      margin-bottom: 1.25rem;\r\n      font-size: 1.25rem;\r\n      line-height: 1.4;\r\n    }\r\n  \r\n    .featurette-heading {\r\n      font-size: 50px;\r\n    }\r\n  }\r\n  \r\n  @media (min-width: 62em) {\r\n    .featurette-heading {\r\n      margin-top: 7rem;\r\n    }\r\n  }"
+        }
+    ]
+}
