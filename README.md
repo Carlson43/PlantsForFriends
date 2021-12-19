@@ -30,7 +30,7 @@ Coolors Farben - Türkis
 https://coolors.co/d7f9f1-a9cdc3-7aa095-2e6636-004b24-8ba569
 
 Coolors Farben - Violett
-https://coolors.co/c96480-b47978-b7245c-2e6636-004b24-8ba569
+https://coolors.co/c96480-be8989-b7245c-2e6636-004b24-8ba569
 
 ### Flask für Web-Dev:
 Realpython
