@@ -27,7 +27,7 @@ Figma
 https://figma.com/login
 
 Coolors Farben - Türkis
-https://coolors.co/d7f9f1-a9cdc3-7aa095-2e6636-004b24-8ba569
+https://coolors.co/0f5132-198754-a3cfbb-d1e7dd-a6e9d5-1aa179
 
 Coolors Farben - Violett
 https://coolors.co/c96480-be8989-b7245c-2e6636-004b24-8ba569
