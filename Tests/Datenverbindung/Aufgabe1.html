@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+
+
+    <p>
+      Welcome to the 14th Easy jQuery Tutorial, part of <a href="http://www.easyprogramming.net">EasyProgramming.net</a>. This is similar to the $.get() method but it gives you very strict control over what kind of data your web page is expecting, JSON. 
+  </p>
+  
+  <p>
+  $.getJSON() example:</p>
+  <pre>
+    $.getJSON(url,data, successCallbacK);
+  </pre>
+  <p>
+  Notice that there is no 'datatype' argument here because type JSON is built in. 
+  </p>
+  <p>
+  A full example would look something like this:
+  </p>
+  <pre>
+    $.getJSON(url,data, successCallbacK)
+      .done(function(){})
+    .fail(function(){})
+    .always(function(){});
+  </pre>
+  <p>
+  The example is pretty straight forward so let's practice below.
+  </p>
+  
+  <h2>
+      Let's practice:
+  </h2>
+  <table id="heroesTable">
+    <thead>
+      <th>App</th>
+      <th>Datetime</th>
+      <th>Parameter</th>
+    </thead>
+    <tbody id="heroesBody"></tbody>
+  </table>
+	
+	<script>
+	    $.getJSON('https://elaspix.de/Lehre/Casestudy/DataScience/liverendering_log_15.12.-25.12.19.json', function(data){
+	 console.log(data);
+  $(data).each(function(i, hero){
+  	$('#heroesBody').append($("<tr>")
+    	.append($("<td>").append(hero.app))
+      .append($("<td>").append(hero.datetime))
+      .append($("<td>").append(hero.parameter)));
+  });
+})
+	.done(function(){
+		alert("Completed");
+	})
+	.fail(function(e){
+		console.log('error:');
+		console.error(e);
+	})
+	.always(function(){
+		alert("always runs");
+	});
+	</script>
+  </body>
+</html>
