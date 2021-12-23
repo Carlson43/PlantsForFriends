@@ -59,7 +59,6 @@ function search()
 {
     var nam = String($("#search_term").val())
     var data = []
-    console.log(nam)
     $.get("https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_",function(response)
     {
     

@@ -1,0 +1,18 @@
+{
+    "sourceFile": "Website/Backend.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1640256408490,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1640256408490,
+            "name": "Commit-0",
+            "content": "function add()\r\n{\r\n    var jsonstring=  '{\"Pflanze\":\"'+$(\"#jsonstring\").val()+'\"}';\r\n    console.log(\"add\"+ jsonstring);\r\n    $.get(\"https://webtechlecture.appspot.com/cloudstore/add?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_&jsonstring=\"+encodeURI(jsonstring),function(response)\r\n    {\r\n    console.log(response);\r\n    });\r\n}\r\n\r\nfunction listAllData()\r\n{\r\n    var jsonstring=$(\"#jsonstring\").val();\r\n    console.log(\"Hi!\");\r\n    $.get(\"https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_\",function(response)\r\n    {\r\n    console.log(response);\r\n    });\r\n}\r\n    \r\nfunction del()\r\n{\r\n    var jsonstring=$(\"#jsonstring\").val();\r\n    console.log(\"Del\");\r\n    $.get(\"https://webtechlecture.appspot.com/cloudstore/del?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_&key=1640178157404\",function(response)\r\n    {\r\n    console.log(response);\r\n    });\r\n}\t\r\n\r\nfunction addAll()\r\n{\r\n\r\n    var jsonstring=  \r\n    \r\n    '{\"Pflanze\":\"'+$(\"#jsonstring1\").val()+'\",'+\r\n    '\"Name\":\"'+$(\"#jsonstring2\").val()+'\",'+\r\n    '\"Nachname\":\"'+$(\"#jsonstring3\").val()+'\",'+\r\n    '\"Straße\":\"'+$(\"#jsonstring4\").val()+\r\n\r\n    '\"}';\r\n    console.log(\"add\"+ jsonstring);\r\n    $.get(\"https://webtechlecture.appspot.com/cloudstore/add?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_&jsonstring=\"+encodeURI(jsonstring),function(response)\r\n    {\r\n    console.log(response);\r\n    });\r\n}\r\n\r\nfunction spec()\r\n{\r\n    var specvar =  \r\n    $.get('https://webtechlecture.appspot.com/cloudstore/ ?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_&jsonstring={\"Pflanzen\":\"Lillie\"}',function(response)\r\n    {\r\n    console.log(response);\r\n    });\r\n}\r\n\r\nfunction search()\r\n{\r\n    var nam = String($(\"#search_term\").val())\r\n    var data = []\r\n    console.log(nam)\r\n    $.get(\"https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_\",function(response)\r\n    {\r\n    \r\n    for (var i = 0; i < response.length; i++)\r\n    data.push(response[i]);\r\n\r\n\r\n    for (var i = 0; i < data.length; i++){\r\n        if (data[i].jsonstring.Pflanze == nam){\r\n            console.log(data[i].jsonstring)}\r\n                else{\r\n                for (var i = 0; i < data.length; i++){\r\n                    if (data[i].jsonstring.Name == nam){\r\n                    console.log(data[i].jsonstring)}\r\n                    else{\r\n                    for (var i = 0; i < data.length; i++){\r\n                        if (data[i].jsonstring.Nachname == nam){\r\n                        console.log(data[i].jsonstring)}\r\n                        else{\r\n                            for (var i = 0; i < data.length; i++){\r\n                                if (data[i].jsonstring.Straße == nam){\r\n                                console.log(data[i].jsonstring)}                                        \r\n                    };            \t          \r\n                }\r\n            }\r\n            }\r\n        }\r\n        }\r\n    };\r\n});         \r\n};"
+        }
+    ]
+}
