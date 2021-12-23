@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 20,
+            "activePatchIndex": 28,
             "patches": [
                 {
                     "date": 1640252294782,
@@ -88,6 +88,38 @@
                 {
                     "date": 1640263247434,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,10 +49,12 @@\n         <h3>Übersicht der Angebote in deiner Nähe</h3>\r\n     </div>\r\n \r\n     <!-- Custom Map Location -->\r\n-    <div class=\"container-md\"></div>\r\n-    <div id=\"pointMap\"></div>\r\n+    <div class=\"container-md\">\r\n+        <div id=\"pointMap\"></div>\r\n+    </div>\r\n+    \r\n \r\n     <!-- Bootstrap JS -->\r\n     <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p\" crossorigin=\"anonymous\"></script>\r\n     \r\n"
+                },
+                {
+                    "date": 1640263524826,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,8 +13,10 @@\n     <!-- Custom Map CSS -->\r\n     <style> #pointMap {height: 660px;}</style>\r\n     <!-- Map Fullscreen CSS -->\r\n     <link rel=\"stylesheet\" href=\"Control.FullScreen.css\" />\r\n+    <!-- Map Locate CSS -->\r\n+    <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@[VERSION]/dist/L.Control.Locate.min.css\" />\r\n \r\n     <title>Karte @ Plants4Friends</title>\r\n   </head>\r\n   <body>\r\n"
+                },
+                {
+                    "date": 1640263545329,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -63,8 +63,11 @@\n     <!-- Leaflet JS -->\r\n     <script src=\"https://unpkg.com/leaflet@1.4.0/dist/leaflet.js\" integrity=\"sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg==\" crossorigin=\"\"></script>\r\n     <!-- Map Fullscreen JS -->\r\n     <script src=\"Control.FullScreen.js\"></script>\r\n+    <!-- Map Locate JS -->\r\n+    <script src=\"https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@[VERSION]/dist/L.Control.Locate.min.js\" charset=\"utf-8\"></script>\r\n+\r\n     <!-- Custom Map JS -->\r\n     <script>\r\n         // Making a map and tiles\r\n         // Setting a higher initial zoom to make effect more obvious\r\n"
+                },
+                {
+                    "date": 1640263857153,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -79,8 +79,9 @@\n         const attribution = '&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors';\r\n         const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';\r\n         const tiles = L.tileLayer(tileUrl, { attribution });\r\n         tiles.addTo(mymap);\r\n+        L.control.locate().addTo(mymap);\r\n \r\n         //Add a marker to the map\r\n         var marker1 = L.marker([51.51792, 9.94451]).addTo(mymap);\r\n         var marker2 = L.marker([51.51861, 9.94746]).addTo(mymap);\r\n"
+                },
+                {
+                    "date": 1640263925605,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -64,9 +64,9 @@\n     <script src=\"https://unpkg.com/leaflet@1.4.0/dist/leaflet.js\" integrity=\"sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg==\" crossorigin=\"\"></script>\r\n     <!-- Map Fullscreen JS -->\r\n     <script src=\"Control.FullScreen.js\"></script>\r\n     <!-- Map Locate JS -->\r\n-    <script src=\"https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@[VERSION]/dist/L.Control.Locate.min.js\" charset=\"utf-8\"></script>\r\n+    <script src=\"./leaflet-locatecontrol-gh-pages/leaflet-locatecontrol-gh-pages/dist/L.Control.Locate.min.js\" charset=\"utf-8\"></script>\r\n \r\n     <!-- Custom Map JS -->\r\n     <script>\r\n         // Making a map and tiles\r\n"
+                },
+                {
+                    "date": 1640263963945,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     <style> #pointMap {height: 660px;}</style>\r\n     <!-- Map Fullscreen CSS -->\r\n     <link rel=\"stylesheet\" href=\"Control.FullScreen.css\" />\r\n     <!-- Map Locate CSS -->\r\n-    <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@[VERSION]/dist/L.Control.Locate.min.css\" />\r\n+    <link rel=\"stylesheet\" href=\"./leaflet-locatecontrol-gh-pages/leaflet-locatecontrol-gh-pages/dist/L.Control.Locate.min.css\" />\r\n \r\n     <title>Karte @ Plants4Friends</title>\r\n   </head>\r\n   <body>\r\n"
+                },
+                {
+                    "date": 1640264028293,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     <style> #pointMap {height: 660px;}</style>\r\n     <!-- Map Fullscreen CSS -->\r\n     <link rel=\"stylesheet\" href=\"Control.FullScreen.css\" />\r\n     <!-- Map Locate CSS -->\r\n-    <link rel=\"stylesheet\" href=\"./leaflet-locatecontrol-gh-pages/leaflet-locatecontrol-gh-pages/dist/L.Control.Locate.min.css\" />\r\n+    <link rel=\"stylesheet\" href=\"./L.Control.Locate.min.css\" />\r\n \r\n     <title>Karte @ Plants4Friends</title>\r\n   </head>\r\n   <body>\r\n@@ -64,9 +64,9 @@\n     <script src=\"https://unpkg.com/leaflet@1.4.0/dist/leaflet.js\" integrity=\"sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg==\" crossorigin=\"\"></script>\r\n     <!-- Map Fullscreen JS -->\r\n     <script src=\"Control.FullScreen.js\"></script>\r\n     <!-- Map Locate JS -->\r\n-    <script src=\"./leaflet-locatecontrol-gh-pages/leaflet-locatecontrol-gh-pages/dist/L.Control.Locate.min.js\" charset=\"utf-8\"></script>\r\n+    <script src=\"./L.Control.Locate.min.js\" charset=\"utf-8\"></script>\r\n \r\n     <!-- Custom Map JS -->\r\n     <script>\r\n         // Making a map and tiles\r\n"
+                },
+                {
+                    "date": 1640264058628,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     <style> #pointMap {height: 660px;}</style>\r\n     <!-- Map Fullscreen CSS -->\r\n     <link rel=\"stylesheet\" href=\"Control.FullScreen.css\" />\r\n     <!-- Map Locate CSS -->\r\n-    <link rel=\"stylesheet\" href=\"./L.Control.Locate.min.css\" />\r\n+    <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@[VERSION]/dist/L.Control.Locate.min.css\" />\r\n \r\n     <title>Karte @ Plants4Friends</title>\r\n   </head>\r\n   <body>\r\n@@ -64,9 +64,9 @@\n     <script src=\"https://unpkg.com/leaflet@1.4.0/dist/leaflet.js\" integrity=\"sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg==\" crossorigin=\"\"></script>\r\n     <!-- Map Fullscreen JS -->\r\n     <script src=\"Control.FullScreen.js\"></script>\r\n     <!-- Map Locate JS -->\r\n-    <script src=\"./L.Control.Locate.min.js\" charset=\"utf-8\"></script>\r\n+    <script src=\"./leaflet-locatecontrol-gh-pages/leaflet-locatecontrol-gh-pages/dist/L.Control.Locate.min.js\" charset=\"utf-8\"></script>\r\n \r\n     <!-- Custom Map JS -->\r\n     <script>\r\n         // Making a map and tiles\r\n"
+                },
+                {
+                    "date": 1640264099086,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     <style> #pointMap {height: 660px;}</style>\r\n     <!-- Map Fullscreen CSS -->\r\n     <link rel=\"stylesheet\" href=\"Control.FullScreen.css\" />\r\n     <!-- Map Locate CSS -->\r\n-    <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@[VERSION]/dist/L.Control.Locate.min.css\" />\r\n+    <link rel=\"stylesheet\" href=\"./leaflet-locatecontrol-gh-pages/leaflet-locatecontrol-gh-pages/dist/L.Control.Locate.min.css\" />\r\n \r\n     <title>Karte @ Plants4Friends</title>\r\n   </head>\r\n   <body>\r\n"
                 }
             ],
             "date": 1640252294782,

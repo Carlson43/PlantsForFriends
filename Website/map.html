@@ -14,6 +14,8 @@
     <style> #pointMap {height: 660px;}</style>
     <!-- Map Fullscreen CSS -->
     <link rel="stylesheet" href="Control.FullScreen.css" />
+    <!-- Map Locate CSS -->
+    <link rel="stylesheet" href="./leaflet-locatecontrol-gh-pages/leaflet-locatecontrol-gh-pages/dist/L.Control.Locate.min.css" />
 
     <title>Karte @ Plants4Friends</title>
   </head>
@@ -62,6 +64,9 @@
     <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js" integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg==" crossorigin=""></script>
     <!-- Map Fullscreen JS -->
     <script src="Control.FullScreen.js"></script>
+    <!-- Map Locate JS -->
+    <script src="./leaflet-locatecontrol-gh-pages/leaflet-locatecontrol-gh-pages/dist/L.Control.Locate.min.js" charset="utf-8"></script>
+
     <!-- Custom Map JS -->
     <script>
         // Making a map and tiles
@@ -75,6 +80,7 @@
         const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
         const tiles = L.tileLayer(tileUrl, { attribution });
         tiles.addTo(mymap);
+        L.control.locate().addTo(mymap);
 
         //Add a marker to the map
         var marker1 = L.marker([51.51792, 9.94451]).addTo(mymap);
