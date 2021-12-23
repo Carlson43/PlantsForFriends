@@ -51,7 +51,7 @@
           console.log(data);
           $(data).each(function(i, hero){
             $('#heroesBody').append($("<tr>")
-            .append($("<td>").append(hero.jsonstring.Name))
+            .append($("<td>").append(hero.Name))
             .append($("<td>").append(hero.datetime))
             .append($("<td>").append(hero.parameter)));
           });

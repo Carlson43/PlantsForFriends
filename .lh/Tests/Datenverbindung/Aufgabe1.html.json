@@ -1,0 +1,26 @@
+{
+    "sourceFile": "Tests/Datenverbindung/Aufgabe1.html",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1640262238728,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1640263069191,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,13 +46,13 @@\n     <tbody id=\"heroesBody\"></tbody>\r\n   </table>\r\n \t\r\n \t<script>\r\n-\t    $.getJSON('https://elaspix.de/Lehre/Casestudy/DataScience/liverendering_log_15.12.-25.12.19.json', function(data){\r\n+\t    $.getJSON('https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_', function(data){\r\n           console.log(data);\r\n           $(data).each(function(i, hero){\r\n             $('#heroesBody').append($(\"<tr>\")\r\n-            .append($(\"<td>\").append(hero.app))\r\n+            .append($(\"<td>\").append(hero.Name))\r\n             .append($(\"<td>\").append(hero.datetime))\r\n             .append($(\"<td>\").append(hero.parameter)));\r\n           });\r\n         })\r\n"
+                },
+                {
+                    "date": 1640263096099,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,9 +50,9 @@\n \t    $.getJSON('https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_', function(data){\r\n           console.log(data);\r\n           $(data).each(function(i, hero){\r\n             $('#heroesBody').append($(\"<tr>\")\r\n-            .append($(\"<td>\").append(hero.Name))\r\n+            .append($(\"<td>\").append(hero.jsonstring.Name))\r\n             .append($(\"<td>\").append(hero.datetime))\r\n             .append($(\"<td>\").append(hero.parameter)));\r\n           });\r\n         })\r\n"
+                }
+            ],
+            "date": 1640262238728,
+            "name": "Commit-0",
+            "content": "<!doctype html>\r\n<html lang=\"en\">\r\n  <script src=\"http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js\"></script>\r\n  <head>\r\n    <!-- Required meta tags -->\r\n    <meta charset=\"utf-8\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\r\n\r\n    <!-- Bootstrap CSS -->\r\n\r\n\r\n    <p>\r\n      Welcome to the 14th Easy jQuery Tutorial, part of <a href=\"http://www.easyprogramming.net\">EasyProgramming.net</a>. This is similar to the $.get() method but it gives you very strict control over what kind of data your web page is expecting, JSON. \r\n  </p>\r\n  \r\n  <p>\r\n  $.getJSON() example:</p>\r\n  <pre>\r\n    $.getJSON(url,data, successCallbacK);\r\n  </pre>\r\n  <p>\r\n  Notice that there is no 'datatype' argument here because type JSON is built in. \r\n  </p>\r\n  <p>\r\n  A full example would look something like this:\r\n  </p>\r\n  <pre>\r\n    $.getJSON(url,data, successCallbacK)\r\n      .done(function(){})\r\n    .fail(function(){})\r\n    .always(function(){});\r\n  </pre>\r\n  <p>\r\n  The example is pretty straight forward so let's practice below.\r\n  </p>\r\n  \r\n  <h2>\r\n      Let's practice:\r\n  </h2>\r\n  <table id=\"heroesTable\">\r\n    <thead>\r\n      <th>App</th>\r\n      <th>Datetime</th>\r\n      <th>Parameter</th>\r\n    </thead>\r\n    <tbody id=\"heroesBody\"></tbody>\r\n  </table>\r\n\t\r\n\t<script>\r\n\t    $.getJSON('https://elaspix.de/Lehre/Casestudy/DataScience/liverendering_log_15.12.-25.12.19.json', function(data){\r\n          console.log(data);\r\n          $(data).each(function(i, hero){\r\n            $('#heroesBody').append($(\"<tr>\")\r\n            .append($(\"<td>\").append(hero.app))\r\n            .append($(\"<td>\").append(hero.datetime))\r\n            .append($(\"<td>\").append(hero.parameter)));\r\n          });\r\n        })\r\n\t.done(function(){\r\n\t\talert(\"Completed\");\r\n\t})\r\n\t.fail(function(e){\r\n\t\tconsole.log('error:');\r\n\t\tconsole.error(e);\r\n\t})\r\n\t.always(function(){\r\n\t\talert(\"always runs\");\r\n\t});\r\n\t</script>\r\n  </body>\r\n</html>"
+        }
+    ]
+}
