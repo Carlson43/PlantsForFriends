@@ -60,8 +60,21 @@
           <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
 
- 
-      
+        <!-- Input / Search Group -->
+        <div class="container-md">
+          <div class="input-group">
+            <input type="text" placeholder="Suchbegriff eingeben" aria-label="search_term" id="search_term" class="form-control">
+            <input type="text" placeholder="Ort" aria-label="search_loc" id="search_loc" class="form-control">
+            <button onclick= "listAllData();" class="btn btn-success" type="button" id="search_btn">Suchen</button>
+            
+         
+    <div>
+      <input id= "jsonstring5" type="text" value=''>
+      <label for=jsonstring5>Suche</label>
+  </div>
+
+  <div><button onclick= "addAll();">Fertig</button></div>
+  <div><button onclick= "search();">Suche</button></div>
   
  
         <div class="carousel-inner">
@@ -105,12 +118,15 @@
     </div>
 
     <!-- Input / Search Group -->
-      <div class="container-md">
-        <div class="input-group">
-          <input type="text" placeholder="Suchbegriff eingeben" aria-label="search_term" id="search_term" class="form-control">
-          <input type="text" placeholder="Ort" aria-label="search_loc" id="search_loc" class="form-control">
-          <button onclick= "search();" class="btn btn-success" type="button" id="search_btn">Suchen</button>          
-        </div>
+    <div class="container-md">
+      <div class="input-group">
+        <input type="text" placeholder="Suchbegriff eingeben" aria-label="search_term" id="searchterm" class="form-control">
+        <input type="text" placeholder="Ort" aria-label="search_loc" id="search_loc" class="form-control">
+        <button onclick= "listAllData();" class="btn btn-success" type="button" id="search_btn">Suchen</button>
+        
+
+
+      </div>
     </div>
     
     <div>
