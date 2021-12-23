@@ -93,6 +93,24 @@
         marker2.bindPopup("<b>Angebot 2</b><br>Angebot details. Evtl. eine Adresse").openPopup();
         marker3.bindPopup("<b>Angebot 3</b><br>Angebot details. Evtl. eine Adresse").openPopup();
         marker4.bindPopup("<b>Angebot 4</b><br>Angebot details. Evtl. eine Adresse").openPopup();
+        
+        // Show Location on Click
+        function onMapClick(e) {
+            alert("You clicked the map at " + e.latlng);
+        }
+
+        mymap.on('click', onMapClick);
+
+        var popup = L.popup();
+
+        function onMapClick(e) {
+            popup
+                .setLatLng(e.latlng)
+                .setContent("You clicked the map at " + e.latlng.toString())
+                .openOn(mymap);
+        }
+
+        mymap.on('click', onMapClick);
 
     </script>
 
