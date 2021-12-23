@@ -8,6 +8,10 @@
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
+        <!--Referencing Backend -->
+        <script src="./Backend.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.js"> </script>
+
         <title>Welcome @ Plants4Friends</title>
     </head>
 
@@ -86,9 +90,12 @@
         <!-- Input / Search Group -->
         <div class="container-md">
           <div class="input-group">
-            <input type="text" placeholder="Suchbegriff eingeben" aria-label="search_term" class="form-control">
-            <input type="text" placeholder="Ort" aria-label="search_loc" class="form-control">
-            <button class="btn btn-success" type="button" id="search_btn">Suchen</button>
+            <input type="text" placeholder="Suchbegriff eingeben" aria-label="search_term" id="search_term" class="form-control">
+            <input type="text" placeholder="Ort" aria-label="search_loc" id="search_loc" class="form-control">
+            <button onclick= "search();" class="btn btn-success" type="button" id="search_btn">Suchen</button>
+            
+
+ 
           </div>
         </div>
         
@@ -150,7 +157,7 @@
         
         <!--Backend Script-->
 
-        
+
 
     </body>
 </html>

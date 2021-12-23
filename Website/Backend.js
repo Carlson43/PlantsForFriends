@@ -57,7 +57,7 @@ function spec()
 
 function search()
 {
-    var nam = String($("#jsonstring5").val())
+    var nam = String($("#search_term").val())
     var data = []
     $.get("https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_",function(response)
     {
