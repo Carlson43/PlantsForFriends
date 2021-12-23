@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 28,
+            "activePatchIndex": 33,
             "patches": [
                 {
                     "date": 1640252294782,
@@ -120,6 +120,26 @@
                 {
                     "date": 1640264099086,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     <style> #pointMap {height: 660px;}</style>\r\n     <!-- Map Fullscreen CSS -->\r\n     <link rel=\"stylesheet\" href=\"Control.FullScreen.css\" />\r\n     <!-- Map Locate CSS -->\r\n-    <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@[VERSION]/dist/L.Control.Locate.min.css\" />\r\n+    <link rel=\"stylesheet\" href=\"./leaflet-locatecontrol-gh-pages/leaflet-locatecontrol-gh-pages/dist/L.Control.Locate.min.css\" />\r\n \r\n     <title>Karte @ Plants4Friends</title>\r\n   </head>\r\n   <body>\r\n"
+                },
+                {
+                    "date": 1640264421043,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -92,9 +92,16 @@\n         marker1.bindPopup(\"<b>Angebot 1</b><br>Angebot details. Evtl. eine Adresse\").openPopup();\r\n         marker2.bindPopup(\"<b>Angebot 2</b><br>Angebot details. Evtl. eine Adresse\").openPopup();\r\n         marker3.bindPopup(\"<b>Angebot 3</b><br>Angebot details. Evtl. eine Adresse\").openPopup();\r\n         marker4.bindPopup(\"<b>Angebot 4</b><br>Angebot details. Evtl. eine Adresse\").openPopup();\r\n+        \r\n+        // Show Location on Click\r\n+        function onMapClick(e) {\r\n+            alert(\"You clicked the map at \" + e.latlng);\r\n+        }\r\n \r\n+        map.on('click', onMapClick);\r\n+\r\n     </script>\r\n \r\n   </body>\r\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1640264494384,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -100,8 +100,19 @@\n         }\r\n \r\n         map.on('click', onMapClick);\r\n \r\n+        var popup = L.popup();\r\n+\r\n+        function onMapClick(e) {\r\n+            popup\r\n+                .setLatLng(e.latlng)\r\n+                .setContent(\"You clicked the map at \" + e.latlng.toString())\r\n+                .openOn(map);\r\n+        }\r\n+\r\n+        map.on('click', onMapClick);\r\n+\r\n     </script>\r\n \r\n   </body>\r\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1640264546032,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -98,17 +98,17 @@\n         function onMapClick(e) {\r\n             alert(\"You clicked the map at \" + e.latlng);\r\n         }\r\n \r\n-        map.on('click', onMapClick);\r\n+        mymap.on('click', onMapClick);\r\n \r\n         var popup = L.popup();\r\n \r\n         function onMapClick(e) {\r\n             popup\r\n                 .setLatLng(e.latlng)\r\n                 .setContent(\"You clicked the map at \" + e.latlng.toString())\r\n-                .openOn(map);\r\n+                .openOn(mymap);\r\n         }\r\n \r\n         map.on('click', onMapClick);\r\n \r\n"
+                },
+                {
+                    "date": 1640264935541,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -94,13 +94,9 @@\n         marker3.bindPopup(\"<b>Angebot 3</b><br>Angebot details. Evtl. eine Adresse\").openPopup();\r\n         marker4.bindPopup(\"<b>Angebot 4</b><br>Angebot details. Evtl. eine Adresse\").openPopup();\r\n         \r\n         // Show Location on Click\r\n-        function onMapClick(e) {\r\n-            alert(\"You clicked the map at \" + e.latlng);\r\n-        }\r\n \r\n-        mymap.on('click', onMapClick);\r\n \r\n         var popup = L.popup();\r\n \r\n         function onMapClick(e) {\r\n@@ -109,9 +105,9 @@\n                 .setContent(\"You clicked the map at \" + e.latlng.toString())\r\n                 .openOn(mymap);\r\n         }\r\n \r\n-        map.on('click', onMapClick);\r\n+        mymap.on('click', onMapClick);\r\n \r\n     </script>\r\n \r\n   </body>\r\n"
+                },
+                {
+                    "date": 1640264944556,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -94,12 +94,9 @@\n         marker3.bindPopup(\"<b>Angebot 3</b><br>Angebot details. Evtl. eine Adresse\").openPopup();\r\n         marker4.bindPopup(\"<b>Angebot 4</b><br>Angebot details. Evtl. eine Adresse\").openPopup();\r\n         \r\n         // Show Location on Click\r\n-\r\n-\r\n         var popup = L.popup();\r\n-\r\n         function onMapClick(e) {\r\n             popup\r\n                 .setLatLng(e.latlng)\r\n                 .setContent(\"You clicked the map at \" + e.latlng.toString())\r\n"
                 }
             ],
             "date": 1640252294782,
