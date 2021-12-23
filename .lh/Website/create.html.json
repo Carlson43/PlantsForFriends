@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 29,
+            "activePatchIndex": 31,
             "patches": [
                 {
                     "date": 1640249105761,
@@ -124,6 +124,14 @@
                 {
                     "date": 1640251797071,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,9 +54,9 @@\n             <label for=\"Ad_email\" class=\"form-label\">Kontaktadresse</label>\r\n             <input type=\"email\" class=\"form-control\" id=\"Ad_email\" aria-describedby=\"emailHelp\" placeholder=\"Damit man dich erreichen kann\">\r\n         </div>\r\n         <div>\r\n-            \r\n+            <p></p>\r\n         </div>\r\n         <div>\r\n             <button type=\"submit\" class=\"btn btn-success\">Anzeige erstellen</button>\r\n         </div>      \r\n"
+                },
+                {
+                    "date": 1640251855106,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,11 +53,9 @@\n         <div>\r\n             <label for=\"Ad_email\" class=\"form-label\">Kontaktadresse</label>\r\n             <input type=\"email\" class=\"form-control\" id=\"Ad_email\" aria-describedby=\"emailHelp\" placeholder=\"Damit man dich erreichen kann\">\r\n         </div>\r\n-        <div>\r\n             <p></p>\r\n-        </div>\r\n         <div>\r\n             <button type=\"submit\" class=\"btn btn-success\">Anzeige erstellen</button>\r\n         </div>      \r\n     </div>\r\n"
+                },
+                {
+                    "date": 1640252206354,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n             <div class=\"collapse navbar-collapse\" id=\"navbarNav\">\r\n                 <div class=\"navbar-nav\">\r\n                     <a class=\"nav-link\" href=\"index.html\">Home</a>\r\n                     <a class=\"nav-link active\" aria-current=\"page\" href=\"#\">Anzeige erstellen</a>\r\n-                    <a class=\"nav-link\" href=\"#\">Pricing</a>\r\n+                    <a class=\"nav-link\" href=\"map.html\">Karte</a>\r\n                     <a class=\"nav-link disabled\">Disabled</a>\r\n                 </div>\r\n             </div>\r\n         </div>\r\n"
                 }
             ],
             "date": 1640249105761,
