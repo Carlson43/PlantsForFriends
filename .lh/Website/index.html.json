@@ -3,11 +3,19 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 2,
             "patches": [
                 {
                     "date": 1640249283972,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1640252169709,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -95,18 +95,8 @@\n         <div>\r\n           <h1></h1>\r\n         </div>\r\n \r\n-        <!-- Card Anzeige -->\r\n-        <!-- <div class=\"card\" style=\"width: 18rem;\">\r\n-            <img src=\"./Bilder/zoe-schaeffer-tbiV-yc903g-unsplash.jpg\" class=\"card-img-top\" alt=\"...\">\r\n-            <div class=\"card-body\">\r\n-              <h5 class=\"card-title\">Card title</h5>\r\n-              <h6 class=\"card-subtitle mb-2 text-muted\">Card subtitle</h6>  \r\n-              <p class=\"card-text\">Some quick example text to build on the card title and make up the bulk of the card's content.</p>\r\n-              <a href=\"#\" class=\"btn btn-primary\">Go somewhere</a>\r\n-            </div>\r\n-          </div> -->\r\n         <!-- Container Layout Demo -->\r\n         <div class=\"container-md\">\r\n             <div class=\"row\">\r\n               <div class=\"col\">\r\n"
+                },
+                {
+                    "date": 1640252190274,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n                 <div class=\"collapse navbar-collapse\" id=\"navbarNav\">\r\n                     <div class=\"navbar-nav\">\r\n                         <a class=\"nav-link active\" aria-current=\"page\" href=\"#\">Home</a>\r\n                         <a class=\"nav-link\" href=\"./create.html\">Anzeige erstellen</a>\r\n-                        <a class=\"nav-link\" href=\"#\">Pricing</a>\r\n+                        <a class=\"nav-link\" href=\"./map.html\">Karte</a>\r\n                         <a class=\"nav-link disabled\">Disabled</a>\r\n                     </div>\r\n                 </div>\r\n             </div>\r\n"
                 }
             ],
             "date": 1640249283972,
