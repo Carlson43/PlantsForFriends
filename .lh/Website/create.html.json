@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 27,
+            "activePatchIndex": 29,
             "patches": [
                 {
                     "date": 1640249105761,
@@ -116,6 +116,14 @@
                 {
                     "date": 1640251678578,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -55,22 +55,12 @@\n             <input type=\"email\" class=\"form-control\" id=\"Ad_email\" aria-describedby=\"emailHelp\" placeholder=\"Damit man dich erreichen kann\">\r\n         </div>\r\n         <div>\r\n             <button type=\"submit\" class=\"btn btn-success\">Anzeige erstellen</button>\r\n-        </div>\r\n-        \r\n+        </div>      \r\n     </div>\r\n-    <div class=\"container md-3\">\r\n-        \r\n-    </div>\r\n-    <div class=\"container md-3\">\r\n-        \r\n-    </div>\r\n-    <div class=\"container mb-3\">\r\n-        \r\n-        \r\n-    </div>\r\n \r\n+\r\n     <!-- Option 1: Bootstrap Bundle with Popper -->\r\n     <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p\" crossorigin=\"anonymous\"></script>\r\n \r\n     \r\n"
+                },
+                {
+                    "date": 1640251789064,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,8 +54,11 @@\n             <label for=\"Ad_email\" class=\"form-label\">Kontaktadresse</label>\r\n             <input type=\"email\" class=\"form-control\" id=\"Ad_email\" aria-describedby=\"emailHelp\" placeholder=\"Damit man dich erreichen kann\">\r\n         </div>\r\n         <div>\r\n+            \r\n+        </div>\r\n+        <div>\r\n             <button type=\"submit\" class=\"btn btn-success\">Anzeige erstellen</button>\r\n         </div>      \r\n     </div>\r\n \r\n"
+                },
+                {
+                    "date": 1640251797071,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -54,9 +54,9 @@\n             <label for=\"Ad_email\" class=\"form-label\">Kontaktadresse</label>\r\n             <input type=\"email\" class=\"form-control\" id=\"Ad_email\" aria-describedby=\"emailHelp\" placeholder=\"Damit man dich erreichen kann\">\r\n         </div>\r\n         <div>\r\n-            \r\n+            <p></p>\r\n         </div>\r\n         <div>\r\n             <button type=\"submit\" class=\"btn btn-success\">Anzeige erstellen</button>\r\n         </div>      \r\n"
                 }
             ],
             "date": 1640249105761,
