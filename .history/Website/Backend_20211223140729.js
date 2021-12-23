@@ -180,11 +180,11 @@ function search_and_display()
                             }
                     }
                 }
-                $.getJSON(nul, function(){
+                $.getJSON('https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_', function(data){
                     console.log(nul);
                     $(nul).each(function(i, hero){
                       $('#heroesBody').append($("<tr>")
-                      .append($("<td>").append(hero.jsonstring.Pflanze))
+                      .append($("<td>").append(hero.jsonstring.Name))
                       .append($("<td>").append(hero.datetime))
                       .append($("<td>").append(hero.parameter)));
                     });

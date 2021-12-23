@@ -137,6 +137,7 @@ function search_and_display()
     var nam = String($("#search_term").val())
     var data = []
     var nul = []
+    console.log(nam)
     $.get("https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_",function(response)
     {
         
@@ -180,25 +181,7 @@ function search_and_display()
                             }
                     }
                 }
-                $.getJSON(nul, function(){
-                    console.log(nul);
-                    $(nul).each(function(i, hero){
-                      $('#heroesBody').append($("<tr>")
-                      .append($("<td>").append(hero.jsonstring.Pflanze))
-                      .append($("<td>").append(hero.datetime))
-                      .append($("<td>").append(hero.parameter)));
-                    });
-                  })
-              .done(function(){
-                  alert("Completed");
-              })
-              .fail(function(e){
-                  console.log('error:');
-                  console.error(e);
-              })
-              .always(function(){
-                  alert("always runs");
-              });
+        console.log(nul)
         };
     }); 
 

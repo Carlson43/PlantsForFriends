@@ -180,7 +180,7 @@ function search_and_display()
                             }
                     }
                 }
-                $.getJSON(nul, function(){
+                $.getJSON(nul, function(nul){
                     console.log(nul);
                     $(nul).each(function(i, hero){
                       $('#heroesBody').append($("<tr>")
