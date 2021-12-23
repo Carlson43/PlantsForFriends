@@ -57,20 +57,7 @@ function spec()
 
 function display()
 {
-    // {
-    //     $.getJson("https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_",function(dat)
-    //     {
-    //         console.log(dat);
-    
-    //         $(dat).each(function(i, parameter))
-    //         {
-    //         $('#AusgabeBody').append($("<tr>")
-    //         .append($("<td>").append(Ausgabe.Name))
-    //         .append($("<td>").append(Ausgabe.Nachname))
-    //         .append($("<td>").append(Ausgabe.Pflanze)));
-    //         });
-    //     }
-    // }
+
     $.getJSON('https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_', function(data){
         console.log(data);
         $(data).each(function(i, hero){
@@ -144,3 +131,80 @@ function search()
     }); 
     display()        
 };
+
+function search_and_display()
+{
+    var nam = String($("#search_term").val())
+    var data = []
+    var nul = []
+    $.get("https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_",function(response)
+    {
+        
+        for (var i = 0; i < response.length; i++)
+        data.push(response[i]);
+
+
+        for (var i = 0; i < data.length; i++)
+        {
+            if (data[i].jsonstring.Pflanze == nam)
+            {
+                nul.push(data[i].jsonstring)
+            }
+                else
+                {
+                    for (var i = 0; i < data.length; i++)
+                    {
+                        if (data[i].jsonstring.Name == nam)
+                        {
+                        nul.push(data[i].jsonstring)
+                        }
+                            else
+                            {
+                                for (var i = 0; i < data.length; i++)
+                                {
+                                if (data[i].jsonstring.Nachname == nam)
+                                    {
+                                    nul.push(data[i].jsonstring)
+                                    }
+                                        else
+                                        {
+                                            for (var i = 0; i < data.length; i++)
+                                            {
+                                            if (data[i].jsonstring.Straße == nam)
+                                                {
+                                                nul.push(data[i].jsonstring)
+                                                }                                        
+                                            };            	          
+                                        }
+                                }
+                            }
+                    }
+                }
+                $.getJSON(nul, function(){
+                    console.log(nul);
+                    $(nul).each(function(i, hero){
+                      $('#heroesBody').append($("<tr>")
+                      .append($("<td>").append(hero.jsonstring.Pflanze))
+                      .append($("<td>").append(hero.datetime))
+                      .append($("<td>").append(hero.parameter)));
+                    });
+                  })
+              .done(function(){
+                  alert("Completed");
+              })
+              .fail(function(e){
+                  console.log('error:');
+                  console.error(e);
+              })
+              .always(function(){
+                  alert("always runs");
+              });
+        };
+    }); 
+
+
+
+
+
+
+}
