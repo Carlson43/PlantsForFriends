@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 33,
+            "activePatchIndex": 37,
             "patches": [
                 {
                     "date": 1640252294782,
@@ -140,6 +140,22 @@
                 {
                     "date": 1640264944556,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -94,12 +94,9 @@\n         marker3.bindPopup(\"<b>Angebot 3</b><br>Angebot details. Evtl. eine Adresse\").openPopup();\r\n         marker4.bindPopup(\"<b>Angebot 4</b><br>Angebot details. Evtl. eine Adresse\").openPopup();\r\n         \r\n         // Show Location on Click\r\n-\r\n-\r\n         var popup = L.popup();\r\n-\r\n         function onMapClick(e) {\r\n             popup\r\n                 .setLatLng(e.latlng)\r\n                 .setContent(\"You clicked the map at \" + e.latlng.toString())\r\n"
+                },
+                {
+                    "date": 1640265238896,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -95,8 +95,9 @@\n         marker4.bindPopup(\"<b>Angebot 4</b><br>Angebot details. Evtl. eine Adresse\").openPopup();\r\n         \r\n         // Show Location on Click\r\n         var popup = L.popup();\r\n+        var locmarker = L.marker(latlng,draggable=\"True\")\r\n         function onMapClick(e) {\r\n             popup\r\n                 .setLatLng(e.latlng)\r\n                 .setContent(\"You clicked the map at \" + e.latlng.toString())\r\n"
+                },
+                {
+                    "date": 1640265265010,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -101,8 +101,9 @@\n             popup\r\n                 .setLatLng(e.latlng)\r\n                 .setContent(\"You clicked the map at \" + e.latlng.toString())\r\n                 .openOn(mymap);\r\n+            locmarker.addTo(mymap)\r\n         }\r\n \r\n         mymap.on('click', onMapClick);\r\n \r\n"
+                },
+                {
+                    "date": 1640265282848,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -101,9 +101,9 @@\n             popup\r\n                 .setLatLng(e.latlng)\r\n                 .setContent(\"You clicked the map at \" + e.latlng.toString())\r\n                 .openOn(mymap);\r\n-            locmarker.addTo(mymap)\r\n+            locmarker.addTo(mymap);\r\n         }\r\n \r\n         mymap.on('click', onMapClick);\r\n \r\n"
+                },
+                {
+                    "date": 1640265301721,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -95,15 +95,13 @@\n         marker4.bindPopup(\"<b>Angebot 4</b><br>Angebot details. Evtl. eine Adresse\").openPopup();\r\n         \r\n         // Show Location on Click\r\n         var popup = L.popup();\r\n-        var locmarker = L.marker(latlng,draggable=\"True\")\r\n         function onMapClick(e) {\r\n             popup\r\n                 .setLatLng(e.latlng)\r\n                 .setContent(\"You clicked the map at \" + e.latlng.toString())\r\n                 .openOn(mymap);\r\n-            locmarker.addTo(mymap);\r\n         }\r\n \r\n         mymap.on('click', onMapClick);\r\n \r\n"
                 }
             ],
             "date": 1640252294782,
