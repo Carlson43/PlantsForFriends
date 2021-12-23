@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 7,
+            "activePatchIndex": 19,
             "patches": [
                 {
                     "date": 1640249105761,
@@ -36,6 +36,54 @@
                 {
                     "date": 1640250185184,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n             </button>\r\n             <!-- Navigation Links -->\r\n             <div class=\"collapse navbar-collapse\" id=\"navbarNav\">\r\n                 <div class=\"navbar-nav\">\r\n-                    <a class=\"nav-link active\" aria-current=\"page\" href=\"index.html\">Home</a>\r\n+                    <a class=\"nav-link\" href=\"index.html\">Home</a>\r\n                     <a class=\"nav-link active\" aria-current=\"page\" href=\"#\">Anzeige erstellen</a>\r\n                     <a class=\"nav-link\" href=\"#\">Pricing</a>\r\n                     <a class=\"nav-link disabled\">Disabled</a>\r\n                 </div>\r\n"
+                },
+                {
+                    "date": 1640250397305,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,8 +10,9 @@\n \r\n     <title>Erstellen @ Plants4Friends</title>\r\n   </head>\r\n   <body>\r\n+\r\n     <!-- Navbar -->\r\n     <nav class=\"navbar navbar-light bg-light\">\r\n         <div class=\"container fluid\">\r\n             <!-- Navabr Logo and Brandname -->\r\n@@ -34,8 +35,14 @@\n             </div>\r\n         </div>\r\n     </nav>\r\n \r\n+    <!-- Input Formular -->\r\n+    <div class=\"input-group mb-3\">\r\n+        <label for=\"Ad_description\" class=\"form-label\">Beschreibung</label>\r\n+        <textarea class=\"form-control\" id=\"exampleFormControlTextarea1\" rows=\"3\"></textarea>\r\n+    </div>\r\n+\r\n     <!-- Option 1: Bootstrap Bundle with Popper -->\r\n     <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p\" crossorigin=\"anonymous\"></script>\r\n \r\n     \r\n"
+                },
+                {
+                    "date": 1640250434784,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n         </div>\r\n     </nav>\r\n \r\n     <!-- Input Formular -->\r\n-    <div class=\"input-group mb-3\">\r\n+    <div class=\"input-group md\">\r\n         <label for=\"Ad_description\" class=\"form-label\">Beschreibung</label>\r\n         <textarea class=\"form-control\" id=\"exampleFormControlTextarea1\" rows=\"3\"></textarea>\r\n     </div>\r\n \r\n"
+                },
+                {
+                    "date": 1640250456479,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,9 +38,9 @@\n \r\n     <!-- Input Formular -->\r\n     <div class=\"input-group md\">\r\n         <label for=\"Ad_description\" class=\"form-label\">Beschreibung</label>\r\n-        <textarea class=\"form-control\" id=\"exampleFormControlTextarea1\" rows=\"3\"></textarea>\r\n+        <textarea class=\"form-control\" id=\"exampleFormControlTextarea1\" ></textarea>\r\n     </div>\r\n \r\n     <!-- Option 1: Bootstrap Bundle with Popper -->\r\n     <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p\" crossorigin=\"anonymous\"></script>\r\n"
+                },
+                {
+                    "date": 1640250586677,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,11 +36,13 @@\n         </div>\r\n     </nav>\r\n \r\n     <!-- Input Formular -->\r\n-    <div class=\"input-group md\">\r\n+    <div class=\"input-group md-3\">\r\n         <label for=\"Ad_description\" class=\"form-label\">Beschreibung</label>\r\n-        <textarea class=\"form-control\" id=\"exampleFormControlTextarea1\" ></textarea>\r\n+        <textarea class=\"form-control\" id=\"exampleFormControlTextarea1\" rows=\"3\"></textarea>\r\n+        <label for=\"formFile\" class=\"form-label\">Default file input example</label>\r\n+        <input class=\"form-control\" type=\"file\" id=\"formFile\">\r\n     </div>\r\n \r\n     <!-- Option 1: Bootstrap Bundle with Popper -->\r\n     <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p\" crossorigin=\"anonymous\"></script>\r\n"
+                },
+                {
+                    "date": 1640250648429,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n         </div>\r\n     </nav>\r\n \r\n     <!-- Input Formular -->\r\n-    <div class=\"input-group md-3\">\r\n+    <div class=\"md-3\">\r\n         <label for=\"Ad_description\" class=\"form-label\">Beschreibung</label>\r\n         <textarea class=\"form-control\" id=\"exampleFormControlTextarea1\" rows=\"3\"></textarea>\r\n         <label for=\"formFile\" class=\"form-label\">Default file input example</label>\r\n         <input class=\"form-control\" type=\"file\" id=\"formFile\">\r\n"
+                },
+                {
+                    "date": 1640250696940,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,8 +39,10 @@\n     <!-- Input Formular -->\r\n     <div class=\"md-3\">\r\n         <label for=\"Ad_description\" class=\"form-label\">Beschreibung</label>\r\n         <textarea class=\"form-control\" id=\"exampleFormControlTextarea1\" rows=\"3\"></textarea>\r\n+    </div>\r\n+    <div class=\"md-3\">\r\n         <label for=\"formFile\" class=\"form-label\">Default file input example</label>\r\n         <input class=\"form-control\" type=\"file\" id=\"formFile\">\r\n     </div>\r\n \r\n"
+                },
+                {
+                    "date": 1640250722932,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,9 @@\n     <div class=\"md-3\">\r\n         <label for=\"Ad_description\" class=\"form-label\">Beschreibung</label>\r\n         <textarea class=\"form-control\" id=\"exampleFormControlTextarea1\" rows=\"3\"></textarea>\r\n     </div>\r\n-    <div class=\"md-3\">\r\n+    <div class=\"container md-3\">\r\n         <label for=\"formFile\" class=\"form-label\">Default file input example</label>\r\n         <input class=\"form-control\" type=\"file\" id=\"formFile\">\r\n     </div>\r\n \r\n"
+                },
+                {
+                    "date": 1640250731925,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n         </div>\r\n     </nav>\r\n \r\n     <!-- Input Formular -->\r\n-    <div class=\"md-3\">\r\n+    <div class=\"container md-3\">\r\n         <label for=\"Ad_description\" class=\"form-label\">Beschreibung</label>\r\n         <textarea class=\"form-control\" id=\"exampleFormControlTextarea1\" rows=\"3\"></textarea>\r\n     </div>\r\n     <div class=\"container md-3\">\r\n"
+                },
+                {
+                    "date": 1640251057803,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,9 +41,9 @@\n         <label for=\"Ad_description\" class=\"form-label\">Beschreibung</label>\r\n         <textarea class=\"form-control\" id=\"exampleFormControlTextarea1\" rows=\"3\"></textarea>\r\n     </div>\r\n     <div class=\"container md-3\">\r\n-        <label for=\"formFile\" class=\"form-label\">Default file input example</label>\r\n+        <label for=\"formFile\" class=\"form-label\">Bilder</label>\r\n         <input class=\"form-control\" type=\"file\" id=\"formFile\">\r\n     </div>\r\n \r\n     <!-- Option 1: Bootstrap Bundle with Popper -->\r\n"
+                },
+                {
+                    "date": 1640251120687,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,8 +37,11 @@\n     </nav>\r\n \r\n     <!-- Input Formular -->\r\n     <div class=\"container md-3\">\r\n+        <input type=\"email\" class=\"form-control\" id=\"exampleFormControlInput1\" placeholder=\"name@example.com\">\r\n+    </div>\r\n+    <div class=\"container md-3\">\r\n         <label for=\"Ad_description\" class=\"form-label\">Beschreibung</label>\r\n         <textarea class=\"form-control\" id=\"exampleFormControlTextarea1\" rows=\"3\"></textarea>\r\n     </div>\r\n     <div class=\"container md-3\">\r\n"
+                },
+                {
+                    "date": 1640251219227,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,17 +37,17 @@\n     </nav>\r\n \r\n     <!-- Input Formular -->\r\n     <div class=\"container md-3\">\r\n-        <input type=\"email\" class=\"form-control\" id=\"exampleFormControlInput1\" placeholder=\"name@example.com\">\r\n+        <input type=\"email\" class=\"form-control\" id=\"Ad_heading\" placeholder=\"Ein ergreifender Titel\">\r\n     </div>\r\n     <div class=\"container md-3\">\r\n         <label for=\"Ad_description\" class=\"form-label\">Beschreibung</label>\r\n-        <textarea class=\"form-control\" id=\"exampleFormControlTextarea1\" rows=\"3\"></textarea>\r\n+        <textarea class=\"form-control\" id=\"Ad_description\" rows=\"3\"></textarea>\r\n     </div>\r\n     <div class=\"container md-3\">\r\n-        <label for=\"formFile\" class=\"form-label\">Bilder</label>\r\n-        <input class=\"form-control\" type=\"file\" id=\"formFile\">\r\n+        <label for=\"Ad_pics\" class=\"form-label\">Bilder</label>\r\n+        <input class=\"form-control\" type=\"file\" id=\"Ad_pics\">\r\n     </div>\r\n \r\n     <!-- Option 1: Bootstrap Bundle with Popper -->\r\n     <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p\" crossorigin=\"anonymous\"></script>\r\n"
+                },
+                {
+                    "date": 1640251252107,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,8 +37,9 @@\n     </nav>\r\n \r\n     <!-- Input Formular -->\r\n     <div class=\"container md-3\">\r\n+        <label for=\"Ad_heading\" class=\"form-label\">Titel der Anzeige</label>\r\n         <input type=\"email\" class=\"form-control\" id=\"Ad_heading\" placeholder=\"Ein ergreifender Titel\">\r\n     </div>\r\n     <div class=\"container md-3\">\r\n         <label for=\"Ad_description\" class=\"form-label\">Beschreibung</label>\r\n"
                 }
             ],
             "date": 1640249105761,
