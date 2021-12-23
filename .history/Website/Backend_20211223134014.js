@@ -75,7 +75,7 @@ function display()
         console.log(data);
         $(data).each(function(i, hero){
           $('#AusgabeBody').append($("<tr>")
-          .append($("<td>").append(hero.jsonstring.Name))
+          .append($("<td>").append(data.jsonstring.Name))
           .append($("<td>").append(hero.jsonstring.Nachname))
           .append($("<td>").append(hero.jsonstring.Pflanze)));
         });

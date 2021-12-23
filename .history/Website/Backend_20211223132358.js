@@ -56,42 +56,21 @@ function spec()
 }
 
 function display()
-{
-    // {
-    //     $.getJson("https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_",function(dat)
-    //     {
-    //         console.log(dat);
+    {
+        $.getJson("https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_",function(dat)
+        {
+            console.log(dat);
     
-    //         $(dat).each(function(i, parameter))
-    //         {
-    //         $('#AusgabeBody').append($("<tr>")
-    //         .append($("<td>").append(Ausgabe.Name))
-    //         .append($("<td>").append(Ausgabe.Nachname))
-    //         .append($("<td>").append(Ausgabe.Pflanze)));
-    //         });
-    //     }
-    // }
-    $.getJSON('https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_', function(data){
-        console.log(data);
-        $(data).each(function(i, hero){
-          $('#AusgabeBody').append($("<tr>")
-          .append($("<td>").append(hero.jsonstring.Name))
-          .append($("<td>").append(hero.jsonstring.Nachname))
-          .append($("<td>").append(hero.jsonstring.Pflanze)));
-        });
-      })
-  .done(function(){
-      alert("Completed");
-  })
-  .fail(function(e){
-      console.log('error:');
-      console.error(e);
-  })
-  .always(function(){
-      alert("always runs");
-  });
+            $(dat).each(function(i, parameter))
+            {
+            $('#AusgabeBody').append($("<tr>")
+            .append($("<td>").append(Ausgabe.Name))
+            .append($("<td>").append(Ausgabe.Nachname))
+            .append($("<td>").append(Ausgabe.Pflanze)));
+            });
+        }
+    }
 
-}
 function search()
 {
     var nam = String($("#search_term").val())
@@ -141,6 +120,5 @@ function search()
                     }
                 }
         };
-    }); 
-    display()        
+    });         
 };

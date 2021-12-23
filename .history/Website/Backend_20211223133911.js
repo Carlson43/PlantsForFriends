@@ -74,7 +74,7 @@ function display()
     $.getJSON('https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_', function(data){
         console.log(data);
         $(data).each(function(i, hero){
-          $('#AusgabeBody').append($("<tr>")
+          $('#AUsgabeBody').append($("<tr>")
           .append($("<td>").append(hero.jsonstring.Name))
           .append($("<td>").append(hero.jsonstring.Nachname))
           .append($("<td>").append(hero.jsonstring.Pflanze)));
