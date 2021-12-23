@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 18,
+            "activePatchIndex": 20,
             "patches": [
                 {
                     "date": 1640252294782,
@@ -80,6 +80,14 @@
                 {
                     "date": 1640262630866,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -62,9 +62,13 @@\n     <!-- Custom Map JS -->\r\n     <script>\r\n         // Making a map and tiles\r\n         // Setting a higher initial zoom to make effect more obvious\r\n-        const mymap = L.map('pointMap').setView([51.5171, 9.9448], 16);\r\n+        const mymap = L.map('pointMap', {\r\n+                        fullscreenControl: true,\r\n+                        fullscreenControlOptions: {\r\n+                        position: 'topleft'}\r\n+                        }).setView([51.5171, 9.9448], 16);\r\n         const attribution = '&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors';\r\n         const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';\r\n         const tiles = L.tileLayer(tileUrl, { attribution });\r\n         tiles.addTo(mymap);\r\n"
+                },
+                {
+                    "date": 1640263240939,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,8 +49,9 @@\n         <h3>Übersicht der Angebote in deiner Nähe</h3>\r\n     </div>\r\n \r\n     <!-- Custom Map Location -->\r\n+    <div class=\"container-md\"></div>\r\n     <div id=\"pointMap\"></div>\r\n \r\n     <!-- Bootstrap JS -->\r\n     <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p\" crossorigin=\"anonymous\"></script>\r\n"
+                },
+                {
+                    "date": 1640263247434,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,10 +49,12 @@\n         <h3>Übersicht der Angebote in deiner Nähe</h3>\r\n     </div>\r\n \r\n     <!-- Custom Map Location -->\r\n-    <div class=\"container-md\"></div>\r\n-    <div id=\"pointMap\"></div>\r\n+    <div class=\"container-md\">\r\n+        <div id=\"pointMap\"></div>\r\n+    </div>\r\n+    \r\n \r\n     <!-- Bootstrap JS -->\r\n     <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p\" crossorigin=\"anonymous\"></script>\r\n     \r\n"
                 }
             ],
             "date": 1640252294782,
