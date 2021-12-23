@@ -67,27 +67,49 @@ function search()
     data.push(response[i]);
 
 
-    for (var i = 0; i < data.length; i++){
-        if (data[i].jsonstring.Pflanze == nam){
-            console.log(data[i].jsonstring)}
-                else{
-                for (var i = 0; i < data.length; i++){
-                    if (data[i].jsonstring.Name == nam){
-                    console.log(data[i].jsonstring)}
-                    else{
-                    for (var i = 0; i < data.length; i++){
-                        if (data[i].jsonstring.Nachname == nam){
-                        console.log(data[i].jsonstring)}
-                        else{
-                            for (var i = 0; i < data.length; i++){
-                                if (data[i].jsonstring.Straße == nam){
-                                console.log(data[i].jsonstring)}                                        
-                    };            	          
+    for (var i = 0; i < data.length; i++)
+    {
+        if (data[i].jsonstring.Pflanze == nam)
+        {
+            console.log(data[i].jsonstring)
+        }
+            else
+            {
+                for (var i = 0; i < data.length; i++)
+                {
+                    if (data[i].jsonstring.Name == nam)
+                    {
+                    console.log(data[i].jsonstring)
+                    }
+                        else
+                        {
+                            for (var i = 0; i < data.length; i++)
+                            {
+                            if (data[i].jsonstring.Nachname == nam)
+                                {
+                                console.log(data[i].jsonstring)
+                                }
+                                    else
+                                    {
+                                        for (var i = 0; i < data.length; i++)
+                                        {
+                                        if (data[i].jsonstring.Straße == nam)
+                                            {
+                                            console.log(data[i].jsonstring)
+                                            }                                        
+                                        };            	          
+                                    }
+                            }
+                        }
                 }
             }
-            }
-        }
-        }
     };
+    $.getJSON('https://elaspix.de/Lehre/Casestudy/DataScience/liverendering_log_15.12.-25.12.19.json', function(data){
+        console.log(data);
+     $(data).each(function(i, hero){
+         $('#heroesBody').append($("<tr>")
+           .append($("<td>").append(hero.app))
+         .append($("<td>").append(hero.datetime))
+         .append($("<td>").append(hero.parameter)));
 });         
 };
