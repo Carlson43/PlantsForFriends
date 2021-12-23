@@ -55,6 +55,43 @@ function spec()
     });
 }
 
+function display()
+{
+    // {
+    //     $.getJson("https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_",function(dat)
+    //     {
+    //         console.log(dat);
+    
+    //         $(dat).each(function(i, parameter))
+    //         {
+    //         $('#AusgabeBody').append($("<tr>")
+    //         .append($("<td>").append(Ausgabe.Name))
+    //         .append($("<td>").append(Ausgabe.Nachname))
+    //         .append($("<td>").append(Ausgabe.Pflanze)));
+    //         });
+    //     }
+    // }
+    $.getJSON('https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_', function(data){
+        console.log(data);
+        $(data).each(function(i, hero){
+          $('#AusgabeBody').append($("<tr>")
+          .append($("<td>").append(hero.jsonstring.Name))
+          .append($("<td>").append(hero.jsonstring.Nachname))
+          .append($("<td>").append(hero.jsonstring.Pflanze)));
+        });
+      })
+  .done(function(){
+      alert("Completed");
+  })
+  .fail(function(e){
+      console.log('error:');
+      console.error(e);
+  })
+  .always(function(){
+      alert("always runs");
+  });
+
+}
 function search()
 {
     var nam = String($("#search_term").val())
@@ -62,54 +99,48 @@ function search()
     console.log(nam)
     $.get("https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_",function(response)
     {
-    
-    for (var i = 0; i < response.length; i++)
-    data.push(response[i]);
+        
+        for (var i = 0; i < response.length; i++)
+        data.push(response[i]);
 
 
-    for (var i = 0; i < data.length; i++)
-    {
-        if (data[i].jsonstring.Pflanze == nam)
+        for (var i = 0; i < data.length; i++)
         {
-            console.log(data[i].jsonstring)
-        }
-            else
+            if (data[i].jsonstring.Pflanze == nam)
             {
-                for (var i = 0; i < data.length; i++)
-                {
-                    if (data[i].jsonstring.Name == nam)
-                    {
-                    console.log(data[i].jsonstring)
-                    }
-                        else
-                        {
-                            for (var i = 0; i < data.length; i++)
-                            {
-                            if (data[i].jsonstring.Nachname == nam)
-                                {
-                                console.log(data[i].jsonstring)
-                                }
-                                    else
-                                    {
-                                        for (var i = 0; i < data.length; i++)
-                                        {
-                                        if (data[i].jsonstring.Straße == nam)
-                                            {
-                                            console.log(data[i].jsonstring)
-                                            }                                        
-                                        };            	          
-                                    }
-                            }
-                        }
-                }
+                console.log(data[i].jsonstring)
             }
-    };
-    $.getJSON('https://elaspix.de/Lehre/Casestudy/DataScience/liverendering_log_15.12.-25.12.19.json', function(data){
-        console.log(data);
-     $(data).each(function(i, hero){
-         $('#heroesBody').append($("<tr>")
-           .append($("<td>").append(hero.app))
-         .append($("<td>").append(hero.datetime))
-         .append($("<td>").append(hero.parameter)));
-});         
+                else
+                {
+                    for (var i = 0; i < data.length; i++)
+                    {
+                        if (data[i].jsonstring.Name == nam)
+                        {
+                        console.log(data[i].jsonstring)
+                        }
+                            else
+                            {
+                                for (var i = 0; i < data.length; i++)
+                                {
+                                if (data[i].jsonstring.Nachname == nam)
+                                    {
+                                    console.log(data[i].jsonstring)
+                                    }
+                                        else
+                                        {
+                                            for (var i = 0; i < data.length; i++)
+                                            {
+                                            if (data[i].jsonstring.Straße == nam)
+                                                {
+                                                console.log(data[i].jsonstring)
+                                                }                                        
+                                            };            	          
+                                        }
+                                }
+                            }
+                    }
+                }
+        };
+    }); 
+    display()        
 };
