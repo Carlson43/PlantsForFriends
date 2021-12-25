@@ -1,71 +1,164 @@
 <!doctype html>
 <html lang="en">
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.js"> </script>
+
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
 
 
-    <p>
-      Welcome to the 14th Easy jQuery Tutorial, part of <a href="http://www.easyprogramming.net">EasyProgramming.net</a>. This is similar to the $.get() method but it gives you very strict control over what kind of data your web page is expecting, JSON. 
-  </p>
-  
-  <p>
-  $.getJSON() example:</p>
-  <pre>
-    $.getJSON(url,data, successCallbacK);
-  </pre>
-  <p>
-  Notice that there is no 'datatype' argument here because type JSON is built in. 
-  </p>
-  <p>
-  A full example would look something like this:
-  </p>
-  <pre>
-    $.getJSON(url,data, successCallbacK)
-      .done(function(){})
-    .fail(function(){})
-    .always(function(){});
-  </pre>
-  <p>
-  The example is pretty straight forward so let's practice below.
-  </p>
-  
   <h2>
       Let's practice:
   </h2>
+  <div><button onclick= "addTable();">Add to existing table</button></div>
+  <div class="container-md">
+    <div class="input-group">
+      <input type="text" placeholder="Suchbegriff eingeben" aria-label="search_term" id="search_term" class="form-control">
+      <button onclick= "search_and_displayy();" class="btn btn-success" type="button" id="search_btn">Suchen</button>          
+    </div>
+</div>
+
   <table id="heroesTable">
     <thead>
-      <th>App</th>
-      <th>Datetime</th>
-      <th>Parameter</th>
+      <th>Name</th>
+      <th>Nachname</th>
+      <th>Pflanze</th>
     </thead>
-    <tbody id="heroesBody"></tbody>
+    <tbody id="AusgabeBody"></tbody>
   </table>
 	
 	<script>
-	    $.getJSON('https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_', function(data){
+	    function addTable()
+      {
+        $.getJSON('https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_', function(data){
           console.log(data);
           $(data).each(function(i, hero){
-            $('#heroesBody').append($("<tr>")
+            $('#AusgabeBody').append($("<tr>")
             .append($("<td>").append(hero.jsonstring.Name))
-            .append($("<td>").append(hero.datetime))
-            .append($("<td>").append(hero.parameter)));
+            .append($("<td>").append(hero.jsonstring.Nachname))
+            .append($("<td>").append(hero.jsonstring.Pflanze)));
           });
-        })
-	.done(function(){
-		alert("Completed");
-	})
-	.fail(function(e){
-		console.log('error:');
-		console.error(e);
-	})
-	.always(function(){
-		alert("always runs");
-	});
+	      });
+      }
+
+      function search_and_display()
+{
+    var nam = String($("#search_term").val())
+    var data = []
+    var nul = []
+    $.getJSON("https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_",function(response)
+    {
+        
+        for (var i = 0; i < response.length; i++)
+        data.push(response[i]);
+
+
+        for (var i = 0; i < data.length; i++)
+        {
+            if (data[i].jsonstring.Pflanze == nam)
+            {
+                nul.push(data[i].jsonstring)
+            }
+                else
+                {
+                    for (var i = 0; i < data.length; i++)
+                    {
+                        if (data[i].jsonstring.Name == nam)
+                        {
+                        nul.push(data[i].jsonstring)
+                        }
+                            else
+                            {
+                                for (var i = 0; i < data.length; i++)
+                                {
+                                if (data[i].jsonstring.Nachname == nam)
+                                    {
+                                    nul.push(data[i].jsonstring)
+                                    }
+                                        else
+                                        {
+                                            for (var i = 0; i < data.length; i++)
+                                            {
+                                            if (data[i].jsonstring.Straße == nam)
+                                                {
+                                                nul.push(data[i].jsonstring)
+                                                }                                        
+                                            };            	          
+                                        }
+                                }
+                            }
+                    }
+                }
+        }
+        console.log(nul[0].Pflanze)
+    })
+}
+
+function search_and_displayy()
+{
+    var nam = String($("#search_term").val())
+    var data = []
+    var nul = []
+    $.getJSON("https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_",function(response)
+    {
+        
+        for (var i = 0; i < response.length; i++)
+        data.push(response[i]);
+
+
+        for (var i = 0; i < data.length; i++)
+        {
+            if (data[i].jsonstring.Pflanze == nam)
+            {
+                nul.push(data[i].jsonstring)
+            }
+                else
+                {
+                    for (var i = 0; i < data.length; i++)
+                    {
+                        if (data[i].jsonstring.Name == nam)
+                        {
+                        nul.push(data[i].jsonstring)
+                        }
+                            else
+                            {
+                                for (var i = 0; i < data.length; i++)
+                                {
+                                if (data[i].jsonstring.Nachname == nam)
+                                    {
+                                    nul.push(data[i].jsonstring)
+                                    }
+                                        else
+                                        {
+                                            for (var i = 0; i < data.length; i++)
+                                            {
+                                            if (data[i].jsonstring.Straße == nam)
+                                                {
+                                                nul.push(data[i].jsonstring)
+                                                }                                        
+                                            };            	          
+                                        }
+                                }
+                            }
+                    }
+                }
+                    console.log(nul)
+                    $(nul).each(function(i, para){
+                      $('#AusgabeBody').append($("<tr>")
+                      .append($("<td>").append(para.Name))
+                      .append($("<td>").append(para.Nachname))
+                      .append($("<td>").append(para.Pflanze)));
+                    });
+                 
+        };
+    });
+  }
+
+
 	</script>
   </body>
 </html>

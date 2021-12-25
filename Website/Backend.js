@@ -33,10 +33,10 @@ function addAll()
 
     var jsonstring=  
     
-    '{"Pflanze":"'+$("#jsonstring1").val()+'",'+
-    '"Name":"'+$("#jsonstring2").val()+'",'+
-    '"Nachname":"'+$("#jsonstring3").val()+'",'+
-    '"Straße":"'+$("#jsonstring4").val()+
+    '{"Titel":"'+$("#Ad_heading").val()+'",'+
+    '"Pflanzenart":"'+$("#Ad_species").val()+'",'+
+    '"Beschreibung":"'+$("#Ad_description").val()+'",'+
+    '"Email":"'+$("#Ad_email").val()+
 
     '"}';
     console.log("add"+ jsonstring);
@@ -58,7 +58,7 @@ function spec()
 function display()
 {
 
-    $.getJSON('https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_', function(data){
+    $.get('https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_', function(data){
         console.log(data);
         $(data).each(function(i, hero){
           $('#AusgabeBody').append($("<tr>")
@@ -83,12 +83,12 @@ function search()
 {
     var nam = String($("#search_term").val())
     var data = []
-    console.log(nam)
     $.get("https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_",function(response)
-    {
-        
+    { 
         for (var i = 0; i < response.length; i++)
         data.push(response[i]);
+        console.log(data)
+        console.log(nam)
 
 
         for (var i = 0; i < data.length; i++)
@@ -98,38 +98,40 @@ function search()
                 console.log(data[i].jsonstring)
             }
                 else
-                {
+                {   console.log("Schritt1")
                     for (var i = 0; i < data.length; i++)
-                    {
-                        if (data[i].jsonstring.Name == nam)
+                    {   console.log(i)
+                        if (data[i].jsonstring.Titel == nam)
                         {
-                        console.log(data[i].jsonstring)
+                            console.log(data[i].jsonstring)
                         }
                             else
                             {
                                 for (var i = 0; i < data.length; i++)
                                 {
-                                if (data[i].jsonstring.Nachname == nam)
+                                if (data[i].jsonstring.Beschreibung == nam)
                                     {
                                     console.log(data[i].jsonstring)
                                     }
-                                        else
-                                        {
-                                            for (var i = 0; i < data.length; i++)
-                                            {
-                                            if (data[i].jsonstring.Straße == nam)
-                                                {
-                                                console.log(data[i].jsonstring)
-                                                }                                        
-                                            };            	          
-                                        }
-                                }
-                            }
+                //                         else
+                //                         {
+                //                             for (var i = 0; i < data.length; i++)
+                //                             {
+                //                             if (data[i].jsonstring.Straße == nam)
+                //                                 {
+                //                                 console.log(data[i].jsonstring)
+                //                                 }                                        
+                //                             };            	          
+                //                         }
+                //                 }
+                //             }
                     }
                 }
+                    }
+                }
+            console.log(data[12].jsonstring.Name)
         };
-    }); 
-    display()        
+    });     
 };
 
 function search_and_display()
@@ -137,7 +139,7 @@ function search_and_display()
     var nam = String($("#search_term").val())
     var data = []
     var nul = []
-    $.get("https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_",function(response)
+    $.getJSON("https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_",function(response)
     {
         
         for (var i = 0; i < response.length; i++)
@@ -180,31 +182,14 @@ function search_and_display()
                             }
                     }
                 }
-                $.getJSON(nul, function(){
-                    console.log(nul);
-                    $(nul).each(function(i, hero){
-                      $('#heroesBody').append($("<tr>")
-                      .append($("<td>").append(hero.jsonstring.Pflanze))
-                      .append($("<td>").append(hero.datetime))
-                      .append($("<td>").append(hero.parameter)));
+                    console.log(nul)
+                    $(nul).each(function(i, para){
+                      $('#AusgabeBody').append($("<tr>")
+                      .append($("<td>").append(para.Name))
+                      .append($("<td>").append(para.Nachname))
+                      .append($("<td>").append(para.Pflanze)));
                     });
-                  })
-              .done(function(){
-                  alert("Completed");
-              })
-              .fail(function(e){
-                  console.log('error:');
-                  console.error(e);
-              })
-              .always(function(){
-                  alert("always runs");
-              });
+                 
         };
-    }); 
-
-
-
-
-
-
-}
+    });
+  }
