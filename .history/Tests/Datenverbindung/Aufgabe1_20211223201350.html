@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.js"> </script>
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+  <h2>
+      Let's practice:
+  </h2>
+  <div><button onclick= "addTable();">Add to existing table</button></div>
+  <div class="container-md">
+    <div class="input-group">
+      <input type="text" placeholder="Suchbegriff eingeben" aria-label="search_term" id="search_term" class="form-control">
+      <button onclick= "search_and_display();" class="btn btn-success" type="button" id="search_btn">Suchen</button>          
+    </div>
+</div>
+
+  <table id="heroesTable">
+    <thead>
+      <th>Name</th>
+      <th>Nachname</th>
+      <th>Pflanze</th>
+    </thead>
+    <tbody id="AusgabeBody"></tbody>
+  </table>
+	
+	<script>
+	    function addTable()
+      {
+        $.getJSON('https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_', function(data){
+          console.log(data);
+          $(data).each(function(i, hero){
+            $('#AusgabeBody').append($("<tr>")
+            .append($("<td>").append(hero.jsonstring.Name))
+            .append($("<td>").append(hero.jsonstring.Nachname))
+            .append($("<td>").append(hero.jsonstring.Pflanze)));
+          });
+	      });
+      }
+
+      function search_and_display()
+{
+    var nam = String($("#search_term").val())
+    var data = []
+    var nul = []
+    $.get("https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_",function(response)
+    {
+        
+        for (var i = 0; i < response.length; i++)
+        data.push(response[i]);
+
+
+        for (var i = 0; i < data.length; i++)
+        {
+            if (data[i].jsonstring.Pflanze == nam)
+            {
+                nul.push(data[i].jsonstring)
+            }
+                else
+                {
+                    for (var i = 0; i < data.length; i++)
+                    {
+                        if (data[i].jsonstring.Name == nam)
+                        {
+                        nul.push(data[i].jsonstring)
+                        }
+                            else
+                            {
+                                for (var i = 0; i < data.length; i++)
+                                {
+                                if (data[i].jsonstring.Nachname == nam)
+                                    {
+                                    nul.push(data[i].jsonstring)
+                                    }
+                                        else
+                                        {
+                                            for (var i = 0; i < data.length; i++)
+                                            {
+                                            if (data[i].jsonstring.Straße == nam)
+                                                {
+                                                nul.push(data[i].jsonstring)
+                                                }                                        
+                                            };            	          
+                                        }
+                                }
+                            }
+                    }
+                }
+        }
+        console.log(nul)
+    })
+}
+
+search_and_display()
+
+
+	</script>
+  </body>
+</html>
