@@ -88,6 +88,10 @@ function search()
         for (var i = 0; i < response.length; i++)
         data.push(response[i]);
 
+        // console.log(data)
+        console.log(String(data[7].jsonstring.Pflanze));
+
+
         for (var i = 0; i < data.length; i++)
         {
             if (data[i].jsonstring.Pflanze == nam)

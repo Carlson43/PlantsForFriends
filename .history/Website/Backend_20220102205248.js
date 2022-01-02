@@ -88,6 +88,10 @@ function search()
         for (var i = 0; i < response.length; i++)
         data.push(response[i]);
 
+        console.log(data)
+        console.log(String(data[7].jsonstring.Pflanze));
+
+
         for (var i = 0; i < data.length; i++)
         {
             if (data[i].jsonstring.Pflanze == nam)
@@ -100,19 +104,44 @@ function search()
                 console.log(data[i].jsonstring)
             }
 
-            else if(data[i].jsonstring.Nachname == nam)
-            {
-                console.log(data[i].jsonstring)
-            }
 
-            else if(data[i].jsonstring.Straße == nam)
-            {
-                console.log(data[i].jsonstring)
-            }
-            else if(data[i].jsonstring.Titel == nam)
-            {
-                console.log(data[i].jsonstring)
-            }          
+                // else
+                // { 
+                //     for (var i = 0; i < data.length; i++)
+                //     {
+                //         if (data[i].jsonstring.Name == nam)
+                //         {
+                //             console.log(data[i].jsonstring);
+                //         }
+                //     }
+                // }
+
+
+                //             else
+                //             {
+                //                 for (var i = 0; i < data.length; i++);
+                //                 {
+                //                 if (data[i].jsonstring.Beschreibung == nam)
+                //                     {
+                //                     console.log(data[i].jsonstring);
+                //                     }
+                //                         else
+                //                         {
+                //                             for (var i = 0; i < data.length; i++)
+                //                             {
+                //                             if (data[i].jsonstring.Straße == nam)
+                //                                 {
+                //                                 console.log(data[i].jsonstring)
+                //                                 }                                        
+                //                             };            	          
+                //                         }
+                //                 }
+                //             }
+                //     }
+                // }
+                //     }
+                // }
+            
         };
     });     
 };
