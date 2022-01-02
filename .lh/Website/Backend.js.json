@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 96,
+            "activePatchIndex": 98,
             "patches": [
                 {
                     "date": 1640256408490,
@@ -392,6 +392,14 @@
                 {
                     "date": 1641155777686,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -200,9 +200,9 @@\n             {\r\n                 // console.log(data[i].jsonstring);\r\n                 dat.push(data[i].jsonstring);\r\n                 var heading1 = document.getElementById(\"heading1\");\r\n-                heading1.firstChild.nodeValue = dat[0].Nachname];\r\n+                heading1.firstChild.nodeValue = dat[0].Nachname;\r\n             }\r\n \r\n             else if(data[i].jsonstring.Name == nam)\r\n             {\r\n"
+                },
+                {
+                    "date": 1641156085334,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -200,9 +200,9 @@\n             {\r\n                 // console.log(data[i].jsonstring);\r\n                 dat.push(data[i].jsonstring);\r\n                 var heading1 = document.getElementById(\"heading1\");\r\n-                heading1.firstChild.nodeValue = dat[0].Nachname;\r\n+                heading1.firstChild.nodeValue = dat[0].Titel;\r\n             }\r\n \r\n             else if(data[i].jsonstring.Name == nam)\r\n             {\r\n@@ -228,7 +228,5 @@\n             }          \r\n         };\r\n     });    \r\n     console.log(dat[0])\r\n-\r\n-\r\n }\r\n"
+                },
+                {
+                    "date": 1641156114702,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -207,25 +207,33 @@\n             else if(data[i].jsonstring.Name == nam)\r\n             {\r\n                 // console.log(data[i].jsonstring);\r\n                 dat.push(data[i].jsonstring);\r\n+                var heading1 = document.getElementById(\"heading1\");\r\n+                heading1.firstChild.nodeValue = dat[0].Titel;\r\n             }\r\n \r\n             else if(data[i].jsonstring.Nachname == nam)\r\n             {\r\n                 // console.log(data[i].jsonstring);\r\n                 dat.push(data[i].jsonstring);\r\n+                var heading1 = document.getElementById(\"heading1\");\r\n+                heading1.firstChild.nodeValue = dat[0].Titel;\r\n             }\r\n \r\n             else if(data[i].jsonstring.Straße == nam)\r\n             {\r\n                 // console.log(data[i].jsonstring);\r\n                 dat.push(data[i].jsonstring);\r\n+                var heading1 = document.getElementById(\"heading1\");\r\n+                heading1.firstChild.nodeValue = dat[0].Titel;\r\n             }\r\n             else if(data[i].jsonstring.Titel == nam)\r\n             {\r\n                 // console.log(data[i].jsonstring);\r\n                 dat.push(data[i].jsonstring);\r\n+                var heading1 = document.getElementById(\"heading1\");\r\n+                heading1.firstChild.nodeValue = dat[0].Titel;\r\n             }          \r\n         };\r\n     });    \r\n     console.log(dat[0])\r\n"
                 }
             ],
             "date": 1640256408490,

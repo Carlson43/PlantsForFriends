@@ -208,31 +208,23 @@ function search_and_display()
             {
                 // console.log(data[i].jsonstring);
                 dat.push(data[i].jsonstring);
-                var heading1 = document.getElementById("heading1");
-                heading1.firstChild.nodeValue = dat[0].Titel;
             }
 
             else if(data[i].jsonstring.Nachname == nam)
             {
                 // console.log(data[i].jsonstring);
                 dat.push(data[i].jsonstring);
-                var heading1 = document.getElementById("heading1");
-                heading1.firstChild.nodeValue = dat[0].Titel;
             }
 
             else if(data[i].jsonstring.Straße == nam)
             {
                 // console.log(data[i].jsonstring);
                 dat.push(data[i].jsonstring);
-                var heading1 = document.getElementById("heading1");
-                heading1.firstChild.nodeValue = dat[0].Titel;
             }
             else if(data[i].jsonstring.Titel == nam)
             {
                 // console.log(data[i].jsonstring);
                 dat.push(data[i].jsonstring);
-                var heading1 = document.getElementById("heading1");
-                heading1.firstChild.nodeValue = dat[0].Titel;
             }          
         };
     });    
