@@ -93,31 +93,28 @@ function search()
         {
             if (data[i].jsonstring.Pflanze == nam)
             {
-                // console.log(data[i].jsonstring);
+                console.log(data[i].jsonstring);
                 dat.push(data[i].jsonstring);
+                console.log(dat)
             }
 
             else if(data[i].jsonstring.Name == nam)
             {
-                // console.log(data[i].jsonstring);
-                dat.push(data[i].jsonstring);
+                console.log(data[i].jsonstring)
             }
 
             else if(data[i].jsonstring.Nachname == nam)
             {
-                // console.log(data[i].jsonstring);
-                dat.push(data[i].jsonstring);
+                console.log(data[i].jsonstring)
             }
 
             else if(data[i].jsonstring.Straße == nam)
             {
-                // console.log(data[i].jsonstring);
-                dat.push(data[i].jsonstring);
+                console.log(data[i].jsonstring)
             }
             else if(data[i].jsonstring.Titel == nam)
             {
-                // console.log(data[i].jsonstring);
-                dat.push(data[i].jsonstring);
+                console.log(data[i].jsonstring)
             }          
         };
     });     
@@ -183,52 +180,10 @@ function search_and_display()
     });
   }
 
-
-function search_and_display()
-{
-    var nam = String($("#search_term").val())
-    var dat = []
-    var data = []
-    $.get("https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_",function(response)
-    { 
-        for (var i = 0; i < response.length; i++)
-        data.push(response[i]);
-
-        for (var i = 0; i < data.length; i++)
-        {
-            if (data[i].jsonstring.Pflanze == nam)
-            {
-                // console.log(data[i].jsonstring);
-                dat.push(data[i].jsonstring);
-                var heading1 = document.getElementById("heading1");
-                heading1.firstChild.nodeValue = dat[0].Nachname;
-            }
-
-            else if(data[i].jsonstring.Name == nam)
-            {
-                // console.log(data[i].jsonstring);
-                dat.push(data[i].jsonstring);
-            }
-
-            else if(data[i].jsonstring.Nachname == nam)
-            {
-                // console.log(data[i].jsonstring);
-                dat.push(data[i].jsonstring);
-            }
-
-            else if(data[i].jsonstring.Straße == nam)
-            {
-                // console.log(data[i].jsonstring);
-                dat.push(data[i].jsonstring);
-            }
-            else if(data[i].jsonstring.Titel == nam)
-            {
-                // console.log(data[i].jsonstring);
-                dat.push(data[i].jsonstring);
-            }          
-        };
-    });    
-    console.log(dat[0])
-
-
-}
+//   function search_and_display()
+//   {
+//       var nam = String($("#search_term").val())
+//       var data = []
+//       var nul = []
+     
+//       search();

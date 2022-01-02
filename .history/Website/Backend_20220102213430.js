@@ -200,8 +200,7 @@ function search_and_display()
             {
                 // console.log(data[i].jsonstring);
                 dat.push(data[i].jsonstring);
-                var heading1 = document.getElementById("heading1");
-                heading1.firstChild.nodeValue = dat[0].Nachname;
+                console.log(dat[0]);
             }
 
             else if(data[i].jsonstring.Name == nam)
@@ -229,6 +228,7 @@ function search_and_display()
         };
     });    
     console.log(dat[0])
-
+    var heading1 = document.getElementById("heading1");
+    heading1.firstChild.nodeValue = dat;
 
 }

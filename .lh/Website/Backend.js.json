@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 66,
+            "activePatchIndex": 96,
             "patches": [
                 {
                     "date": 1640256408490,
@@ -272,6 +272,126 @@
                 {
                     "date": 1641153318672,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -87,12 +87,8 @@\n     { \r\n         for (var i = 0; i < response.length; i++)\r\n         data.push(response[i]);\r\n \r\n-        // console.log(data)\r\n-        console.log(String(data[7].jsonstring.Pflanze));\r\n-\r\n-\r\n         for (var i = 0; i < data.length; i++)\r\n         {\r\n             if (data[i].jsonstring.Pflanze == nam)\r\n             {\r\n"
+                },
+                {
+                    "date": 1641153625115,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -81,9 +81,9 @@\n }\r\n function search()\r\n {\r\n     var nam = String($(\"#search_term\").val())\r\n-    var data = []\r\n+    var dat = []\r\n     $.get(\"https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_\",function(response)\r\n     { \r\n         for (var i = 0; i < response.length; i++)\r\n         data.push(response[i]);\r\n@@ -92,8 +92,10 @@\n         {\r\n             if (data[i].jsonstring.Pflanze == nam)\r\n             {\r\n                 console.log(data[i].jsonstring);\r\n+                dat.push(data[i].jsonstring);\r\n+                console.log(dat)\r\n             }\r\n \r\n             else if(data[i].jsonstring.Name == nam)\r\n             {\r\n@@ -174,5 +176,13 @@\n                     });\r\n                  \r\n         };\r\n     });\r\n-  }\n\\ No newline at end of file\n+  }\r\n+\r\n+  function search_and_display()\r\n+  {\r\n+      var nam = String($(\"#search_term\").val())\r\n+      var data = []\r\n+      var nul = []\r\n+     \r\n+      search();\r\n"
+                },
+                {
+                    "date": 1641153637398,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -178,11 +178,11 @@\n         };\r\n     });\r\n   }\r\n \r\n-  function search_and_display()\r\n-  {\r\n-      var nam = String($(\"#search_term\").val())\r\n-      var data = []\r\n-      var nul = []\r\n+//   function search_and_display()\r\n+//   {\r\n+//       var nam = String($(\"#search_term\").val())\r\n+//       var data = []\r\n+//       var nul = []\r\n      \r\n-      search();\r\n+//       search();\r\n"
+                },
+                {
+                    "date": 1641153655761,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -82,8 +82,9 @@\n function search()\r\n {\r\n     var nam = String($(\"#search_term\").val())\r\n     var dat = []\r\n+    var data = []\r\n     $.get(\"https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_\",function(response)\r\n     { \r\n         for (var i = 0; i < response.length; i++)\r\n         data.push(response[i]);\r\n"
+                },
+                {
+                    "date": 1641153858455,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -94,28 +94,31 @@\n             if (data[i].jsonstring.Pflanze == nam)\r\n             {\r\n                 console.log(data[i].jsonstring);\r\n                 dat.push(data[i].jsonstring);\r\n-                console.log(dat)\r\n             }\r\n \r\n             else if(data[i].jsonstring.Name == nam)\r\n             {\r\n-                console.log(data[i].jsonstring)\r\n+                console.log(data[i].jsonstring);\r\n+                dat.push(data[i].jsonstring);\r\n             }\r\n \r\n             else if(data[i].jsonstring.Nachname == nam)\r\n             {\r\n-                console.log(data[i].jsonstring)\r\n+                console.log(data[i].jsonstring);\r\n+                dat.push(data[i].jsonstring);\r\n             }\r\n \r\n             else if(data[i].jsonstring.Straße == nam)\r\n             {\r\n-                console.log(data[i].jsonstring)\r\n+                console.log(data[i].jsonstring);\r\n+                dat.push(data[i].jsonstring);\r\n             }\r\n             else if(data[i].jsonstring.Titel == nam)\r\n             {\r\n-                console.log(data[i].jsonstring)\r\n+                console.log(data[i].jsonstring);\r\n+                dat.push(data[i].jsonstring);\r\n             }          \r\n         };\r\n     });     \r\n };\r\n@@ -179,11 +182,23 @@\n         };\r\n     });\r\n   }\r\n \r\n-//   function search_and_display()\r\n-//   {\r\n-//       var nam = String($(\"#search_term\").val())\r\n-//       var data = []\r\n-//       var nul = []\r\n-     \r\n-//       search();\r\n+  \r\n+function search_and_display()\r\n+{\r\n+    var nam = String($(\"#search_term\").val())\r\n+    var data = []\r\n+    var nul = []\r\n+\r\n+    search();\r\n+\r\n+    console.log(dat)\r\n+    $(dat).each(function(i, para)\r\n+    {\r\n+        $('#AusgabeBody').append($(\"<tr>\")\r\n+        .append($(\"<td>\").append(para.Name))\r\n+        .append($(\"<td>\").append(para.Nachname))\r\n+        .append($(\"<td>\").append(para.Pflanze)));\r\n+    });\r\n+\r\n+}\r\n"
+                },
+                {
+                    "date": 1641153894382,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -182,13 +182,13 @@\n         };\r\n     });\r\n   }\r\n \r\n-  \r\n+\r\n function search_and_display()\r\n {\r\n     var nam = String($(\"#search_term\").val())\r\n-    var data = []\r\n+    var dat = []\r\n     var nul = []\r\n \r\n     search();\r\n \r\n"
+                },
+                {
+                    "date": 1641153956389,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -189,10 +189,49 @@\n     var nam = String($(\"#search_term\").val())\r\n     var dat = []\r\n     var nul = []\r\n \r\n-    search();\r\n+    var nam = String($(\"#search_term\").val())\r\n+    var dat = []\r\n+    var data = []\r\n+    $.get(\"https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_\",function(response)\r\n+    { \r\n+        for (var i = 0; i < response.length; i++)\r\n+        data.push(response[i]);\r\n \r\n+        for (var i = 0; i < data.length; i++)\r\n+        {\r\n+            if (data[i].jsonstring.Pflanze == nam)\r\n+            {\r\n+                console.log(data[i].jsonstring);\r\n+                dat.push(data[i].jsonstring);\r\n+            }\r\n+\r\n+            else if(data[i].jsonstring.Name == nam)\r\n+            {\r\n+                console.log(data[i].jsonstring);\r\n+                dat.push(data[i].jsonstring);\r\n+            }\r\n+\r\n+            else if(data[i].jsonstring.Nachname == nam)\r\n+            {\r\n+                console.log(data[i].jsonstring);\r\n+                dat.push(data[i].jsonstring);\r\n+            }\r\n+\r\n+            else if(data[i].jsonstring.Straße == nam)\r\n+            {\r\n+                console.log(data[i].jsonstring);\r\n+                dat.push(data[i].jsonstring);\r\n+            }\r\n+            else if(data[i].jsonstring.Titel == nam)\r\n+            {\r\n+                console.log(data[i].jsonstring);\r\n+                dat.push(data[i].jsonstring);\r\n+            }          \r\n+        };\r\n+    });    \r\n+\r\n     console.log(dat)\r\n     $(dat).each(function(i, para)\r\n     {\r\n         $('#AusgabeBody').append($(\"<tr>\")\r\n"
+                },
+                {
+                    "date": 1641154057732,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -187,12 +187,8 @@\n function search_and_display()\r\n {\r\n     var nam = String($(\"#search_term\").val())\r\n     var dat = []\r\n-    var nul = []\r\n-\r\n-    var nam = String($(\"#search_term\").val())\r\n-    var dat = []\r\n     var data = []\r\n     $.get(\"https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_\",function(response)\r\n     { \r\n         for (var i = 0; i < response.length; i++)\r\n"
+                },
+                {
+                    "date": 1641154875919,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -226,14 +226,8 @@\n             }          \r\n         };\r\n     });    \r\n \r\n-    console.log(dat)\r\n-    $(dat).each(function(i, para)\r\n-    {\r\n-        $('#AusgabeBody').append($(\"<tr>\")\r\n-        .append($(\"<td>\").append(para.Name))\r\n-        .append($(\"<td>\").append(para.Nachname))\r\n-        .append($(\"<td>\").append(para.Pflanze)));\r\n-    });\r\n+    var heading1 = document.getElementById(\"heading1\");\r\n+    heading1.firstChild.nodeValue = data[7].jsonstring;\r\n \r\n }\r\n"
+                },
+                {
+                    "date": 1641154897902,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -227,7 +227,7 @@\n         };\r\n     });    \r\n \r\n     var heading1 = document.getElementById(\"heading1\");\r\n-    heading1.firstChild.nodeValue = data[7].jsonstring;\r\n+    heading1.firstChild.nodeValue = data[7].jsonstring.Pflanze;\r\n \r\n }\r\n"
+                },
+                {
+                    "date": 1641154915438,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -227,7 +227,7 @@\n         };\r\n     });    \r\n \r\n     var heading1 = document.getElementById(\"heading1\");\r\n-    heading1.firstChild.nodeValue = data[7].jsonstring.Pflanze;\r\n+    heading1.firstChild.nodeValue = String(data[7].jsonstring.Pflanze);\r\n \r\n }\r\n"
+                },
+                {
+                    "date": 1641154928633,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -227,7 +227,7 @@\n         };\r\n     });    \r\n \r\n     var heading1 = document.getElementById(\"heading1\");\r\n-    heading1.firstChild.nodeValue = String(data[7].jsonstring.Pflanze);\r\n+    heading1.firstChild.nodeValue = String(data[7].jsonstring);\r\n \r\n }\r\n"
+                },
+                {
+                    "date": 1641154952332,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -227,7 +227,7 @@\n         };\r\n     });    \r\n \r\n     var heading1 = document.getElementById(\"heading1\");\r\n-    heading1.firstChild.nodeValue = String(data[7].jsonstring);\r\n+    heading1.firstChild.nodeValue = data;\r\n \r\n }\r\n"
+                },
+                {
+                    "date": 1641154968374,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -227,7 +227,7 @@\n         };\r\n     });    \r\n \r\n     var heading1 = document.getElementById(\"heading1\");\r\n-    heading1.firstChild.nodeValue = data;\r\n+    heading1.firstChild.nodeValue = dat;\r\n \r\n }\r\n"
+                },
+                {
+                    "date": 1641154994530,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -225,9 +225,9 @@\n                 dat.push(data[i].jsonstring);\r\n             }          \r\n         };\r\n     });    \r\n-\r\n+    console.log(dat)\r\n     var heading1 = document.getElementById(\"heading1\");\r\n     heading1.firstChild.nodeValue = dat;\r\n \r\n }\r\n"
+                },
+                {
+                    "date": 1641155016923,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -225,9 +225,9 @@\n                 dat.push(data[i].jsonstring);\r\n             }          \r\n         };\r\n     });    \r\n-    console.log(dat)\r\n+    console.log(dat.Nachname)\r\n     var heading1 = document.getElementById(\"heading1\");\r\n-    heading1.firstChild.nodeValue = dat;\r\n+    heading1.firstChild.nodeValue = dat.Nachname;\r\n \r\n }\r\n"
+                },
+                {
+                    "date": 1641155171677,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -92,32 +92,32 @@\n         for (var i = 0; i < data.length; i++)\r\n         {\r\n             if (data[i].jsonstring.Pflanze == nam)\r\n             {\r\n-                console.log(data[i].jsonstring);\r\n+                // console.log(data[i].jsonstring);\r\n                 dat.push(data[i].jsonstring);\r\n             }\r\n \r\n             else if(data[i].jsonstring.Name == nam)\r\n             {\r\n-                console.log(data[i].jsonstring);\r\n+                // console.log(data[i].jsonstring);\r\n                 dat.push(data[i].jsonstring);\r\n             }\r\n \r\n             else if(data[i].jsonstring.Nachname == nam)\r\n             {\r\n-                console.log(data[i].jsonstring);\r\n+                // console.log(data[i].jsonstring);\r\n                 dat.push(data[i].jsonstring);\r\n             }\r\n \r\n             else if(data[i].jsonstring.Straße == nam)\r\n             {\r\n-                console.log(data[i].jsonstring);\r\n+                // console.log(data[i].jsonstring);\r\n                 dat.push(data[i].jsonstring);\r\n             }\r\n             else if(data[i].jsonstring.Titel == nam)\r\n             {\r\n-                console.log(data[i].jsonstring);\r\n+                // console.log(data[i].jsonstring);\r\n                 dat.push(data[i].jsonstring);\r\n             }          \r\n         };\r\n     });     \r\n@@ -197,37 +197,37 @@\n         for (var i = 0; i < data.length; i++)\r\n         {\r\n             if (data[i].jsonstring.Pflanze == nam)\r\n             {\r\n-                console.log(data[i].jsonstring);\r\n+                // console.log(data[i].jsonstring);\r\n                 dat.push(data[i].jsonstring);\r\n             }\r\n \r\n             else if(data[i].jsonstring.Name == nam)\r\n             {\r\n-                console.log(data[i].jsonstring);\r\n+                // console.log(data[i].jsonstring);\r\n                 dat.push(data[i].jsonstring);\r\n             }\r\n \r\n             else if(data[i].jsonstring.Nachname == nam)\r\n             {\r\n-                console.log(data[i].jsonstring);\r\n+                // console.log(data[i].jsonstring);\r\n                 dat.push(data[i].jsonstring);\r\n             }\r\n \r\n             else if(data[i].jsonstring.Straße == nam)\r\n             {\r\n-                console.log(data[i].jsonstring);\r\n+                // console.log(data[i].jsonstring);\r\n                 dat.push(data[i].jsonstring);\r\n             }\r\n             else if(data[i].jsonstring.Titel == nam)\r\n             {\r\n-                console.log(data[i].jsonstring);\r\n+                // console.log(data[i].jsonstring);\r\n                 dat.push(data[i].jsonstring);\r\n             }          \r\n         };\r\n     });    \r\n-    console.log(dat.Nachname)\r\n+    console.log(dat)\r\n     var heading1 = document.getElementById(\"heading1\");\r\n-    heading1.firstChild.nodeValue = dat.Nachname;\r\n+    heading1.firstChild.nodeValue = dat;\r\n \r\n }\r\n"
+                },
+                {
+                    "date": 1641155207675,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -225,9 +225,9 @@\n                 dat.push(data[i].jsonstring);\r\n             }          \r\n         };\r\n     });    \r\n-    console.log(dat)\r\n+    console.log(dat[0])\r\n     var heading1 = document.getElementById(\"heading1\");\r\n     heading1.firstChild.nodeValue = dat;\r\n \r\n }\r\n"
+                },
+                {
+                    "date": 1641155232636,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -225,9 +225,9 @@\n                 dat.push(data[i].jsonstring);\r\n             }          \r\n         };\r\n     });    \r\n-    console.log(dat[0])\r\n+    console.log(dat)\r\n     var heading1 = document.getElementById(\"heading1\");\r\n     heading1.firstChild.nodeValue = dat;\r\n \r\n }\r\n"
+                },
+                {
+                    "date": 1641155253475,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -225,9 +225,9 @@\n                 dat.push(data[i].jsonstring);\r\n             }          \r\n         };\r\n     });    \r\n-    console.log(dat)\r\n+    console.log(dat.Nachname)\r\n     var heading1 = document.getElementById(\"heading1\");\r\n     heading1.firstChild.nodeValue = dat;\r\n \r\n }\r\n"
+                },
+                {
+                    "date": 1641155265210,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -225,9 +225,9 @@\n                 dat.push(data[i].jsonstring);\r\n             }          \r\n         };\r\n     });    \r\n-    console.log(dat.Nachname)\r\n+    console.log(dat)\r\n     var heading1 = document.getElementById(\"heading1\");\r\n     heading1.firstChild.nodeValue = dat;\r\n \r\n }\r\n"
+                },
+                {
+                    "date": 1641155283317,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -225,9 +225,9 @@\n                 dat.push(data[i].jsonstring);\r\n             }          \r\n         };\r\n     });    \r\n-    console.log(dat)\r\n+    console.log(dat.jsonstring)\r\n     var heading1 = document.getElementById(\"heading1\");\r\n     heading1.firstChild.nodeValue = dat;\r\n \r\n }\r\n"
+                },
+                {
+                    "date": 1641155294174,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -225,9 +225,9 @@\n                 dat.push(data[i].jsonstring);\r\n             }          \r\n         };\r\n     });    \r\n-    console.log(dat.jsonstring)\r\n+    console.log(dat)\r\n     var heading1 = document.getElementById(\"heading1\");\r\n     heading1.firstChild.nodeValue = dat;\r\n \r\n }\r\n"
+                },
+                {
+                    "date": 1641155312398,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -225,9 +225,9 @@\n                 dat.push(data[i].jsonstring);\r\n             }          \r\n         };\r\n     });    \r\n-    console.log(dat)\r\n+    console.log(dat[0])\r\n     var heading1 = document.getElementById(\"heading1\");\r\n     heading1.firstChild.nodeValue = dat;\r\n \r\n }\r\n"
+                },
+                {
+                    "date": 1641155359168,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -225,9 +225,9 @@\n                 dat.push(data[i].jsonstring);\r\n             }          \r\n         };\r\n     });    \r\n-    console.log(dat[0])\r\n+    console.log(dat)\r\n     var heading1 = document.getElementById(\"heading1\");\r\n     heading1.firstChild.nodeValue = dat;\r\n \r\n }\r\n"
+                },
+                {
+                    "date": 1641155587011,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -225,9 +225,9 @@\n                 dat.push(data[i].jsonstring);\r\n             }          \r\n         };\r\n     });    \r\n-    console.log(dat)\r\n+    console.log(dat[0])\r\n     var heading1 = document.getElementById(\"heading1\");\r\n     heading1.firstChild.nodeValue = dat;\r\n \r\n }\r\n"
+                },
+                {
+                    "date": 1641155670955,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -199,8 +199,9 @@\n             if (data[i].jsonstring.Pflanze == nam)\r\n             {\r\n                 // console.log(data[i].jsonstring);\r\n                 dat.push(data[i].jsonstring);\r\n+                console.log(dat[0]);\r\n             }\r\n \r\n             else if(data[i].jsonstring.Name == nam)\r\n             {\r\n"
+                },
+                {
+                    "date": 1641155736790,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -199,9 +199,10 @@\n             if (data[i].jsonstring.Pflanze == nam)\r\n             {\r\n                 // console.log(data[i].jsonstring);\r\n                 dat.push(data[i].jsonstring);\r\n-                console.log(dat[0]);\r\n+                var heading1 = document.getElementById(\"heading1\");\r\n+                heading1.firstChild.nodeValue = dat;\r\n             }\r\n \r\n             else if(data[i].jsonstring.Name == nam)\r\n             {\r\n@@ -227,8 +228,7 @@\n             }          \r\n         };\r\n     });    \r\n     console.log(dat[0])\r\n-    var heading1 = document.getElementById(\"heading1\");\r\n-    heading1.firstChild.nodeValue = dat;\r\n \r\n+\r\n }\r\n"
+                },
+                {
+                    "date": 1641155755713,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -200,9 +200,9 @@\n             {\r\n                 // console.log(data[i].jsonstring);\r\n                 dat.push(data[i].jsonstring);\r\n                 var heading1 = document.getElementById(\"heading1\");\r\n-                heading1.firstChild.nodeValue = dat;\r\n+                heading1.firstChild.nodeValue = dat[0];\r\n             }\r\n \r\n             else if(data[i].jsonstring.Name == nam)\r\n             {\r\n"
+                },
+                {
+                    "date": 1641155769860,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -200,9 +200,9 @@\n             {\r\n                 // console.log(data[i].jsonstring);\r\n                 dat.push(data[i].jsonstring);\r\n                 var heading1 = document.getElementById(\"heading1\");\r\n-                heading1.firstChild.nodeValue = dat[0];\r\n+                heading1.firstChild.nodeValue = dat[0].Nachname];\r\n             }\r\n \r\n             else if(data[i].jsonstring.Name == nam)\r\n             {\r\n"
+                },
+                {
+                    "date": 1641155777686,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -200,9 +200,9 @@\n             {\r\n                 // console.log(data[i].jsonstring);\r\n                 dat.push(data[i].jsonstring);\r\n                 var heading1 = document.getElementById(\"heading1\");\r\n-                heading1.firstChild.nodeValue = dat[0].Nachname];\r\n+                heading1.firstChild.nodeValue = dat[0].Nachname;\r\n             }\r\n \r\n             else if(data[i].jsonstring.Name == nam)\r\n             {\r\n"
                 }
             ],
             "date": 1640256408490,

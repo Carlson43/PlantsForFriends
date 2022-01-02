@@ -201,7 +201,7 @@ function search_and_display()
                 // console.log(data[i].jsonstring);
                 dat.push(data[i].jsonstring);
                 var heading1 = document.getElementById("heading1");
-                heading1.firstChild.nodeValue = dat[0].Nachname;
+                heading1.firstChild.nodeValue = dat;
             }
 
             else if(data[i].jsonstring.Name == nam)

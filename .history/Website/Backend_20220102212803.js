@@ -200,8 +200,6 @@ function search_and_display()
             {
                 // console.log(data[i].jsonstring);
                 dat.push(data[i].jsonstring);
-                var heading1 = document.getElementById("heading1");
-                heading1.firstChild.nodeValue = dat[0].Nachname;
             }
 
             else if(data[i].jsonstring.Name == nam)
@@ -228,7 +226,8 @@ function search_and_display()
             }          
         };
     });    
-    console.log(dat[0])
-
+    console.log(dat.jsonstring)
+    var heading1 = document.getElementById("heading1");
+    heading1.firstChild.nodeValue = dat;
 
 }
