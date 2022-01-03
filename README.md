@@ -1,4 +1,4 @@
-# [PlantsForFriends](https://duckduckgo.com "Unsere Seite im Internet")
+# [PlantsForFriends](https://carlson43.github.io/PlantsForFriends "Unsere Seite im Internet")
 Aufgaben für Fallstudie in WWI20DSA
 
 
