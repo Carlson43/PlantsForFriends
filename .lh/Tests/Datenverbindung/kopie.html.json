@@ -1,0 +1,22 @@
+{
+    "sourceFile": "Tests/Datenverbindung/kopie.html",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1641204941469,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1641205039812,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n     function add()\r\n     {\r\n       var jsonstring=  '{\"Pflanze\":\"'+$(\"#jsonstring\").val()+'\"}';\r\n       console.log(\"add\"+ jsonstring);\r\n-      $.get(\"https://webtechlecture.appspot.com/cloudstore/add?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_&key=1640175149201jsonstring=\"+encodeURI(jsonstring),function(response)\r\n+      $.get(\"https://webtechlecture.appspot.com/cloudstore/add?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_&jsonstring=\"+encodeURI(jsonstring),function(response)\r\n       {\r\n         console.log(response);\r\n       });\r\n     }\r\n"
+                }
+            ],
+            "date": 1641204941469,
+            "name": "Commit-0",
+            "content": "<!doctype html>\r\n<html lang=\"en\">\r\n  <head>\r\n    <meta charset=\"utf-8\">\r\n    <script src=\"https://code.jquery.com/jquery-3.6.0.js\"> </script>\r\n    <style>\r\n      div{\r\n        padding:10px\r\n      }\r\n    </style>\r\n\r\n  </head>\r\n\r\n\r\n  <body>\r\n\r\n   <div>\r\n\t  <input id= \"jsonstring\" type=\"text\" value='{\"parameter\":\"value\"}'>\r\n    <button onclick= \"add();\">Add JSON string</button>\r\n  </div>\r\n\r\n  <div>\r\n    <button onclick=\"readwithkey();\">Make read with key request</button>\r\n  </div>\r\n\r\n  <div>\r\n    <button onclick=\"listAllData();\"> List all Data</button>\r\n  </div>\r\n\t\r\n\t<script>\r\n    function add()\r\n    {\r\n      var jsonstring=  '{\"Pflanze\":\"'+$(\"#jsonstring\").val()+'\"}';\r\n      console.log(\"add\"+ jsonstring);\r\n      $.get(\"https://webtechlecture.appspot.com/cloudstore/add?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_&key=1640175149201jsonstring=\"+encodeURI(jsonstring),function(response)\r\n      {\r\n        console.log(response);\r\n      });\r\n    }\r\n\r\n    function listAllData()\r\n    {\r\n      var jsonstring=$(\"#jsonstring\").val();\r\n      console.log(\"Hi!\");\r\n      $.get(\"https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_\",function(response)\r\n      {\r\n        console.log(response);\r\n      });\r\n    }\r\n\t\t\r\n    function del()\r\n    {\r\n      var jsonstring=$(\"#jsonstring\").val();\r\n      console.log(\"Del\");\r\n      $.get(\"https://webtechlecture.appspot.com/cloudstore/del?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_&key=1640178157404\",function(response)\r\n      {\r\n        console.log(response);\r\n      });\r\n    }\t\t\r\n\t\r\n    del();\r\n\t</script>\r\n  </body>\r\n</html>"
+        }
+    ]
+}
