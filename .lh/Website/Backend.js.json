@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 147,
+            "activePatchIndex": 149,
             "patches": [
                 {
                     "date": 1640256408490,
@@ -596,6 +596,14 @@
                 {
                     "date": 1641243698018,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -131,10 +131,10 @@\n                 document.getElementById(\"Test11\").src= \"./Design-Ressourcen/Bilder/hand-saplings.jpg\";\r\n             \r\n                 var x = document.getElementById(\"Test11\").firstChild;\r\n                 var txt = \"\";\r\n-                txt += \"The node name: \" + dat[0].Pflanzenart + \"<br>\";\r\n-                txt += \"The node value: \" + dat[0].Titel + \"<br>\";\r\n+                txt += \"The node name: \" + dat[0].Titel + \"<br>\";\r\n+                txt += \"The node value: \" + dat[0].Pflanzenart + \"<br>\";\r\n                 txt += \"The node type: \" + dat[0].Email;\r\n                 document.getElementById(\"Test11\").innerHTML = txt;\r\n                 \r\n             }\r\n"
+                },
+                {
+                    "date": 1641244122833,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -155,10 +155,10 @@\n     document.getElementById(\"Test11\").src= \"./Design-Ressourcen/Bilder/hand-saplings.jpg\";\r\n \r\n     var x = document.getElementById(\"Test11\").firstChild;\r\n     var txt = \"\";\r\n-    txt += \"The node name: \" + x.nodeName + \"<br>\";\r\n-    txt += \"The node value: \" + x.nodeValue + \"<br>\";\r\n-    txt += \"The node type: \" + x.nodeType;\r\n+    txt += \"Titel: \" + x.nodeName + \"<br>\";\r\n+    txt += \"Pflanze: \" + x.nodeValue + \"<br>\";\r\n+    txt += \"Email: \" + x.nodeType;\r\n     document.getElementById(\"Test11\").innerHTML = txt;\r\n     \r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1641244166857,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -131,11 +131,11 @@\n                 document.getElementById(\"Test11\").src= \"./Design-Ressourcen/Bilder/hand-saplings.jpg\";\r\n             \r\n                 var x = document.getElementById(\"Test11\").firstChild;\r\n                 var txt = \"\";\r\n-                txt += \"The node name: \" + dat[0].Titel + \"<br>\";\r\n-                txt += \"The node value: \" + dat[0].Pflanzenart + \"<br>\";\r\n-                txt += \"The node type: \" + dat[0].Email;\r\n+                txt += \"Titel: \" + dat[0].Titel + \"<br>\";\r\n+                txt += \"Pflanzenart: \" + dat[0].Pflanzenart + \"<br>\";\r\n+                txt += \"Email: \" + dat[0].Email;\r\n                 document.getElementById(\"Test11\").innerHTML = txt;\r\n                 \r\n             }\r\n          \r\n"
                 }
             ],
             "date": 1640256408490,
