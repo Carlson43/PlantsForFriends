@@ -69,7 +69,7 @@
             <input class="form-control" type="file" id="Ad_pics">  
         </div>
         <div>
-            <label for="Ad_email" class="form-label">Kontaktadresse</label>
+            <label for="Ad_email" class="form-label">Kontaktmöglichkeit</label>
             <input type="email" class="form-control" id="Ad_email" aria-describedby="emailHelp" placeholder="Damit man dich erreichen kann">
         </div>
         <p></p>
@@ -135,7 +135,7 @@
         function onMapClick(e) {
             popup
                 .setLatLng(e.latlng)
-                .setContent("You clicked the map at " + e.latlng.toString())
+                .setContent("Kooridnaten deiner Anzeige:" + e.latlng.toString())
                 .openOn(mymap);
         }
 

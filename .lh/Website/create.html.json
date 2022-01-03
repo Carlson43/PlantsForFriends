@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 54,
+            "activePatchIndex": 56,
             "patches": [
                 {
                     "date": 1640249105761,
@@ -224,6 +224,14 @@
                 {
                     "date": 1641206386116,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n     <!-- Navbar -->\r\n     <nav class=\"navbar navbar-light bg-light\">\r\n         <div class=\"container fluid\">\r\n             <!-- Navabr Logo and Brandname -->\r\n-            <a class=\"navbar-brand\" href=\"#\">\r\n+            <a class=\"navbar-brand\" href=\"index.html\">\r\n                 <img src=\"./Design-Ressourcen/logo.svg\" alt=\"\" width=\"30\" height=\"24\" class=\"d-inline-block align-text-top\">\r\n                 Plants4Friends\r\n             </a>\r\n             <!-- Toggler for Expandsion -->\r\n"
+                },
+                {
+                    "date": 1641215529106,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,9 +68,9 @@\n             <label for=\"Ad_pics\" class=\"form-label\">Bilder</label>\r\n             <input class=\"form-control\" type=\"file\" id=\"Ad_pics\">  \r\n         </div>\r\n         <div>\r\n-            <label for=\"Ad_email\" class=\"form-label\">Kontaktadresse</label>\r\n+            <label for=\"Ad_email\" class=\"form-label\">Kontaktmöglichkeit</label>\r\n             <input type=\"email\" class=\"form-control\" id=\"Ad_email\" aria-describedby=\"emailHelp\" placeholder=\"Damit man dich erreichen kann\">\r\n         </div>\r\n         <p></p>\r\n         <div>\r\n@@ -80,19 +80,32 @@\n         <div>\r\n             <button onclick=\"listAllData();\" class=\"btn btn-success\"> List all Data</button>\r\n         </div>\r\n         <p></p>\r\n+\r\n         <!-- Custom Map Location -->\r\n         <div>\r\n             <label class=\"form-label\">Ort der Anzeige</label>\r\n             <div id=\"pointMap\"></div>\r\n         </div>\r\n         <p></p>\r\n+\r\n     </div>\r\n \r\n-\r\n-\r\n     \r\n+    <!-- Footer -->\r\n+    <div class=\"container\">\r\n+        <footer class=\"d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top\">\r\n+          <p class=\"col-md-4 mb-0 text-muted\">© 2021 Plants4Friends</p>\r\n+      \r\n+          <a href=\"index.html\" class=\"col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none\">\r\n+            <img src=\"./Design-Ressourcen/logo.svg\" alt=\"\" width=\"30\" height=\"24\" class=\"d-inline-block align-text-top\">\r\n+          </a>\r\n+      \r\n+          <p class=\"col-md-4 mb-0 text-muted\">Made with ❤ in Mannheim</p>\r\n+        </footer>\r\n+      </div>\r\n+    \r\n     <!-- Option 1: Bootstrap Bundle with Popper -->\r\n     <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p\" crossorigin=\"anonymous\"></script>\r\n \r\n     <!-- Leaflet JS -->\r\n"
+                },
+                {
+                    "date": 1641215558162,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -134,9 +134,9 @@\n         var popup = L.popup();\r\n         function onMapClick(e) {\r\n             popup\r\n                 .setLatLng(e.latlng)\r\n-                .setContent(\"You clicked the map at \" + e.latlng.toString())\r\n+                .setContent(\"Kooridnaten deiner Anzeige:\" + e.latlng.toString())\r\n                 .openOn(mymap);\r\n         }\r\n \r\n         mymap.on('click', onMapClick);\r\n"
                 }
             ],
             "date": 1640249105761,
