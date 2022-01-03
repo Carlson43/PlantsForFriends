@@ -100,13 +100,24 @@
         <div class="input-group">
           <input type="text" placeholder="Suchbegriff eingeben" aria-label="search_term" id="search_term" class="form-control">
           <input type="text" placeholder="Ort" aria-label="search_loc" id="search_loc" class="form-control">
-          <button onclick= "search_and_display();" class="btn btn-success" type="button" id="search_btn">Suchen</button>          
+          <button onclick= "search_and_displayy();" class="btn btn-success" type="button" id="search_btn">Suchen</button>          
         </div>
     </div>
     
     <div>
       <h1></h1>
     </div>
+
+    <div class="container-sm">
+    <table id="AusgabeBody">
+      <thead>
+        <th>Name</th>
+        <th>Nachname</th>
+        <th>Pflanze</th>
+      </thead>
+      <tbody id="AusgabeBody"></tbody>
+    </table>
+  </div>
 
     <!-- Container Layout Demo -->
     <div class="container-md">

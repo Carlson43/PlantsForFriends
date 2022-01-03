@@ -119,7 +119,6 @@ function search_and_display()
                 dat.push(data[i].jsonstring);
                 var heading1 = document.getElementById("heading1");
                 heading1.firstChild.nodeValue = dat[0].Titel;
-                
             }
          
         };
