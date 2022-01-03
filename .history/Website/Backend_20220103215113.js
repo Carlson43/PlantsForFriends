@@ -117,25 +117,8 @@ function search_and_display()
                 ||data[i].jsonstring.Titel == nam)
             {
                 dat.push(data[i].jsonstring);
-                console.log(dat[0])
-                // var heading1 = document.getElementById("heading1");
-                // heading1.firstChild.nodeValue = dat[0].Titel;
-
-                var btn = document.createElement("div");
-                btn.setAttribute("id", "Test11");
-                btn.className = 'container-md';
-                btn.innerHTML = "CLICK ME";
-                document.body.appendChild(btn);
-                document.getElementById("Test11").style.width = "300px";
-                document.getElementById("Test11").style.length = "300px";
-                document.getElementById("Test11").src= "./Design-Ressourcen/Bilder/hand-saplings.jpg";
-            
-                var x = document.getElementById("Test11").firstChild;
-                var txt = "";
-                txt += "The node name: " + dat[0].Titel + "<br>";
-                txt += "The node value: " + dat[0].Pflanzenart + "<br>";
-                txt += "The node type: " + dat[0].Email;
-                document.getElementById("Test11").innerHTML = txt;
+                var heading1 = document.getElementById("heading1");
+                heading1.firstChild.nodeValue = dat[0].Titel;
                 
             }
          
@@ -147,18 +130,16 @@ function addElement(){
 
     var btn = document.createElement("div");
     btn.setAttribute("id", "Test11");
-    btn.className = 'container-md';
+    btn.className = 'card';
     btn.innerHTML = "CLICK ME";
     document.body.appendChild(btn);
     document.getElementById("Test11").style.width = "300px";
     document.getElementById("Test11").style.length = "300px";
     document.getElementById("Test11").src= "./Design-Ressourcen/Bilder/hand-saplings.jpg";
-
-    var x = document.getElementById("Test11").firstChild;
-    var txt = "";
-    txt += "The node name: " + x.nodeName + "<br>";
-    txt += "The node value: " + x.nodeValue + "<br>";
-    txt += "The node type: " + x.nodeType;
-    document.getElementById("Test11").innerHTML = txt;
+    
+    var heading1 = document.getElementById("Test11");
+    heading1.firstChild.nodeValue = "Hallo";
+    var heading2 = document.getElementById("Test11");
+    heading2.firstChild.nodeValue = "Hier könnte Ihre Werbung stehen";
     
 }

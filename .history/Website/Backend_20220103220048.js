@@ -132,8 +132,8 @@ function search_and_display()
             
                 var x = document.getElementById("Test11").firstChild;
                 var txt = "";
-                txt += "The node name: " + dat[0].Titel + "<br>";
-                txt += "The node value: " + dat[0].Pflanzenart + "<br>";
+                txt += "The node name: " + dat[0].Pflanzenart + "<br>";
+                txt += "The node value: " + dat[0].Titel + "<br>";
                 txt += "The node type: " + dat[0].Email;
                 document.getElementById("Test11").innerHTML = txt;
                 
