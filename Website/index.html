@@ -20,7 +20,20 @@
       }
       </style>
 
+      <!-- Custom Divider CSS -->
+      <style type="text/css">
+        .h-divider{
+         margin-top:15px;
+         margin-bottom:15px;
+         height:1px;
+         width:100%;
+         /* border-top:1px solid gray; */
+        }
+      </style>
+
     <title>Welcome @ Plants4Friends</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./Design-Ressourcen/flower.svg">
   </head>
 
   <body>
@@ -91,9 +104,7 @@
         </button>
     </div>
 
-    <div>
-      <h4></h4>
-    </div>
+    <div class="h-divider">
 
     <!-- Input / Search Group -->
       <div class="container-md">
@@ -104,9 +115,7 @@
         </div>
     </div>
     
-    <div>
-      <h1></h1>
-    </div>
+    <div class="h-divider">
 
     <!-- Container Layout Demo -->
     <!-- <div class="container-md">
@@ -161,6 +170,18 @@
       <button onclick="search_and_display();"> Element</button>
     </div>
 
+    <!-- Footer -->
+    <div class="container">
+      <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <p class="col-md-4 mb-0 text-muted">© 2021 Plants4Friends</p>
+    
+        <a href="index.html" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+          <img src="./Design-Ressourcen/logo.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
+        </a>
+    
+        <p class="col-md-4 mb-0 text-muted">Made with ❤ in Mannheim</p>
+      </footer>
+    </div>
 
     <!--Bootstrap JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
