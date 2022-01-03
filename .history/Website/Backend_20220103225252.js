@@ -117,9 +117,8 @@ function search_and_display()
                 ||data[i].jsonstring.Titel == nam)
             {
                 dat.push(data[i].jsonstring);
-                console.log(dat[0]);
-                var div = document.getElementById('Card1');
-                div.style.visibility='visible'
+                console.log(dat[0])
+                ["Card1"].style.visibility='visible'
                 // var heading1 = document.getElementById("heading1");
                 // heading1.firstChild.nodeValue = dat[0].Titel;
 
