@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 37,
+            "activePatchIndex": 38,
             "patches": [
                 {
                     "date": 1640252294782,
@@ -156,6 +156,10 @@
                 {
                     "date": 1640265301721,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -95,15 +95,13 @@\n         marker4.bindPopup(\"<b>Angebot 4</b><br>Angebot details. Evtl. eine Adresse\").openPopup();\r\n         \r\n         // Show Location on Click\r\n         var popup = L.popup();\r\n-        var locmarker = L.marker(latlng,draggable=\"True\")\r\n         function onMapClick(e) {\r\n             popup\r\n                 .setLatLng(e.latlng)\r\n                 .setContent(\"You clicked the map at \" + e.latlng.toString())\r\n                 .openOn(mymap);\r\n-            locmarker.addTo(mymap);\r\n         }\r\n \r\n         mymap.on('click', onMapClick);\r\n \r\n"
+                },
+                {
+                    "date": 1641206401666,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n     <!-- Navbar -->\r\n     <nav class=\"navbar navbar-light bg-light\">\r\n         <div class=\"container fluid\">\r\n             <!-- Navabr Logo and Brandname -->\r\n-            <a class=\"navbar-brand\" href=\"#\">\r\n+            <a class=\"navbar-brand\" href=\"index.html\">\r\n                 <img src=\"./Design-Ressourcen/logo.svg\" alt=\"\" width=\"30\" height=\"24\" class=\"d-inline-block align-text-top\">\r\n                 Plants4Friends\r\n             </a>\r\n             <!-- Toggler for Expandsion -->\r\n"
                 }
             ],
             "date": 1640252294782,
