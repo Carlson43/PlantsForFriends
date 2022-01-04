@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 272,
+            "activePatchIndex": 273,
             "patches": [
                 {
                     "date": 1640256408490,
@@ -1096,6 +1096,10 @@
                 {
                     "date": 1641330528275,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n     '\"Pflanzenart\":\"'+$(\"#Ad_species\").val()+'\",'+\r\n     '\"Beschreibung\":\"'+$(\"#Ad_description\").val()+'\",'+\r\n     '\"Email\":\"'+$(\"#Ad_email\").val()+'\",'+\r\n     '\"lat\":\"'+lat[0].lat+'\",'+\r\n-    '\"lng\":\"'+lat[0].lng+'\",'+\r\n+    '\"lng\":\"'+lat[0].lng+\r\n \r\n     '\"}';\r\n     console.log(\"add\"+ jsonstring);\r\n     $.get(\"https://webtechlecture.appspot.com/cloudstore/add?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_&jsonstring=\"+encodeURI(jsonstring),function(response)\r\n"
+                },
+                {
+                    "date": 1641330637849,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,18 +16,8 @@\n     {\r\n     console.log(response);\r\n     });\r\n }\r\n-    \r\n-function del()\r\n-{\r\n-    var jsonstring=$(\"#jsonstring\").val();\r\n-    console.log(\"Del\");\r\n-    $.get(\"https://webtechlecture.appspot.com/cloudstore/del?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_&key=1640178157404\",function(response)\r\n-    {\r\n-    console.log(response);\r\n-    });\r\n-}\t\r\n \r\n function addAll()\r\n {\r\n     var jsonstring=  \r\n@@ -46,61 +36,8 @@\n     console.log(response);\r\n     });\r\n }\r\n \r\n-function spec()\r\n-{\r\n-    var specvar =  \r\n-    $.get('https://webtechlecture.appspot.com/cloudstore/ ?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_&jsonstring={\"Pflanzen\":\"Lillie\"}',function(response)\r\n-    {\r\n-    console.log(response);\r\n-    });\r\n-}\r\n-\r\n-function search()\r\n-{\r\n-    var nam = String($(\"#search_term\").val())\r\n-    var dat = []\r\n-    var data = []\r\n-    $.get(\"https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_\",function(response)\r\n-    { \r\n-        for (var i = 0; i < response.length; i++)\r\n-        data.push(response[i]);\r\n-\r\n-        for (var i = 0; i < data.length; i++)\r\n-        {\r\n-            if (data[i].jsonstring.Pflanze == nam)\r\n-            {\r\n-                // console.log(data[i].jsonstring);\r\n-                dat.push(data[i].jsonstring);\r\n-            }\r\n-\r\n-            else if(data[i].jsonstring.Name == nam)\r\n-            {\r\n-                // console.log(data[i].jsonstring);\r\n-                dat.push(data[i].jsonstring);\r\n-            }\r\n-\r\n-            else if(data[i].jsonstring.Nachname == nam)\r\n-            {\r\n-                // console.log(data[i].jsonstring);\r\n-                dat.push(data[i].jsonstring);\r\n-            }\r\n-\r\n-            else if(data[i].jsonstring.Straße == nam)\r\n-            {\r\n-                // console.log(data[i].jsonstring);\r\n-                dat.push(data[i].jsonstring);\r\n-            }\r\n-            else if(data[i].jsonstring.Titel == nam)\r\n-            {\r\n-                // console.log(data[i].jsonstring);\r\n-                dat.push(data[i].jsonstring);\r\n-            }          \r\n-        };\r\n-    });     \r\n-};\r\n-\r\n function search_and_display()\r\n {\r\n     var nam = String($(\"#search_term\").val())\r\n     var dat = []\r\n"
                 }
             ],
             "date": 1640256408490,
