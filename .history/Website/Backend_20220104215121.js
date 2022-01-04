@@ -30,14 +30,13 @@ function del()
 
 function addAll()
 {
+    console.log(onMapClick())
     var jsonstring=  
     
     '{"Titel":"'+$("#Ad_heading").val()+'",'+
     '"Pflanzenart":"'+$("#Ad_species").val()+'",'+
     '"Beschreibung":"'+$("#Ad_description").val()+'",'+
-    '"Email":"'+$("#Ad_email").val()+'",'+
-    '"lat":"'+lat[0].lat+'",'+
-    '"lng":"'+lat[0].lng+
+    '"Email":"'+$("#Ad_email").val()+
 
     '"}';
     console.log("add"+ jsonstring);
@@ -148,6 +147,5 @@ function onMapClick(e) {
         .setLatLng(e.latlng)
         .setContent("Kooridnaten deiner Anzeige:" + e.latlng.toString())
         .openOn(mymap);
-        lat[0] = e.latlng
-        console.log(lat[0].lat)
+        return(e.latlng)
 }

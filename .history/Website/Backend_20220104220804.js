@@ -35,9 +35,9 @@ function addAll()
     '{"Titel":"'+$("#Ad_heading").val()+'",'+
     '"Pflanzenart":"'+$("#Ad_species").val()+'",'+
     '"Beschreibung":"'+$("#Ad_description").val()+'",'+
-    '"Email":"'+$("#Ad_email").val()+'",'+
+    '"Email":"'+$("#Ad_email").val()+'",'
     '"lat":"'+lat[0].lat+'",'+
-    '"lng":"'+lat[0].lng+
+    '"lng":"'+lat[0].lng+'",'+
 
     '"}';
     console.log("add"+ jsonstring);

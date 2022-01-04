@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 56,
+            "activePatchIndex": 66,
             "patches": [
                 {
                     "date": 1640249105761,
@@ -232,6 +232,46 @@
                 {
                     "date": 1641215558162,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -134,9 +134,9 @@\n         var popup = L.popup();\r\n         function onMapClick(e) {\r\n             popup\r\n                 .setLatLng(e.latlng)\r\n-                .setContent(\"You clicked the map at \" + e.latlng.toString())\r\n+                .setContent(\"Kooridnaten deiner Anzeige:\" + e.latlng.toString())\r\n                 .openOn(mymap);\r\n         }\r\n \r\n         mymap.on('click', onMapClick);\r\n"
+                },
+                {
+                    "date": 1641328663152,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,14 @@\n     <link rel=\"stylesheet\" href=\"Control.FullScreen.css\" />\r\n     <!-- Map Locate CSS -->\r\n     <link rel=\"stylesheet\" href=\"./leaflet-locatecontrol-gh-pages/leaflet-locatecontrol-gh-pages/dist/L.Control.Locate.min.css\" />\r\n \r\n+    <!-- Custom Divider CSS -->\r\n+    <link rel=\"stylesheet\" href=\"divider.css\">\r\n+\r\n     <title>Erstellen @ Plants4Friends</title>\r\n+    <!-- Favicon -->\r\n+    <link rel=\"icon\" type=\"image/x-icon\" href=\"./Design-Ressourcen/flower.svg\">\r\n   </head>\r\n   <body>\r\n \r\n     <!-- Navbar -->\r\n@@ -73,26 +78,27 @@\n             <input type=\"email\" class=\"form-control\" id=\"Ad_email\" aria-describedby=\"emailHelp\" placeholder=\"Damit man dich erreichen kann\">\r\n         </div>\r\n         <p></p>\r\n         <div>\r\n+            <label class=\"form-label\">Ort der Anzeige</label>\r\n+            <input class=\"form-control\" type=\"text\" value=\"Die Position deiner Anzeige\" aria-label=\"Ad_location_box\" readonly>\r\n+            <p></p>\r\n+            <!-- Custom Map Location -->\r\n+            <div id=\"pointMap\"></div>\r\n+        </div>\r\n+        <p></p>\r\n+        <div>\r\n             <button onclick= \"addAll();\" type=\"submit\" class=\"btn btn-success\">Anzeige erstellen</button>\r\n         </div>      \r\n         <p></p>\r\n         <div>\r\n             <button onclick=\"listAllData();\" class=\"btn btn-success\"> List all Data</button>\r\n         </div>\r\n-        <p></p>\r\n+        <p></p>    \r\n+    </div>\r\n \r\n-        <!-- Custom Map Location -->\r\n-        <div>\r\n-            <label class=\"form-label\">Ort der Anzeige</label>\r\n-            <div id=\"pointMap\"></div>\r\n-        </div>\r\n-        <p></p>\r\n+    <div class=\"h-divider\"></div>\r\n \r\n-    </div>\r\n-\r\n-    \r\n     <!-- Footer -->\r\n     <div class=\"container\">\r\n         <footer class=\"d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top\">\r\n           <p class=\"col-md-4 mb-0 text-muted\">© 2021 Plants4Friends</p>\r\n@@ -139,8 +145,9 @@\n                 .openOn(mymap);\r\n         }\r\n \r\n         mymap.on('click', onMapClick);\r\n+        console.log(e.latlng)\r\n \r\n     </script>\r\n     \r\n   </body>\r\n"
+                },
+                {
+                    "date": 1641328701476,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -145,9 +145,9 @@\n                 .openOn(mymap);\r\n         }\r\n \r\n         mymap.on('click', onMapClick);\r\n-        console.log(e.latlng)\r\n+        console.log(latlng)\r\n \r\n     </script>\r\n     \r\n   </body>\r\n"
+                },
+                {
+                    "date": 1641328719049,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -145,9 +145,9 @@\n                 .openOn(mymap);\r\n         }\r\n \r\n         mymap.on('click', onMapClick);\r\n-        console.log(latlng)\r\n+        console.log(e.latlng.toString())\r\n \r\n     </script>\r\n     \r\n   </body>\r\n"
+                },
+                {
+                    "date": 1641328833327,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -142,12 +142,13 @@\n             popup\r\n                 .setLatLng(e.latlng)\r\n                 .setContent(\"Kooridnaten deiner Anzeige:\" + e.latlng.toString())\r\n                 .openOn(mymap);\r\n+                console.log(e.latlng)\r\n         }\r\n \r\n         mymap.on('click', onMapClick);\r\n-        console.log(e.latlng.toString())\r\n+        \r\n \r\n     </script>\r\n     \r\n   </body>\r\n"
+                },
+                {
+                    "date": 1641329100000,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -137,18 +137,12 @@\n         L.control.locate().addTo(mymap);\r\n \r\n         // Show Location on Click\r\n         var popup = L.popup();\r\n-        function onMapClick(e) {\r\n-            popup\r\n-                .setLatLng(e.latlng)\r\n-                .setContent(\"Kooridnaten deiner Anzeige:\" + e.latlng.toString())\r\n-                .openOn(mymap);\r\n-                console.log(e.latlng)\r\n-        }\r\n \r\n+\r\n         mymap.on('click', onMapClick);\r\n-        \r\n+        console.log(onMapClick)\r\n \r\n     </script>\r\n     \r\n   </body>\r\n"
+                },
+                {
+                    "date": 1641329122524,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -140,9 +140,9 @@\n         var popup = L.popup();\r\n \r\n \r\n         mymap.on('click', onMapClick);\r\n-        console.log(onMapClick)\r\n+        console.log(onMapClick(e))\r\n \r\n     </script>\r\n     \r\n   </body>\r\n"
+                },
+                {
+                    "date": 1641329252665,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -82,9 +82,9 @@\n             <label class=\"form-label\">Ort der Anzeige</label>\r\n             <input class=\"form-control\" type=\"text\" value=\"Die Position deiner Anzeige\" aria-label=\"Ad_location_box\" readonly>\r\n             <p></p>\r\n             <!-- Custom Map Location -->\r\n-            <div id=\"pointMap\"></div>\r\n+            <div onclick = \"onMapClick();\" id=\"pointMap\"></div>\r\n         </div>\r\n         <p></p>\r\n         <div>\r\n             <button onclick= \"addAll();\" type=\"submit\" class=\"btn btn-success\">Anzeige erstellen</button>\r\n@@ -140,10 +140,10 @@\n         var popup = L.popup();\r\n \r\n \r\n         mymap.on('click', onMapClick);\r\n-        console.log(onMapClick(e))\r\n \r\n+\r\n     </script>\r\n     \r\n   </body>\r\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1641329816120,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -86,9 +86,9 @@\n             <div onclick = \"onMapClick();\" id=\"pointMap\"></div>\r\n         </div>\r\n         <p></p>\r\n         <div>\r\n-            <button onclick= \"addAll();\" type=\"submit\" class=\"btn btn-success\">Anzeige erstellen</button>\r\n+            <button onclick= \"testAdd();\" type=\"submit\" class=\"btn btn-success\">Anzeige erstellen</button>\r\n         </div>      \r\n         <p></p>\r\n         <div>\r\n             <button onclick=\"listAllData();\" class=\"btn btn-success\"> List all Data</button>\r\n"
+                },
+                {
+                    "date": 1641330098550,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -124,8 +124,11 @@\n     <!-- Custom Map JS -->\r\n     <script>\r\n         // Making a map and tiles\r\n         // Setting a higher initial zoom to make effect more obvious\r\n+\r\n+        lat = []\r\n+\r\n         const mymap = L.map('pointMap', {\r\n                         fullscreenControl: true,\r\n                         fullscreenControlOptions: {\r\n                         position: 'topleft'}\r\n"
+                },
+                {
+                    "date": 1641330287322,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -86,9 +86,9 @@\n             <div onclick = \"onMapClick();\" id=\"pointMap\"></div>\r\n         </div>\r\n         <p></p>\r\n         <div>\r\n-            <button onclick= \"testAdd();\" type=\"submit\" class=\"btn btn-success\">Anzeige erstellen</button>\r\n+            <button onclick= \"addAll();\" type=\"submit\" class=\"btn btn-success\">Anzeige erstellen</button>\r\n         </div>      \r\n         <p></p>\r\n         <div>\r\n             <button onclick=\"listAllData();\" class=\"btn btn-success\"> List all Data</button>\r\n"
                 }
             ],
             "date": 1640249105761,

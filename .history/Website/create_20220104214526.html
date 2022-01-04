@@ -83,7 +83,7 @@
             <input class="form-control" type="text" value="Die Position deiner Anzeige" aria-label="Ad_location_box" readonly>
             <p></p>
             <!-- Custom Map Location -->
-            <div onclick = "onMapClick();" id="pointMap"></div>
+            <div id="pointMap"></div>
         </div>
         <p></p>
         <div>
@@ -125,9 +125,6 @@
     <script>
         // Making a map and tiles
         // Setting a higher initial zoom to make effect more obvious
-
-        lat = []
-
         const mymap = L.map('pointMap', {
                         fullscreenControl: true,
                         fullscreenControlOptions: {
@@ -144,7 +141,7 @@
 
 
         mymap.on('click', onMapClick);
-
+        console.log(onMapClick())
 
     </script>
     

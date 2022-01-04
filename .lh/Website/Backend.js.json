@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 251,
+            "activePatchIndex": 272,
             "patches": [
                 {
                     "date": 1640256408490,
@@ -1012,6 +1012,90 @@
                 {
                     "date": 1641328200192,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -119,10 +119,10 @@\n                 dat.push(data[i].jsonstring);\r\n \r\n                 for (var k = 0; k < dat.length; k++){\r\n                 console.log(dat[k].Titel)        ;\r\n-                document.getElementById(\"Card0\").removeAttribute(\"hidden\");\r\n-                document.getElementById(\"Card0title\").innerHTML = dat[k].Titel;\r\n+                document.getElementById(\"Card\"+ Number(k)).removeAttribute(\"hidden\");\r\n+                document.getElementById(\"Card\"+ Number(k)+ \"title\").innerHTML = dat[k].Titel;\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"subtitle\").innerHTML = dat[k].Pflanzenart;\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"list1\").innerHTML = dat[k].Email;\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"text\").innerHTML = dat[k].Beschreibung;\r\n                 }\r\n"
+                },
+                {
+                    "date": 1641329109181,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -138,8 +138,14 @@\n \r\n     \r\n }\r\n \r\n-function addElement(){\r\n+function addElement(){ \r\n+}\r\n \r\n- \r\n+function onMapClick(e) {\r\n+    popup\r\n+        .setLatLng(e.latlng)\r\n+        .setContent(\"Kooridnaten deiner Anzeige:\" + e.latlng.toString())\r\n+        .openOn(mymap);\r\n+        return(e.latlng)\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1641329324579,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -146,6 +146,6 @@\n     popup\r\n         .setLatLng(e.latlng)\r\n         .setContent(\"Kooridnaten deiner Anzeige:\" + e.latlng.toString())\r\n         .openOn(mymap);\r\n-        return(e.latlng)\r\n+        console.log(e.latlng)\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1641329413120,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n }\t\r\n \r\n function addAll()\r\n {\r\n-\r\n+    console.log(onMapClick)\r\n     var jsonstring=  \r\n     \r\n     '{\"Titel\":\"'+$(\"#Ad_heading\").val()+'\",'+\r\n     '\"Pflanzenart\":\"'+$(\"#Ad_species\").val()+'\",'+\r\n@@ -146,6 +146,6 @@\n     popup\r\n         .setLatLng(e.latlng)\r\n         .setContent(\"Kooridnaten deiner Anzeige:\" + e.latlng.toString())\r\n         .openOn(mymap);\r\n-        console.log(e.latlng)\r\n+        return(e.latlng)\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1641329481771,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n }\t\r\n \r\n function addAll()\r\n {\r\n-    console.log(onMapClick)\r\n+    console.log(onMapClick())\r\n     var jsonstring=  \r\n     \r\n     '{\"Titel\":\"'+$(\"#Ad_heading\").val()+'\",'+\r\n     '\"Pflanzenart\":\"'+$(\"#Ad_species\").val()+'\",'+\r\n"
+                },
+                {
+                    "date": 1641329782839,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,16 +29,15 @@\n }\t\r\n \r\n function addAll()\r\n {\r\n-    console.log(onMapClick())\r\n+    console.log(onMapClick)\r\n     var jsonstring=  \r\n     \r\n     '{\"Titel\":\"'+$(\"#Ad_heading\").val()+'\",'+\r\n     '\"Pflanzenart\":\"'+$(\"#Ad_species\").val()+'\",'+\r\n     '\"Beschreibung\":\"'+$(\"#Ad_description\").val()+'\",'+\r\n     '\"Email\":\"'+$(\"#Ad_email\").val()+\r\n-\r\n     '\"}';\r\n     console.log(\"add\"+ jsonstring);\r\n     $.get(\"https://webtechlecture.appspot.com/cloudstore/add?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_&jsonstring=\"+encodeURI(jsonstring),function(response)\r\n     {\r\n@@ -147,5 +146,20 @@\n         .setLatLng(e.latlng)\r\n         .setContent(\"Kooridnaten deiner Anzeige:\" + e.latlng.toString())\r\n         .openOn(mymap);\r\n         return(e.latlng)\r\n+}\r\n+\r\n+function testAdd(){\r\n+\r\n+    function addAll()\r\n+    {\r\n+        var jsonstring=  \r\n+        \r\n+        '{\"Titel\":\"'+ onMapClick+'\"}';\r\n+        console.log(\"add\"+ jsonstring);\r\n+        $.get(\"https://webtechlecture.appspot.com/cloudstore/add?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_&jsonstring=\"+encodeURI(jsonstring),function(response)\r\n+        {\r\n+        console.log(response);\r\n+        });\r\n+    }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1641329810253,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -150,16 +150,15 @@\n }\r\n \r\n function testAdd(){\r\n \r\n-    function addAll()\r\n-    {\r\n+    \r\n         var jsonstring=  \r\n         \r\n         '{\"Titel\":\"'+ onMapClick+'\"}';\r\n         console.log(\"add\"+ jsonstring);\r\n         $.get(\"https://webtechlecture.appspot.com/cloudstore/add?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_&jsonstring=\"+encodeURI(jsonstring),function(response)\r\n         {\r\n         console.log(response);\r\n         });\r\n-    }\r\n+    \r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1641329873240,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -145,9 +145,9 @@\n     popup\r\n         .setLatLng(e.latlng)\r\n         .setContent(\"Kooridnaten deiner Anzeige:\" + e.latlng.toString())\r\n         .openOn(mymap);\r\n-        return(e.latlng)\r\n+        console.log(e.latlng)\r\n }\r\n \r\n function testAdd(){\r\n \r\n"
+                },
+                {
+                    "date": 1641329937007,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -145,9 +145,9 @@\n     popup\r\n         .setLatLng(e.latlng)\r\n         .setContent(\"Kooridnaten deiner Anzeige:\" + e.latlng.toString())\r\n         .openOn(mymap);\r\n-        console.log(e.latlng)\r\n+        return(e.latlng)\r\n }\r\n \r\n function testAdd(){\r\n \r\n"
+                },
+                {
+                    "date": 1641329981712,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -153,12 +153,12 @@\n \r\n     \r\n         var jsonstring=  \r\n         \r\n-        '{\"Titel\":\"'+ onMapClick+'\"}';\r\n-        console.log(\"add\"+ jsonstring);\r\n-        $.get(\"https://webtechlecture.appspot.com/cloudstore/add?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_&jsonstring=\"+encodeURI(jsonstring),function(response)\r\n-        {\r\n-        console.log(response);\r\n-        });\r\n+        console.log('{\"Titel\":\"'+ onMapClick+'\"}')\r\n+        // console.log(\"add\"+ jsonstring);\r\n+        // $.get(\"https://webtechlecture.appspot.com/cloudstore/add?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_&jsonstring=\"+encodeURI(jsonstring),function(response)\r\n+        // {\r\n+        // console.log(response);\r\n+        // });\r\n     \r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1641330081419,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -145,9 +145,9 @@\n     popup\r\n         .setLatLng(e.latlng)\r\n         .setContent(\"Kooridnaten deiner Anzeige:\" + e.latlng.toString())\r\n         .openOn(mymap);\r\n-        return(e.latlng)\r\n+        lat[0] = e.latlng\r\n }\r\n \r\n function testAdd(){\r\n \r\n"
+                },
+                {
+                    "date": 1641330091854,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -146,8 +146,9 @@\n         .setLatLng(e.latlng)\r\n         .setContent(\"Kooridnaten deiner Anzeige:\" + e.latlng.toString())\r\n         .openOn(mymap);\r\n         lat[0] = e.latlng\r\n+        console.log(lat[0])\r\n }\r\n \r\n function testAdd(){\r\n \r\n"
+                },
+                {
+                    "date": 1641330127819,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -146,9 +146,9 @@\n         .setLatLng(e.latlng)\r\n         .setContent(\"Kooridnaten deiner Anzeige:\" + e.latlng.toString())\r\n         .openOn(mymap);\r\n         lat[0] = e.latlng\r\n-        console.log(lat[0])\r\n+        console.log(lat[0].Lat)\r\n }\r\n \r\n function testAdd(){\r\n \r\n"
+                },
+                {
+                    "date": 1641330135497,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -146,9 +146,9 @@\n         .setLatLng(e.latlng)\r\n         .setContent(\"Kooridnaten deiner Anzeige:\" + e.latlng.toString())\r\n         .openOn(mymap);\r\n         lat[0] = e.latlng\r\n-        console.log(lat[0].Lat)\r\n+        console.log(lat[0])\r\n }\r\n \r\n function testAdd(){\r\n \r\n"
+                },
+                {
+                    "date": 1641330141269,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -146,9 +146,9 @@\n         .setLatLng(e.latlng)\r\n         .setContent(\"Kooridnaten deiner Anzeige:\" + e.latlng.toString())\r\n         .openOn(mymap);\r\n         lat[0] = e.latlng\r\n-        console.log(lat[0])\r\n+        console.log(lat[0].lat)\r\n }\r\n \r\n function testAdd(){\r\n \r\n"
+                },
+                {
+                    "date": 1641330185652,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -154,9 +154,9 @@\n \r\n     \r\n         var jsonstring=  \r\n         \r\n-        console.log('{\"Titel\":\"'+ onMapClick+'\"}')\r\n+        console.log('{\"Titel\":\"'+ lat[0].lat+'\"}')\r\n         // console.log(\"add\"+ jsonstring);\r\n         // $.get(\"https://webtechlecture.appspot.com/cloudstore/add?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_&jsonstring=\"+encodeURI(jsonstring),function(response)\r\n         // {\r\n         // console.log(response);\r\n"
+                },
+                {
+                    "date": 1641330273641,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,8 +36,11 @@\n     '{\"Titel\":\"'+$(\"#Ad_heading\").val()+'\",'+\r\n     '\"Pflanzenart\":\"'+$(\"#Ad_species\").val()+'\",'+\r\n     '\"Beschreibung\":\"'+$(\"#Ad_description\").val()+'\",'+\r\n     '\"Email\":\"'+$(\"#Ad_email\").val()+\r\n+    '\"lat\":\"'+lat[0].lat+'\",'+\r\n+    '\"lng\":\"'+lat[0].lng+'\",'+\r\n+\r\n     '\"}';\r\n     console.log(\"add\"+ jsonstring);\r\n     $.get(\"https://webtechlecture.appspot.com/cloudstore/add?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_&jsonstring=\"+encodeURI(jsonstring),function(response)\r\n     {\r\n"
+                },
+                {
+                    "date": 1641330372894,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -151,18 +151,4 @@\n         .openOn(mymap);\r\n         lat[0] = e.latlng\r\n         console.log(lat[0].lat)\r\n }\r\n-\r\n-function testAdd(){\r\n-\r\n-    \r\n-        var jsonstring=  \r\n-        \r\n-        console.log('{\"Titel\":\"'+ lat[0].lat+'\"}')\r\n-        // console.log(\"add\"+ jsonstring);\r\n-        // $.get(\"https://webtechlecture.appspot.com/cloudstore/add?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_&jsonstring=\"+encodeURI(jsonstring),function(response)\r\n-        // {\r\n-        // console.log(response);\r\n-        // });\r\n-    \r\n-}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1641330412230,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,8 @@\n }\t\r\n \r\n function addAll()\r\n {\r\n-    console.log(onMapClick)\r\n     var jsonstring=  \r\n     \r\n     '{\"Titel\":\"'+$(\"#Ad_heading\").val()+'\",'+\r\n     '\"Pflanzenart\":\"'+$(\"#Ad_species\").val()+'\",'+\r\n"
+                },
+                {
+                    "date": 1641330484531,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n     \r\n     '{\"Titel\":\"'+$(\"#Ad_heading\").val()+'\",'+\r\n     '\"Pflanzenart\":\"'+$(\"#Ad_species\").val()+'\",'+\r\n     '\"Beschreibung\":\"'+$(\"#Ad_description\").val()+'\",'+\r\n-    '\"Email\":\"'+$(\"#Ad_email\").val()+\r\n+    '\"Email\":\"'+$(\"#Ad_email\").val()+'\",'\r\n     '\"lat\":\"'+lat[0].lat+'\",'+\r\n     '\"lng\":\"'+lat[0].lng+'\",'+\r\n \r\n     '\"}';\r\n"
+                },
+                {
+                    "date": 1641330500092,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n     \r\n     '{\"Titel\":\"'+$(\"#Ad_heading\").val()+'\",'+\r\n     '\"Pflanzenart\":\"'+$(\"#Ad_species\").val()+'\",'+\r\n     '\"Beschreibung\":\"'+$(\"#Ad_description\").val()+'\",'+\r\n-    '\"Email\":\"'+$(\"#Ad_email\").val()+'\",'\r\n+    '\"Email\":\"'+$(\"#Ad_email\").val()+'\",'+\r\n     '\"lat\":\"'+lat[0].lat+'\",'+\r\n     '\"lng\":\"'+lat[0].lng+'\",'+\r\n \r\n     '\"}';\r\n"
+                },
+                {
+                    "date": 1641330528275,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n     '\"Pflanzenart\":\"'+$(\"#Ad_species\").val()+'\",'+\r\n     '\"Beschreibung\":\"'+$(\"#Ad_description\").val()+'\",'+\r\n     '\"Email\":\"'+$(\"#Ad_email\").val()+'\",'+\r\n     '\"lat\":\"'+lat[0].lat+'\",'+\r\n-    '\"lng\":\"'+lat[0].lng+'\",'+\r\n+    '\"lng\":\"'+lat[0].lng+\r\n \r\n     '\"}';\r\n     console.log(\"add\"+ jsonstring);\r\n     $.get(\"https://webtechlecture.appspot.com/cloudstore/add?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_&jsonstring=\"+encodeURI(jsonstring),function(response)\r\n"
                 }
             ],
             "date": 1640256408490,

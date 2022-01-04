@@ -30,15 +30,13 @@ function del()
 
 function addAll()
 {
+    console.log(onMapClick)
     var jsonstring=  
     
     '{"Titel":"'+$("#Ad_heading").val()+'",'+
     '"Pflanzenart":"'+$("#Ad_species").val()+'",'+
     '"Beschreibung":"'+$("#Ad_description").val()+'",'+
-    '"Email":"'+$("#Ad_email").val()+'",'+
-    '"lat":"'+lat[0].lat+'",'+
-    '"lng":"'+lat[0].lng+
-
+    '"Email":"'+$("#Ad_email").val()+
     '"}';
     console.log("add"+ jsonstring);
     $.get("https://webtechlecture.appspot.com/cloudstore/add?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_&jsonstring="+encodeURI(jsonstring),function(response)
@@ -149,5 +147,19 @@ function onMapClick(e) {
         .setContent("Kooridnaten deiner Anzeige:" + e.latlng.toString())
         .openOn(mymap);
         lat[0] = e.latlng
-        console.log(lat[0].lat)
+        console.log(lat[0])
+}
+
+function testAdd(){
+
+    
+        var jsonstring=  
+        
+        console.log('{"Titel":"'+ onMapClick+'"}')
+        // console.log("add"+ jsonstring);
+        // $.get("https://webtechlecture.appspot.com/cloudstore/add?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_&jsonstring="+encodeURI(jsonstring),function(response)
+        // {
+        // console.log(response);
+        // });
+    
 }
