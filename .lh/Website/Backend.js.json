@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 161,
+            "activePatchIndex": 168,
             "patches": [
                 {
                     "date": 1640256408490,
@@ -652,6 +652,34 @@
                 {
                     "date": 1641294539417,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -122,27 +122,8 @@\n                 document.getElementById(\"Card1title\").innerHTML = dat[0].Titel;\r\n                 document.getElementById(\"Card1subtitle\").innerHTML = dat[0].Pflanzenart;\r\n                 document.getElementById(\"Card1list1\").innerHTML = dat[0].Email;\r\n                 document.getElementById(\"Card1text\").innerHTML = dat[0].Beschreibung;\r\n-\r\n-                // var heading1 = document.getElementById(\"heading1\");\r\n-                // heading1.firstChild.nodeValue = dat[0].Titel;\r\n-\r\n-                // var btn = document.createElement(\"div\");\r\n-                // btn.setAttribute(\"id\", \"Test11\");\r\n-                // btn.className = 'container-md';\r\n-                // btn.innerHTML = \"CLICK ME\";\r\n-                // document.body.appendChild(btn);\r\n-                // document.getElementById(\"Test11\").style.width = \"300px\";\r\n-                // document.getElementById(\"Test11\").style.length = \"300px\";\r\n-                // document.getElementById(\"Test11\").src= \"./Design-Ressourcen/Bilder/hand-saplings.jpg\";\r\n-            \r\n-                // var x = document.getElementById(\"Test11\").firstChild;\r\n-                // var txt = \"\";\r\n-                // txt += \"Titel: \" + dat[0].Titel + \"<br>\";\r\n-                // txt += \"Pflanzenart: \" + dat[0].Pflanzenart + \"<br>\";\r\n-                // txt += \"Email: \" + dat[0].Email;\r\n-                // document.getElementById(\"Test11\").innerHTML = txt;\r\n                 \r\n             }\r\n          \r\n         };\r\n"
+                },
+                {
+                    "date": 1641295119614,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -116,9 +116,9 @@\n                 ||data[i].jsonstring.Beschreibung == nam\r\n                 ||data[i].jsonstring.Titel == nam)\r\n             {\r\n                 dat.push(data[i].jsonstring);\r\n-                console.log(dat[0]);\r\n+                console.log(dat[1]);\r\n                 document.getElementById(\"Card1\").removeAttribute(\"hidden\");\r\n                 document.getElementById(\"Card1title\").innerHTML = dat[0].Titel;\r\n                 document.getElementById(\"Card1subtitle\").innerHTML = dat[0].Pflanzenart;\r\n                 document.getElementById(\"Card1list1\").innerHTML = dat[0].Email;\r\n"
+                },
+                {
+                    "date": 1641295209056,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -116,9 +116,12 @@\n                 ||data[i].jsonstring.Beschreibung == nam\r\n                 ||data[i].jsonstring.Titel == nam)\r\n             {\r\n                 dat.push(data[i].jsonstring);\r\n+\r\n+                for (var k = 0; k <length(dat); k++)\r\n                 console.log(dat[1]);\r\n+\r\n                 document.getElementById(\"Card1\").removeAttribute(\"hidden\");\r\n                 document.getElementById(\"Card1title\").innerHTML = dat[0].Titel;\r\n                 document.getElementById(\"Card1subtitle\").innerHTML = dat[0].Pflanzenart;\r\n                 document.getElementById(\"Card1list1\").innerHTML = dat[0].Email;\r\n"
+                },
+                {
+                    "date": 1641295234644,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -117,10 +117,10 @@\n                 ||data[i].jsonstring.Titel == nam)\r\n             {\r\n                 dat.push(data[i].jsonstring);\r\n \r\n-                for (var k = 0; k <length(dat); k++)\r\n-                console.log(dat[1]);\r\n+                for (var k = 0; k < dat.lenght; k++)\r\n+                console.log(dat[k]);\r\n \r\n                 document.getElementById(\"Card1\").removeAttribute(\"hidden\");\r\n                 document.getElementById(\"Card1title\").innerHTML = dat[0].Titel;\r\n                 document.getElementById(\"Card1subtitle\").innerHTML = dat[0].Pflanzenart;\r\n"
+                },
+                {
+                    "date": 1641295262747,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -118,9 +118,9 @@\n             {\r\n                 dat.push(data[i].jsonstring);\r\n \r\n                 for (var k = 0; k < dat.lenght; k++)\r\n-                console.log(dat[k]);\r\n+                console.log(dat[0]);\r\n \r\n                 document.getElementById(\"Card1\").removeAttribute(\"hidden\");\r\n                 document.getElementById(\"Card1title\").innerHTML = dat[0].Titel;\r\n                 document.getElementById(\"Card1subtitle\").innerHTML = dat[0].Pflanzenart;\r\n"
+                },
+                {
+                    "date": 1641295351359,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -117,9 +117,9 @@\n                 ||data[i].jsonstring.Titel == nam)\r\n             {\r\n                 dat.push(data[i].jsonstring);\r\n \r\n-                for (var k = 0; k < dat.lenght; k++)\r\n+                for (var k = 0; k < dat.lenght+1; k++)\r\n                 console.log(dat[0]);\r\n \r\n                 document.getElementById(\"Card1\").removeAttribute(\"hidden\");\r\n                 document.getElementById(\"Card1title\").innerHTML = dat[0].Titel;\r\n"
+                },
+                {
+                    "date": 1641295370749,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -117,9 +117,9 @@\n                 ||data[i].jsonstring.Titel == nam)\r\n             {\r\n                 dat.push(data[i].jsonstring);\r\n \r\n-                for (var k = 0; k < dat.lenght+1; k++)\r\n+                for (var i = 0; i < dat.lenght+1; i++)\r\n                 console.log(dat[0]);\r\n \r\n                 document.getElementById(\"Card1\").removeAttribute(\"hidden\");\r\n                 document.getElementById(\"Card1title\").innerHTML = dat[0].Titel;\r\n"
+                },
+                {
+                    "date": 1641295739985,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -117,10 +117,10 @@\n                 ||data[i].jsonstring.Titel == nam)\r\n             {\r\n                 dat.push(data[i].jsonstring);\r\n \r\n-                for (var i = 0; i < dat.lenght+1; i++)\r\n-                console.log(dat[0]);\r\n+                // for (var i = 0; i < dat.lenght+1; i++)\r\n+                // console.log(dat[0]);\r\n \r\n                 document.getElementById(\"Card1\").removeAttribute(\"hidden\");\r\n                 document.getElementById(\"Card1title\").innerHTML = dat[0].Titel;\r\n                 document.getElementById(\"Card1subtitle\").innerHTML = dat[0].Pflanzenart;\r\n"
                 }
             ],
             "date": 1640256408490,

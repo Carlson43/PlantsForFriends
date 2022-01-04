@@ -118,8 +118,8 @@ function search_and_display()
             {
                 dat.push(data[i].jsonstring);
 
-                // for (var i = 0; i < dat.lenght+1; i++)
-                // console.log(dat[0]);
+                for (var k = 0; k < dat.lenght+1; k++)
+                console.log(dat[0]);
 
                 document.getElementById("Card1").removeAttribute("hidden");
                 document.getElementById("Card1title").innerHTML = dat[0].Titel;
