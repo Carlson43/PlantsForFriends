@@ -1,0 +1,18 @@
+{
+    "sourceFile": ".vscode/settings.json",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1641304800754,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1641304800754,
+            "name": "Commit-0",
+            "content": "{\r\n    \"python.pythonPath\": \"C:\\\\Users\\\\thielkat\\\\AppData\\\\Local\\\\Continuum\\\\anaconda3\\\\envs\\\\Fallstudie\\\\python.exe\",\r\n    \"local-history.browser.descending\": false\r\n}"
+        }
+    ]
+}

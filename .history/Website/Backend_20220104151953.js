@@ -121,17 +121,19 @@ function search_and_display()
               
                 
             }
-            
+            if (dat !== null)
+                 
+            {
+            for (var k = 0; k < dat.length; k++)
+            console.log(dat[k].Titel)        ;
+            document.getElementById("Card0").removeAttribute("hidden");
+            document.getElementById("Card"+ Number(k)+ "title").innerHTML = String(dat[k].Titel);
+            document.getElementById("Card"+ Number(k)+ "subtitle").innerHTML = dat[k].Pflanzenart;
+            document.getElementById("Card"+ Number(k)+ "list1").innerHTML = dat[k].Email;
+            document.getElementById("Card"+ Number(k)+ "text").innerHTML = dat[k].Beschreibung;    
+            }
         };  
-     
-        for (var k = 0; k < dat.length; k++)
-        console.log(dat[k].Titel)        ;
-        document.getElementById("Card0").removeAttribute("hidden");
-        document.getElementById("Card"+ Number(k)+ "title").innerHTML = String(dat[k].Titel);
-        document.getElementById("Card"+ Number(k)+ "subtitle").innerHTML = dat[k].Pflanzenart;
-        document.getElementById("Card"+ Number(k)+ "list1").innerHTML = dat[k].Email;
-        document.getElementById("Card"+ Number(k)+ "text").innerHTML = dat[k].Beschreibung;    
-        
+    
     
 
 
