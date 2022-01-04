@@ -118,26 +118,11 @@ function search_and_display()
             {
                 dat.push(data[i].jsonstring);
                 console.log(dat[0]);
-                var div = document.getElementById('Card1');
-                div.style.visibility='visible'
-                // var heading1 = document.getElementById("heading1");
-                // heading1.firstChild.nodeValue = dat[0].Titel;
-
-                // var btn = document.createElement("div");
-                // btn.setAttribute("id", "Test11");
-                // btn.className = 'container-md';
-                // btn.innerHTML = "CLICK ME";
-                // document.body.appendChild(btn);
-                // document.getElementById("Test11").style.width = "300px";
-                // document.getElementById("Test11").style.length = "300px";
-                // document.getElementById("Test11").src= "./Design-Ressourcen/Bilder/hand-saplings.jpg";
-            
-                // var x = document.getElementById("Test11").firstChild;
-                // var txt = "";
-                // txt += "Titel: " + dat[0].Titel + "<br>";
-                // txt += "Pflanzenart: " + dat[0].Pflanzenart + "<br>";
-                // txt += "Email: " + dat[0].Email;
-                // document.getElementById("Test11").innerHTML = txt;
+                document.getElementById("Card1").removeAttribute("hidden");
+                document.getElementById("Card1title").innerHTML = dat[0].Titel;
+                document.getElementById("Card1subtitle").innerHTML = dat[0].Pflanzenart;
+                document.getElementById("Card1list1").innerHTML = dat[0].Email;
+                document.getElementById("Card1text").innerHTML = dat[0].Beschreibung;
                 
             }
          
@@ -147,20 +132,5 @@ function search_and_display()
 
 function addElement(){
 
-    var btn = document.createElement("div");
-    btn.setAttribute("id", "Test11");
-    btn.className = 'container-md';
-    btn.innerHTML = "CLICK ME";
-    document.body.appendChild(btn);
-    document.getElementById("Test11").style.width = "300px";
-    document.getElementById("Test11").style.length = "300px";
-    document.getElementById("Test11").src= "./Design-Ressourcen/Bilder/hand-saplings.jpg";
-
-    var x = document.getElementById("Test11").firstChild;
-    var txt = "";
-    txt += "Titel: " + x.nodeName + "<br>";
-    txt += "Pflanze: " + x.nodeValue + "<br>";
-    txt += "Email: " + x.nodeType;
-    document.getElementById("Test11").innerHTML = txt;
-    
+ 
 }
