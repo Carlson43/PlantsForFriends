@@ -117,8 +117,15 @@ function search_and_display()
                 ||data[i].jsonstring.Titel == nam)
             {
                 dat.push(data[i].jsonstring);
-                var heading1 = document.getElementById("heading1");
-                heading1.firstChild.nodeValue = dat[0].Titel;
+
+                // for (var i = 0; i < dat.lenght+1; i++)
+                // console.log(dat[0]);
+
+                document.getElementById("Card1").removeAttribute("hidden");
+                document.getElementById("Card1title").innerHTML = dat[0].Titel;
+                document.getElementById("Card1subtitle").innerHTML = dat[0].Pflanzenart;
+                document.getElementById("Card1list1").innerHTML = dat[0].Email;
+                document.getElementById("Card1text").innerHTML = dat[0].Beschreibung;
                 
             }
          
@@ -126,3 +133,7 @@ function search_and_display()
     });    
 }
 
+function addElement(){
+
+ 
+}
