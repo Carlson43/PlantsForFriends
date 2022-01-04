@@ -117,17 +117,19 @@ function search_and_display()
                 ||data[i].jsonstring.Titel == nam)
             {
                 dat.push(data[i].jsonstring);
-              
-            }
-        };
-        for (var k = 0; k < dat.length; k++)
-        console.log(dat[k]);
 
-        document.getElementById("Card"+ Number(k)).removeAttribute("hidden");
-        document.getElementById("Card"+Number(k)+"title").innerHTML = dat[0].Titel;
-        document.getElementById("Card"+ Number(k)+ "subtitle").innerHTML = dat[0].Pflanzenart;
-        document.getElementById("Card"+ Number(k)+ "list1").innerHTML = dat[0].Email;
-        document.getElementById("Card"+ Number(k)+ "text").innerHTML = dat[0].Beschreibung;          
+                for (var i = 0; i < dat.lenght+1; i++)
+                console.log(dat.length);
+
+                document.getElementById("Card1").removeAttribute("hidden");
+                document.getElementById("Card1title").innerHTML = dat[0].Titel;
+                document.getElementById("Card1subtitle").innerHTML = dat[0].Pflanzenart;
+                document.getElementById("Card1list1").innerHTML = dat[0].Email;
+                document.getElementById("Card1text").innerHTML = dat[0].Beschreibung;
+                
+            }
+         
+        };
     });    
 }
 
