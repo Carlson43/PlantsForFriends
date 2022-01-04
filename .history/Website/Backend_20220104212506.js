@@ -102,7 +102,7 @@ function search()
 function search_and_display()
 {
     var nam = String($("#search_term").val())
-    var dat = []
+
     var data = []
     $.get("https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_",function(response)
     { 
@@ -116,16 +116,15 @@ function search_and_display()
                 ||data[i].jsonstring.Beschreibung == nam
                 ||data[i].jsonstring.Titel == nam)
             {
-                dat.push(data[i].jsonstring);
-
-                for (var k = 0; k < dat.length; k++){
+                var dat = []
+                dat.push(data[i].jsonstring)   
+                for (var k = 0; k < dat.length; k++)
                 console.log(dat[k].Titel)        ;
-                document.getElementById("Card"+ Number(k)).removeAttribute("hidden");
-                document.getElementById("Card"+ Number(k)+ "title").innerHTML = dat[k].Titel;
+                document.getElementById("Card0").removeAttribute("hidden");
+                document.getElementById("Card0title").innerHTML = dat[k].Titel;
                 document.getElementById("Card"+ Number(k)+ "subtitle").innerHTML = dat[k].Pflanzenart;
                 document.getElementById("Card"+ Number(k)+ "list1").innerHTML = dat[k].Email;
-                document.getElementById("Card"+ Number(k)+ "text").innerHTML = dat[k].Beschreibung;
-                }
+                document.getElementById("Card"+ Number(k)+ "text").innerHTML = dat[k].Beschreibung;    
                 
             }
             

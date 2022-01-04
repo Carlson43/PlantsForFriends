@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 1,
+            "activePatchIndex": 2,
             "patches": [
                 {
                     "date": 1641305042435,
@@ -12,6 +12,10 @@
                 {
                     "date": 1641305057385,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -117,9 +117,9 @@\n                 <div class=\"card\" style=\"width: 18rem;\" id = \"Card0\" hidden>\r\n                     <img src=\"./Design-Ressourcen/Bilder/carrots.jpg\" class=\"card-img-top\" alt=\"...\">\r\n                     <div class=\"card-body\">\r\n                     <h5 class=\"card-title\" id = \"Card0title\">Card title</h5>\r\n-                    <h6 class=\"card-subtitle mb-2 text-muted\" id = \"Card1subtitle\">Card subtitle</h6>\r\n+                    <h6 class=\"card-subtitle mb-2 text-muted\" id = \"Card0subtitle\">Card subtitle</h6>\r\n                     <ul class=\"list-group list-group-flush\">\r\n                       <li class=\"list-group-item\" id = \"Card0list1\">Adress</li>\r\n                       <li class=\"list-group-item\">Cost / Pricing</li>\r\n                     </ul>  \r\n"
+                },
+                {
+                    "date": 1641328320968,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -129,17 +129,19 @@\n                 </div>\r\n           </div>\r\n           <div class=\"col\">\r\n             <!-- Card Anzeige -->\r\n-            <div class=\"card\" style=\"width: 18rem;\" id = \"Card2\" hidden>\r\n+            <div class=\"card\" style=\"width: 18rem;\" id = \"Card1\" hidden>\r\n                 <img src=\"./Design-Ressourcen/Bilder/hand-saplings.jpg\" class=\"card-img-top\" alt=\"...\">\r\n                 <div class=\"card-body\">\r\n-                <h5 class=\"card-title\" id=\"heading1\">Card title</h5>\r\n+                <h5 class=\"card-title\" id=\"Card1title\">Card title</h5>\r\n+                <h6 class=\"card-subtitle mb-2 text-muted\" id = \"Card1subtitle\">Card subtitle</h6>\r\n+\r\n                 <ul class=\"list-group list-group-flush\">\r\n-                  <li class=\"list-group-item\">Adress</li>\r\n+                  <li class=\"list-group-item\" id = \"Card1list1\">Adress</li>\r\n                   <li class=\"list-group-item\">Cost / Pricing</li>\r\n                 </ul>  \r\n-                <p class=\"card-text\">Some quick example text to build on the card title and make up the bulk of the card's content.</p>\r\n+                <p class=\"card-text\" id = \"Card1text\">Some quick example text to build on the card title and make up the bulk of the card's content.</p>\r\n                 <a href=\"#\" class=\"btn btn-primary\">Go somewhere</a>\r\n                 </div>\r\n             </div>\r\n           </div>\r\n"
                 }
             ],
             "date": 1641305042435,

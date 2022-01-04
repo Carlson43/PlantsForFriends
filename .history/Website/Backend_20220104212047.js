@@ -116,16 +116,15 @@ function search_and_display()
                 ||data[i].jsonstring.Beschreibung == nam
                 ||data[i].jsonstring.Titel == nam)
             {
-                dat.push(data[i].jsonstring);
+                dat.push(data[i].jsonstring)   
 
-                for (var k = 0; k < dat.length; k++){
+                for (var k = 0; k < dat.length; k++)
                 console.log(dat[k].Titel)        ;
-                document.getElementById("Card"+ Number(k)).removeAttribute("hidden");
-                document.getElementById("Card"+ Number(k)+ "title").innerHTML = dat[k].Titel;
-                document.getElementById("Card"+ Number(k)+ "subtitle").innerHTML = dat[k].Pflanzenart;
-                document.getElementById("Card"+ Number(k)+ "list1").innerHTML = dat[k].Email;
-                document.getElementById("Card"+ Number(k)+ "text").innerHTML = dat[k].Beschreibung;
-                }
+                document.getElementById("Card0").removeAttribute("hidden");
+                document.getElementById("Card0title").innerHTML = data[i].jsonstring.Titel;
+                document.getElementById("Card0subtitle").innerHTML = data[i].jsonstring.Pflanzenart;
+                document.getElementById("Card0list1").innerHTML = data[i].jsonstring.Email;
+                document.getElementById("Card0text").innerHTML = data[i].jsonstring.Beschreibung;    
                 
             }
             
