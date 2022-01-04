@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 152,
+            "activePatchIndex": 161,
             "patches": [
                 {
                     "date": 1640256408490,
@@ -616,6 +616,42 @@
                 {
                     "date": 1641247038061,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -116,10 +116,11 @@\n                 ||data[i].jsonstring.Beschreibung == nam\r\n                 ||data[i].jsonstring.Titel == nam)\r\n             {\r\n                 dat.push(data[i].jsonstring);\r\n-                console.log(dat[0])\r\n-                [\"Card1\"].style.visibility='visible'\r\n+                console.log(dat[0]);\r\n+                var div = document.getElementById('Card1');\r\n+                div.style.visibility='visible'\r\n                 // var heading1 = document.getElementById(\"heading1\");\r\n                 // heading1.firstChild.nodeValue = dat[0].Titel;\r\n \r\n                 // var btn = document.createElement(\"div\");\r\n"
+                },
+                {
+                    "date": 1641293611053,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -146,21 +146,8 @@\n }\r\n \r\n function addElement(){\r\n \r\n-    var btn = document.createElement(\"div\");\r\n-    btn.setAttribute(\"id\", \"Test11\");\r\n-    btn.className = 'container-md';\r\n-    btn.innerHTML = \"CLICK ME\";\r\n-    document.body.appendChild(btn);\r\n-    document.getElementById(\"Test11\").style.width = \"300px\";\r\n-    document.getElementById(\"Test11\").style.length = \"300px\";\r\n-    document.getElementById(\"Test11\").src= \"./Design-Ressourcen/Bilder/hand-saplings.jpg\";\r\n-\r\n-    var x = document.getElementById(\"Test11\").firstChild;\r\n-    var txt = \"\";\r\n-    txt += \"Titel: \" + x.nodeName + \"<br>\";\r\n-    txt += \"Pflanze: \" + x.nodeValue + \"<br>\";\r\n-    txt += \"Email: \" + x.nodeType;\r\n-    document.getElementById(\"Test11\").innerHTML = txt;\r\n+    var div = document.getElementById('Card1');\r\n+    div.style.visibility='visible'\r\n     \r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1641293705080,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -146,8 +146,6 @@\n }\r\n \r\n function addElement(){\r\n \r\n-    var div = document.getElementById('Card1');\r\n-    div.style.visibility='visible'\r\n-    \r\n+    document.getElementById(\"Card1\").removeAttribute(\"hidden\");\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1641293734361,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -117,10 +117,9 @@\n                 ||data[i].jsonstring.Titel == nam)\r\n             {\r\n                 dat.push(data[i].jsonstring);\r\n                 console.log(dat[0]);\r\n-                var div = document.getElementById('Card1');\r\n-                div.style.visibility='visible'\r\n+                document.getElementById(\"Card1\").removeAttribute(\"hidden\");\r\n                 // var heading1 = document.getElementById(\"heading1\");\r\n                 // heading1.firstChild.nodeValue = dat[0].Titel;\r\n \r\n                 // var btn = document.createElement(\"div\");\r\n@@ -146,6 +145,6 @@\n }\r\n \r\n function addElement(){\r\n \r\n-    document.getElementById(\"Card1\").removeAttribute(\"hidden\");\r\n+ \r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1641293856017,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -118,8 +118,10 @@\n             {\r\n                 dat.push(data[i].jsonstring);\r\n                 console.log(dat[0]);\r\n                 document.getElementById(\"Card1\").removeAttribute(\"hidden\");\r\n+                document.getElementById(\"Card1title\").innerHTML = dat[0].Titel;\r\n+\r\n                 // var heading1 = document.getElementById(\"heading1\");\r\n                 // heading1.firstChild.nodeValue = dat[0].Titel;\r\n \r\n                 // var btn = document.createElement(\"div\");\r\n"
+                },
+                {
+                    "date": 1641293911828,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -119,8 +119,9 @@\n                 dat.push(data[i].jsonstring);\r\n                 console.log(dat[0]);\r\n                 document.getElementById(\"Card1\").removeAttribute(\"hidden\");\r\n                 document.getElementById(\"Card1title\").innerHTML = dat[0].Titel;\r\n+                document.getElementById(\"Card1title\").innerHTML = dat[0].Pflanzenart;\r\n \r\n                 // var heading1 = document.getElementById(\"heading1\");\r\n                 // heading1.firstChild.nodeValue = dat[0].Titel;\r\n \r\n"
+                },
+                {
+                    "date": 1641293920912,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -119,9 +119,9 @@\n                 dat.push(data[i].jsonstring);\r\n                 console.log(dat[0]);\r\n                 document.getElementById(\"Card1\").removeAttribute(\"hidden\");\r\n                 document.getElementById(\"Card1title\").innerHTML = dat[0].Titel;\r\n-                document.getElementById(\"Card1title\").innerHTML = dat[0].Pflanzenart;\r\n+                document.getElementById(\"Card1subtitle\").innerHTML = dat[0].Pflanzenart;\r\n \r\n                 // var heading1 = document.getElementById(\"heading1\");\r\n                 // heading1.firstChild.nodeValue = dat[0].Titel;\r\n \r\n"
+                },
+                {
+                    "date": 1641293994115,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -120,8 +120,9 @@\n                 console.log(dat[0]);\r\n                 document.getElementById(\"Card1\").removeAttribute(\"hidden\");\r\n                 document.getElementById(\"Card1title\").innerHTML = dat[0].Titel;\r\n                 document.getElementById(\"Card1subtitle\").innerHTML = dat[0].Pflanzenart;\r\n+                document.getElementById(\"Card1list1\").innerHTML = dat[0].Email;\r\n \r\n                 // var heading1 = document.getElementById(\"heading1\");\r\n                 // heading1.firstChild.nodeValue = dat[0].Titel;\r\n \r\n"
+                },
+                {
+                    "date": 1641294117848,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -121,8 +121,9 @@\n                 document.getElementById(\"Card1\").removeAttribute(\"hidden\");\r\n                 document.getElementById(\"Card1title\").innerHTML = dat[0].Titel;\r\n                 document.getElementById(\"Card1subtitle\").innerHTML = dat[0].Pflanzenart;\r\n                 document.getElementById(\"Card1list1\").innerHTML = dat[0].Email;\r\n+                document.getElementById(\"Card1text\").innerHTML = dat[0].Beschreibung;\r\n \r\n                 // var heading1 = document.getElementById(\"heading1\");\r\n                 // heading1.firstChild.nodeValue = dat[0].Titel;\r\n \r\n"
+                },
+                {
+                    "date": 1641294539417,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -122,27 +122,8 @@\n                 document.getElementById(\"Card1title\").innerHTML = dat[0].Titel;\r\n                 document.getElementById(\"Card1subtitle\").innerHTML = dat[0].Pflanzenart;\r\n                 document.getElementById(\"Card1list1\").innerHTML = dat[0].Email;\r\n                 document.getElementById(\"Card1text\").innerHTML = dat[0].Beschreibung;\r\n-\r\n-                // var heading1 = document.getElementById(\"heading1\");\r\n-                // heading1.firstChild.nodeValue = dat[0].Titel;\r\n-\r\n-                // var btn = document.createElement(\"div\");\r\n-                // btn.setAttribute(\"id\", \"Test11\");\r\n-                // btn.className = 'container-md';\r\n-                // btn.innerHTML = \"CLICK ME\";\r\n-                // document.body.appendChild(btn);\r\n-                // document.getElementById(\"Test11\").style.width = \"300px\";\r\n-                // document.getElementById(\"Test11\").style.length = \"300px\";\r\n-                // document.getElementById(\"Test11\").src= \"./Design-Ressourcen/Bilder/hand-saplings.jpg\";\r\n-            \r\n-                // var x = document.getElementById(\"Test11\").firstChild;\r\n-                // var txt = \"\";\r\n-                // txt += \"Titel: \" + dat[0].Titel + \"<br>\";\r\n-                // txt += \"Pflanzenart: \" + dat[0].Pflanzenart + \"<br>\";\r\n-                // txt += \"Email: \" + dat[0].Email;\r\n-                // document.getElementById(\"Test11\").innerHTML = txt;\r\n                 \r\n             }\r\n          \r\n         };\r\n"
                 }
             ],
             "date": 1640256408490,
