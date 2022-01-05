@@ -95,15 +95,25 @@ function Marker()
     mark = []
     $.get("https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_",function(response)
     {
-        for (var i = 0; i < response.length; i++){
-        data.push(response[i]);}
+        for (var i = 0; i < response.length; i++)
+        {
+        data.push(response[i])
+        }
         
         
         for(var k = 0; k< data.length;k++)
         {
-        if (data[k].jsonstring.lat !== "undefined"){
-        mark.push(L.marker(data[k].jsonstring.lat, (data[k].jsonstring.lng)).addTo(mymap));
-        mark[k].bindPopup("<b>Angebot 1</b><br>Angebot details. Evtl. eine Adresse").openPopup();
-        }}
-    });
-}
+            if ("lat" in data[k].jsonstring)
+            {
+            mark.push(data[k].jsonstring.lat, data[k].jsonstring.lng)
+            console.log(mark)
+            }
+        }
+
+        for (var j = 0; j < mark.length; j++){
+            
+        }
+
+
+    }
+)}
