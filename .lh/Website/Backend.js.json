@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 289,
+            "activePatchIndex": 291,
             "patches": [
                 {
                     "date": 1640256408490,
@@ -1164,6 +1164,14 @@
                 {
                     "date": 1641388891217,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -101,9 +101,9 @@\n         \r\n         for(var k = 0; k< data.length;k++)\r\n         {\r\n         if (data[k].jsonstring.lat !== \"undefined\"){\r\n-        mark.push(L.marker(data[k].jsonstring.lat, (data[k].jsonstring.lat)).addTo(mymap));\r\n+        mark.push(L.marker(data[k].jsonstring.lat, (data[k].jsonstring.lng)).addTo(mymap));\r\n         mark[k].bindPopup(\"<b>Angebot 1</b><br>Angebot details. Evtl. eine Adresse\").openPopup();\r\n         }}\r\n     });\r\n }\r\n"
+                },
+                {
+                    "date": 1641389073116,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,10 +60,10 @@\n                 console.log(dat[k].Titel)        ;\r\n                 document.getElementById(\"Card\"+ Number(k)).removeAttribute(\"hidden\");\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"title\").innerHTML = dat[k].Titel;\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"subtitle\").innerHTML = dat[k].Pflanzenart;\r\n-                document.getElementById(\"Card\"+ Number(k)+ \"list1\").innerHTML = dat[k].Email;\r\n-                document.getElementById(\"Card\"+ Number(k)+ \"text\").innerHTML = dat[k].Beschreibung;\r\n+                document.getElementById(\"Card\"+ Number(k)+ \"price\").innerHTML = dat[k].Email;\r\n+                document.getElementById(\"Card\"+ Number(k)+ \"loc\").innerHTML = dat[k].Beschreibung;\r\n                 }\r\n                 \r\n             }\r\n             \r\n"
+                },
+                {
+                    "date": 1641389716847,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -59,11 +59,11 @@\n                 for (var k = 0; k < dat.length; k++){\r\n                 console.log(dat[k].Titel)        ;\r\n                 document.getElementById(\"Card\"+ Number(k)).removeAttribute(\"hidden\");\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"title\").innerHTML = dat[k].Titel;\r\n-                document.getElementById(\"Card\"+ Number(k)+ \"subtitle\").innerHTML = dat[k].Pflanzenart;\r\n-                document.getElementById(\"Card\"+ Number(k)+ \"price\").innerHTML = dat[k].Email;\r\n-                document.getElementById(\"Card\"+ Number(k)+ \"loc\").innerHTML = dat[k].Beschreibung;\r\n+                document.getElementById(\"Card\"+ Number(k)+ \"price\").innerHTML = dat[k].Pflanzenart;\r\n+                document.getElementById(\"Card\"+ Number(k)+ \"loc\").innerHTML = dat[k].Email;\r\n+                document.getElementById(\"Card\"+ Number(k)+ \"text\").innerHTML = dat[k].Beschreibung;\r\n                 }\r\n                 \r\n             }\r\n             \r\n"
                 }
             ],
             "date": 1640256408490,
