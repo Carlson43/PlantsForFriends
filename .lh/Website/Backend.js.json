@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 300,
+            "activePatchIndex": 301,
             "patches": [
                 {
                     "date": 1640256408490,
@@ -1208,6 +1208,10 @@
                 {
                     "date": 1641390639833,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -108,6 +108,12 @@\n             mark.push(data[k].jsonstring.lat, data[k].jsonstring.lng)\r\n             console.log(mark)\r\n             }\r\n         }\r\n+\r\n+        for (var j = 0; j < mark.length; j++){\r\n+            \r\n+        }\r\n+\r\n+\r\n     }\r\n )}\r\n"
+                },
+                {
+                    "date": 1641390687326,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -104,15 +104,15 @@\n         for(var k = 0; k< data.length;k++)\r\n         {\r\n             if (\"lat\" in data[k].jsonstring)\r\n             {\r\n-            mark.push(data[k].jsonstring.lat, data[k].jsonstring.lng)\r\n+            mark.push(data[k].jsonstring.lat, data[k].jsonstring.lng,data[k].jsonstring.Pflanzenart)\r\n             console.log(mark)\r\n             }\r\n         }\r\n \r\n         for (var j = 0; j < mark.length; j++){\r\n-            \r\n+\r\n         }\r\n \r\n \r\n     }\r\n"
                 }
             ],
             "date": 1640256408490,
