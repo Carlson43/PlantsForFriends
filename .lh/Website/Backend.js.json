@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 291,
+            "activePatchIndex": 300,
             "patches": [
                 {
                     "date": 1640256408490,
@@ -1172,6 +1172,42 @@
                 {
                     "date": 1641389716847,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -59,11 +59,11 @@\n                 for (var k = 0; k < dat.length; k++){\r\n                 console.log(dat[k].Titel)        ;\r\n                 document.getElementById(\"Card\"+ Number(k)).removeAttribute(\"hidden\");\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"title\").innerHTML = dat[k].Titel;\r\n-                document.getElementById(\"Card\"+ Number(k)+ \"subtitle\").innerHTML = dat[k].Pflanzenart;\r\n-                document.getElementById(\"Card\"+ Number(k)+ \"price\").innerHTML = dat[k].Email;\r\n-                document.getElementById(\"Card\"+ Number(k)+ \"loc\").innerHTML = dat[k].Beschreibung;\r\n+                document.getElementById(\"Card\"+ Number(k)+ \"price\").innerHTML = dat[k].Pflanzenart;\r\n+                document.getElementById(\"Card\"+ Number(k)+ \"loc\").innerHTML = dat[k].Email;\r\n+                document.getElementById(\"Card\"+ Number(k)+ \"text\").innerHTML = dat[k].Beschreibung;\r\n                 }\r\n                 \r\n             }\r\n             \r\n"
+                },
+                {
+                    "date": 1641390030078,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -94,16 +94,19 @@\n     data = []\r\n     mark = []\r\n     $.get(\"https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_\",function(response)\r\n     {\r\n-        for (var i = 0; i < response.length; i++){\r\n-        data.push(response[i]);}\r\n+        for (var i = 0; i < response.length; i++)\r\n+        {\r\n+        data.push(response[i])\r\n+        }\r\n         \r\n         \r\n         for(var k = 0; k< data.length;k++)\r\n         {\r\n-        if (data[k].jsonstring.lat !== \"undefined\"){\r\n-        mark.push(L.marker(data[k].jsonstring.lat, (data[k].jsonstring.lng)).addTo(mymap));\r\n-        mark[k].bindPopup(\"<b>Angebot 1</b><br>Angebot details. Evtl. eine Adresse\").openPopup();\r\n-        }}\r\n-    });\r\n-}\r\n+            if (data[k].jsonstring.lat !== null)\r\n+            {\r\n+            mark.push(data[k].jsonstring.lat, data[k].jsonstring.lng)\r\n+            }\r\n+        }\r\n+    }\r\n+)}\r\n"
+                },
+                {
+                    "date": 1641390041610,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -105,8 +105,9 @@\n         {\r\n             if (data[k].jsonstring.lat !== null)\r\n             {\r\n             mark.push(data[k].jsonstring.lat, data[k].jsonstring.lng)\r\n+            console.log(mark)\r\n             }\r\n         }\r\n     }\r\n )}\r\n"
+                },
+                {
+                    "date": 1641390089976,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -99,12 +99,13 @@\n         {\r\n         data.push(response[i])\r\n         }\r\n         \r\n+        if (data[k].jsonstring.lat !== null)\r\n+        {\r\n+        for(var k = 0; k< data.length;k++)\r\n         \r\n-        for(var k = 0; k< data.length;k++)\r\n-        {\r\n-            if (data[k].jsonstring.lat !== null)\r\n+            \r\n             {\r\n             mark.push(data[k].jsonstring.lat, data[k].jsonstring.lng)\r\n             console.log(mark)\r\n             }\r\n"
+                },
+                {
+                    "date": 1641390112563,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -99,13 +99,12 @@\n         {\r\n         data.push(response[i])\r\n         }\r\n         \r\n-        if (data[k].jsonstring.lat !== null)\r\n+        \r\n+        for(var k = 0; k< data.length;k++)\r\n         {\r\n-        for(var k = 0; k< data.length;k++)\r\n-        \r\n-            \r\n+            if (data[k].jsonstring.lat !== null)\r\n             {\r\n             mark.push(data[k].jsonstring.lat, data[k].jsonstring.lng)\r\n             console.log(mark)\r\n             }\r\n"
+                },
+                {
+                    "date": 1641390209856,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -102,9 +102,9 @@\n         \r\n         \r\n         for(var k = 0; k< data.length;k++)\r\n         {\r\n-            if (data[k].jsonstring.lat !== null)\r\n+            if (data[k].jsonstring.lng !== null)\r\n             {\r\n             mark.push(data[k].jsonstring.lat, data[k].jsonstring.lng)\r\n             console.log(mark)\r\n             }\r\n"
+                },
+                {
+                    "date": 1641390247292,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -102,9 +102,9 @@\n         \r\n         \r\n         for(var k = 0; k< data.length;k++)\r\n         {\r\n-            if (data[k].jsonstring.lng !== null)\r\n+            if (data[k].jsonstring.lng == null)\r\n             {\r\n             mark.push(data[k].jsonstring.lat, data[k].jsonstring.lng)\r\n             console.log(mark)\r\n             }\r\n"
+                },
+                {
+                    "date": 1641390258837,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -102,9 +102,9 @@\n         \r\n         \r\n         for(var k = 0; k< data.length;k++)\r\n         {\r\n-            if (data[k].jsonstring.lng == null)\r\n+            if (data[k].jsonstring.lng !== null)\r\n             {\r\n             mark.push(data[k].jsonstring.lat, data[k].jsonstring.lng)\r\n             console.log(mark)\r\n             }\r\n"
+                },
+                {
+                    "date": 1641390439631,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -102,9 +102,9 @@\n         \r\n         \r\n         for(var k = 0; k< data.length;k++)\r\n         {\r\n-            if (data[k].jsonstring.lng !== null)\r\n+            if (\"lat\" in data[k].jsonstring)\r\n             {\r\n             mark.push(data[k].jsonstring.lat, data[k].jsonstring.lng)\r\n             console.log(mark)\r\n             }\r\n"
+                },
+                {
+                    "date": 1641390639833,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -108,6 +108,12 @@\n             mark.push(data[k].jsonstring.lat, data[k].jsonstring.lng)\r\n             console.log(mark)\r\n             }\r\n         }\r\n+\r\n+        for (var j = 0; j < mark.length; j++){\r\n+            \r\n+        }\r\n+\r\n+\r\n     }\r\n )}\r\n"
                 }
             ],
             "date": 1640256408490,
