@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 110,
+            "activePatchIndex": 111,
             "patches": [
                 {
                     "date": 1640249105761,
@@ -448,6 +448,10 @@
                 {
                     "date": 1641397532419,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -112,9 +112,9 @@\n             </div>\r\n             <p></p>\r\n             <!-- Button \"Erstellen\" -->\r\n             <div>\r\n-                <button onclick= \"addAll();\" type=\"submit\" class=\"btn btn-success\">Anzeige erstellen</button>\r\n+                <a href=\"success.html\" onclick= \"addAll();\" type=\"submit\" class=\"btn btn-success\">Anzeige erstellen</a>\r\n             </div>      \r\n             <p></p>\r\n             <!-- Button \"Alle anzeigen\" -->\r\n             <div>\r\n"
+                },
+                {
+                    "date": 1641397577995,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -113,8 +113,9 @@\n             <p></p>\r\n             <!-- Button \"Erstellen\" -->\r\n             <div>\r\n                 <a href=\"success.html\" onclick= \"addAll();\" type=\"submit\" class=\"btn btn-success\">Anzeige erstellen</a>\r\n+                <a href=\"success.html\" type=\"submit\" class=\"btn btn-success\">Anzeige erstellen (ohne anktion) </a>\r\n             </div>      \r\n             <p></p>\r\n             <!-- Button \"Alle anzeigen\" -->\r\n             <div>\r\n"
                 }
             ],
             "date": 1640249105761,
