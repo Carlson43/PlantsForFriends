@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 316,
+            "activePatchIndex": 317,
             "patches": [
                 {
                     "date": 1640256408490,
@@ -1272,6 +1272,10 @@
                 {
                     "date": 1641396349868,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -106,9 +106,9 @@\n         for(var k = 0; k< data.length;k++)\r\n         {\r\n             if (\"lat\" in data[k].jsonstring)\r\n             {\r\n-            mark.push(data[k].jsonstring.lat, data[k].jsonstring.lng,data[k].jsonstring.Pflanzeart)\r\n+            mark.push(data[k].jsonstring.lat, data[k].jsonstring.lng,data[k].jsonstring.Pflanzenart)\r\n             console.log(mark)\r\n             }\r\n         }\r\n \r\n"
+                },
+                {
+                    "date": 1641413978198,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -112,9 +112,9 @@\n             }\r\n         }\r\n \r\n         for (var j = 0; j < mark.length; j++){\r\n-            marker[j] = L.marker([mark[3*j], mark[3*j+1]]).addTo(mymap);\r\n+            marker[j] = L.marker([mark[3*j], mark[3*j+1]]).addTo(overview_map);\r\n             marker[j].bindPopup(mark[3*j+2]).openPopup();\r\n             console.log(mark[3*j+2])\r\n         }\r\n \r\n"
                 }
             ],
             "date": 1640256408490,
