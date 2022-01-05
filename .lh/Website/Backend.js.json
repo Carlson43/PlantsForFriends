@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 301,
+            "activePatchIndex": 304,
             "patches": [
                 {
                     "date": 1640256408490,
@@ -1212,6 +1212,18 @@
                 {
                     "date": 1641390687326,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -104,15 +104,15 @@\n         for(var k = 0; k< data.length;k++)\r\n         {\r\n             if (\"lat\" in data[k].jsonstring)\r\n             {\r\n-            mark.push(data[k].jsonstring.lat, data[k].jsonstring.lng)\r\n+            mark.push(data[k].jsonstring.lat, data[k].jsonstring.lng,data[k].jsonstring.Pflanzenart)\r\n             console.log(mark)\r\n             }\r\n         }\r\n \r\n         for (var j = 0; j < mark.length; j++){\r\n-            \r\n+\r\n         }\r\n \r\n \r\n     }\r\n"
+                },
+                {
+                    "date": 1641391352034,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -92,8 +92,10 @@\n function Marker()\r\n {\r\n     data = []\r\n     mark = []\r\n+    marker = []\r\n+\r\n     $.get(\"https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_\",function(response)\r\n     {\r\n         for (var i = 0; i < response.length; i++)\r\n         {\r\n@@ -110,9 +112,10 @@\n             }\r\n         }\r\n \r\n         for (var j = 0; j < mark.length; j++){\r\n-\r\n+            marker[j] = L.marker(mark[0], mark[1]).addTo(mymap);\r\n+            marker[j].bindPopup(\"<b>Angebot 1</b><br>Angebot details. Evtl. eine Adresse\").openPopup();\r\n         }\r\n \r\n \r\n     }\r\n"
+                },
+                {
+                    "date": 1641392489592,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -112,9 +112,9 @@\n             }\r\n         }\r\n \r\n         for (var j = 0; j < mark.length; j++){\r\n-            marker[j] = L.marker(mark[0], mark[1]).addTo(mymap);\r\n+            marker[j] = L.marker([mark[0], mark[1]]).addTo(mymap);\r\n             marker[j].bindPopup(\"<b>Angebot 1</b><br>Angebot details. Evtl. eine Adresse\").openPopup();\r\n         }\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1641392572374,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -112,10 +112,10 @@\n             }\r\n         }\r\n \r\n         for (var j = 0; j < mark.length; j++){\r\n-            marker[j] = L.marker([mark[0], mark[1]]).addTo(mymap);\r\n-            marker[j].bindPopup(\"<b>Angebot 1</b><br>Angebot details. Evtl. eine Adresse\").openPopup();\r\n+            marker[j] = L.marker([mark[3*j], mark[3*j+1]]).addTo(mymap);\r\n+            marker[j].bindPopup(mark[3*j+2]).openPopup();\r\n         }\r\n \r\n \r\n     }\r\n"
                 }
             ],
             "date": 1640256408490,
