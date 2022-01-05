@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 44,
+            "activePatchIndex": 45,
             "patches": [
                 {
                     "date": 1640252294782,
@@ -184,6 +184,10 @@
                 {
                     "date": 1641392952260,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -101,15 +101,15 @@\n         const tiles = L.tileLayer(tileUrl, { attribution });\r\n         tiles.addTo(mymap);\r\n         L.control.locate().addTo(mymap);\r\n \r\n-        //Add a marker to the map\r\n+        //Add a marker to the map (Test)\r\n         // var marker1 = L.marker([51.51792, 9.94451]).addTo(mymap);\r\n         // var marker2 = L.marker([51.51861, 9.94746]).addTo(mymap);\r\n         // var marker3 = L.marker([51.51844, 9.94163]).addTo(mymap);\r\n         // var marker4 = L.marker([51.51564, 9.94732]).addTo(mymap);\r\n   \r\n-        //Add Popup / description to markers\r\n+        //Add Popup / description to markers (Test)\r\n         // marker1.bindPopup(\"<b>Angebot 1</b><br>Angebot details. Evtl. eine Adresse\").openPopup();\r\n         // marker2.bindPopup(\"<b>Angebot 2</b><br>Angebot details. Evtl. eine Adresse\").openPopup();\r\n         // marker3.bindPopup(\"<b>Angebot 3</b><br>Angebot details. Evtl. eine Adresse\").openPopup();\r\n         // marker4.bindPopup(\"<b>Angebot 4</b><br>Angebot details. Evtl. eine Adresse\").openPopup();\r\n"
+                },
+                {
+                    "date": 1641395430365,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,9 +45,8 @@\n                 <div class=\"navbar-nav\">\r\n                     <a class=\"nav-link\" href=\"index.html\">Home</a>\r\n                     <a class=\"nav-link\" href=\"create.html\">Anzeige erstellen</a>\r\n                     <a class=\"nav-link active\" aria-current=\"page\" href=\"#\">Karte</a>\r\n-                    <a class=\"nav-link disabled\">Disabled</a>\r\n                 </div>\r\n             </div>\r\n         </div>\r\n     </nav>\r\n"
                 }
             ],
             "date": 1640252294782,
