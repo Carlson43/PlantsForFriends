@@ -90,39 +90,16 @@
     <script>
         // Making a map and tiles
         // Setting a higher initial zoom to make effect more obvious
-        const mymap = L.map('pointMap', {
+        const overview_map = L.map('pointMap', {
                         fullscreenControl: true,
                         fullscreenControlOptions: {
                         position: 'topleft'}
-                        }).setView([51.5171, 9.9448], 16);
+                        }).setView([51.289406, 10.008545], 6);
         const attribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
         const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
         const tiles = L.tileLayer(tileUrl, { attribution });
-        tiles.addTo(mymap);
-        L.control.locate().addTo(mymap);
-
-        //Add a marker to the map (Test)
-        // var marker1 = L.marker([51.51792, 9.94451]).addTo(mymap);
-        // var marker2 = L.marker([51.51861, 9.94746]).addTo(mymap);
-        // var marker3 = L.marker([51.51844, 9.94163]).addTo(mymap);
-        // var marker4 = L.marker([51.51564, 9.94732]).addTo(mymap);
-  
-        //Add Popup / description to markers (Test)
-        // marker1.bindPopup("<b>Angebot 1</b><br>Angebot details. Evtl. eine Adresse").openPopup();
-        // marker2.bindPopup("<b>Angebot 2</b><br>Angebot details. Evtl. eine Adresse").openPopup();
-        // marker3.bindPopup("<b>Angebot 3</b><br>Angebot details. Evtl. eine Adresse").openPopup();
-        // marker4.bindPopup("<b>Angebot 4</b><br>Angebot details. Evtl. eine Adresse").openPopup();
-        
-        // Show Location on Click
-        var popup = L.popup();
-        function onMapClick(e) {
-            popup
-                .setLatLng(e.latlng)
-                .setContent("You clicked the map at " + e.latlng.toString())
-                .openOn(mymap);
-        }
-
-        mymap.on('click', onMapClick);
+        tiles.addTo(overview_map);
+        L.control.locate().addTo(overview_map);
 
         Marker();
     </script>

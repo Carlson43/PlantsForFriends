@@ -118,7 +118,7 @@
         // Setting a higher initial zoom to make effect more obvious
         var Ad_loc = [51.51792, 9.94451]
 
-        const mymap = L.map('pointMap', {
+        const detail_map = L.map('pointMap', {
                         fullscreenControl: true,
                         fullscreenControlOptions: {
                         position: 'topleft'}
@@ -126,26 +126,14 @@
         const attribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
         const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
         const tiles = L.tileLayer(tileUrl, { attribution });
-        tiles.addTo(mymap);
-        L.control.locate().addTo(mymap);
+        tiles.addTo(detail_map);
+        L.control.locate().addTo(detail_map);
 
         //Add a marker to the map
-        var marker1 = L.marker(Ad_loc).addTo(mymap);
+        var marker1 = L.marker(Ad_loc).addTo(detail_map);
   
         //Add Popup / description to markers
         marker1.bindPopup("<b>Angebot Name</b>").openPopup();
-
-        
-        // Show Location on Click
-        var popup = L.popup();
-        function onMapClick(e) {
-            popup
-                .setLatLng(e.latlng)
-                .setContent("You clicked the map at " + e.latlng.toString())
-                .openOn(mymap);
-        }
-
-        mymap.on('click', onMapClick);
 
         Marker();
     </script>
