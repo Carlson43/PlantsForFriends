@@ -44,10 +44,9 @@
             <!-- Navigation Links -->
             <div class="collapse navbar-collapse" id="navbarNav">
                 <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link active" aria-current="page" href="index.html">Home</a>
                     <a class="nav-link" href="./create.html">Anzeige erstellen</a>
                     <a class="nav-link" href="./map.html">Karte</a>
-                    <a class="nav-link disabled">Disabled</a>
                 </div>
             </div>
         </div>
@@ -102,7 +101,7 @@
       <div class="container-md">
         <div class="input-group">
           <input type="text" placeholder="Suchbegriff eingeben" aria-label="search_term" id="search_term" class="form-control">
-          <input type="text" placeholder="Ort" aria-label="search_loc" id="search_loc" class="form-control">
+          <input type="text" placeholder="Ort" aria-label="search_loc" id="search_loc" class="form-control" disabled>
           <button onclick= "search_and_display();" class="btn btn-success" type="button" id="search_btn">Suchen</button>          
         </div>
     </div>
@@ -113,47 +112,125 @@
     <div class="container-md">
         <div class="row">
           <div class="col">
-                <!-- Card Anzeige -->
-                <div class="card" style="width: 18rem;" id = "Card1" >
-                    <img src="./Design-Ressourcen/Bilder/carrots.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                    <h5 class="card-title" id = "Card1title">Card title</h5>
-                    <h6 class="card-subtitle mb-2 text-muted" id = "Card1subtitle">Card subtitle</h6>
-                    <ul class="list-group list-group-flush">
-                      <li class="list-group-item" id = "Card1list1">Adress</li>
-                      <li class="list-group-item">Cost / Pricing</li>
-                    </ul>  
-                    <p class="card-text" id = "Card1text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
+                <!-- Card Element -->
+                <div class="card" style="width: 18rem;" id = "Card0" hidden>
+                  <img src="./Design-Ressourcen/Bilder/carrots.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                      <h5 class="card-title" id = "Card0title">Überschrift</h5>
+                      <h6 class="card-subtitle mb-2 text-muted" id = "Card0price">Preis in €</h6>
+                      <h6 class="card-subtitle mb-2 text-muted" id = "Card0loc">Ortsangabe</h6>
+                      <p class="card-text" id = "Card0text">Die Beschreibung der Anzeige soll hier dann erscheinen. Vielleicht ist die Größe aber ein Limit. Naja, das lässt sich bestimmt irgendiwe Lösen</p>
+                      <a href="details.html" class="btn btn-primary">Details ></a>
+                  </div>
+                </div>  
           </div>
           <div class="col">
-            <!-- Card Anzeige -->
-            <div class="card" style="width: 18rem;" id = "Card2" >
-                <img src="./Design-Ressourcen/Bilder/hand-saplings.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                <h5 class="card-title" id="heading1">Card title</h5>
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item">Adress</li>
-                  <li class="list-group-item">Cost / Pricing</li>
-                </ul>  
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
+            <!-- Card Element -->
+            <div class="card" style="width: 18rem;" id = "Card1" hidden>
+              <img src="./Design-Ressourcen/Bilder/carrots.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                  <h5 class="card-title" id = "Card1title">Überschrift</h5>
+                  <h6 class="card-subtitle mb-2 text-muted" id = "Card1price">Preis in €</h6>
+                  <h6 class="card-subtitle mb-2 text-muted" id = "Card1loc">Ortsangabe</h6>
+                  <p class="card-text" id = "Card1text">Die Beschreibung der Anzeige soll hier dann erscheinen. Vielleicht ist die Größe aber ein Limit. Naja, das lässt sich bestimmt irgendiwe Lösen</p>
+                  <a href="details.html" class="btn btn-primary">Details ></a>
+              </div>
+            </div>  
           </div>
           <div class="col">
-           <!-- Card Anzeige -->
-            <div class="card" style="width: 18rem;" id = "Card3" >
-                <img src="./Design-Ressourcen/Bilder/mangold.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>  
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
+            <!-- Card Element -->
+            <div class="card" style="width: 18rem;" id = "Card2" hidden>
+              <img src="./Design-Ressourcen/Bilder/carrots.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                  <h5 class="card-title" id = "Card0title">Überschrift</h5>
+                  <h6 class="card-subtitle mb-2 text-muted" id = "Card2price">Preis in €</h6>
+                  <h6 class="card-subtitle mb-2 text-muted" id = "Card2loc">Ortsangabe</h6>
+                  <p class="card-text" id = "Card2text">Die Beschreibung der Anzeige soll hier dann erscheinen. Vielleicht ist die Größe aber ein Limit. Naja, das lässt sich bestimmt irgendiwe Lösen</p>
+                  <a href="details.html" class="btn btn-primary">Details ></a>
+              </div>
+            </div>  
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+                <!-- Card Element -->
+                <div class="card" style="width: 18rem;" id = "Card3" hidden>
+                  <img src="./Design-Ressourcen/Bilder/carrots.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                      <h5 class="card-title" id = "Card3title">Überschrift</h5>
+                      <h6 class="card-subtitle mb-2 text-muted" id = "Card3price">Preis in €</h6>
+                      <h6 class="card-subtitle mb-2 text-muted" id = "Card3loc">Ortsangabe</h6>
+                      <p class="card-text" id = "Card3text">Die Beschreibung der Anzeige soll hier dann erscheinen. Vielleicht ist die Größe aber ein Limit. Naja, das lässt sich bestimmt irgendiwe Lösen</p>
+                      <a href="details.html" class="btn btn-primary">Details ></a>
+                  </div>
+                </div>  
+          </div>
+          <div class="col">
+            <!-- Card Element -->
+            <div class="card" style="width: 18rem;" id = "Card0" hidden>
+              <img src="./Design-Ressourcen/Bilder/carrots.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                  <h5 class="card-title" id = "Card4title">Überschrift</h5>
+                  <h6 class="card-subtitle mb-2 text-muted" id = "Card4price">Preis in €</h6>
+                  <h6 class="card-subtitle mb-2 text-muted" id = "Card4loc">Ortsangabe</h6>
+                  <p class="card-text" id = "Card4text">Die Beschreibung der Anzeige soll hier dann erscheinen. Vielleicht ist die Größe aber ein Limit. Naja, das lässt sich bestimmt irgendiwe Lösen</p>
+                  <a href="details.html" class="btn btn-primary">Details ></a>
+              </div>
+            </div>  
+          </div>
+          <div class="col">
+            <!-- Card Element -->
+            <div class="card" style="width: 18rem;" id = "Card5" hidden>
+              <img src="./Design-Ressourcen/Bilder/carrots.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                  <h5 class="card-title" id = "Card0title">Überschrift</h5>
+                  <h6 class="card-subtitle mb-2 text-muted" id = "Card5price">Preis in €</h6>
+                  <h6 class="card-subtitle mb-2 text-muted" id = "Card5loc">Ortsangabe</h6>
+                  <p class="card-text" id = "Card5text">Die Beschreibung der Anzeige soll hier dann erscheinen. Vielleicht ist die Größe aber ein Limit. Naja, das lässt sich bestimmt irgendiwe Lösen</p>
+                  <a href="details.html" class="btn btn-primary">Details ></a>
+              </div>
+            </div>  
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+                <!-- Card Element -->
+                <div class="card" style="width: 18rem;" id = "Card6" hidden>
+                  <img src="./Design-Ressourcen/Bilder/carrots.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                      <h5 class="card-title" id = "Card6title">Überschrift</h5>
+                      <h6 class="card-subtitle mb-2 text-muted" id = "Card6price">Preis in €</h6>
+                      <h6 class="card-subtitle mb-2 text-muted" id = "Card6loc">Ortsangabe</h6>
+                      <p class="card-text" id = "Card6text">Die Beschreibung der Anzeige soll hier dann erscheinen. Vielleicht ist die Größe aber ein Limit. Naja, das lässt sich bestimmt irgendiwe Lösen</p>
+                      <a href="details.html" class="btn btn-primary">Details ></a>
+                  </div>
+                </div>  
+          </div>
+          <div class="col">
+            <!-- Card Element -->
+            <div class="card" style="width: 18rem;" id = "Card7" hidden>
+              <img src="./Design-Ressourcen/Bilder/carrots.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                  <h5 class="card-title" id = "Card7title">Überschrift</h5>
+                  <h6 class="card-subtitle mb-2 text-muted" id = "Card7price">Preis in €</h6>
+                  <h6 class="card-subtitle mb-2 text-muted" id = "Card7loc">Ortsangabe</h6>
+                  <p class="card-text" id = "Card7text">Die Beschreibung der Anzeige soll hier dann erscheinen. Vielleicht ist die Größe aber ein Limit. Naja, das lässt sich bestimmt irgendiwe Lösen</p>
+                  <a href="details.html" class="btn btn-primary">Details ></a>
+              </div>
+            </div>  
+          </div>
+          <div class="col">
+            <!-- Card Element -->
+            <div class="card" style="width: 18rem;" id = "Card8" hidden>
+              <img src="./Design-Ressourcen/Bilder/carrots.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                  <h5 class="card-title" id = "Card8title">Überschrift</h5>
+                  <h6 class="card-subtitle mb-2 text-muted" id = "Card8price">Preis in €</h6>
+                  <h6 class="card-subtitle mb-2 text-muted" id = "Card8loc">Ortsangabe</h6>
+                  <p class="card-text" id = "Card8text">Die Beschreibung der Anzeige soll hier dann erscheinen. Vielleicht ist die Größe aber ein Limit. Naja, das lässt sich bestimmt irgendiwe Lösen</p>
+                  <a href="details.html" class="btn btn-primary">Details ></a>
+              </div>
+            </div>  
           </div>
         </div>
     </div>
