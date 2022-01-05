@@ -67,30 +67,36 @@
                 <div class="invalid-feedback">Pflichtfeld</div> 
             </div>
             <p></p>
+            <!-- Pflanzenart -->
             <div>
                 <label for="Ad_species" class="form-label">Pflanzenart</label>
                 <input type="text" class="form-control" id="Ad_species" placeholder="Die Art deiner Pflanze" required>
                 <div class="invalid-feedback">Pflichtfeld</div> 
             </div>
             <p></p>
+            <!-- Preis -->
             <div>
                 <label for="Ad_price" class="form-label">Preis</label>
                 <input type="text" class="form-control" id="Ad_price" placeholder="Preis in €, VB möglich" required>
                 <div class="invalid-feedback">Pflichtfeld</div>
             </div>
             <p></p>
+            <!-- Beschreibung -->
             <div>
                 <label for="Ad_description" class="form-label">Beschreibung</label>
                 <textarea class="form-control" id="Ad_description" rows="3" required></textarea>
                 <div class="invalid-feedback">Pflichtfeld</div>
             </div>
             <p></p>
+            <!-- Bilder-Upload -->
             <div>
                 <label for="Ad_pics" class="form-label">Bilder</label>
-                <input type="file" class="form-control" id="Ad_pics">
+                <input type="file" class="form-control" id="Ad_pics" disabled>
+                <div id="Ad_pics_helper" class="form-text">Momentan leider nicht möglich.</div>
                 <div class="valid-feedback">Optional</div>
             </div>
             <p></p>
+            <!-- Kontaktmöglichkeit -->
             <div>
                 <label for="Ad_contact" class="form-label">Kontaktmöglichkeit</label>
                 <input type="text" class="form-control" id="Ad_contact" aria-describedby="emailHelp" placeholder="z.B. Tel. oder E-Mail" required>
@@ -98,6 +104,7 @@
                 <div class="invalid-feedback">Pflichtfeld</div>
             </div>
             <p></p>
+            <!-- Ortsangabe/Koordinaten -->
             <div>
                 <label class="form-label">Ort der Anzeige</label>
                 <input class="form-control" type="text" value="Die Position deiner Anzeige" aria-label="Ad_location_box" readonly>
@@ -105,10 +112,12 @@
                 <div onclick = "onMapClick();" id="pointMap"></div>
             </div>
             <p></p>
+            <!-- Button "Erstellen" -->
             <div>
                 <button onclick= "addAll();" type="submit" class="btn btn-success">Anzeige erstellen</button>
             </div>      
             <p></p>
+            <!-- Button "Alle anzeigen" -->
             <div>
                 <button onclick="listAllData();" class="btn btn-success"> List all Data</button>
             </div>
