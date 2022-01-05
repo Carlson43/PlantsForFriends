@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 106,
+            "activePatchIndex": 108,
             "patches": [
                 {
                     "date": 1640249105761,
@@ -432,6 +432,14 @@
                 {
                     "date": 1641391046501,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -110,12 +110,14 @@\n                 <p></p>\r\n                 <div onclick = \"onMapClick();\" id=\"pointMap\"></div>\r\n             </div>\r\n             <p></p>\r\n+            <!-- Button \"Erstellen\" -->\r\n             <div>\r\n                 <button onclick= \"addAll();\" type=\"submit\" class=\"btn btn-success\">Anzeige erstellen</button>\r\n             </div>      \r\n             <p></p>\r\n+            <!-- Button \"Alle anzeigen\" -->\r\n             <div>\r\n                 <button onclick=\"listAllData();\" class=\"btn btn-success\"> List all Data</button>\r\n             </div>\r\n             <p></p>\r\n"
+                },
+                {
+                    "date": 1641391182742,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -90,9 +90,9 @@\n             <p></p>\r\n             <!-- Bilder-Upload -->\r\n             <div>\r\n                 <label for=\"Ad_pics\" class=\"form-label\">Bilder</label>\r\n-                <input type=\"file\" class=\"form-control\" id=\"Ad_pics\">\r\n+                <input type=\"file\" class=\"form-control\" id=\"Ad_pics\" disabled>\r\n                 <div class=\"valid-feedback\">Optional</div>\r\n             </div>\r\n             <p></p>\r\n             <!-- Kontaktmöglichkeit -->\r\n"
+                },
+                {
+                    "date": 1641391249026,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -91,8 +91,9 @@\n             <!-- Bilder-Upload -->\r\n             <div>\r\n                 <label for=\"Ad_pics\" class=\"form-label\">Bilder</label>\r\n                 <input type=\"file\" class=\"form-control\" id=\"Ad_pics\" disabled>\r\n+                <div id=\"Ad_pics_helper\" class=\"form-text\">Momentan leider nicht möglich.</div>\r\n                 <div class=\"valid-feedback\">Optional</div>\r\n             </div>\r\n             <p></p>\r\n             <!-- Kontaktmöglichkeit -->\r\n"
                 }
             ],
             "date": 1640249105761,
