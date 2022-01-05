@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 273,
+            "activePatchIndex": 289,
             "patches": [
                 {
                     "date": 1640256408490,
@@ -1100,6 +1100,70 @@
                 {
                     "date": 1641330637849,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,18 +16,8 @@\n     {\r\n     console.log(response);\r\n     });\r\n }\r\n-    \r\n-function del()\r\n-{\r\n-    var jsonstring=$(\"#jsonstring\").val();\r\n-    console.log(\"Del\");\r\n-    $.get(\"https://webtechlecture.appspot.com/cloudstore/del?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_&key=1640178157404\",function(response)\r\n-    {\r\n-    console.log(response);\r\n-    });\r\n-}\t\r\n \r\n function addAll()\r\n {\r\n     var jsonstring=  \r\n@@ -46,61 +36,8 @@\n     console.log(response);\r\n     });\r\n }\r\n \r\n-function spec()\r\n-{\r\n-    var specvar =  \r\n-    $.get('https://webtechlecture.appspot.com/cloudstore/ ?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_&jsonstring={\"Pflanzen\":\"Lillie\"}',function(response)\r\n-    {\r\n-    console.log(response);\r\n-    });\r\n-}\r\n-\r\n-function search()\r\n-{\r\n-    var nam = String($(\"#search_term\").val())\r\n-    var dat = []\r\n-    var data = []\r\n-    $.get(\"https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_\",function(response)\r\n-    { \r\n-        for (var i = 0; i < response.length; i++)\r\n-        data.push(response[i]);\r\n-\r\n-        for (var i = 0; i < data.length; i++)\r\n-        {\r\n-            if (data[i].jsonstring.Pflanze == nam)\r\n-            {\r\n-                // console.log(data[i].jsonstring);\r\n-                dat.push(data[i].jsonstring);\r\n-            }\r\n-\r\n-            else if(data[i].jsonstring.Name == nam)\r\n-            {\r\n-                // console.log(data[i].jsonstring);\r\n-                dat.push(data[i].jsonstring);\r\n-            }\r\n-\r\n-            else if(data[i].jsonstring.Nachname == nam)\r\n-            {\r\n-                // console.log(data[i].jsonstring);\r\n-                dat.push(data[i].jsonstring);\r\n-            }\r\n-\r\n-            else if(data[i].jsonstring.Straße == nam)\r\n-            {\r\n-                // console.log(data[i].jsonstring);\r\n-                dat.push(data[i].jsonstring);\r\n-            }\r\n-            else if(data[i].jsonstring.Titel == nam)\r\n-            {\r\n-                // console.log(data[i].jsonstring);\r\n-                dat.push(data[i].jsonstring);\r\n-            }          \r\n-        };\r\n-    });     \r\n-};\r\n-\r\n function search_and_display()\r\n {\r\n     var nam = String($(\"#search_term\").val())\r\n     var dat = []\r\n"
+                },
+                {
+                    "date": 1641386609019,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -87,4 +87,16 @@\n         .openOn(mymap);\r\n         lat[0] = e.latlng\r\n         console.log(lat[0].lat)\r\n }\r\n+\r\n+function showMarker()\r\n+{\r\n+    data = []\r\n+    $.get(\"https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_\",function(response)\r\n+    {\r\n+        for (var i = 0; i < response.length; i++)\r\n+        data.push(response[i]);\r\n+        console.log(dat)\r\n+\r\n+    });\r\n+}\r\n"
+                },
+                {
+                    "date": 1641387058835,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -88,15 +88,14 @@\n         lat[0] = e.latlng\r\n         console.log(lat[0].lat)\r\n }\r\n \r\n-function showMarker()\r\n+function Marker()\r\n {\r\n     data = []\r\n     $.get(\"https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_\",function(response)\r\n     {\r\n         for (var i = 0; i < response.length; i++)\r\n         data.push(response[i]);\r\n         console.log(dat)\r\n-\r\n     });\r\n }\r\n"
+                },
+                {
+                    "date": 1641387129787,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -95,7 +95,7 @@\n     $.get(\"https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_\",function(response)\r\n     {\r\n         for (var i = 0; i < response.length; i++)\r\n         data.push(response[i]);\r\n-        console.log(dat)\r\n+        console.log(data)\r\n     });\r\n }\r\n"
+                },
+                {
+                    "date": 1641387719614,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -91,11 +91,16 @@\n \r\n function Marker()\r\n {\r\n     data = []\r\n+    mark = []\r\n     $.get(\"https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_\",function(response)\r\n     {\r\n-        for (var i = 0; i < response.length; i++)\r\n+        for (var i = 0; i < response.length; i++){\r\n         data.push(response[i]);\r\n-        console.log(data)\r\n+        console.log(data)}\r\n+\r\n+        for(var k = 0; k< data.length;k++)\r\n+        mark.push(L.marker(data[k].jsonstring.lat, (data[k].jsonstring.lat)).addTo(mymap));\r\n+        mark[k].bindPopup(\"<b>Angebot 1</b><br>Angebot details. Evtl. eine Adresse\").openPopup();\r\n     });\r\n }\r\n"
+                },
+                {
+                    "date": 1641387945036,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -97,10 +97,14 @@\n     {\r\n         for (var i = 0; i < response.length; i++){\r\n         data.push(response[i]);\r\n         console.log(data)}\r\n-\r\n+        \r\n+        \r\n         for(var k = 0; k< data.length;k++)\r\n+        {\r\n+        if (data[k].jsonstring.lat !== null){\r\n         mark.push(L.marker(data[k].jsonstring.lat, (data[k].jsonstring.lat)).addTo(mymap));\r\n         mark[k].bindPopup(\"<b>Angebot 1</b><br>Angebot details. Evtl. eine Adresse\").openPopup();\r\n+        }}\r\n     });\r\n }\r\n"
+                },
+                {
+                    "date": 1641387993759,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -102,9 +102,10 @@\n         \r\n         for(var k = 0; k< data.length;k++)\r\n         {\r\n         if (data[k].jsonstring.lat !== null){\r\n-        mark.push(L.marker(data[k].jsonstring.lat, (data[k].jsonstring.lat)).addTo(mymap));\r\n-        mark[k].bindPopup(\"<b>Angebot 1</b><br>Angebot details. Evtl. eine Adresse\").openPopup();\r\n+            console.log(data)\r\n+        // mark.push(L.marker(data[k].jsonstring.lat, (data[k].jsonstring.lat)).addTo(mymap));\r\n+        // mark[k].bindPopup(\"<b>Angebot 1</b><br>Angebot details. Evtl. eine Adresse\").openPopup();\r\n         }}\r\n     });\r\n }\r\n"
+                },
+                {
+                    "date": 1641388017787,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -102,9 +102,9 @@\n         \r\n         for(var k = 0; k< data.length;k++)\r\n         {\r\n         if (data[k].jsonstring.lat !== null){\r\n-            console.log(data)\r\n+            console.log(data[k])\r\n         // mark.push(L.marker(data[k].jsonstring.lat, (data[k].jsonstring.lat)).addTo(mymap));\r\n         // mark[k].bindPopup(\"<b>Angebot 1</b><br>Angebot details. Evtl. eine Adresse\").openPopup();\r\n         }}\r\n     });\r\n"
+                },
+                {
+                    "date": 1641388027491,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -102,9 +102,9 @@\n         \r\n         for(var k = 0; k< data.length;k++)\r\n         {\r\n         if (data[k].jsonstring.lat !== null){\r\n-            console.log(data[k])\r\n+            console.log(data[k].jsonstring)\r\n         // mark.push(L.marker(data[k].jsonstring.lat, (data[k].jsonstring.lat)).addTo(mymap));\r\n         // mark[k].bindPopup(\"<b>Angebot 1</b><br>Angebot details. Evtl. eine Adresse\").openPopup();\r\n         }}\r\n     });\r\n"
+                },
+                {
+                    "date": 1641388039627,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -102,9 +102,9 @@\n         \r\n         for(var k = 0; k< data.length;k++)\r\n         {\r\n         if (data[k].jsonstring.lat !== null){\r\n-            console.log(data[k].jsonstring)\r\n+            console.log(data[k].jsonstring.lng)\r\n         // mark.push(L.marker(data[k].jsonstring.lat, (data[k].jsonstring.lat)).addTo(mymap));\r\n         // mark[k].bindPopup(\"<b>Angebot 1</b><br>Angebot details. Evtl. eine Adresse\").openPopup();\r\n         }}\r\n     });\r\n"
+                },
+                {
+                    "date": 1641388134102,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -95,10 +95,9 @@\n     mark = []\r\n     $.get(\"https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_\",function(response)\r\n     {\r\n         for (var i = 0; i < response.length; i++){\r\n-        data.push(response[i]);\r\n-        console.log(data)}\r\n+        data.push(response[i]);}\r\n         \r\n         \r\n         for(var k = 0; k< data.length;k++)\r\n         {\r\n"
+                },
+                {
+                    "date": 1641388225731,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -100,9 +100,9 @@\n         \r\n         \r\n         for(var k = 0; k< data.length;k++)\r\n         {\r\n-        if (data[k].jsonstring.lat !== null){\r\n+        if (data[k].jsonstring.lat !== \"undefined\"){\r\n             console.log(data[k].jsonstring.lng)\r\n         // mark.push(L.marker(data[k].jsonstring.lat, (data[k].jsonstring.lat)).addTo(mymap));\r\n         // mark[k].bindPopup(\"<b>Angebot 1</b><br>Angebot details. Evtl. eine Adresse\").openPopup();\r\n         }}\r\n"
+                },
+                {
+                    "date": 1641388312615,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -100,9 +100,9 @@\n         \r\n         \r\n         for(var k = 0; k< data.length;k++)\r\n         {\r\n-        if (data[k].jsonstring.lat !== \"undefined\"){\r\n+        if (data[k].jsonstring.lat !== null){\r\n             console.log(data[k].jsonstring.lng)\r\n         // mark.push(L.marker(data[k].jsonstring.lat, (data[k].jsonstring.lat)).addTo(mymap));\r\n         // mark[k].bindPopup(\"<b>Angebot 1</b><br>Angebot details. Evtl. eine Adresse\").openPopup();\r\n         }}\r\n"
+                },
+                {
+                    "date": 1641388525907,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -100,9 +100,9 @@\n         \r\n         \r\n         for(var k = 0; k< data.length;k++)\r\n         {\r\n-        if (data[k].jsonstring.lat !== null){\r\n+        if (data[k].jsonstring.lat !== \"null\"){\r\n             console.log(data[k].jsonstring.lng)\r\n         // mark.push(L.marker(data[k].jsonstring.lat, (data[k].jsonstring.lat)).addTo(mymap));\r\n         // mark[k].bindPopup(\"<b>Angebot 1</b><br>Angebot details. Evtl. eine Adresse\").openPopup();\r\n         }}\r\n"
+                },
+                {
+                    "date": 1641388538819,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -100,9 +100,9 @@\n         \r\n         \r\n         for(var k = 0; k< data.length;k++)\r\n         {\r\n-        if (data[k].jsonstring.lat !== \"null\"){\r\n+        if (data[k].jsonstring.lat !== \"undefined\"){\r\n             console.log(data[k].jsonstring.lng)\r\n         // mark.push(L.marker(data[k].jsonstring.lat, (data[k].jsonstring.lat)).addTo(mymap));\r\n         // mark[k].bindPopup(\"<b>Angebot 1</b><br>Angebot details. Evtl. eine Adresse\").openPopup();\r\n         }}\r\n"
+                },
+                {
+                    "date": 1641388837820,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -101,10 +101,9 @@\n         \r\n         for(var k = 0; k< data.length;k++)\r\n         {\r\n         if (data[k].jsonstring.lat !== \"undefined\"){\r\n-            console.log(data[k].jsonstring.lng)\r\n-        // mark.push(L.marker(data[k].jsonstring.lat, (data[k].jsonstring.lat)).addTo(mymap));\r\n-        // mark[k].bindPopup(\"<b>Angebot 1</b><br>Angebot details. Evtl. eine Adresse\").openPopup();\r\n+        mark.push(L.marker(data[k].jsonstring.lat, (data[k].jsonstring.lat)).addTo(mymap));\r\n+        mark[k].bindPopup(\"<b>Angebot 1</b><br>Angebot details. Evtl. eine Adresse\").openPopup();\r\n         }}\r\n     });\r\n }\r\n"
+                },
+                {
+                    "date": 1641388891217,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -101,9 +101,9 @@\n         \r\n         for(var k = 0; k< data.length;k++)\r\n         {\r\n         if (data[k].jsonstring.lat !== \"undefined\"){\r\n-        mark.push(L.marker(data[k].jsonstring.lat, (data[k].jsonstring.lat)).addTo(mymap));\r\n+        mark.push(L.marker(data[k].jsonstring.lat, (data[k].jsonstring.lng)).addTo(mymap));\r\n         mark[k].bindPopup(\"<b>Angebot 1</b><br>Angebot details. Evtl. eine Adresse\").openPopup();\r\n         }}\r\n     });\r\n }\r\n"
                 }
             ],
             "date": 1640256408490,

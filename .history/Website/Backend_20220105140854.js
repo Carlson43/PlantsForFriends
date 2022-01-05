@@ -101,9 +101,10 @@ function Marker()
         
         for(var k = 0; k< data.length;k++)
         {
-        if (data[k].jsonstring.lat !== "undefined"){
-        mark.push(L.marker(data[k].jsonstring.lat, (data[k].jsonstring.lng)).addTo(mymap));
-        mark[k].bindPopup("<b>Angebot 1</b><br>Angebot details. Evtl. eine Adresse").openPopup();
+        if (data[k].jsonstring.lat !== null){
+            console.log(data[k].jsonstring.lng)
+        // mark.push(L.marker(data[k].jsonstring.lat, (data[k].jsonstring.lat)).addTo(mymap));
+        // mark[k].bindPopup("<b>Angebot 1</b><br>Angebot details. Evtl. eine Adresse").openPopup();
         }}
     });
 }

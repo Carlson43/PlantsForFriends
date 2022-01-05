@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 38,
+            "activePatchIndex": 42,
             "patches": [
                 {
                     "date": 1640252294782,
@@ -160,6 +160,22 @@
                 {
                     "date": 1641206401666,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n     <!-- Navbar -->\r\n     <nav class=\"navbar navbar-light bg-light\">\r\n         <div class=\"container fluid\">\r\n             <!-- Navabr Logo and Brandname -->\r\n-            <a class=\"navbar-brand\" href=\"#\">\r\n+            <a class=\"navbar-brand\" href=\"index.html\">\r\n                 <img src=\"./Design-Ressourcen/logo.svg\" alt=\"\" width=\"30\" height=\"24\" class=\"d-inline-block align-text-top\">\r\n                 Plants4Friends\r\n             </a>\r\n             <!-- Toggler for Expandsion -->\r\n"
+                },
+                {
+                    "date": 1641386988789,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,8 +17,10 @@\n     <!-- Map Locate CSS -->\r\n     <link rel=\"stylesheet\" href=\"./leaflet-locatecontrol-gh-pages/leaflet-locatecontrol-gh-pages/dist/L.Control.Locate.min.css\" />\r\n \r\n     <title>Karte @ Plants4Friends</title>\r\n+    <!-- Favicon -->\r\n+    <link rel=\"icon\" type=\"image/x-icon\" href=\"./Design-Ressourcen/flower.svg\">\r\n   </head>\r\n   <body>\r\n \r\n     <!-- Navbar -->\r\n@@ -55,8 +57,21 @@\n     <div class=\"container-md\">\r\n         <div id=\"pointMap\"></div>\r\n     </div>\r\n     \r\n+    \r\n+    <!-- Footer -->\r\n+    <div class=\"container\">\r\n+        <footer class=\"d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top\">\r\n+          <p class=\"col-md-4 mb-0 text-muted\">© 2021 Plants4Friends</p>\r\n+      \r\n+          <a href=\"index.html\" class=\"col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none\">\r\n+            <img src=\"./Design-Ressourcen/logo.svg\" alt=\"\" width=\"30\" height=\"24\" class=\"d-inline-block align-text-top\">\r\n+          </a>\r\n+      \r\n+          <p class=\"col-md-4 mb-0 text-muted\">Made with ❤ in Mannheim</p>\r\n+        </footer>\r\n+      </div>\r\n \r\n     <!-- Bootstrap JS -->\r\n     <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p\" crossorigin=\"anonymous\"></script>\r\n     \r\n@@ -104,8 +119,9 @@\n         }\r\n \r\n         mymap.on('click', onMapClick);\r\n \r\n+        showMarker()\r\n     </script>\r\n \r\n   </body>\r\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1641387071291,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -119,9 +119,9 @@\n         }\r\n \r\n         mymap.on('click', onMapClick);\r\n \r\n-        showMarker()\r\n+        Marker();\r\n     </script>\r\n \r\n   </body>\r\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1641387105305,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,13 @@\n     <!-- Required meta tags -->\r\n     <meta charset=\"utf-8\">\r\n     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n \r\n+        <!-- Referencing Backend -->\r\n+        <script src=\"https://code.jquery.com/jquery-3.6.0.js\"> </script>\r\n+        <script src=\"./Backend.js\"> </script>\r\n+    \r\n+\r\n     <!-- Bootstrap CSS -->\r\n     <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3\" crossorigin=\"anonymous\">\r\n     \r\n     <!-- Leaflet CSS -->\r\n"
+                },
+                {
+                    "date": 1641387120712,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,11 +4,11 @@\n     <!-- Required meta tags -->\r\n     <meta charset=\"utf-8\">\r\n     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n \r\n-        <!-- Referencing Backend -->\r\n-        <script src=\"https://code.jquery.com/jquery-3.6.0.js\"> </script>\r\n-        <script src=\"./Backend.js\"> </script>\r\n+    <!-- Referencing Backend -->\r\n+    <script src=\"https://code.jquery.com/jquery-3.6.0.js\"> </script>\r\n+    <script src=\"./Backend.js\"> </script>\r\n     \r\n \r\n     <!-- Bootstrap CSS -->\r\n     <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3\" crossorigin=\"anonymous\">\r\n"
                 }
             ],
             "date": 1640252294782,
