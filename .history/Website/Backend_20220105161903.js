@@ -62,6 +62,7 @@ function search_and_display()
                 document.getElementById("Card"+ Number(k)).removeAttribute("hidden");
                 document.getElementById("Card"+ Number(k)+ "title").innerHTML = dat[k].Titel;
                 document.getElementById("Card"+ Number(k)+ "price").innerHTML = dat[k].Preis;
+                document.getElementById("Card"+ Number(k)+ "loc").innerHTML = dat[k].Email;
                 document.getElementById("Card"+ Number(k)+ "text").innerHTML = dat[k].Beschreibung;
                 }
                 
@@ -115,7 +116,6 @@ function Marker()
         for (var j = 0; j < mark.length; j++){
             marker[j] = L.marker([mark[3*j], mark[3*j+1]]).addTo(mymap);
             marker[j].bindPopup(mark[3*j+2]).openPopup();
-            console.log(mark[3*j+2])
         }
 
 

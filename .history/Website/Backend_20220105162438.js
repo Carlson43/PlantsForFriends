@@ -107,7 +107,7 @@ function Marker()
         {
             if ("lat" in data[k].jsonstring)
             {
-            mark.push(data[k].jsonstring.lat, data[k].jsonstring.lng,data[k].jsonstring.Pflanzenart)
+            mark.push([data[k].jsonstring.lat, data[k].jsonstring.lng,data[k].jsonstring.Pflanzenart)
             console.log(mark)
             }
         }
