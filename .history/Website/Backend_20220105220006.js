@@ -63,7 +63,7 @@ function search_and_display()
                 document.getElementById("Card"+ Number(k)+ "title").innerHTML = dat[k].Titel;
                 document.getElementById("Card"+ Number(k)+ "price").innerHTML = dat[k].Preis + "€";
                 document.getElementById("Card"+ Number(k)+ "text").innerHTML = dat[k].Beschreibung;
-                document.getElementById("Card"+ Number(k)+ "loc").innerHTML = ["Lat.: "+dat[k].lat+"° Lng.: "+dat[k].lng]+"°";
+                document.getElementById("Card"+ Number(k)+ "loc").innerHTML = dat[k].lat,dat[k].lng;
                 }
                 
             }

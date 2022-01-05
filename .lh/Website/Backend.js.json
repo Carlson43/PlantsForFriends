@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 317,
+            "activePatchIndex": 323,
             "patches": [
                 {
                     "date": 1640256408490,
@@ -1276,6 +1276,30 @@
                 {
                     "date": 1641413978198,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -112,9 +112,9 @@\n             }\r\n         }\r\n \r\n         for (var j = 0; j < mark.length; j++){\r\n-            marker[j] = L.marker([mark[3*j], mark[3*j+1]]).addTo(mymap);\r\n+            marker[j] = L.marker([mark[3*j], mark[3*j+1]]).addTo(overview_map);\r\n             marker[j].bindPopup(mark[3*j+2]).openPopup();\r\n             console.log(mark[3*j+2])\r\n         }\r\n \r\n"
+                },
+                {
+                    "date": 1641416406067,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,10 +60,11 @@\n                 for (var k = 0; k < dat.length; k++){\r\n                 console.log(dat[k].Titel)        ;\r\n                 document.getElementById(\"Card\"+ Number(k)).removeAttribute(\"hidden\");\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"title\").innerHTML = dat[k].Titel;\r\n-                document.getElementById(\"Card\"+ Number(k)+ \"price\").innerHTML = dat[k].Preis;\r\n+                document.getElementById(\"Card\"+ Number(k)+ \"price\").innerHTML = dat[k].Preis + \"€\";\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"text\").innerHTML = dat[k].Beschreibung;\r\n+                document.getElementById(\"Card\"+ Number(k)+ \"loc\").innerHTML = dat[k].lat,dat[k].lng;\r\n                 }\r\n                 \r\n             }\r\n             \r\n"
+                },
+                {
+                    "date": 1641416427174,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -62,9 +62,9 @@\n                 document.getElementById(\"Card\"+ Number(k)).removeAttribute(\"hidden\");\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"title\").innerHTML = dat[k].Titel;\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"price\").innerHTML = dat[k].Preis + \"€\";\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"text\").innerHTML = dat[k].Beschreibung;\r\n-                document.getElementById(\"Card\"+ Number(k)+ \"loc\").innerHTML = dat[k].lat,dat[k].lng;\r\n+                document.getElementById(\"Card\"+ Number(k)+ \"loc\").innerHTML = [dat[k].lat,dat[k].lng];\r\n                 }\r\n                 \r\n             }\r\n             \r\n"
+                },
+                {
+                    "date": 1641416473800,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -62,9 +62,9 @@\n                 document.getElementById(\"Card\"+ Number(k)).removeAttribute(\"hidden\");\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"title\").innerHTML = dat[k].Titel;\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"price\").innerHTML = dat[k].Preis + \"€\";\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"text\").innerHTML = dat[k].Beschreibung;\r\n-                document.getElementById(\"Card\"+ Number(k)+ \"loc\").innerHTML = [dat[k].lat,dat[k].lng];\r\n+                document.getElementById(\"Card\"+ Number(k)+ \"loc\").innerHTML = \"Lat.:\"+dat[k].lat+\"Lng.:\"+dat[k].lng];\r\n                 }\r\n                 \r\n             }\r\n             \r\n"
+                },
+                {
+                    "date": 1641416504114,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -62,9 +62,9 @@\n                 document.getElementById(\"Card\"+ Number(k)).removeAttribute(\"hidden\");\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"title\").innerHTML = dat[k].Titel;\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"price\").innerHTML = dat[k].Preis + \"€\";\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"text\").innerHTML = dat[k].Beschreibung;\r\n-                document.getElementById(\"Card\"+ Number(k)+ \"loc\").innerHTML = \"Lat.:\"+dat[k].lat+\"Lng.:\"+dat[k].lng];\r\n+                document.getElementById(\"Card\"+ Number(k)+ \"loc\").innerHTML = [\"Lat.:\"+dat[k].lat+\"Lng.:\"+dat[k].lng];\r\n                 }\r\n                 \r\n             }\r\n             \r\n"
+                },
+                {
+                    "date": 1641416523887,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -62,9 +62,9 @@\n                 document.getElementById(\"Card\"+ Number(k)).removeAttribute(\"hidden\");\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"title\").innerHTML = dat[k].Titel;\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"price\").innerHTML = dat[k].Preis + \"€\";\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"text\").innerHTML = dat[k].Beschreibung;\r\n-                document.getElementById(\"Card\"+ Number(k)+ \"loc\").innerHTML = [\"Lat.:\"+dat[k].lat+\"Lng.:\"+dat[k].lng];\r\n+                document.getElementById(\"Card\"+ Number(k)+ \"loc\").innerHTML = [\"Lat.: \"+dat[k].lat+\" Lng.: \"+dat[k].lng];\r\n                 }\r\n                 \r\n             }\r\n             \r\n"
+                },
+                {
+                    "date": 1641416547314,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -62,9 +62,9 @@\n                 document.getElementById(\"Card\"+ Number(k)).removeAttribute(\"hidden\");\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"title\").innerHTML = dat[k].Titel;\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"price\").innerHTML = dat[k].Preis + \"€\";\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"text\").innerHTML = dat[k].Beschreibung;\r\n-                document.getElementById(\"Card\"+ Number(k)+ \"loc\").innerHTML = [\"Lat.: \"+dat[k].lat+\" Lng.: \"+dat[k].lng];\r\n+                document.getElementById(\"Card\"+ Number(k)+ \"loc\").innerHTML = [\"Lat.: \"+dat[k].lat+\"° Lng.: \"+dat[k].lng]+\"°\";\r\n                 }\r\n                 \r\n             }\r\n             \r\n"
                 }
             ],
             "date": 1640256408490,
