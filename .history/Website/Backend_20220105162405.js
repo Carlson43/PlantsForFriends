@@ -107,15 +107,15 @@ function Marker()
         {
             if ("lat" in data[k].jsonstring)
             {
-            mark.push(data[k].jsonstring.lat, data[k].jsonstring.lng,data[k].jsonstring.Pflanzenart)
+            mark.push([data[k].jsonstring.lat, data[k].jsonstring.lng,data[k].jsonstring.Pflanzenart])
             console.log(mark)
             }
         }
 
         for (var j = 0; j < mark.length; j++){
-            marker[j] = L.marker([mark[3*j], mark[3*j+1]]).addTo(mymap);
+            marker[j] = L.marker([mark[j], mark[j].[1]).addTo(mymap);
             marker[j].bindPopup(mark[3*j+2]).openPopup();
-            console.log(mark[3*j+2])
+            console.log(mark[j])
         }
 
 
