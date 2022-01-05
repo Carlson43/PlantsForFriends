@@ -113,8 +113,8 @@ function Marker()
         }
 
         for (var j = 0; j < mark.length; j++){
-            marker[j] = L.marker([mark[3*j], mark[3*j+1]]).addTo(mymap);
-            marker[j].bindPopup(mark[3*j+2]).openPopup();
+            marker[j] = L.marker([mark[0], mark[1]]).addTo(mymap);
+            marker[j].bindPopup("<b>Angebot 1</b><br>Angebot details. Evtl. eine Adresse").openPopup();
         }
 
 

@@ -58,6 +58,11 @@
 </div>
 
 
+    <div>
+        <input id= "jsonstring5" type="text" value=''>
+        <label for=jsonstring5>Suche</label>
+    </div>
+
     <div><button onclick= "addAll();">Fertig</button></div>
     <div><button onclick= "search();">Suche</button></div>
 
@@ -109,13 +114,15 @@
       '{"Pflanzeart":"'+$("#jsonstring1").val()+'",'+
       '"Preis":"'+$("#jsonstring2").val()+'",'+
       '"Kontaktmöglichkeit":"'+$("#jsonstring3").val()+'",'+
-      '"Beschreibung":"'+$("#jsonstring4").val()+'",'+
-      '"lat":"'+$("#jsonstring5").val()+'",'+
-      '"lng":"'+$("#jsonstring6").val()+'",'+
-      '"Titel":"'+$("#jsonstring7").val()+'"}';
+      '"Beschreibung":"'+$("#jsonstring3").val()+'",'+
+      '"lat":"'+$("#jsonstring3").val()+'",'+
+      '"lng":"'+$("#jsonstring3").val()+'",'+
 
+      '"Titel":"'+$("#jsonstring4").val()+
+
+      '"}';
       console.log("add"+ jsonstring);
-      $.get("https://webtechlecture.appspot.com/cloudstore/add?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_&jsonstring="+jsonstring+"&key="+$("#jsonstring8").val(),function(response)
+      $.get("https://webtechlecture.appspot.com/cloudstore/add?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_&jsonstring="+encodeURI(jsonstring),function(response)
       {
         console.log(response);
       });
