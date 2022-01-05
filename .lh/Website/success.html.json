@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 24,
+            "activePatchIndex": 26,
             "patches": [
                 {
                     "date": 1641395904811,
@@ -104,6 +104,14 @@
                 {
                     "date": 1641397479018,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,9 +52,9 @@\n         <p class=\"text-center\"> Deine Anzeige wurde erfolgreich erstellt und kann nun von anderen gesehen werden.</p>\r\n         <p></p>\r\n         <div class=\"row\">\r\n             <div class=\"col\">\r\n-                <a> href=\"index.html\" type=\"button\" class=\"btn btn-success\">Zurück zur Übersicht</a>>\r\n+                <a href=\"index.html\" type=\"button\" class=\"btn btn-success\">Zurück zur Übersicht</a>\r\n             </div>\r\n             <div class=\"col\">\r\n                 <a href=\"create.html\" type=\"button\" class=\"btn btn-success\">Weitere Anzeige erstellen</a>\r\n             </div>\r\n"
+                },
+                {
+                    "date": 1641398407720,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,16 +50,24 @@\n         <img src=\"./Design-Ressourcen/success.svg\" class=\"mx-auto d-block\" alt=\"\" style=\"height: 200px\">\r\n         <h4 class=\"text-center\">Geschafft !</h4>\r\n         <p class=\"text-center\"> Deine Anzeige wurde erfolgreich erstellt und kann nun von anderen gesehen werden.</p>\r\n         <p></p>\r\n-        <div class=\"row\">\r\n+        <!-- <div class=\"row\">\r\n             <div class=\"col\">\r\n                 <a href=\"index.html\" type=\"button\" class=\"btn btn-success\">Zurück zur Übersicht</a>\r\n             </div>\r\n             <div class=\"col\">\r\n                 <a href=\"create.html\" type=\"button\" class=\"btn btn-success\">Weitere Anzeige erstellen</a>\r\n             </div>\r\n-        </div>\r\n+        </div> -->\r\n+        <div class=\"btn-toolbar\" role=\"toolbar\" aria-label=\"Toolbar with button groups\">\r\n+            <div class=\"btn-group me-2\" role=\"group\" aria-label=\"First group\">\r\n+                <a href=\"index.html\" type=\"button\" class=\"btn btn-success\">Zurück zur Übersicht</a>\r\n+            </div>\r\n+            <div class=\"btn-group me-2\" role=\"group\" aria-label=\"Second group\">\r\n+                <a href=\"create.html\" type=\"button\" class=\"btn btn-success\">Weitere Anzeige erstellen</a>\r\n+            </div>\r\n+          </div>\r\n     </div>\r\n     <p></p>\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1641398477825,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,17 +50,9 @@\n         <img src=\"./Design-Ressourcen/success.svg\" class=\"mx-auto d-block\" alt=\"\" style=\"height: 200px\">\r\n         <h4 class=\"text-center\">Geschafft !</h4>\r\n         <p class=\"text-center\"> Deine Anzeige wurde erfolgreich erstellt und kann nun von anderen gesehen werden.</p>\r\n         <p></p>\r\n-        <!-- <div class=\"row\">\r\n-            <div class=\"col\">\r\n-                <a href=\"index.html\" type=\"button\" class=\"btn btn-success\">Zurück zur Übersicht</a>\r\n-            </div>\r\n-            <div class=\"col\">\r\n-                <a href=\"create.html\" type=\"button\" class=\"btn btn-success\">Weitere Anzeige erstellen</a>\r\n-            </div>\r\n-        </div> -->\r\n-        <div class=\"btn-toolbar\" role=\"toolbar\" aria-label=\"Toolbar with button groups\">\r\n+         <div class=\"btn-toolbar\" role=\"toolbar\" aria-label=\"Toolbar with button groups\">\r\n             <div class=\"btn-group me-2\" role=\"group\" aria-label=\"First group\">\r\n                 <a href=\"index.html\" type=\"button\" class=\"btn btn-success\">Zurück zur Übersicht</a>\r\n             </div>\r\n             <div class=\"btn-group me-2\" role=\"group\" aria-label=\"Second group\">\r\n"
                 }
             ],
             "date": 1641395904811,
