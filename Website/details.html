@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="./leaflet-locatecontrol-gh-pages/leaflet-locatecontrol-gh-pages/dist/L.Control.Locate.min.css" />
 
     <title>Details @ Plants4Friends</title>
+
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="./Design-Ressourcen/flower.svg">
   </head>
@@ -34,7 +35,7 @@
     <nav class="navbar navbar-light bg-light">
         <div class="container fluid">
             <!-- Navabr Logo and Brandname -->
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="index.html">
                 <img src="./Design-Ressourcen/logo.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
                 Plants4Friends
             </a>
@@ -53,6 +54,7 @@
         </div>
     </nav>
 
+    <!-- Text / Content Container -->
     <div class="container-md">
         <div class="h-divider"></div>
         <!-- Überschrift -->
@@ -78,6 +80,7 @@
             </div>
         </div>
         <p></p>
+        <!-- Beschreibung der Anzeige -->
         <div class="card">
             <div class="card-body">Hier ist dann die Beschreibung der Anzeige: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</div>
         </div>
@@ -94,6 +97,7 @@
       <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
         <p class="col-md-4 mb-0 text-muted">© 2021 Plants4Friends</p>
     
+        <!-- Footer Logo -->
         <a href="index.html" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
           <img src="./Design-Ressourcen/logo.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
         </a>
@@ -114,21 +118,24 @@
 
     <!-- Custom Map JS -->
     <script>
-        // Making a map and tiles
-        // Setting a higher initial zoom to make effect more obvious
+        // Setting Coordinates for View and Marker
         var Ad_loc = [51.289406, 10.008545] 
         // 51.289406, 10.008545 Globaler Sichtmittelpunkt
         // 51.51792, 9.94451 Lokaler / BEispiel Sichmittelpunkt
 
+        // Making a map and tiles
         const detail_map = L.map('pointMap', {
                         fullscreenControl: true,
                         fullscreenControlOptions: {
                         position: 'topleft'}
                         }).setView(Ad_loc,11);
+        // Setting Attributions for OSM Compliance
         const attribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
+        // Loading and adding Tiles
         const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
         const tiles = L.tileLayer(tileUrl, { attribution });
         tiles.addTo(detail_map);
+        // Add Control Buttons
         L.control.locate().addTo(detail_map);
 
         //Add a marker to the map
@@ -137,6 +144,7 @@
         //Add Popup / description to markers
         marker1.bindPopup("<b>Angebot Name</b>").openPopup();
 
+        // Load all Ad-Locattions from Backend.js
         Marker();
     </script>
 
