@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 323,
+            "activePatchIndex": 326,
             "patches": [
                 {
                     "date": 1640256408490,
@@ -1300,6 +1300,18 @@
                 {
                     "date": 1641416547314,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -62,9 +62,9 @@\n                 document.getElementById(\"Card\"+ Number(k)).removeAttribute(\"hidden\");\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"title\").innerHTML = dat[k].Titel;\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"price\").innerHTML = dat[k].Preis + \"€\";\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"text\").innerHTML = dat[k].Beschreibung;\r\n-                document.getElementById(\"Card\"+ Number(k)+ \"loc\").innerHTML = [\"Lat.: \"+dat[k].lat+\" Lng.: \"+dat[k].lng];\r\n+                document.getElementById(\"Card\"+ Number(k)+ \"loc\").innerHTML = [\"Lat.: \"+dat[k].lat+\"° Lng.: \"+dat[k].lng]+\"°\";\r\n                 }\r\n                 \r\n             }\r\n             \r\n"
+                },
+                {
+                    "date": 1641454680438,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -62,9 +62,9 @@\n                 document.getElementById(\"Card\"+ Number(k)).removeAttribute(\"hidden\");\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"title\").innerHTML = dat[k].Titel;\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"price\").innerHTML = dat[k].Preis + \"€\";\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"text\").innerHTML = dat[k].Beschreibung;\r\n-                document.getElementById(\"Card\"+ Number(k)+ \"loc\").innerHTML = [\"Lat.: \"+dat[k].lat+\"° Lng.: \"+dat[k].lng]+\"°\";\r\n+                document.getElementById(\"Card\"+ Number(k)+ \"contact\").innerHTML = dat[k].Konaktmöglichkeit;\r\n                 }\r\n                 \r\n             }\r\n             \r\n"
+                },
+                {
+                    "date": 1641454861531,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,9 +57,9 @@\n             {\r\n                 dat.push(data[i].jsonstring);\r\n \r\n                 for (var k = 0; k < dat.length; k++){\r\n-                console.log(dat[k].Titel)        ;\r\n+                console.log(dat[k].Konaktmöglichkeit)        ;\r\n                 document.getElementById(\"Card\"+ Number(k)).removeAttribute(\"hidden\");\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"title\").innerHTML = dat[k].Titel;\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"price\").innerHTML = dat[k].Preis + \"€\";\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"text\").innerHTML = dat[k].Beschreibung;\r\n"
+                },
+                {
+                    "date": 1641454921982,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,14 +57,14 @@\n             {\r\n                 dat.push(data[i].jsonstring);\r\n \r\n                 for (var k = 0; k < dat.length; k++){\r\n-                console.log(dat[k].Konaktmöglichkeit)        ;\r\n+                console.log(dat[k].Kontaktmöglichkeit)        ;\r\n                 document.getElementById(\"Card\"+ Number(k)).removeAttribute(\"hidden\");\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"title\").innerHTML = dat[k].Titel;\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"price\").innerHTML = dat[k].Preis + \"€\";\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"text\").innerHTML = dat[k].Beschreibung;\r\n-                document.getElementById(\"Card\"+ Number(k)+ \"contact\").innerHTML = dat[k].Konaktmöglichkeit;\r\n+                document.getElementById(\"Card\"+ Number(k)+ \"contact\").innerHTML = dat[k].Kontaktmöglichkeit;\r\n                 }\r\n                 \r\n             }\r\n             \r\n"
                 }
             ],
             "date": 1640256408490,

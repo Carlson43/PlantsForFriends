@@ -58,12 +58,12 @@ function search_and_display()
                 dat.push(data[i].jsonstring);
 
                 for (var k = 0; k < dat.length; k++){
-                console.log(dat[k].Kontaktmöglichkeit)        ;
+                console.log(dat[k].Konaktmöglichkeit)        ;
                 document.getElementById("Card"+ Number(k)).removeAttribute("hidden");
                 document.getElementById("Card"+ Number(k)+ "title").innerHTML = dat[k].Titel;
                 document.getElementById("Card"+ Number(k)+ "price").innerHTML = dat[k].Preis + "€";
                 document.getElementById("Card"+ Number(k)+ "text").innerHTML = dat[k].Beschreibung;
-                document.getElementById("Card"+ Number(k)+ "contact").innerHTML = dat[k].Kontaktmöglichkeit;
+                document.getElementById("Card"+ Number(k)+ "contact").innerHTML = dat[k].Konaktmöglichkeit;
                 }
                 
             }

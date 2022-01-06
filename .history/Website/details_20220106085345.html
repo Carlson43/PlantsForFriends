@@ -116,15 +116,13 @@
     <script>
         // Making a map and tiles
         // Setting a higher initial zoom to make effect more obvious
-        var Ad_loc = [51.289406, 10.008545] 
-        // 51.289406, 10.008545 Globaler Sichtmittelpunkt
-        // 51.51792, 9.94451 Lokaler / BEispiel Sichmittelpunkt
+        var Ad_loc = ([51.289406, 10.008545], 6)
 
         const detail_map = L.map('pointMap', {
                         fullscreenControl: true,
                         fullscreenControlOptions: {
                         position: 'topleft'}
-                        }).setView(Ad_loc,11);
+                        }).setView(Ad_loc);
         const attribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
         const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
         const tiles = L.tileLayer(tileUrl, { attribution });

@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 57,
+            "activePatchIndex": 59,
             "patches": [
                 {
                     "date": 1641392022048,
@@ -236,6 +236,14 @@
                 {
                     "date": 1641395415215,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,9 +47,8 @@\n                 <div class=\"navbar-nav\">\r\n                     <a class=\"nav-link\" href=\"./index.html\">Home</a>\r\n                     <a class=\"nav-link\" href=\"./create.html\">Anzeige erstellen</a>\r\n                     <a class=\"nav-link\" href=\"./map.html\">Karte</a>\r\n-                    <a class=\"nav-link disabled\">Disabled</a>\r\n                 </div>\r\n             </div>\r\n         </div>\r\n     </nav>\r\n"
+                },
+                {
+                    "date": 1641455531276,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -115,39 +115,27 @@\n     <!-- Custom Map JS -->\r\n     <script>\r\n         // Making a map and tiles\r\n         // Setting a higher initial zoom to make effect more obvious\r\n-        var Ad_loc = [51.51792, 9.94451]\r\n+        var Ad_loc = ([51.289406, 10.008545], 6)\r\n \r\n-        const mymap = L.map('pointMap', {\r\n+        const detail_map = L.map('pointMap', {\r\n                         fullscreenControl: true,\r\n                         fullscreenControlOptions: {\r\n                         position: 'topleft'}\r\n                         }).setView(Ad_loc, 10);\r\n         const attribution = '&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors';\r\n         const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';\r\n         const tiles = L.tileLayer(tileUrl, { attribution });\r\n-        tiles.addTo(mymap);\r\n-        L.control.locate().addTo(mymap);\r\n+        tiles.addTo(detail_map);\r\n+        L.control.locate().addTo(detail_map);\r\n \r\n         //Add a marker to the map\r\n-        var marker1 = L.marker(Ad_loc).addTo(mymap);\r\n+        var marker1 = L.marker(Ad_loc).addTo(detail_map);\r\n   \r\n         //Add Popup / description to markers\r\n         marker1.bindPopup(\"<b>Angebot Name</b>\").openPopup();\r\n \r\n-        \r\n-        // Show Location on Click\r\n-        var popup = L.popup();\r\n-        function onMapClick(e) {\r\n-            popup\r\n-                .setLatLng(e.latlng)\r\n-                .setContent(\"You clicked the map at \" + e.latlng.toString())\r\n-                .openOn(mymap);\r\n-        }\r\n-\r\n-        mymap.on('click', onMapClick);\r\n-\r\n         Marker();\r\n     </script>\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1641455625593,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -121,9 +121,9 @@\n         const detail_map = L.map('pointMap', {\r\n                         fullscreenControl: true,\r\n                         fullscreenControlOptions: {\r\n                         position: 'topleft'}\r\n-                        }).setView(Ad_loc, 10);\r\n+                        }).setView(Ad_loc);\r\n         const attribution = '&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors';\r\n         const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';\r\n         const tiles = L.tileLayer(tileUrl, { attribution });\r\n         tiles.addTo(detail_map);\r\n"
                 }
             ],
             "date": 1641392022048,
