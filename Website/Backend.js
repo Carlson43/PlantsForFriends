@@ -102,6 +102,7 @@ function Marker()
     mark = []
     marker = []
 
+
     $.get("https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_",function(response)
     {
         for (var i = 0; i < response.length; i++)
@@ -115,16 +116,15 @@ function Marker()
             if ("lat" in data[k].jsonstring)
             {
             mark.push(data[k].jsonstring.lat, data[k].jsonstring.lng,data[k].jsonstring.Pflanzenart)
-            console.log(mark)
             }
         }
 
         for (var j = 0; j < mark.length; j++){
             marker[j] = L.marker([mark[3*j], mark[3*j+1]]).addTo(overview_map);
             marker[j].bindPopup(mark[3*j+2]).openPopup();
-            console.log(mark[3*j+2])
+            overview_map.setView([51.289406, 10.008545],6);
+
         }
-
-
     }
-)}
+    )
+}
