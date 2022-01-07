@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 330,
+            "activePatchIndex": 366,
             "patches": [
                 {
                     "date": 1640256408490,
@@ -1328,6 +1328,150 @@
                 {
                     "date": 1641595903175,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n     var dat = []\r\n     var data = []\r\n \r\n     for (var h = 0; h < 8; h++){\r\n-        document.getElementById(\"Card\"+ Number(h)).setAttribute(\"hidden\");\r\n+        document.getElementById(\"Card\"+ Number(h)).setAttribute(\"hidden\",true);\r\n     }\r\n \r\n \r\n     $.get(\"https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_\",function(response)\r\n"
+                },
+                {
+                    "date": 1641596156274,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -126,5 +126,6 @@\n         }\r\n \r\n \r\n     }\r\n+    L.map.setView([51.289406, 10.008545], 6)\r\n )}\r\n"
+                },
+                {
+                    "date": 1641596184809,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -126,6 +126,6 @@\n         }\r\n \r\n \r\n     }\r\n-    L.map.setView([51.289406, 10.008545], 6)\r\n+    overview_map.setView([51.289406, 10.008545], 6)\r\n )}\r\n"
+                },
+                {
+                    "date": 1641596224587,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -126,6 +126,6 @@\n         }\r\n \r\n \r\n     }\r\n-    overview_map.setView([51.289406, 10.008545], 6)\r\n+    L.setView([51.289406, 10.008545], 6)\r\n )}\r\n"
+                },
+                {
+                    "date": 1641596252013,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -126,6 +126,6 @@\n         }\r\n \r\n \r\n     }\r\n-    L.setView([51.289406, 10.008545], 6)\r\n+    L.setView([51.289406, 10.008545])\r\n )}\r\n"
+                },
+                {
+                    "date": 1641596319540,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -121,11 +121,10 @@\n \r\n         for (var j = 0; j < mark.length; j++){\r\n             marker[j] = L.marker([mark[3*j], mark[3*j+1]]).addTo(overview_map);\r\n             marker[j].bindPopup(mark[3*j+2]).openPopup();\r\n-            console.log(mark[3*j+2])\r\n+            console.log(mark[3*j+2]);\r\n+            L.setView([51.289406, 10.008545])\r\n         }\r\n-\r\n-\r\n     }\r\n-    L.setView([51.289406, 10.008545])\r\n+    // L.setView([51.289406, 10.008545])\r\n )}\r\n"
+                },
+                {
+                    "date": 1641596331545,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -122,9 +122,9 @@\n         for (var j = 0; j < mark.length; j++){\r\n             marker[j] = L.marker([mark[3*j], mark[3*j+1]]).addTo(overview_map);\r\n             marker[j].bindPopup(mark[3*j+2]).openPopup();\r\n             console.log(mark[3*j+2]);\r\n-            L.setView([51.289406, 10.008545])\r\n+            // L.setView([51.289406, 10.008545])\r\n         }\r\n     }\r\n     // L.setView([51.289406, 10.008545])\r\n )}\r\n"
+                },
+                {
+                    "date": 1641596369981,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -122,9 +122,9 @@\n         for (var j = 0; j < mark.length; j++){\r\n             marker[j] = L.marker([mark[3*j], mark[3*j+1]]).addTo(overview_map);\r\n             marker[j].bindPopup(mark[3*j+2]).openPopup();\r\n             console.log(mark[3*j+2]);\r\n-            // L.setView([51.289406, 10.008545])\r\n+            L.setView([51.289406, 10.008545])\r\n         }\r\n     }\r\n     // L.setView([51.289406, 10.008545])\r\n )}\r\n"
+                },
+                {
+                    "date": 1641596435672,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -121,9 +121,8 @@\n \r\n         for (var j = 0; j < mark.length; j++){\r\n             marker[j] = L.marker([mark[3*j], mark[3*j+1]]).addTo(overview_map);\r\n             marker[j].bindPopup(mark[3*j+2]).openPopup();\r\n-            console.log(mark[3*j+2]);\r\n             L.setView([51.289406, 10.008545])\r\n         }\r\n     }\r\n     // L.setView([51.289406, 10.008545])\r\n"
+                },
+                {
+                    "date": 1641596452329,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -121,9 +121,10 @@\n \r\n         for (var j = 0; j < mark.length; j++){\r\n             marker[j] = L.marker([mark[3*j], mark[3*j+1]]).addTo(overview_map);\r\n             marker[j].bindPopup(mark[3*j+2]).openPopup();\r\n-            L.setView([51.289406, 10.008545])\r\n+\r\n         }\r\n+        L.setView([51.289406, 10.008545])\r\n     }\r\n     // L.setView([51.289406, 10.008545])\r\n )}\r\n"
+                },
+                {
+                    "date": 1641596481600,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -100,8 +100,9 @@\n {\r\n     data = []\r\n     mark = []\r\n     marker = []\r\n+    L.setView([51.289406, 10.008545])\r\n \r\n     $.get(\"https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_\",function(response)\r\n     {\r\n         for (var i = 0; i < response.length; i++)\r\n@@ -123,8 +124,8 @@\n             marker[j] = L.marker([mark[3*j], mark[3*j+1]]).addTo(overview_map);\r\n             marker[j].bindPopup(mark[3*j+2]).openPopup();\r\n \r\n         }\r\n-        L.setView([51.289406, 10.008545])\r\n+        // L.setView([51.289406, 10.008545])\r\n     }\r\n-    // L.setView([51.289406, 10.008545])\r\n+\r\n )}\r\n"
+                },
+                {
+                    "date": 1641596494349,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -100,10 +100,10 @@\n {\r\n     data = []\r\n     mark = []\r\n     marker = []\r\n-    L.setView([51.289406, 10.008545])\r\n \r\n+\r\n     $.get(\"https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_\",function(response)\r\n     {\r\n         for (var i = 0; i < response.length; i++)\r\n         {\r\n"
+                },
+                {
+                    "date": 1641596522380,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -126,6 +126,6 @@\n \r\n         }\r\n         // L.setView([51.289406, 10.008545])\r\n     }\r\n-\r\n+    L.setView([51.289406, 10.008545])\r\n )}\r\n"
+                },
+                {
+                    "date": 1641596603673,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -126,6 +126,6 @@\n \r\n         }\r\n         // L.setView([51.289406, 10.008545])\r\n     }\r\n-    L.setView([51.289406, 10.008545])\r\n+    \r\n )}\r\n"
+                },
+                {
+                    "date": 1641596683462,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -126,6 +126,6 @@\n \r\n         }\r\n         // L.setView([51.289406, 10.008545])\r\n     }\r\n-    \r\n+    L.panTo([51.289406, 10.008545])\r\n )}\r\n"
+                },
+                {
+                    "date": 1641596715294,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -126,6 +126,6 @@\n \r\n         }\r\n         // L.setView([51.289406, 10.008545])\r\n     }\r\n-    L.panTo([51.289406, 10.008545])\r\n+    L.setView([51.28, 10.00])\r\n )}\r\n"
+                },
+                {
+                    "date": 1641596960743,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -126,6 +126,6 @@\n \r\n         }\r\n         // L.setView([51.289406, 10.008545])\r\n     }\r\n-    L.setView([51.28, 10.00])\r\n+    L.setView(new L.LatLng(40.737, -73.923), 8)\r\n )}\r\n"
+                },
+                {
+                    "date": 1641597026960,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -126,6 +126,8 @@\n \r\n         }\r\n         // L.setView([51.289406, 10.008545])\r\n     }\r\n-    L.setView(new L.LatLng(40.737, -73.923), 8)\r\n-)}\r\n+\r\n+    )\r\n+        L.setView([51.289406, 10.008545])\r\n+}\r\n"
+                },
+                {
+                    "date": 1641597037452,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -128,6 +128,6 @@\n         // L.setView([51.289406, 10.008545])\r\n     }\r\n \r\n     )\r\n-        L.setView([51.289406, 10.008545])\r\n+        L.setView([5.289406, 10.008545])\r\n }\r\n"
+                },
+                {
+                    "date": 1641597058431,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -128,6 +128,6 @@\n         // L.setView([51.289406, 10.008545])\r\n     }\r\n \r\n     )\r\n-        L.setView([5.289406, 10.008545])\r\n+        L.setView([5.289406, 10.008545],6)\r\n }\r\n"
+                },
+                {
+                    "date": 1641597092933,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -128,6 +128,6 @@\n         // L.setView([51.289406, 10.008545])\r\n     }\r\n \r\n     )\r\n-        L.setView([5.289406, 10.008545],6)\r\n+        L.panTo([5.289406, 10.008545],6)\r\n }\r\n"
+                },
+                {
+                    "date": 1641597108162,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -128,6 +128,6 @@\n         // L.setView([51.289406, 10.008545])\r\n     }\r\n \r\n     )\r\n-        L.panTo([5.289406, 10.008545],6)\r\n+        L.map.panTo([5.289406, 10.008545],6)\r\n }\r\n"
+                },
+                {
+                    "date": 1641597320232,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -128,6 +128,6 @@\n         // L.setView([51.289406, 10.008545])\r\n     }\r\n \r\n     )\r\n-        L.map.panTo([5.289406, 10.008545],6)\r\n+        // L.map.panTo([5.289406, 10.008545],6)\r\n }\r\n"
+                },
+                {
+                    "date": 1641597491764,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -122,8 +122,9 @@\n \r\n         for (var j = 0; j < mark.length; j++){\r\n             marker[j] = L.marker([mark[3*j], mark[3*j+1]]).addTo(overview_map);\r\n             marker[j].bindPopup(mark[3*j+2]).openPopup();\r\n+                    L.setView([51.289406, 10.008545])\r\n \r\n         }\r\n         // L.setView([51.289406, 10.008545])\r\n     }\r\n"
+                },
+                {
+                    "date": 1641597501740,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -122,9 +122,9 @@\n \r\n         for (var j = 0; j < mark.length; j++){\r\n             marker[j] = L.marker([mark[3*j], mark[3*j+1]]).addTo(overview_map);\r\n             marker[j].bindPopup(mark[3*j+2]).openPopup();\r\n-                    L.setView([51.289406, 10.008545])\r\n+                    L.setView([51.406, 10.8545])\r\n \r\n         }\r\n         // L.setView([51.289406, 10.008545])\r\n     }\r\n"
+                },
+                {
+                    "date": 1641597512973,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -122,9 +122,9 @@\n \r\n         for (var j = 0; j < mark.length; j++){\r\n             marker[j] = L.marker([mark[3*j], mark[3*j+1]]).addTo(overview_map);\r\n             marker[j].bindPopup(mark[3*j+2]).openPopup();\r\n-                    L.setView([51.406, 10.8545])\r\n+                    L.setView([10.406, 50.8545])\r\n \r\n         }\r\n         // L.setView([51.289406, 10.008545])\r\n     }\r\n"
+                },
+                {
+                    "date": 1641597540419,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -122,9 +122,9 @@\n \r\n         for (var j = 0; j < mark.length; j++){\r\n             marker[j] = L.marker([mark[3*j], mark[3*j+1]]).addTo(overview_map);\r\n             marker[j].bindPopup(mark[3*j+2]).openPopup();\r\n-                    L.setView([10.406, 50.8545])\r\n+                    L.setView([10.406, 50.8545],10)\r\n \r\n         }\r\n         // L.setView([51.289406, 10.008545])\r\n     }\r\n"
+                },
+                {
+                    "date": 1641597585213,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -115,9 +115,8 @@\n         {\r\n             if (\"lat\" in data[k].jsonstring)\r\n             {\r\n             mark.push(data[k].jsonstring.lat, data[k].jsonstring.lng,data[k].jsonstring.Pflanzenart)\r\n-            console.log(mark)\r\n             }\r\n         }\r\n \r\n         for (var j = 0; j < mark.length; j++){\r\n"
+                },
+                {
+                    "date": 1641598018847,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -121,9 +121,9 @@\n \r\n         for (var j = 0; j < mark.length; j++){\r\n             marker[j] = L.marker([mark[3*j], mark[3*j+1]]).addTo(overview_map);\r\n             marker[j].bindPopup(mark[3*j+2]).openPopup();\r\n-                    L.setView([10.406, 50.8545],10)\r\n+            overview_map.setView([10.406, 50.8545],10)\r\n \r\n         }\r\n         // L.setView([51.289406, 10.008545])\r\n     }\r\n"
+                },
+                {
+                    "date": 1641598026440,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -121,9 +121,9 @@\n \r\n         for (var j = 0; j < mark.length; j++){\r\n             marker[j] = L.marker([mark[3*j], mark[3*j+1]]).addTo(overview_map);\r\n             marker[j].bindPopup(mark[3*j+2]).openPopup();\r\n-            overview_map.setView([10.406, 50.8545],10)\r\n+            map.setView([10.406, 50.8545],10)\r\n \r\n         }\r\n         // L.setView([51.289406, 10.008545])\r\n     }\r\n"
+                },
+                {
+                    "date": 1641598089838,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -121,9 +121,9 @@\n \r\n         for (var j = 0; j < mark.length; j++){\r\n             marker[j] = L.marker([mark[3*j], mark[3*j+1]]).addTo(overview_map);\r\n             marker[j].bindPopup(mark[3*j+2]).openPopup();\r\n-            map.setView([10.406, 50.8545],10)\r\n+            // map.setView([10.406, 50.8545],10)\r\n \r\n         }\r\n         // L.setView([51.289406, 10.008545])\r\n     }\r\n"
+                },
+                {
+                    "date": 1641598317554,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -121,9 +121,9 @@\n \r\n         for (var j = 0; j < mark.length; j++){\r\n             marker[j] = L.marker([mark[3*j], mark[3*j+1]]).addTo(overview_map);\r\n             marker[j].bindPopup(mark[3*j+2]).openPopup();\r\n-            // map.setView([10.406, 50.8545],10)\r\n+            overview_map.setView([1.289406, 10.008545],6);\r\n \r\n         }\r\n         // L.setView([51.289406, 10.008545])\r\n     }\r\n"
+                },
+                {
+                    "date": 1641598326535,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -121,9 +121,9 @@\n \r\n         for (var j = 0; j < mark.length; j++){\r\n             marker[j] = L.marker([mark[3*j], mark[3*j+1]]).addTo(overview_map);\r\n             marker[j].bindPopup(mark[3*j+2]).openPopup();\r\n-            overview_map.setView([1.289406, 10.008545],6);\r\n+            overview_map.setView([50.289406, 10.008545],6);\r\n \r\n         }\r\n         // L.setView([51.289406, 10.008545])\r\n     }\r\n"
+                },
+                {
+                    "date": 1641598332710,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -121,9 +121,9 @@\n \r\n         for (var j = 0; j < mark.length; j++){\r\n             marker[j] = L.marker([mark[3*j], mark[3*j+1]]).addTo(overview_map);\r\n             marker[j].bindPopup(mark[3*j+2]).openPopup();\r\n-            overview_map.setView([50.289406, 10.008545],6);\r\n+            overview_map.setView([50.289406, 11.008545],6);\r\n \r\n         }\r\n         // L.setView([51.289406, 10.008545])\r\n     }\r\n"
+                },
+                {
+                    "date": 1641598338183,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -121,9 +121,9 @@\n \r\n         for (var j = 0; j < mark.length; j++){\r\n             marker[j] = L.marker([mark[3*j], mark[3*j+1]]).addTo(overview_map);\r\n             marker[j].bindPopup(mark[3*j+2]).openPopup();\r\n-            overview_map.setView([50.289406, 11.008545],6);\r\n+            overview_map.setView([50.289406, 12.008545],6);\r\n \r\n         }\r\n         // L.setView([51.289406, 10.008545])\r\n     }\r\n"
+                },
+                {
+                    "date": 1641598348784,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -121,9 +121,9 @@\n \r\n         for (var j = 0; j < mark.length; j++){\r\n             marker[j] = L.marker([mark[3*j], mark[3*j+1]]).addTo(overview_map);\r\n             marker[j].bindPopup(mark[3*j+2]).openPopup();\r\n-            overview_map.setView([50.289406, 12.008545],6);\r\n+            overview_map.setView([51.289406, 10.008545],6);\r\n \r\n         }\r\n         // L.setView([51.289406, 10.008545])\r\n     }\r\n"
+                },
+                {
+                    "date": 1641598401452,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -124,10 +124,7 @@\n             marker[j].bindPopup(mark[3*j+2]).openPopup();\r\n             overview_map.setView([51.289406, 10.008545],6);\r\n \r\n         }\r\n-        // L.setView([51.289406, 10.008545])\r\n     }\r\n-\r\n     )\r\n-        // L.map.panTo([5.289406, 10.008545],6)\r\n }\r\n"
                 }
             ],
             "date": 1640256408490,
