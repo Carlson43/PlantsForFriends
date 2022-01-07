@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 326,
+            "activePatchIndex": 330,
             "patches": [
                 {
                     "date": 1640256408490,
@@ -1312,6 +1312,22 @@
                 {
                     "date": 1641454921982,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,14 +57,14 @@\n             {\r\n                 dat.push(data[i].jsonstring);\r\n \r\n                 for (var k = 0; k < dat.length; k++){\r\n-                console.log(dat[k].Konaktmöglichkeit)        ;\r\n+                console.log(dat[k].Kontaktmöglichkeit)        ;\r\n                 document.getElementById(\"Card\"+ Number(k)).removeAttribute(\"hidden\");\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"title\").innerHTML = dat[k].Titel;\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"price\").innerHTML = dat[k].Preis + \"€\";\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"text\").innerHTML = dat[k].Beschreibung;\r\n-                document.getElementById(\"Card\"+ Number(k)+ \"contact\").innerHTML = dat[k].Konaktmöglichkeit;\r\n+                document.getElementById(\"Card\"+ Number(k)+ \"contact\").innerHTML = dat[k].Kontaktmöglichkeit;\r\n                 }\r\n                 \r\n             }\r\n             \r\n"
+                },
+                {
+                    "date": 1641595749236,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,8 +41,15 @@\n {\r\n     var nam = String($(\"#search_term\").val())\r\n     var dat = []\r\n     var data = []\r\n+\r\n+    for (var h = 0, h < 8, h++){\r\n+        document.getElementById(\"Card\"+ Number(h)).setAttribute(\"hidden\");\r\n+    }\r\n+\r\n+    document.getElementById(\"Card\"+ Number(k)).removeAttribute(\"hidden\");\r\n+\r\n     $.get(\"https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_\",function(response)\r\n     { \r\n         for (var i = 0; i < response.length; i++)\r\n         data.push(response[i]);\r\n"
+                },
+                {
+                    "date": 1641595828042,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,9 +42,9 @@\n     var nam = String($(\"#search_term\").val())\r\n     var dat = []\r\n     var data = []\r\n \r\n-    for (var h = 0, h < 8, h++){\r\n+    for (var h = 0; h < 8; h++){\r\n         document.getElementById(\"Card\"+ Number(h)).setAttribute(\"hidden\");\r\n     }\r\n \r\n     document.getElementById(\"Card\"+ Number(k)).removeAttribute(\"hidden\");\r\n"
+                },
+                {
+                    "date": 1641595853217,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,9 +46,8 @@\n     for (var h = 0; h < 8; h++){\r\n         document.getElementById(\"Card\"+ Number(h)).setAttribute(\"hidden\");\r\n     }\r\n \r\n-    document.getElementById(\"Card\"+ Number(k)).removeAttribute(\"hidden\");\r\n \r\n     $.get(\"https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_\",function(response)\r\n     { \r\n         for (var i = 0; i < response.length; i++)\r\n"
+                },
+                {
+                    "date": 1641595903175,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n     var dat = []\r\n     var data = []\r\n \r\n     for (var h = 0; h < 8; h++){\r\n-        document.getElementById(\"Card\"+ Number(h)).setAttribute(\"hidden\");\r\n+        document.getElementById(\"Card\"+ Number(h)).setAttribute(\"hidden\",true);\r\n     }\r\n \r\n \r\n     $.get(\"https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_\",function(response)\r\n"
                 }
             ],
             "date": 1640256408490,

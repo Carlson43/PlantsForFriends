@@ -43,10 +43,11 @@ function search_and_display()
     var dat = []
     var data = []
 
-    for (var h = 0; h < 8; h++){
-        document.getElementById("Card"+ Number(h)).setAttribute("hidden",true);
+    for (var h = 0, h < 8, h++){
+        document.getElementById("Card"+ Number(h)).setAttribute("hidden");
     }
 
+    document.getElementById("Card"+ Number(k)).removeAttribute("hidden");
 
     $.get("https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_",function(response)
     { 

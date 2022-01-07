@@ -44,7 +44,7 @@ function search_and_display()
     var data = []
 
     for (var h = 0; h < 8; h++){
-        document.getElementById("Card"+ Number(h)).setAttribute("hidden",true);
+        document.getElementById("Card"+ Number(h)).setAttribute("hidden");
     }
 
 
