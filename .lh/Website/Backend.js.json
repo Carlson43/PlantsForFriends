@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 366,
+            "activePatchIndex": 376,
             "patches": [
                 {
                     "date": 1640256408490,
@@ -1472,6 +1472,46 @@
                 {
                     "date": 1641598401452,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -124,10 +124,7 @@\n             marker[j].bindPopup(mark[3*j+2]).openPopup();\r\n             overview_map.setView([51.289406, 10.008545],6);\r\n \r\n         }\r\n-        // L.setView([51.289406, 10.008545])\r\n     }\r\n-\r\n     )\r\n-        // L.map.panTo([5.289406, 10.008545],6)\r\n }\r\n"
+                },
+                {
+                    "date": 1641598440447,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -114,9 +114,9 @@\n         for(var k = 0; k< data.length;k++)\r\n         {\r\n             if (\"lat\" in data[k].jsonstring)\r\n             {\r\n-            mark.push(data[k].jsonstring.lat, data[k].jsonstring.lng,data[k].jsonstring.Pflanzenart)\r\n+            mark.push(data[k].jsonstring.lat, data[k].jsonstring.lng,data[k].jsonstring.Titel)\r\n             }\r\n         }\r\n \r\n         for (var j = 0; j < mark.length; j++){\r\n"
+                },
+                {
+                    "date": 1641599319819,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -127,4 +127,10 @@\n         }\r\n     }\r\n     )\r\n }\r\n+\r\n+\r\n+function display_details(){\r\n+    document.getElementById(\"Anzeigen_Name\").innerHTML = dat[k].Titel;\r\n+\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1641599342153,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -130,7 +130,7 @@\n }\r\n \r\n \r\n function display_details(){\r\n-    document.getElementById(\"Anzeigen_Name\").innerHTML = dat[k].Titel;\r\n+    document.getElementById(\"Anzeigen_Name\").innerHTML = Card0title;\r\n \r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1641599415821,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -130,7 +130,7 @@\n }\r\n \r\n \r\n function display_details(){\r\n-    document.getElementById(\"Anzeigen_Name\").innerHTML = Card0title;\r\n+    document.getElementById(\"Anzeigen_Name\").innerHTML =  document.getElementById(\"Card0title\").innerHTML;\r\n \r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1641599454336,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -130,7 +130,7 @@\n }\r\n \r\n \r\n function display_details(){\r\n-    document.getElementById(\"Anzeigen_Name\").innerHTML =  document.getElementById(\"Card0title\").innerHTML;\r\n+    document.getElementById(\"Anzeigen_Name\").innerHTML =  \"Hallo\";\r\n \r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1641599504412,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -130,7 +130,7 @@\n }\r\n \r\n \r\n function display_details(){\r\n-    document.getElementById(\"Anzeigen_Name\").innerHTML =  \"Hallo\";\r\n+    document.getElementById(\"Anzeigen_Name\").innerHTML =  document.getElementById(\"Card0title\").innerHTML;\r\n \r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1641599548258,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -130,7 +130,7 @@\n }\r\n \r\n \r\n function display_details(){\r\n-    document.getElementById(\"Anzeigen_Name\").innerHTML =  document.getElementById(\"Card0title\").innerHTML;\r\n+    document.getElementById(\"Anzeigen_Name\").innerHTML =  Card0title;\r\n \r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1641599563639,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -130,7 +130,7 @@\n }\r\n \r\n \r\n function display_details(){\r\n-    document.getElementById(\"Anzeigen_Name\").innerHTML =  Card0title;\r\n+    document.getElementById(\"Anzeigen_Name\").innerHTML =  \"Card0title\";\r\n \r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1641599674772,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -130,7 +130,7 @@\n }\r\n \r\n \r\n function display_details(){\r\n-    document.getElementById(\"Anzeigen_Name\").innerHTML =  \"Card0title\";\r\n+    document.getElementById(\"Anzeigen_Name\").innerHTML =  Kontakt;\r\n \r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1641599689183,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -130,7 +130,7 @@\n }\r\n \r\n \r\n function display_details(){\r\n-    document.getElementById(\"Anzeigen_Name\").innerHTML =  Kontakt;\r\n+    document.getElementById(\"Anzeigen_Name\").innerHTML =  document.getElementById(\"Kontakt\").innerHTML;\r\n \r\n }\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1640256408490,

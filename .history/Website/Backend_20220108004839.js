@@ -131,6 +131,6 @@ function Marker()
 
 
 function display_details(){
-    document.getElementById("Anzeigen_Name").innerHTML =  document.getElementById("Kontakt").innerHTML;
+    document.getElementById("Anzeigen_Name").innerHTML = dat[k].Titel;
 
 }
