@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 62,
+            "activePatchIndex": 71,
             "patches": [
                 {
                     "date": 1641392022048,
@@ -256,6 +256,42 @@
                 {
                     "date": 1641599662186,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -74,9 +74,9 @@\n             </div>\r\n             <div class=\"col\">\r\n                 <!-- Kontaktbox -->\r\n                 <div class=\"card\">\r\n-                    <div class=\"card-body\">Kontaktmöglichkeit</div>\r\n+                    <div class=\"card-body\" id=\"Kontakt\">Kontaktmöglichkeit</div>\r\n                 </div>\r\n             </div>\r\n         </div>\r\n         <p></p>\r\n"
+                },
+                {
+                    "date": 1641743739318,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,15 +68,15 @@\n         <div class=\"row\">\r\n             <div class=\"col\">\r\n                 <!-- Preisbox -->\r\n                 <div class=\"card\">\r\n-                    <div class=\"card-body\">Preis</div>\r\n+                    <div id = \"Anzeigen_Preis\" class=\"card-body\">Preis</div>\r\n                 </div>\r\n             </div>\r\n             <div class=\"col\">\r\n                 <!-- Kontaktbox -->\r\n                 <div class=\"card\">\r\n-                    <div class=\"card-body\" id=\"Kontakt\">Kontaktmöglichkeit</div>\r\n+                    <div class=\"card-body\" id=\"Anzeigen_Kontakt\">Kontaktmöglichkeit</div>\r\n                 </div>\r\n             </div>\r\n         </div>\r\n         <p></p>\r\n"
+                },
+                {
+                    "date": 1641743819282,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -81,9 +81,9 @@\n         </div>\r\n         <p></p>\r\n         <!-- Beschreibung der Anzeige -->\r\n         <div class=\"card\">\r\n-            <div class=\"card-body\">Hier ist dann die Beschreibung der Anzeige: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</div>\r\n+            <div id = \"Anzeigen_Beschreibung\"class=\"card-body\">Hier ist dann die Beschreibung der Anzeige: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</div>\r\n         </div>\r\n     </div>\r\n     <p></p>\r\n \r\n"
+                },
+                {
+                    "date": 1641745214451,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -147,8 +147,9 @@\n         // Load all Ad-Locattions from Backend.js\r\n         Marker();\r\n \r\n         display_details()\r\n+        location.reload()\r\n     </script>\r\n \r\n \r\n   </body>\r\n"
+                },
+                {
+                    "date": 1641745224095,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -147,9 +147,9 @@\n         // Load all Ad-Locattions from Backend.js\r\n         Marker();\r\n \r\n         display_details()\r\n-        location.reload()\r\n+       \r\n     </script>\r\n \r\n \r\n   </body>\r\n"
+                },
+                {
+                    "date": 1641745867307,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -146,9 +146,11 @@\n \r\n         // Load all Ad-Locattions from Backend.js\r\n         Marker();\r\n \r\n-        display_details()\r\n+        display_details();\r\n+        location.reload();\r\n+        return false;\r\n        \r\n     </script>\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1641745876518,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -147,9 +147,9 @@\n         // Load all Ad-Locattions from Backend.js\r\n         Marker();\r\n \r\n         display_details();\r\n-        location.reload();\r\n+        location.reload()\r\n         return false;\r\n        \r\n     </script>\r\n \r\n"
+                },
+                {
+                    "date": 1641746032756,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -147,10 +147,11 @@\n         // Load all Ad-Locattions from Backend.js\r\n         Marker();\r\n \r\n         display_details();\r\n-        location.reload()\r\n-        return false;\r\n+        location.reload();\r\n+        \r\n+\r\n        \r\n     </script>\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1641746043038,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -147,11 +147,11 @@\n         // Load all Ad-Locattions from Backend.js\r\n         Marker();\r\n \r\n         display_details();\r\n-        location.reload();\r\n-        \r\n \r\n+\r\n+\r\n        \r\n     </script>\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1641746131219,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -148,8 +148,9 @@\n         Marker();\r\n \r\n         display_details();\r\n \r\n+        window.onload\r\n \r\n \r\n        \r\n     </script>\r\n"
                 }
             ],
             "date": 1641392022048,
