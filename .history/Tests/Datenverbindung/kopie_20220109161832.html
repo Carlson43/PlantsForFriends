@@ -28,9 +28,9 @@
   </div>
 	
 	<script>
-    function addKey0()
+    function add()
     {
-      var jsonstring=  '{"Main":"'+document.getElementById("Card0key").innerHTML;
+      var jsonstring=  '{"":"'+$("#jsonstring").val()+'"}';
       console.log("add"+ jsonstring);
       $.get("https://webtechlecture.appspot.com/cloudstore/add?owner=s201655_key_log&token=FZ0UtB0FSNllekE69ckUlP74oSo_&jsonstring="+encodeURI(jsonstring),function(response)
       {
@@ -42,7 +42,7 @@
     {
       var jsonstring=$("#jsonstring").val();
       console.log("Hi!");
-      $.get("https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655_key_log&token=FZ0UtB0FSNllekE69ckUlP74oSo_",function(response)
+      $.get("https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_",function(response)
       {
         console.log(response);
       });

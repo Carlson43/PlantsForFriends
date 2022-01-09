@@ -44,7 +44,7 @@
       console.log("Hi!");
       $.get("https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655_key_log&token=FZ0UtB0FSNllekE69ckUlP74oSo_",function(response)
       {
-        console.log(response);
+        console.log(response[0].key);
       });
     }
 		

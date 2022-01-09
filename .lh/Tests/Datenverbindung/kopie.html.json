@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 1,
+            "activePatchIndex": 8,
             "patches": [
                 {
                     "date": 1641204941469,
@@ -12,6 +12,34 @@
                 {
                     "date": 1641205039812,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n     function add()\r\n     {\r\n       var jsonstring=  '{\"Pflanze\":\"'+$(\"#jsonstring\").val()+'\"}';\r\n       console.log(\"add\"+ jsonstring);\r\n-      $.get(\"https://webtechlecture.appspot.com/cloudstore/add?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_&key=1640175149201jsonstring=\"+encodeURI(jsonstring),function(response)\r\n+      $.get(\"https://webtechlecture.appspot.com/cloudstore/add?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_&jsonstring=\"+encodeURI(jsonstring),function(response)\r\n       {\r\n         console.log(response);\r\n       });\r\n     }\r\n"
+                },
+                {
+                    "date": 1641741473877,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n     function add()\r\n     {\r\n       var jsonstring=  '{\"Pflanze\":\"'+$(\"#jsonstring\").val()+'\"}';\r\n       console.log(\"add\"+ jsonstring);\r\n-      $.get(\"https://webtechlecture.appspot.com/cloudstore/add?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_&jsonstring=\"+encodeURI(jsonstring),function(response)\r\n+      $.get(\"https://webtechlecture.appspot.com/cloudstore/add?owner=s201655_key_log&token=FZ0UtB0FSNllekE69ckUlP74oSo_&jsonstring=\"+encodeURI(jsonstring),function(response)\r\n       {\r\n         console.log(response);\r\n       });\r\n     }\r\n"
+                },
+                {
+                    "date": 1641741503258,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n \t\r\n \t<script>\r\n     function add()\r\n     {\r\n-      var jsonstring=  '{\"Pflanze\":\"'+$(\"#jsonstring\").val()+'\"}';\r\n+      var jsonstring=  '{\"\":\"'+$(\"#jsonstring\").val()+'\"}';\r\n       console.log(\"add\"+ jsonstring);\r\n       $.get(\"https://webtechlecture.appspot.com/cloudstore/add?owner=s201655_key_log&token=FZ0UtB0FSNllekE69ckUlP74oSo_&jsonstring=\"+encodeURI(jsonstring),function(response)\r\n       {\r\n         console.log(response);\r\n"
+                },
+                {
+                    "date": 1641741512171,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n \r\n   <body>\r\n \r\n    <div>\r\n-\t  <input id= \"jsonstring\" type=\"text\" value='{\"parameter\":\"value\"}'>\r\n+\t  <input id= \"jsonstring\" type=\"text\" value=''>\r\n     <button onclick= \"add();\">Add JSON string</button>\r\n   </div>\r\n \r\n   <div>\r\n"
+                },
+                {
+                    "date": 1641741542438,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,9 +41,9 @@\n     function listAllData()\r\n     {\r\n       var jsonstring=$(\"#jsonstring\").val();\r\n       console.log(\"Hi!\");\r\n-      $.get(\"https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_\",function(response)\r\n+      $.get(\"https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655_key_log&token=FZ0UtB0FSNllekE69ckUlP74oSo_\",function(response)\r\n       {\r\n         console.log(response);\r\n       });\r\n     }\r\n"
+                },
+                {
+                    "date": 1641741639785,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,11 +27,11 @@\n     <button onclick=\"listAllData();\"> List all Data</button>\r\n   </div>\r\n \t\r\n \t<script>\r\n-    function add()\r\n+    function addKey()\r\n     {\r\n-      var jsonstring=  '{\"\":\"'+$(\"#jsonstring\").val()+'\"}';\r\n+      var jsonstring=  '{\"Main\":\"'+$(\"#jsonstring\").val()+'\"}';\r\n       console.log(\"add\"+ jsonstring);\r\n       $.get(\"https://webtechlecture.appspot.com/cloudstore/add?owner=s201655_key_log&token=FZ0UtB0FSNllekE69ckUlP74oSo_&jsonstring=\"+encodeURI(jsonstring),function(response)\r\n       {\r\n         console.log(response);\r\n@@ -43,9 +43,9 @@\n       var jsonstring=$(\"#jsonstring\").val();\r\n       console.log(\"Hi!\");\r\n       $.get(\"https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655_key_log&token=FZ0UtB0FSNllekE69ckUlP74oSo_\",function(response)\r\n       {\r\n-        console.log(response);\r\n+        console.log(response[0].key);\r\n       });\r\n     }\r\n \t\t\r\n     function del()\r\n"
+                },
+                {
+                    "date": 1641742627641,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,11 +27,11 @@\n     <button onclick=\"listAllData();\"> List all Data</button>\r\n   </div>\r\n \t\r\n \t<script>\r\n-    function addKey()\r\n+    function addKey0()\r\n     {\r\n-      var jsonstring=  '{\"Main\":\"'+$(\"#jsonstring\").val()+'\"}';\r\n+      var jsonstring=  '{\"Main\":\"'+document.getElementById(\"Card0key\").innerHTML;\r\n       console.log(\"add\"+ jsonstring);\r\n       $.get(\"https://webtechlecture.appspot.com/cloudstore/add?owner=s201655_key_log&token=FZ0UtB0FSNllekE69ckUlP74oSo_&jsonstring=\"+encodeURI(jsonstring),function(response)\r\n       {\r\n         console.log(response);\r\n"
+                },
+                {
+                    "date": 1641743027730,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n       var jsonstring=$(\"#jsonstring\").val();\r\n       console.log(\"Hi!\");\r\n       $.get(\"https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655_key_log&token=FZ0UtB0FSNllekE69ckUlP74oSo_\",function(response)\r\n       {\r\n-        console.log(response[0].key);\r\n+        console.log(response);\r\n       });\r\n     }\r\n \t\t\r\n     function del()\r\n"
                 }
             ],
             "date": 1641204941469,
