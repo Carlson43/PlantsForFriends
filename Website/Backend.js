@@ -39,53 +39,37 @@ function addAll()
     });
 }
 
-function diaplay_details()
-{
-    var nam = String($("#search_term").val())
-    var dat = []
+function display_details()
+{ 
+    key=0
     var data = []
+ 
 
-    for (var h = 0; h < 8; h++){
-        document.getElementById("Card"+ Number(h)).setAttribute("hidden",true);
-    }
-
-
-    $.get("https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_",function(response)
+    $.get("https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655_key_log&token=FZ0UtB0FSNllekE69ckUlP74oSo_&jsonstring=",function(response)
     { 
-        for (var i = 0; i < response.length; i++)
-        data.push(response[i]);
+        key = response[response.length-1].jsonstring.Main
+    $.get("https://webtechlecture.appspot.com/cloudstore/get?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_&key="+key,function(response)
+    {
+      data.push(response)
+      console.log(data)
+      console.log(data.Titel)
 
-        for (var i = 0; i < data.length; i++)
-        {
-            if (data[i].jsonstring.Pflanzenart == nam
-                ||data[i].jsonstring.Email == nam
-                ||data[i].jsonstring.Beschreibung == nam
-                ||data[i].jsonstring.Pflanzeart == nam
-                ||data[i].jsonstring.Titel == nam)
-            {
-                dat.push(data[i]);
-               
+    document.getElementById("Anzeigen_Name").innerHTML = data[0].Titel;
+    document.getElementById("Anzeigen_Preis").innerHTML = data[0].Preis + "€";
+    document.getElementById("Anzeigen_Beschreibung").innerHTML = data[0].Beschreibung;
+    document.getElementById("Anzeigen_Kontakt").innerHTML = data[0].Kontaktmöglichkeit;
 
-                for (var k = 0; k < dat.length; k++){
-                document.getElementById("Card"+ Number(k)).removeAttribute("hidden");
-                document.getElementById("Card"+ Number(k)+ "title").innerHTML = dat[k].jsonstring.Titel;
-                document.getElementById("Card"+ Number(k)+ "price").innerHTML = dat[k].jsonstring.Preis + "€";
-                document.getElementById("Card"+ Number(k)+ "text").innerHTML = dat[k].jsonstring.Beschreibung;
-                document.getElementById("Card"+ Number(k)+ "contact").innerHTML = dat[k].jsonstring.Kontaktmöglichkeit;
-                document.getElementById("Card"+ Number(k)+ "key").innerHTML = dat[k].key;
 
-                }
-                
-            }
-            
-        };  
-     
 
 
     });
 
 
-    
+
+
+    }) 
+ 
+
 }
 
 function search_and_display()
@@ -190,6 +174,7 @@ function addKey0()
   {
     console.log(response);
   });
+
 }
 
 function addKey1()
@@ -271,3 +256,15 @@ function addKey8()
     console.log(response);
   });
 }
+
+window.onload = function() {
+    if(!window.location.hash) {
+        window.location = window.location + '#loaded';
+        window.location.reload();
+    }
+}
+
+function myURL(){
+            window.open('details.html');
+         }
+
