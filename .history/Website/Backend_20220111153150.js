@@ -115,6 +115,9 @@ function search_and_display()
     
 }
 
+function addElement(){ 
+}
+
 function onMapClick(e) {
     popup
         .setLatLng(e.latlng)
@@ -124,7 +127,7 @@ function onMapClick(e) {
         console.log(lat[0].lat)
 }
 
-function marker()
+function Marker()
 {
     data = []
     mark = []

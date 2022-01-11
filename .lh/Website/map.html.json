@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 62,
+            "activePatchIndex": 63,
             "patches": [
                 {
                     "date": 1640252294782,
@@ -256,6 +256,10 @@
                 {
                     "date": 1641598401549,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -110,9 +110,9 @@\n         L.control.locate().addTo(overview_map);\r\n \r\n         // Load all Ad-Locattions from Backend.js\r\n         Marker();\r\n-        overview_map.setView([1.289406, 10.008545],6);\r\n+\r\n     </script>\r\n \r\n   </body>\r\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1641911567943,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n   </head>\r\n   <body>\r\n \r\n     <!-- Navbar -->\r\n-    <nav class=\"navbar navbar-light bg-light\">\r\n+    <nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\r\n         <div class=\"container fluid\">\r\n             <!-- Navabr Logo and Brandname -->\r\n             <a class=\"navbar-brand\" href=\"index.html\">\r\n                 <img src=\"./Design-Ressourcen/logo.svg\" alt=\"\" width=\"30\" height=\"24\" class=\"d-inline-block align-text-top\">\r\n@@ -109,9 +109,9 @@\n         // Add Control Buttons\r\n         L.control.locate().addTo(overview_map);\r\n \r\n         // Load all Ad-Locattions from Backend.js\r\n-        Marker();\r\n+        marker();\r\n \r\n     </script>\r\n \r\n   </body>\r\n"
                 }
             ],
             "date": 1640252294782,
