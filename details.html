@@ -32,7 +32,7 @@
 
   <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container fluid">
             <!-- Navabr Logo and Brandname -->
             <a class="navbar-brand" href="index.html">
@@ -142,18 +142,12 @@
         // Add Control Buttons
         L.control.locate().addTo(detail_map);
 
-        //Add a marker to the map
-        var marker1 = L.marker(Ad_loc).addTo(detail_map);
-  
-        //Add Popup / description to markers
-        marker1.bindPopup("<b>Angebot Name</b>").openPopup();
+        
 
-        // Load all Ad-Locattions from Backend.js
-        Marker();
-
+        // Load Ad-Locattions from Backend.js
         display_details();
 
-        window.onload
+        // window.onload
 
 
        

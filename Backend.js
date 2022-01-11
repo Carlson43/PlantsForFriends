@@ -52,23 +52,22 @@ function display_details()
     {
       data.push(response)
       console.log(data)
-      console.log(data.Titel)
+      console.log(data[0].lng,data[0].lat)
 
     document.getElementById("Anzeigen_Name").innerHTML = data[0].Titel;
     document.getElementById("Anzeigen_Preis").innerHTML = data[0].Preis + "€";
     document.getElementById("Anzeigen_Beschreibung").innerHTML = data[0].Beschreibung;
     document.getElementById("Anzeigen_Kontakt").innerHTML = data[0].Kontaktmöglichkeit;
 
-
-
+    anzeige_marker = L.marker([data[0].lat, data[0].lng]).addTo(detail_map);
+    console.log(data[0].Titel)
+    
+    detail_map.setView([data[0].lat, data[0].lng],8);
+    anzeige_marker.bindPopup(data[0].Titel).openPopup();
+   
 
     });
-
-
-
-
     }) 
- 
 
 }
 
@@ -165,6 +164,7 @@ function Marker()
     }
     )
 }
+
 
 function addKey0()
 {
