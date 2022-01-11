@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 426,
+            "activePatchIndex": 438,
             "patches": [
                 {
                     "date": 1640256408490,
@@ -1712,6 +1712,54 @@
                 {
                     "date": 1641747232593,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -267,6 +267,4 @@\n function myURL(){\r\n             window.open('details.html');\r\n          }\r\n \r\n-function popup(mylink, windowname) \r\n-{ if (! window.focus)return true; var href; if (typeof(mylink) == 'string') href=mylink; else href=mylink.href; window.open(href, windowname, 'width=400,height=200,scrollbars=yes'); return false; }\r\n"
+                },
+                {
+                    "date": 1641908601151,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,19 +57,10 @@\n     document.getElementById(\"Anzeigen_Name\").innerHTML = data[0].Titel;\r\n     document.getElementById(\"Anzeigen_Preis\").innerHTML = data[0].Preis + \"€\";\r\n     document.getElementById(\"Anzeigen_Beschreibung\").innerHTML = data[0].Beschreibung;\r\n     document.getElementById(\"Anzeigen_Kontakt\").innerHTML = data[0].Kontaktmöglichkeit;\r\n-\r\n-\r\n-\r\n-\r\n     });\r\n-\r\n-\r\n-\r\n-\r\n     }) \r\n- \r\n \r\n }\r\n \r\n function search_and_display()\r\n@@ -165,8 +156,31 @@\n     }\r\n     )\r\n }\r\n \r\n+function marker_details()\r\n+{\r\n+    data = []\r\n+    mark = []\r\n+    marker = []\r\n+\r\n+\r\n+    $.get(\"https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655_key_log&token=FZ0UtB0FSNllekE69ckUlP74oSo_&jsonstring=\",function(response)\r\n+    { \r\n+\r\n+        mark.push(response[i])\r\n+        console.log(mark)\r\n+\r\n+        for (var j = 0; j < mark.length; j++){\r\n+            marker[j] = L.marker([mark[3*j], mark[3*j+1]]).addTo(overview_map);\r\n+            marker[j].bindPopup(mark[3*j+2]).openPopup();\r\n+            overview_map.setView([51.289406, 10.008545],6);\r\n+\r\n+        }\r\n+    }\r\n+    )\r\n+}\r\n+\r\n function addKey0()\r\n {\r\n   var jsonstring=  '{\"Main\":\"'+document.getElementById(\"Card0key\").innerHTML+'\"}';\r\n   console.log(\"add\"+ jsonstring);\r\n"
+                },
+                {
+                    "date": 1641908678481,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -170,11 +170,10 @@\n         mark.push(response[i])\r\n         console.log(mark)\r\n \r\n         for (var j = 0; j < mark.length; j++){\r\n-            marker[j] = L.marker([mark[3*j], mark[3*j+1]]).addTo(overview_map);\r\n+            marker[j] = L.marker([mark[3*j], mark[3*j+1]]).addTo(detail_map);\r\n             marker[j].bindPopup(mark[3*j+2]).openPopup();\r\n-            overview_map.setView([51.289406, 10.008545],6);\r\n \r\n         }\r\n     }\r\n     )\r\n"
+                },
+                {
+                    "date": 1641908723157,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -166,14 +166,15 @@\n \r\n     $.get(\"https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655_key_log&token=FZ0UtB0FSNllekE69ckUlP74oSo_&jsonstring=\",function(response)\r\n     { \r\n \r\n-        mark.push(response[i])\r\n+        mark.push(response)\r\n         console.log(mark)\r\n \r\n         for (var j = 0; j < mark.length; j++){\r\n-            marker[j] = L.marker([mark[3*j], mark[3*j+1]]).addTo(detail_map);\r\n+            marker[j] = L.marker([mark[3*j], mark[3*j+1]]).addTo(overview_map);\r\n             marker[j].bindPopup(mark[3*j+2]).openPopup();\r\n+            overview_map.setView([51.289406, 10.008545],6);\r\n \r\n         }\r\n     }\r\n     )\r\n"
+                },
+                {
+                    "date": 1641908963145,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,8 +57,13 @@\n     document.getElementById(\"Anzeigen_Name\").innerHTML = data[0].Titel;\r\n     document.getElementById(\"Anzeigen_Preis\").innerHTML = data[0].Preis + \"€\";\r\n     document.getElementById(\"Anzeigen_Beschreibung\").innerHTML = data[0].Beschreibung;\r\n     document.getElementById(\"Anzeigen_Kontakt\").innerHTML = data[0].Kontaktmöglichkeit;\r\n+\r\n+    anzeige_marker = L.marker([data[0].lng, data[0].lat]).addTo(overview_map);\r\n+    anzeige_marker.bindPopup(Data[0].Titel).openPopup();\r\n+    overview_map.setView([data[0].lng, data[0.lat]],6);\r\n+\r\n     });\r\n     }) \r\n \r\n }\r\n"
+                },
+                {
+                    "date": 1641908970202,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,9 +60,9 @@\n     document.getElementById(\"Anzeigen_Kontakt\").innerHTML = data[0].Kontaktmöglichkeit;\r\n \r\n     anzeige_marker = L.marker([data[0].lng, data[0].lat]).addTo(overview_map);\r\n     anzeige_marker.bindPopup(Data[0].Titel).openPopup();\r\n-    overview_map.setView([data[0].lng, data[0.lat]],6);\r\n+    overview_map.setView([data[0].lng, data[0].lat],6);\r\n \r\n     });\r\n     }) \r\n \r\n"
+                },
+                {
+                    "date": 1641908986343,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -58,9 +58,9 @@\n     document.getElementById(\"Anzeigen_Preis\").innerHTML = data[0].Preis + \"€\";\r\n     document.getElementById(\"Anzeigen_Beschreibung\").innerHTML = data[0].Beschreibung;\r\n     document.getElementById(\"Anzeigen_Kontakt\").innerHTML = data[0].Kontaktmöglichkeit;\r\n \r\n-    anzeige_marker = L.marker([data[0].lng, data[0].lat]).addTo(overview_map);\r\n+    anzeige_marker = L.marker([data[0].lng, data[0].lat]).addTo(detail_map);\r\n     anzeige_marker.bindPopup(Data[0].Titel).openPopup();\r\n     overview_map.setView([data[0].lng, data[0].lat],6);\r\n \r\n     });\r\n"
+                },
+                {
+                    "date": 1641909031319,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -161,31 +161,9 @@\n     }\r\n     )\r\n }\r\n \r\n-function marker_details()\r\n-{\r\n-    data = []\r\n-    mark = []\r\n-    marker = []\r\n \r\n-\r\n-    $.get(\"https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655_key_log&token=FZ0UtB0FSNllekE69ckUlP74oSo_&jsonstring=\",function(response)\r\n-    { \r\n-\r\n-        mark.push(response)\r\n-        console.log(mark)\r\n-\r\n-        for (var j = 0; j < mark.length; j++){\r\n-            marker[j] = L.marker([mark[3*j], mark[3*j+1]]).addTo(overview_map);\r\n-            marker[j].bindPopup(mark[3*j+2]).openPopup();\r\n-            overview_map.setView([51.289406, 10.008545],6);\r\n-\r\n-        }\r\n-    }\r\n-    )\r\n-}\r\n-\r\n function addKey0()\r\n {\r\n   var jsonstring=  '{\"Main\":\"'+document.getElementById(\"Card0key\").innerHTML+'\"}';\r\n   console.log(\"add\"+ jsonstring);\r\n"
+                },
+                {
+                    "date": 1641909060035,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -59,9 +59,9 @@\n     document.getElementById(\"Anzeigen_Beschreibung\").innerHTML = data[0].Beschreibung;\r\n     document.getElementById(\"Anzeigen_Kontakt\").innerHTML = data[0].Kontaktmöglichkeit;\r\n \r\n     anzeige_marker = L.marker([data[0].lng, data[0].lat]).addTo(detail_map);\r\n-    anzeige_marker.bindPopup(Data[0].Titel).openPopup();\r\n+    // anzeige_marker.bindPopup(Data[0].Titel).openPopup();\r\n     overview_map.setView([data[0].lng, data[0].lat],6);\r\n \r\n     });\r\n     }) \r\n"
+                },
+                {
+                    "date": 1641909070799,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,9 +60,9 @@\n     document.getElementById(\"Anzeigen_Kontakt\").innerHTML = data[0].Kontaktmöglichkeit;\r\n \r\n     anzeige_marker = L.marker([data[0].lng, data[0].lat]).addTo(detail_map);\r\n     // anzeige_marker.bindPopup(Data[0].Titel).openPopup();\r\n-    overview_map.setView([data[0].lng, data[0].lat],6);\r\n+    anzeige_marker.setView([data[0].lng, data[0].lat],6);\r\n \r\n     });\r\n     }) \r\n \r\n"
+                },
+                {
+                    "date": 1641909153227,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,9 +60,9 @@\n     document.getElementById(\"Anzeigen_Kontakt\").innerHTML = data[0].Kontaktmöglichkeit;\r\n \r\n     anzeige_marker = L.marker([data[0].lng, data[0].lat]).addTo(detail_map);\r\n     // anzeige_marker.bindPopup(Data[0].Titel).openPopup();\r\n-    anzeige_marker.setView([data[0].lng, data[0].lat],6);\r\n+    anzeige_marker.setView([data[0].lng, data[0].lat]);\r\n \r\n     });\r\n     }) \r\n \r\n"
+                },
+                {
+                    "date": 1641909167378,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,9 @@\n     $.get(\"https://webtechlecture.appspot.com/cloudstore/get?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_&key=\"+key,function(response)\r\n     {\r\n       data.push(response)\r\n       console.log(data)\r\n-      console.log(data.Titel)\r\n+      console.log(data[0].Titel)\r\n \r\n     document.getElementById(\"Anzeigen_Name\").innerHTML = data[0].Titel;\r\n     document.getElementById(\"Anzeigen_Preis\").innerHTML = data[0].Preis + \"€\";\r\n     document.getElementById(\"Anzeigen_Beschreibung\").innerHTML = data[0].Beschreibung;\r\n"
+                },
+                {
+                    "date": 1641909220166,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,9 +60,9 @@\n     document.getElementById(\"Anzeigen_Kontakt\").innerHTML = data[0].Kontaktmöglichkeit;\r\n \r\n     anzeige_marker = L.marker([data[0].lng, data[0].lat]).addTo(detail_map);\r\n     // anzeige_marker.bindPopup(Data[0].Titel).openPopup();\r\n-    anzeige_marker.setView([data[0].lng, data[0].lat]);\r\n+    detail_map.setView([data[0].lng, data[0].lat]);\r\n \r\n     });\r\n     }) \r\n \r\n"
                 }
             ],
             "date": 1640256408490,

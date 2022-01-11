@@ -52,7 +52,7 @@ function display_details()
     {
       data.push(response)
       console.log(data)
-      console.log(data[0].Titel)
+      console.log(data.Titel)
 
     document.getElementById("Anzeigen_Name").innerHTML = data[0].Titel;
     document.getElementById("Anzeigen_Preis").innerHTML = data[0].Preis + "€";
@@ -61,7 +61,7 @@ function display_details()
 
     anzeige_marker = L.marker([data[0].lng, data[0].lat]).addTo(detail_map);
     // anzeige_marker.bindPopup(Data[0].Titel).openPopup();
-    detail_map.setView([data[0].lng, data[0].lat]);
+    overview_map.setView([data[0].lng, data[0].lat],6);
 
     });
     }) 

@@ -61,7 +61,7 @@ function display_details()
 
     anzeige_marker = L.marker([data[0].lng, data[0].lat]).addTo(detail_map);
     // anzeige_marker.bindPopup(Data[0].Titel).openPopup();
-    detail_map.setView([data[0].lng, data[0].lat]);
+    anzeige_marker.setView([data[0].lng, data[0].lat]);
 
     });
     }) 
