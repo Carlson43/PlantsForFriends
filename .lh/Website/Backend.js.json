@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 445,
+            "activePatchIndex": 452,
             "patches": [
                 {
                     "date": 1640256408490,
@@ -1788,6 +1788,34 @@
                 {
                     "date": 1641910765260,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -59,9 +59,9 @@\n     document.getElementById(\"Anzeigen_Beschreibung\").innerHTML = data[0].Beschreibung;\r\n     document.getElementById(\"Anzeigen_Kontakt\").innerHTML = data[0].Kontaktmöglichkeit;\r\n \r\n     anzeige_marker = L.marker([data[0].lat, data[0].lng]).addTo(detail_map);\r\n-    // anzeige_marker.bindPopup(Data[0].Titel).openPopup();\r\n+    anzeige_marker.bindPopup(Data[0].Titel).openPopup();\r\n     detail_map.setView([data[0].lat, data[0].lng],8);\r\n \r\n     });\r\n     }) \r\n"
+                },
+                {
+                    "date": 1641911009863,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -59,9 +59,9 @@\n     document.getElementById(\"Anzeigen_Beschreibung\").innerHTML = data[0].Beschreibung;\r\n     document.getElementById(\"Anzeigen_Kontakt\").innerHTML = data[0].Kontaktmöglichkeit;\r\n \r\n     anzeige_marker = L.marker([data[0].lat, data[0].lng]).addTo(detail_map);\r\n-    anzeige_marker.bindPopup(Data[0].Titel).openPopup();\r\n+    detail_map.bindPopup(Data[0].Titel).openPopup();\r\n     detail_map.setView([data[0].lat, data[0].lng],8);\r\n \r\n     });\r\n     }) \r\n"
+                },
+                {
+                    "date": 1641911017644,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -59,9 +59,9 @@\n     document.getElementById(\"Anzeigen_Beschreibung\").innerHTML = data[0].Beschreibung;\r\n     document.getElementById(\"Anzeigen_Kontakt\").innerHTML = data[0].Kontaktmöglichkeit;\r\n \r\n     anzeige_marker = L.marker([data[0].lat, data[0].lng]).addTo(detail_map);\r\n-    detail_map.bindPopup(Data[0].Titel).openPopup();\r\n+    anzeige_marker.bindPopup(Data[0].Titel).openPopup();\r\n     detail_map.setView([data[0].lat, data[0].lng],8);\r\n \r\n     });\r\n     }) \r\n"
+                },
+                {
+                    "date": 1641911091380,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -59,10 +59,12 @@\n     document.getElementById(\"Anzeigen_Beschreibung\").innerHTML = data[0].Beschreibung;\r\n     document.getElementById(\"Anzeigen_Kontakt\").innerHTML = data[0].Kontaktmöglichkeit;\r\n \r\n     anzeige_marker = L.marker([data[0].lat, data[0].lng]).addTo(detail_map);\r\n+    \r\n+    detail_map.setView([data[0].lat, data[0].lng],8);\r\n     anzeige_marker.bindPopup(Data[0].Titel).openPopup();\r\n-    detail_map.setView([data[0].lat, data[0].lng],8);\r\n+    console.log(data[0])\r\n \r\n     });\r\n     }) \r\n \r\n"
+                },
+                {
+                    "date": 1641911099447,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -62,9 +62,9 @@\n     anzeige_marker = L.marker([data[0].lat, data[0].lng]).addTo(detail_map);\r\n     \r\n     detail_map.setView([data[0].lat, data[0].lng],8);\r\n     anzeige_marker.bindPopup(Data[0].Titel).openPopup();\r\n-    console.log(data[0])\r\n+    console.log(data[0].titel)\r\n \r\n     });\r\n     }) \r\n \r\n"
+                },
+                {
+                    "date": 1641911114728,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -59,12 +59,13 @@\n     document.getElementById(\"Anzeigen_Beschreibung\").innerHTML = data[0].Beschreibung;\r\n     document.getElementById(\"Anzeigen_Kontakt\").innerHTML = data[0].Kontaktmöglichkeit;\r\n \r\n     anzeige_marker = L.marker([data[0].lat, data[0].lng]).addTo(detail_map);\r\n+    console.log(data[0].Titel)\r\n     \r\n     detail_map.setView([data[0].lat, data[0].lng],8);\r\n     anzeige_marker.bindPopup(Data[0].Titel).openPopup();\r\n-    console.log(data[0].titel)\r\n+   \r\n \r\n     });\r\n     }) \r\n \r\n"
+                },
+                {
+                    "date": 1641911146059,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -62,9 +62,9 @@\n     anzeige_marker = L.marker([data[0].lat, data[0].lng]).addTo(detail_map);\r\n     console.log(data[0].Titel)\r\n     \r\n     detail_map.setView([data[0].lat, data[0].lng],8);\r\n-    anzeige_marker.bindPopup(Data[0].Titel).openPopup();\r\n+    anzeige_marker.bindPopup(\"Hallo\").openPopup();\r\n    \r\n \r\n     });\r\n     }) \r\n"
+                },
+                {
+                    "date": 1641911167677,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -62,9 +62,9 @@\n     anzeige_marker = L.marker([data[0].lat, data[0].lng]).addTo(detail_map);\r\n     console.log(data[0].Titel)\r\n     \r\n     detail_map.setView([data[0].lat, data[0].lng],8);\r\n-    anzeige_marker.bindPopup(\"Hallo\").openPopup();\r\n+    anzeige_marker.bindPopup(data[0].Titel).openPopup();\r\n    \r\n \r\n     });\r\n     }) \r\n"
                 }
             ],
             "date": 1640256408490,
