@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 71,
+            "activePatchIndex": 75,
             "patches": [
                 {
                     "date": 1641392022048,
@@ -292,6 +292,22 @@
                 {
                     "date": 1641746131219,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -148,8 +148,9 @@\n         Marker();\r\n \r\n         display_details();\r\n \r\n+        window.onload\r\n \r\n \r\n        \r\n     </script>\r\n"
+                },
+                {
+                    "date": 1641894089386,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,8 +68,9 @@\n         <div class=\"row\">\r\n             <div class=\"col\">\r\n                 <!-- Preisbox -->\r\n                 <div class=\"card\">\r\n+                    <div class=\"card-header\">Preis</div>\r\n                     <div id = \"Anzeigen_Preis\" class=\"card-body\">Preis</div>\r\n                 </div>\r\n             </div>\r\n             <div class=\"col\">\r\n"
+                },
+                {
+                    "date": 1641894112675,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,8 +75,9 @@\n             </div>\r\n             <div class=\"col\">\r\n                 <!-- Kontaktbox -->\r\n                 <div class=\"card\">\r\n+                    <div class=\"card-header\">Kontaktmöglichkeit</div>\r\n                     <div class=\"card-body\" id=\"Anzeigen_Kontakt\">Kontaktmöglichkeit</div>\r\n                 </div>\r\n             </div>\r\n         </div>\r\n"
+                },
+                {
+                    "date": 1641894169256,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -83,8 +83,9 @@\n         </div>\r\n         <p></p>\r\n         <!-- Beschreibung der Anzeige -->\r\n         <div class=\"card\">\r\n+            <div class=\"card-header\">Breschreibung</div>\r\n             <div id = \"Anzeigen_Beschreibung\"class=\"card-body\">Hier ist dann die Beschreibung der Anzeige: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</div>\r\n         </div>\r\n     </div>\r\n     <p></p>\r\n"
+                },
+                {
+                    "date": 1641894302041,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -91,8 +91,9 @@\n     <p></p>\r\n \r\n     <!-- Custom Map Location -->\r\n     <div class=\"container-md\">\r\n+        <div class=\"card-header\">Ort der Anzeige</div>\r\n         <div id=\"pointMap\"></div>\r\n     </div>\r\n \r\n     <!-- Footer -->\r\n"
                 }
             ],
             "date": 1641392022048,
