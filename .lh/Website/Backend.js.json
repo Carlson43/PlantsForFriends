@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 438,
+            "activePatchIndex": 445,
             "patches": [
                 {
                     "date": 1640256408490,
@@ -1760,6 +1760,34 @@
                 {
                     "date": 1641909220166,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,9 +60,9 @@\n     document.getElementById(\"Anzeigen_Kontakt\").innerHTML = data[0].Kontaktmöglichkeit;\r\n \r\n     anzeige_marker = L.marker([data[0].lng, data[0].lat]).addTo(detail_map);\r\n     // anzeige_marker.bindPopup(Data[0].Titel).openPopup();\r\n-    anzeige_marker.setView([data[0].lng, data[0].lat]);\r\n+    detail_map.setView([data[0].lng, data[0].lat]);\r\n \r\n     });\r\n     }) \r\n \r\n"
+                },
+                {
+                    "date": 1641910360770,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,9 @@\n     $.get(\"https://webtechlecture.appspot.com/cloudstore/get?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_&key=\"+key,function(response)\r\n     {\r\n       data.push(response)\r\n       console.log(data)\r\n-      console.log(data[0].Titel)\r\n+      console.log(data[0].lng)\r\n \r\n     document.getElementById(\"Anzeigen_Name\").innerHTML = data[0].Titel;\r\n     document.getElementById(\"Anzeigen_Preis\").innerHTML = data[0].Preis + \"€\";\r\n     document.getElementById(\"Anzeigen_Beschreibung\").innerHTML = data[0].Beschreibung;\r\n"
+                },
+                {
+                    "date": 1641910551274,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,9 @@\n     $.get(\"https://webtechlecture.appspot.com/cloudstore/get?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_&key=\"+key,function(response)\r\n     {\r\n       data.push(response)\r\n       console.log(data)\r\n-      console.log(data[0].lng)\r\n+      console.log(data[0].lng,data[0].lat)\r\n \r\n     document.getElementById(\"Anzeigen_Name\").innerHTML = data[0].Titel;\r\n     document.getElementById(\"Anzeigen_Preis\").innerHTML = data[0].Preis + \"€\";\r\n     document.getElementById(\"Anzeigen_Beschreibung\").innerHTML = data[0].Beschreibung;\r\n"
+                },
+                {
+                    "date": 1641910574015,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,9 +60,9 @@\n     document.getElementById(\"Anzeigen_Kontakt\").innerHTML = data[0].Kontaktmöglichkeit;\r\n \r\n     anzeige_marker = L.marker([data[0].lng, data[0].lat]).addTo(detail_map);\r\n     // anzeige_marker.bindPopup(Data[0].Titel).openPopup();\r\n-    detail_map.setView([data[0].lng, data[0].lat]);\r\n+    detail_map.setView([data[0].lng, data[0].lat],6);\r\n \r\n     });\r\n     }) \r\n \r\n"
+                },
+                {
+                    "date": 1641910648712,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -58,11 +58,11 @@\n     document.getElementById(\"Anzeigen_Preis\").innerHTML = data[0].Preis + \"€\";\r\n     document.getElementById(\"Anzeigen_Beschreibung\").innerHTML = data[0].Beschreibung;\r\n     document.getElementById(\"Anzeigen_Kontakt\").innerHTML = data[0].Kontaktmöglichkeit;\r\n \r\n-    anzeige_marker = L.marker([data[0].lng, data[0].lat]).addTo(detail_map);\r\n+    anzeige_marker = L.marker([data[0].lat, data[0].lng]).addTo(detail_map);\r\n     // anzeige_marker.bindPopup(Data[0].Titel).openPopup();\r\n-    detail_map.setView([data[0].lng, data[0].lat],6);\r\n+    detail_map.setView([data[0].lat, data[0].lng],6);\r\n \r\n     });\r\n     }) \r\n \r\n"
+                },
+                {
+                    "date": 1641910681173,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,9 +60,9 @@\n     document.getElementById(\"Anzeigen_Kontakt\").innerHTML = data[0].Kontaktmöglichkeit;\r\n \r\n     anzeige_marker = L.marker([data[0].lat, data[0].lng]).addTo(detail_map);\r\n     // anzeige_marker.bindPopup(Data[0].Titel).openPopup();\r\n-    detail_map.setView([data[0].lat, data[0].lng],6);\r\n+    detail_map.setView([data[0].lat, data[0].lng],4);\r\n \r\n     });\r\n     }) \r\n \r\n"
+                },
+                {
+                    "date": 1641910691161,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,9 +60,9 @@\n     document.getElementById(\"Anzeigen_Kontakt\").innerHTML = data[0].Kontaktmöglichkeit;\r\n \r\n     anzeige_marker = L.marker([data[0].lat, data[0].lng]).addTo(detail_map);\r\n     // anzeige_marker.bindPopup(Data[0].Titel).openPopup();\r\n-    detail_map.setView([data[0].lat, data[0].lng],4);\r\n+    detail_map.setView([data[0].lat, data[0].lng],8);\r\n \r\n     });\r\n     }) \r\n \r\n"
+                },
+                {
+                    "date": 1641910765260,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -59,9 +59,9 @@\n     document.getElementById(\"Anzeigen_Beschreibung\").innerHTML = data[0].Beschreibung;\r\n     document.getElementById(\"Anzeigen_Kontakt\").innerHTML = data[0].Kontaktmöglichkeit;\r\n \r\n     anzeige_marker = L.marker([data[0].lat, data[0].lng]).addTo(detail_map);\r\n-    // anzeige_marker.bindPopup(Data[0].Titel).openPopup();\r\n+    anzeige_marker.bindPopup(Data[0].Titel).openPopup();\r\n     detail_map.setView([data[0].lat, data[0].lng],8);\r\n \r\n     });\r\n     }) \r\n"
                 }
             ],
             "date": 1640256408490,

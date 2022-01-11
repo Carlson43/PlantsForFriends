@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 79,
+            "activePatchIndex": 83,
             "patches": [
                 {
                     "date": 1641392022048,
@@ -324,6 +324,22 @@
                 {
                     "date": 1641909274079,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -140,14 +140,9 @@\n         const tiles = L.tileLayer(tileUrl, { attribution });\r\n         tiles.addTo(detail_map);\r\n         // Add Control Buttons\r\n         L.control.locate().addTo(detail_map);\r\n-\r\n-        //Add a marker to the map\r\n         \r\n-  \r\n-        //Add Popup / description to markers\r\n-        \r\n \r\n         // Load all Ad-Locattions from Backend.js\r\n         display_details();\r\n \r\n"
+                },
+                {
+                    "date": 1641910418121,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n   </head>\r\n \r\n   <body>\r\n     <!-- Navbar -->\r\n-    <nav class=\"navbar navbar-light bg-light\">\r\n+    <nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\r\n         <div class=\"container fluid\">\r\n             <!-- Navabr Logo and Brandname -->\r\n             <a class=\"navbar-brand\" href=\"index.html\">\r\n                 <img src=\"./Design-Ressourcen/logo.svg\" alt=\"\" width=\"30\" height=\"24\" class=\"d-inline-block align-text-top\">\r\n@@ -145,9 +145,9 @@\n \r\n         // Load all Ad-Locattions from Backend.js\r\n         display_details();\r\n \r\n-        window.onload\r\n+        // window.onload\r\n \r\n \r\n        \r\n     </script>\r\n"
+                },
+                {
+                    "date": 1641910796459,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -131,9 +131,9 @@\n         const detail_map = L.map('pointMap', {\r\n                         fullscreenControl: true,\r\n                         fullscreenControlOptions: {\r\n                         position: 'topleft'}\r\n-                        }).setView(Ad_loc,11);\r\n+                        });\r\n         // Setting Attributions for OSM Compliance\r\n         const attribution = '&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors';\r\n         // Loading and adding Tiles\r\n         const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';\r\n"
+                },
+                {
+                    "date": 1641910806084,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -131,9 +131,9 @@\n         const detail_map = L.map('pointMap', {\r\n                         fullscreenControl: true,\r\n                         fullscreenControlOptions: {\r\n                         position: 'topleft'}\r\n-                        });\r\n+                        }).setView(Ad_loc,11);\r\n         // Setting Attributions for OSM Compliance\r\n         const attribution = '&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors';\r\n         // Loading and adding Tiles\r\n         const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';\r\n"
+                },
+                {
+                    "date": 1641910976652,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -140,8 +140,9 @@\n         const tiles = L.tileLayer(tileUrl, { attribution });\r\n         tiles.addTo(detail_map);\r\n         // Add Control Buttons\r\n         L.control.locate().addTo(detail_map);\r\n+\r\n         \r\n \r\n         // Load all Ad-Locattions from Backend.js\r\n         display_details();\r\n"
                 }
             ],
             "date": 1641392022048,

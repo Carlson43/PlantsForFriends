@@ -60,8 +60,8 @@ function display_details()
     document.getElementById("Anzeigen_Kontakt").innerHTML = data[0].Kontaktmöglichkeit;
 
     anzeige_marker = L.marker([data[0].lat, data[0].lng]).addTo(detail_map);
-    anzeige_marker.bindPopup(Data[0].Titel).openPopup();
-    detail_map.setView([data[0].lat, data[0].lng],8);
+    // anzeige_marker.bindPopup(Data[0].Titel).openPopup();
+    detail_map.setView([data[0].lat, data[0].lng],10);
 
     });
     }) 
