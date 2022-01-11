@@ -52,17 +52,12 @@ function display_details()
     {
       data.push(response)
       console.log(data)
-      console.log(data[0].Titel)
+      console.log(data.Titel)
 
     document.getElementById("Anzeigen_Name").innerHTML = data[0].Titel;
     document.getElementById("Anzeigen_Preis").innerHTML = data[0].Preis + "€";
     document.getElementById("Anzeigen_Beschreibung").innerHTML = data[0].Beschreibung;
     document.getElementById("Anzeigen_Kontakt").innerHTML = data[0].Kontaktmöglichkeit;
-
-    anzeige_marker = L.marker([data[0].lng, data[0].lat]).addTo(detail_map);
-    // anzeige_marker.bindPopup(Data[0].Titel).openPopup();
-    detail_map.setView([data[0].lng, data[0].lat]);
-
     });
     }) 
 
@@ -162,6 +157,28 @@ function Marker()
     )
 }
 
+function marker_details()
+{
+    data = []
+    mark = []
+    marker = []
+
+
+    $.get("https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655_key_log&token=FZ0UtB0FSNllekE69ckUlP74oSo_&jsonstring=",function(response)
+    { 
+
+        mark.push(response[i])
+        console.log(mark)
+
+        for (var j = 0; j < mark.length; j++){
+            marker[j] = L.marker([mark[3*j], mark[3*j+1]]).addTo(overview_map);
+            marker[j].bindPopup(mark[3*j+2]).openPopup();
+            overview_map.setView([51.289406, 10.008545],6);
+
+        }
+    }
+    )
+}
 
 function addKey0()
 {

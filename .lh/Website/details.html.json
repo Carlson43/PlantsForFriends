@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 75,
+            "activePatchIndex": 79,
             "patches": [
                 {
                     "date": 1641392022048,
@@ -308,6 +308,22 @@
                 {
                     "date": 1641894302041,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -91,8 +91,9 @@\n     <p></p>\r\n \r\n     <!-- Custom Map Location -->\r\n     <div class=\"container-md\">\r\n+        <div class=\"card-header\">Ort der Anzeige</div>\r\n         <div id=\"pointMap\"></div>\r\n     </div>\r\n \r\n     <!-- Footer -->\r\n"
+                },
+                {
+                    "date": 1641908603426,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -148,9 +148,9 @@\n         //Add Popup / description to markers\r\n         marker1.bindPopup(\"<b>Angebot Name</b>\").openPopup();\r\n \r\n         // Load all Ad-Locattions from Backend.js\r\n-        Marker();\r\n+        marker_details();\r\n \r\n         display_details();\r\n \r\n         window.onload\r\n"
+                },
+                {
+                    "date": 1641909029948,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -148,10 +148,8 @@\n         //Add Popup / description to markers\r\n         marker1.bindPopup(\"<b>Angebot Name</b>\").openPopup();\r\n \r\n         // Load all Ad-Locattions from Backend.js\r\n-        marker_details();\r\n-\r\n         display_details();\r\n \r\n         window.onload\r\n \r\n"
+                },
+                {
+                    "date": 1641909266274,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -142,12 +142,12 @@\n         // Add Control Buttons\r\n         L.control.locate().addTo(detail_map);\r\n \r\n         //Add a marker to the map\r\n-        var marker1 = L.marker(Ad_loc).addTo(detail_map);\r\n+        \r\n   \r\n         //Add Popup / description to markers\r\n-        marker1.bindPopup(\"<b>Angebot Name</b>\").openPopup();\r\n+        \r\n \r\n         // Load all Ad-Locattions from Backend.js\r\n         display_details();\r\n \r\n"
+                },
+                {
+                    "date": 1641909274079,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -140,14 +140,9 @@\n         const tiles = L.tileLayer(tileUrl, { attribution });\r\n         tiles.addTo(detail_map);\r\n         // Add Control Buttons\r\n         L.control.locate().addTo(detail_map);\r\n-\r\n-        //Add a marker to the map\r\n         \r\n-  \r\n-        //Add Popup / description to markers\r\n-        \r\n \r\n         // Load all Ad-Locattions from Backend.js\r\n         display_details();\r\n \r\n"
                 }
             ],
             "date": 1641392022048,
