@@ -63,7 +63,7 @@ function display_details()
     console.log(data[0].Titel)
     
     detail_map.setView([data[0].lat, data[0].lng],8);
-    anzeige_marker.bindPopup(data[0].Titel).openPopup();
+    anzeige_marker.bindPopup("Hallo").openPopup();
    
 
     });

@@ -60,11 +60,10 @@ function display_details()
     document.getElementById("Anzeigen_Kontakt").innerHTML = data[0].Kontaktmöglichkeit;
 
     anzeige_marker = L.marker([data[0].lat, data[0].lng]).addTo(detail_map);
-    console.log(data[0].Titel)
     
     detail_map.setView([data[0].lat, data[0].lng],8);
-    anzeige_marker.bindPopup(data[0].Titel).openPopup();
-   
+    anzeige_marker.bindPopup(Data[0].Titel).openPopup();
+    console.log(data[0].Titel)
 
     });
     }) 
