@@ -1,3 +1,5 @@
+
+
 function add()
 {
     var jsonstring=  '{"Pflanze":"'+$("#jsonstring").val()+'"}';
@@ -37,11 +39,50 @@ function addAll()
     });
 }
 
+function display_details()
+{ 
+    key=0
+    var data = []
+ 
+
+    $.get("https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655_key_log&token=FZ0UtB0FSNllekE69ckUlP74oSo_&jsonstring=",function(response)
+    { 
+        key = response[response.length-1].jsonstring.Main
+    $.get("https://webtechlecture.appspot.com/cloudstore/get?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_&key="+key,function(response)
+    {
+      data.push(response)
+      console.log(data)
+      console.log(data.Titel)
+
+    document.getElementById("Anzeigen_Name").innerHTML = data[0].Titel;
+    document.getElementById("Anzeigen_Preis").innerHTML = data[0].Preis + "€";
+    document.getElementById("Anzeigen_Beschreibung").innerHTML = data[0].Beschreibung;
+    document.getElementById("Anzeigen_Kontakt").innerHTML = data[0].Kontaktmöglichkeit;
+
+
+
+
+    });
+
+
+
+
+    }) 
+ 
+
+}
+
 function search_and_display()
 {
     var nam = String($("#search_term").val())
     var dat = []
     var data = []
+
+    for (var h = 0; h < 8; h++){
+        document.getElementById("Card"+ Number(h)).setAttribute("hidden",true);
+    }
+
+
     $.get("https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_",function(response)
     { 
         for (var i = 0; i < response.length; i++)
@@ -55,14 +96,17 @@ function search_and_display()
                 ||data[i].jsonstring.Pflanzeart == nam
                 ||data[i].jsonstring.Titel == nam)
             {
-                dat.push(data[i].jsonstring);
+                dat.push(data[i]);
+               
 
                 for (var k = 0; k < dat.length; k++){
-                console.log(dat[k].Titel)        ;
                 document.getElementById("Card"+ Number(k)).removeAttribute("hidden");
-                document.getElementById("Card"+ Number(k)+ "title").innerHTML = dat[k].Titel;
-                document.getElementById("Card"+ Number(k)+ "price").innerHTML = dat[k].Preis;
-                document.getElementById("Card"+ Number(k)+ "text").innerHTML = dat[k].Beschreibung;
+                document.getElementById("Card"+ Number(k)+ "title").innerHTML = dat[k].jsonstring.Titel;
+                document.getElementById("Card"+ Number(k)+ "price").innerHTML = dat[k].jsonstring.Preis + "€";
+                document.getElementById("Card"+ Number(k)+ "text").innerHTML = dat[k].jsonstring.Beschreibung;
+                document.getElementById("Card"+ Number(k)+ "contact").innerHTML = dat[k].jsonstring.Kontaktmöglichkeit;
+                document.getElementById("Card"+ Number(k)+ "key").innerHTML = dat[k].key;
+
                 }
                 
             }
@@ -95,6 +139,7 @@ function Marker()
     mark = []
     marker = []
 
+
     $.get("https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_",function(response)
     {
         for (var i = 0; i < response.length; i++)
@@ -107,17 +152,119 @@ function Marker()
         {
             if ("lat" in data[k].jsonstring)
             {
-            mark.push(data[k].jsonstring.lat, data[k].jsonstring.lng,data[k].jsonstring.Pflanzenart)
-            console.log(mark)
+            mark.push(data[k].jsonstring.lat, data[k].jsonstring.lng,data[k].jsonstring.Titel)
             }
         }
 
         for (var j = 0; j < mark.length; j++){
-            marker[j] = L.marker([mark[3*j], mark[3*j+1]]).addTo(mymap);
+            marker[j] = L.marker([mark[3*j], mark[3*j+1]]).addTo(overview_map);
             marker[j].bindPopup(mark[3*j+2]).openPopup();
-            console.log(mark[3*j+2])
+            overview_map.setView([51.289406, 10.008545],6);
+
         }
-
-
     }
-)}
+    )
+}
+
+function addKey0()
+{
+  var jsonstring=  '{"Main":"'+document.getElementById("Card0key").innerHTML+'"}';
+  console.log("add"+ jsonstring);
+  $.get("https://webtechlecture.appspot.com/cloudstore/add?owner=s201655_key_log&token=FZ0UtB0FSNllekE69ckUlP74oSo_&jsonstring="+encodeURI(jsonstring),function(response)
+  {
+    console.log(response);
+  });
+
+}
+
+function addKey1()
+{
+  var jsonstring=  '{"Main":"'+document.getElementById("Card1key").innerHTML+'"}';
+  console.log("add"+ jsonstring);
+  $.get("https://webtechlecture.appspot.com/cloudstore/add?owner=s201655_key_log&token=FZ0UtB0FSNllekE69ckUlP74oSo_&jsonstring="+encodeURI(jsonstring),function(response)
+  {
+    console.log(response);
+  });
+}
+
+function addKey2()
+{
+  var jsonstring=  '{"Main":"'+document.getElementById("Card2key").innerHTML+'"}';
+  console.log("add"+ jsonstring);
+  $.get("https://webtechlecture.appspot.com/cloudstore/add?owner=s201655_key_log&token=FZ0UtB0FSNllekE69ckUlP74oSo_&jsonstring="+encodeURI(jsonstring),function(response)
+  {
+    console.log(response);
+  });
+}
+
+function addKey3()
+{
+  var jsonstring=  '{"Main":"'+document.getElementById("Card3key").innerHTML+'"}';
+  console.log("add"+ jsonstring);
+  $.get("https://webtechlecture.appspot.com/cloudstore/add?owner=s201655_key_log&token=FZ0UtB0FSNllekE69ckUlP74oSo_&jsonstring="+encodeURI(jsonstring),function(response)
+  {
+    console.log(response);
+  });
+}
+
+function addKey4()
+{
+  var jsonstring=  '{"Main":"'+document.getElementById("Card4key").innerHTML+'"}';
+  console.log("add"+ jsonstring);
+  $.get("https://webtechlecture.appspot.com/cloudstore/add?owner=s201655_key_log&token=FZ0UtB0FSNllekE69ckUlP74oSo_&jsonstring="+encodeURI(jsonstring),function(response)
+  {
+    console.log(response);
+  });
+}
+
+function addKey5()
+{
+  var jsonstring=  '{"Main":"'+document.getElementById("Card5key").innerHTML+'"}';
+  console.log("add"+ jsonstring);
+  $.get("https://webtechlecture.appspot.com/cloudstore/add?owner=s201655_key_log&token=FZ0UtB0FSNllekE69ckUlP74oSo_&jsonstring="+encodeURI(jsonstring),function(response)
+  {
+    console.log(response);
+  });
+}
+
+function addKey6()
+{
+  var jsonstring=  '{"Main":"'+document.getElementById("Card6key").innerHTML+'"}';
+  console.log("add"+ jsonstring);
+  $.get("https://webtechlecture.appspot.com/cloudstore/add?owner=s201655_key_log&token=FZ0UtB0FSNllekE69ckUlP74oSo_&jsonstring="+encodeURI(jsonstring),function(response)
+  {
+    console.log(response);
+  });
+}
+
+function addKey7()
+{
+  var jsonstring=  '{"Main":"'+document.getElementById("Card7key").innerHTML+'"}';
+  console.log("add"+ jsonstring);
+  $.get("https://webtechlecture.appspot.com/cloudstore/add?owner=s201655_key_log&token=FZ0UtB0FSNllekE69ckUlP74oSo_&jsonstring="+encodeURI(jsonstring),function(response)
+  {
+    console.log(response);
+  });
+}
+
+function addKey8()
+{
+  var jsonstring=  '{"Main":"'+document.getElementById("Card8key").innerHTML+'"}';
+  console.log("add"+ jsonstring);
+  $.get("https://webtechlecture.appspot.com/cloudstore/add?owner=s201655_key_log&token=FZ0UtB0FSNllekE69ckUlP74oSo_&jsonstring="+encodeURI(jsonstring),function(response)
+  {
+    console.log(response);
+  });
+}
+
+window.onload = function() {
+    if(!window.location.hash) {
+        window.location = window.location + '#loaded';
+        window.location.reload();
+    }
+}
+
+function myURL(){
+            window.open('details.html');
+         }
+

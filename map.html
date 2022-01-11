@@ -8,6 +8,8 @@
     <!-- Referencing Backend -->
     <script src="https://code.jquery.com/jquery-3.6.0.js"> </script>
     <script src="./Backend.js"> </script>
+
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
     
 
     <!-- Bootstrap CSS -->
@@ -23,6 +25,7 @@
     <link rel="stylesheet" href="./leaflet-locatecontrol-gh-pages/leaflet-locatecontrol-gh-pages/dist/L.Control.Locate.min.css" />
 
     <title>Karte @ Plants4Friends</title>
+
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="./Design-Ressourcen/flower.svg">
   </head>
@@ -53,8 +56,9 @@
 
     <p></p>
 
+    <!-- Titel -->
     <div class="container-md">
-        <h3>Übersicht der Angebote in deiner Nähe</h3>
+        <h4>Übersicht der Angebote in deiner Nähe</h4>
     </div>
 
     <!-- Custom Map Location -->
@@ -68,6 +72,7 @@
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
           <p class="col-md-4 mb-0 text-muted">© 2021 Plants4Friends</p>
       
+          <!-- Footer Logo -->
           <a href="index.html" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
             <img src="./Design-Ressourcen/logo.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
           </a>
@@ -89,42 +94,24 @@
     <!-- Custom Map JS -->
     <script>
         // Making a map and tiles
-        // Setting a higher initial zoom to make effect more obvious
-        const mymap = L.map('pointMap', {
+        // Setting a lower initial zoom for beter overview
+        const overview_map = L.map('pointMap', {
                         fullscreenControl: true,
                         fullscreenControlOptions: {
                         position: 'topleft'}
-                        }).setView([51.5171, 9.9448], 16);
+                        }).setView([51.289406, 10.008545], 6);
+        // Setting Attributions for OSM Compliance
         const attribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
+        // Loading and adding Tiles
         const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
         const tiles = L.tileLayer(tileUrl, { attribution });
-        tiles.addTo(mymap);
-        L.control.locate().addTo(mymap);
+        tiles.addTo(overview_map);
+        // Add Control Buttons
+        L.control.locate().addTo(overview_map);
 
-        //Add a marker to the map (Test)
-        // var marker1 = L.marker([51.51792, 9.94451]).addTo(mymap);
-        // var marker2 = L.marker([51.51861, 9.94746]).addTo(mymap);
-        // var marker3 = L.marker([51.51844, 9.94163]).addTo(mymap);
-        // var marker4 = L.marker([51.51564, 9.94732]).addTo(mymap);
-  
-        //Add Popup / description to markers (Test)
-        // marker1.bindPopup("<b>Angebot 1</b><br>Angebot details. Evtl. eine Adresse").openPopup();
-        // marker2.bindPopup("<b>Angebot 2</b><br>Angebot details. Evtl. eine Adresse").openPopup();
-        // marker3.bindPopup("<b>Angebot 3</b><br>Angebot details. Evtl. eine Adresse").openPopup();
-        // marker4.bindPopup("<b>Angebot 4</b><br>Angebot details. Evtl. eine Adresse").openPopup();
-        
-        // Show Location on Click
-        var popup = L.popup();
-        function onMapClick(e) {
-            popup
-                .setLatLng(e.latlng)
-                .setContent("You clicked the map at " + e.latlng.toString())
-                .openOn(mymap);
-        }
-
-        mymap.on('click', onMapClick);
-
+        // Load all Ad-Locattions from Backend.js
         Marker();
+
     </script>
 
   </body>

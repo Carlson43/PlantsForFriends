@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="./leaflet-locatecontrol-gh-pages/leaflet-locatecontrol-gh-pages/dist/L.Control.Locate.min.css" />
 
     <title>Details @ Plants4Friends</title>
+
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="./Design-Ressourcen/flower.svg">
   </head>
@@ -34,7 +35,7 @@
     <nav class="navbar navbar-light bg-light">
         <div class="container fluid">
             <!-- Navabr Logo and Brandname -->
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="index.html">
                 <img src="./Design-Ressourcen/logo.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
                 Plants4Friends
             </a>
@@ -53,10 +54,11 @@
         </div>
     </nav>
 
+    <!-- Text / Content Container -->
     <div class="container-md">
         <div class="h-divider"></div>
         <!-- Überschrift -->
-        <h4>Anzeigen Name</h5>
+        <h4 id = "Anzeigen_Name">Anzeigen Name</h5>
         <!-- Bild (eingebettet in Container) -->
         <div class="col-md-7">
             <img src="./Design-Ressourcen/Bilder/garlic.jpg" class="img-fluid rounded" alt="">
@@ -67,25 +69,30 @@
             <div class="col">
                 <!-- Preisbox -->
                 <div class="card">
-                    <div class="card-body">Preis</div>
+                    <div class="card-header">Preis</div>
+                    <div id = "Anzeigen_Preis" class="card-body">Preis</div>
                 </div>
             </div>
             <div class="col">
                 <!-- Kontaktbox -->
                 <div class="card">
-                    <div class="card-body">Kontaktmöglichkeit</div>
+                    <div class="card-header">Kontaktmöglichkeit</div>
+                    <div class="card-body" id="Anzeigen_Kontakt">Kontaktmöglichkeit</div>
                 </div>
             </div>
         </div>
         <p></p>
+        <!-- Beschreibung der Anzeige -->
         <div class="card">
-            <div class="card-body">Hier ist dann die Beschreibung der Anzeige: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</div>
+            <div class="card-header">Breschreibung</div>
+            <div id = "Anzeigen_Beschreibung"class="card-body">Hier ist dann die Beschreibung der Anzeige: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</div>
         </div>
     </div>
     <p></p>
 
     <!-- Custom Map Location -->
     <div class="container-md">
+        <div class="card-header">Ort der Anzeige</div>
         <div id="pointMap"></div>
     </div>
 
@@ -94,6 +101,7 @@
       <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
         <p class="col-md-4 mb-0 text-muted">© 2021 Plants4Friends</p>
     
+        <!-- Footer Logo -->
         <a href="index.html" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
           <img src="./Design-Ressourcen/logo.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
         </a>
@@ -114,40 +122,41 @@
 
     <!-- Custom Map JS -->
     <script>
-        // Making a map and tiles
-        // Setting a higher initial zoom to make effect more obvious
-        var Ad_loc = [51.51792, 9.94451]
+        // Setting Coordinates for View and Marker
+        var Ad_loc = [51.289406, 10.008545] 
+        // 51.289406, 10.008545 Globaler Sichtmittelpunkt
+        // 51.51792, 9.94451 Lokaler / BEispiel Sichmittelpunkt
 
-        const mymap = L.map('pointMap', {
+        // Making a map and tiles
+        const detail_map = L.map('pointMap', {
                         fullscreenControl: true,
                         fullscreenControlOptions: {
                         position: 'topleft'}
-                        }).setView(Ad_loc, 10);
+                        }).setView(Ad_loc,11);
+        // Setting Attributions for OSM Compliance
         const attribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
+        // Loading and adding Tiles
         const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
         const tiles = L.tileLayer(tileUrl, { attribution });
-        tiles.addTo(mymap);
-        L.control.locate().addTo(mymap);
+        tiles.addTo(detail_map);
+        // Add Control Buttons
+        L.control.locate().addTo(detail_map);
 
         //Add a marker to the map
-        var marker1 = L.marker(Ad_loc).addTo(mymap);
+        var marker1 = L.marker(Ad_loc).addTo(detail_map);
   
         //Add Popup / description to markers
         marker1.bindPopup("<b>Angebot Name</b>").openPopup();
 
-        
-        // Show Location on Click
-        var popup = L.popup();
-        function onMapClick(e) {
-            popup
-                .setLatLng(e.latlng)
-                .setContent("You clicked the map at " + e.latlng.toString())
-                .openOn(mymap);
-        }
-
-        mymap.on('click', onMapClick);
-
+        // Load all Ad-Locattions from Backend.js
         Marker();
+
+        display_details();
+
+        window.onload
+
+
+       
     </script>
 
 
