@@ -5,10 +5,10 @@
 
     <meta charset="utf-8" />
 
-        <!-- Referencing Backend -->
+        <!-- Referencing Backend
         <script src="https://code.jquery.com/jquery-3.6.0.js"> </script>
         <script src="./Backend.js"> </script>
-    
+     -->
 
     <link
       rel="stylesheet"
@@ -21,7 +21,6 @@
       integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
       crossorigin=""
     ></script>
-
 
     <style>
       #pointMap {
@@ -50,11 +49,11 @@
         tiles.addTo(mymap);
   
         // Making a marker with a custom icon
-        const issIcon = L.icon({
-          iconUrl: 'iss200.png',
-          iconSize: [50, 32],
-          iconAnchor: [25, 16]
-        });
+        // const issIcon = L.icon({
+        //   iconUrl: 'iss200.png',
+        //   iconSize: [50, 32],
+        //   iconAnchor: [25, 16]
+        // });
 
         //Add a marker to the map
         var marker1 = L.marker([51.51792, 9.94451]).addTo(mymap);
