@@ -74,7 +74,6 @@ function search_and_display()
 
     for (var h = 0; h < 8; h++){
         document.getElementById("Card"+ Number(h)).setAttribute("hidden",true);
-        document.getElementById("not_found").setAttribute("hidden",true)
     }
 
 
@@ -107,16 +106,17 @@ function search_and_display()
                  
                 }
 
+                }
+                if (dat.length == 0){
+                  search_not_found()
             }
-
+         
 
             
 
         };  
      
-        if (dat.length == 0)
-        {search_not_found()}
- 
+
 
     });
 

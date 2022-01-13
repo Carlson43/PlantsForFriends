@@ -74,7 +74,6 @@ function search_and_display()
 
     for (var h = 0; h < 8; h++){
         document.getElementById("Card"+ Number(h)).setAttribute("hidden",true);
-        document.getElementById("not_found").setAttribute("hidden",true)
     }
 
 
@@ -102,25 +101,24 @@ function search_and_display()
                 document.getElementById("Card"+ Number(k)+ "text").innerHTML = dat[k].jsonstring.Beschreibung;
                 document.getElementById("Card"+ Number(k)+ "contact").innerHTML = dat[k].jsonstring.Kontaktmöglichkeit;
                 document.getElementById("Card"+ Number(k)+ "key").innerHTML = dat[k].key;
-                
-               
-                 
+
                 }
-
+                
             }
-
-
             
 
         };  
      
-        if (dat.length == 0)
-        {search_not_found()}
- 
+
+        if (dat.length == 0 ){
+          document.getElementById("not_found").removeAttribute("hidden")
+          console.log("Hi")
 
     });
 
-
+    
+  }
+    
 }
 
 function onMapClick(e) {
@@ -271,10 +269,56 @@ function alert(){
   document.getElementById("alert").removeAttribute("hidden")
 }
 
+function search_and_display()
+{
+    var nam = String($("#search_term").val())
+    var dat = []
+    var data = []
+
+    for (var h = 0; h < 8; h++){
+        document.getElementById("Card"+ Number(h)).setAttribute("hidden",true);
+    }
+
+
+    $.get("https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_",function(response)
+    { 
+        for (var i = 0; i < response.length; i++)
+        data.push(response[i]);
+
+        for (var i = 0; i < data.length; i++)
+        {
+            if (data[i].jsonstring.Pflanzenart == nam
+                ||data[i].jsonstring.Email == nam
+                ||data[i].jsonstring.Beschreibung == nam
+                ||data[i].jsonstring.Pflanzeart == nam
+                ||data[i].jsonstring.Titel == nam)
+            {
+                dat.push(data[i]);
+               
+
+                for (var k = 0; k < dat.length; k++){
+                document.getElementById("Card"+ Number(k)).removeAttribute("hidden");
+                document.getElementById("Card"+ Number(k)+ "title").innerHTML = dat[k].jsonstring.Titel;
+                document.getElementById("Card"+ Number(k)+ "price").innerHTML = dat[k].jsonstring.Preis + "€";
+                document.getElementById("Card"+ Number(k)+ "text").innerHTML = dat[k].jsonstring.Beschreibung;
+                document.getElementById("Card"+ Number(k)+ "contact").innerHTML = dat[k].jsonstring.Kontaktmöglichkeit;
+                document.getElementById("Card"+ Number(k)+ "key").innerHTML = dat[k].key;
+
+                }
+                
+            }
+            
+        };  
+     
+
+
+    });
+
+
+    
+}
 
 function search_not_found(){
-  var nam = String($("#search_term").val())
-  document.getElementById("not_found").removeAttribute("hidden")
-  document.getElementById("not_found_text").innerHTML = 'Ihre Suche zu : "'+ nam + '" hat leider keine Ergebnisse ergeben.';
+  document.getElementById("alert").removeAttribute("hidden")
 
 }

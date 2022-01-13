@@ -74,7 +74,6 @@ function search_and_display()
 
     for (var h = 0; h < 8; h++){
         document.getElementById("Card"+ Number(h)).setAttribute("hidden",true);
-        document.getElementById("not_found").setAttribute("hidden",true)
     }
 
 
@@ -108,15 +107,14 @@ function search_and_display()
                 }
 
             }
-
-
-            
+         
+            else {
+              search_not_found()
+            }
 
         };  
      
-        if (dat.length == 0)
-        {search_not_found()}
- 
+
 
     });
 
@@ -273,8 +271,5 @@ function alert(){
 
 
 function search_not_found(){
-  var nam = String($("#search_term").val())
   document.getElementById("not_found").removeAttribute("hidden")
-  document.getElementById("not_found_text").innerHTML = 'Ihre Suche zu : "'+ nam + '" hat leider keine Ergebnisse ergeben.';
-
 }
