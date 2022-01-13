@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 492,
+            "activePatchIndex": 494,
             "patches": [
                 {
                     "date": 1640256408490,
@@ -1976,6 +1976,14 @@
                 {
                     "date": 1642085128552,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -276,5 +276,6 @@\n   var nam = String($(\"#search_term\").val())\r\n   document.getElementById(\"not_found\").removeAttribute(\"hidden\")\r\n   document.getElementById(\"not_found_text\").innerHTML = 'Ihre Suche zu : \"'+ nam + '\" hat leider keine Ergebnisse ergeben.';\r\n \r\n-}\n\\ No newline at end of file\n+}\r\n+\r\n"
+                },
+                {
+                    "date": 1642085297481,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -274,8 +274,8 @@\n \r\n function search_not_found(){\r\n   var nam = String($(\"#search_term\").val())\r\n   document.getElementById(\"not_found\").removeAttribute(\"hidden\")\r\n-  document.getElementById(\"not_found_text\").innerHTML = 'Ihre Suche zu : \"'+ nam + '\" hat leider keine Ergebnisse ergeben.';\r\n+  document.getElementById(\"not_found_text\").innerHTML = 'Ihre Suche zu \"'+ nam + '\" hat leider keine Ergebnisse ergeben.';\r\n \r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1642085569357,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -100,28 +100,15 @@\n                 document.getElementById(\"Card\"+ Number(k)+ \"title\").innerHTML = dat[k].jsonstring.Titel;\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"price\").innerHTML = dat[k].jsonstring.Preis + \"€\";\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"text\").innerHTML = dat[k].jsonstring.Beschreibung;\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"contact\").innerHTML = dat[k].jsonstring.Kontaktmöglichkeit;\r\n-                document.getElementById(\"Card\"+ Number(k)+ \"key\").innerHTML = dat[k].key;\r\n-                \r\n-               \r\n-                 \r\n+                document.getElementById(\"Card\"+ Number(k)+ \"key\").innerHTML = dat[k].key;                 \r\n                 }\r\n-\r\n             }\r\n-\r\n-\r\n-            \r\n-\r\n-        };  \r\n-     \r\n+        };       \r\n         if (dat.length == 0)\r\n         {search_not_found()}\r\n- \r\n-\r\n     });\r\n-\r\n-\r\n }\r\n \r\n function onMapClick(e) {\r\n     popup\r\n@@ -136,34 +123,27 @@\n {\r\n     data = []\r\n     mark = []\r\n     marker = []\r\n-\r\n-\r\n     $.get(\"https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_\",function(response)\r\n     {\r\n         for (var i = 0; i < response.length; i++)\r\n         {\r\n         data.push(response[i])\r\n-        }\r\n-        \r\n-        \r\n+        }       \r\n         for(var k = 0; k< data.length;k++)\r\n         {\r\n             if (\"lat\" in data[k].jsonstring)\r\n             {\r\n             mark.push(data[k].jsonstring.lat, data[k].jsonstring.lng,data[k].jsonstring.Titel)\r\n             }\r\n         }\r\n-\r\n         for (var j = 0; j < mark.length; j++){\r\n             marker[j] = L.marker([mark[3*j], mark[3*j+1]]).addTo(overview_map);\r\n             marker[j].bindPopup(mark[3*j+2]).openPopup();\r\n             overview_map.setView([51.289406, 10.008545],6);\r\n-\r\n         }\r\n-    }\r\n-    )\r\n+    })   \r\n }\r\n \r\n function addKey0()\r\n {\r\n@@ -274,8 +254,7 @@\n \r\n function search_not_found(){\r\n   var nam = String($(\"#search_term\").val())\r\n   document.getElementById(\"not_found\").removeAttribute(\"hidden\")\r\n-  document.getElementById(\"not_found_text\").innerHTML = 'Ihre Suche zu \"'+ nam + '\" hat leider keine Ergebnisse ergeben.';\r\n-\r\n+  document.getElementById(\"not_found_text\").innerHTML = 'Deine Suche zu \"'+ nam + '\" hat leider keine Ergebnisse ergeben.';\r\n }\r\n \r\n"
                 }
             ],
             "date": 1640256408490,
