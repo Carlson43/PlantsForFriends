@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 491,
+            "activePatchIndex": 492,
             "patches": [
                 {
                     "date": 1640256408490,
@@ -1972,6 +1972,10 @@
                 {
                     "date": 1642080390123,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -73,8 +73,9 @@\n     var data = []\r\n \r\n     for (var h = 0; h < 8; h++){\r\n         document.getElementById(\"Card\"+ Number(h)).setAttribute(\"hidden\",true);\r\n+        document.getElementById(\"not_found\").setAttribute(\"hidden\",true)\r\n     }\r\n \r\n \r\n     $.get(\"https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_\",function(response)\r\n"
+                },
+                {
+                    "date": 1642085128552,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -276,5 +276,6 @@\n   var nam = String($(\"#search_term\").val())\r\n   document.getElementById(\"not_found\").removeAttribute(\"hidden\")\r\n   document.getElementById(\"not_found_text\").innerHTML = 'Ihre Suche zu : \"'+ nam + '\" hat leider keine Ergebnisse ergeben.';\r\n \r\n-}\n\\ No newline at end of file\n+}\r\n+\r\n"
                 }
             ],
             "date": 1640256408490,
