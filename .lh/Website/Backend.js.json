@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 454,
+            "activePatchIndex": 455,
             "patches": [
                 {
                     "date": 1640256408490,
@@ -1824,6 +1824,10 @@
                 {
                     "date": 1641911565073,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -114,11 +114,8 @@\n \r\n     \r\n }\r\n \r\n-function addElement(){ \r\n-}\r\n-\r\n function onMapClick(e) {\r\n     popup\r\n         .setLatLng(e.latlng)\r\n         .setContent(\"Kooridnaten deiner Anzeige:\" + e.latlng.toString())\r\n@@ -126,9 +123,9 @@\n         lat[0] = e.latlng\r\n         console.log(lat[0].lat)\r\n }\r\n \r\n-function Marker()\r\n+function marker()\r\n {\r\n     data = []\r\n     mark = []\r\n     marker = []\r\n"
+                },
+                {
+                    "date": 1642071440249,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -255,7 +255,7 @@\n     }\r\n }\r\n \r\n function myURL(){\r\n-            window.open('details.html');\r\n+            window.location.replace('details.html');\r\n }\r\n \r\n"
                 }
             ],
             "date": 1640256408490,
