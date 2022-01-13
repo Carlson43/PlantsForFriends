@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 455,
+            "activePatchIndex": 460,
             "patches": [
                 {
                     "date": 1640256408490,
@@ -1828,6 +1828,26 @@
                 {
                     "date": 1642071440249,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -255,7 +255,7 @@\n     }\r\n }\r\n \r\n function myURL(){\r\n-            window.open('details.html');\r\n+            window.location.replace('details.html');\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1642071885796,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -164,8 +164,9 @@\n   $.get(\"https://webtechlecture.appspot.com/cloudstore/add?owner=s201655_key_log&token=FZ0UtB0FSNllekE69ckUlP74oSo_&jsonstring=\"+encodeURI(jsonstring),function(response)\r\n   {\r\n     console.log(response);\r\n   });\r\n+  document.getElementById(\"alert\").removeAttribute(\"hidden\")\r\n \r\n }\r\n \r\n function addKey1()\r\n"
+                },
+                {
+                    "date": 1642071910515,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -164,10 +164,10 @@\n   $.get(\"https://webtechlecture.appspot.com/cloudstore/add?owner=s201655_key_log&token=FZ0UtB0FSNllekE69ckUlP74oSo_&jsonstring=\"+encodeURI(jsonstring),function(response)\r\n   {\r\n     console.log(response);\r\n   });\r\n-  document.getElementById(\"alert\").removeAttribute(\"hidden\")\r\n \r\n+\r\n }\r\n \r\n function addKey1()\r\n {\r\n"
+                },
+                {
+                    "date": 1642071929958,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -164,10 +164,10 @@\n   $.get(\"https://webtechlecture.appspot.com/cloudstore/add?owner=s201655_key_log&token=FZ0UtB0FSNllekE69ckUlP74oSo_&jsonstring=\"+encodeURI(jsonstring),function(response)\r\n   {\r\n     console.log(response);\r\n   });\r\n+  document.getElementById(\"alert\").removeAttribute(\"hidden\")\r\n \r\n-\r\n }\r\n \r\n function addKey1()\r\n {\r\n"
+                },
+                {
+                    "date": 1642071947727,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -164,9 +164,8 @@\n   $.get(\"https://webtechlecture.appspot.com/cloudstore/add?owner=s201655_key_log&token=FZ0UtB0FSNllekE69ckUlP74oSo_&jsonstring=\"+encodeURI(jsonstring),function(response)\r\n   {\r\n     console.log(response);\r\n   });\r\n-  document.getElementById(\"alert\").removeAttribute(\"hidden\")\r\n \r\n }\r\n \r\n function addKey1()\r\n"
+                },
+                {
+                    "date": 1642072035326,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -258,4 +258,7 @@\n function myURL(){\r\n             window.location.replace('details.html');\r\n }\r\n \r\n+function alert(){\r\n+  document.getElementById(\"alert\").removeAttribute(\"hidden\")\r\n+}\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1640256408490,

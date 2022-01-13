@@ -166,6 +166,7 @@ function addKey0()
     console.log(response);
   });
 
+
 }
 
 function addKey1()
@@ -259,6 +260,3 @@ function myURL(){
             window.location.replace('details.html');
 }
 
-function alert(){
-  document.getElementById("alert").removeAttribute("hidden")
-}
