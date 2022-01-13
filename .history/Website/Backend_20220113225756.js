@@ -101,14 +101,12 @@ function search_and_display()
                 document.getElementById("Card"+ Number(k)+ "price").innerHTML = dat[k].jsonstring.Preis + "€";
                 document.getElementById("Card"+ Number(k)+ "text").innerHTML = dat[k].jsonstring.Beschreibung;
                 document.getElementById("Card"+ Number(k)+ "contact").innerHTML = dat[k].jsonstring.Kontaktmöglichkeit;
-                document.getElementById("Card"+ Number(k)+ "key").innerHTML = dat[k].key;   
-                document.getElementById("pic" + Number(k)).src=randomise_pic();              
+                document.getElementById("Card"+ Number(k)+ "key").innerHTML = dat[k].key;                 
                 }
             }
         };       
         if (dat.length == 0)
         {search_not_found()}
-        
     });
 }
 
@@ -155,8 +153,7 @@ function addKey0()
   {
     console.log(response);
   });
-
-
+  document.getElementById("pic0").src=randomise_pic();
 
 }
 
@@ -263,8 +260,6 @@ function search_not_found(){
 }
 
 function randomise_pic(){
-  pics = ["./Design-Ressourcen/Bilder/carrots.jpg","./Design-Ressourcen/Bilder/garlic.jpg","./Design-Ressourcen/Bilder/hand-saplings.jpg"]
-  console.log("hi")
-  console.log
+  pics = ["./carrots.jpg","./garlic.jpg","./hand-saplings.jpg"]
   return pics[Math.floor(Math.random() * 3)]
 }

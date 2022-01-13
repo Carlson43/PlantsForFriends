@@ -101,14 +101,13 @@ function search_and_display()
                 document.getElementById("Card"+ Number(k)+ "price").innerHTML = dat[k].jsonstring.Preis + "€";
                 document.getElementById("Card"+ Number(k)+ "text").innerHTML = dat[k].jsonstring.Beschreibung;
                 document.getElementById("Card"+ Number(k)+ "contact").innerHTML = dat[k].jsonstring.Kontaktmöglichkeit;
-                document.getElementById("Card"+ Number(k)+ "key").innerHTML = dat[k].key;   
-                document.getElementById("pic" + Number(k)).src=randomise_pic();              
+                document.getElementById("Card"+ Number(k)+ "key").innerHTML = dat[k].key;                 
                 }
             }
         };       
         if (dat.length == 0)
         {search_not_found()}
-        
+        document.getElementById("pic0").src=randomise_pic();
     });
 }
 

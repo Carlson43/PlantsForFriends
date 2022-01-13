@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 494,
+            "activePatchIndex": 501,
             "patches": [
                 {
                     "date": 1640256408490,
@@ -1984,6 +1984,34 @@
                 {
                     "date": 1642085569357,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -100,28 +100,15 @@\n                 document.getElementById(\"Card\"+ Number(k)+ \"title\").innerHTML = dat[k].jsonstring.Titel;\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"price\").innerHTML = dat[k].jsonstring.Preis + \"€\";\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"text\").innerHTML = dat[k].jsonstring.Beschreibung;\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"contact\").innerHTML = dat[k].jsonstring.Kontaktmöglichkeit;\r\n-                document.getElementById(\"Card\"+ Number(k)+ \"key\").innerHTML = dat[k].key;\r\n-                \r\n-               \r\n-                 \r\n+                document.getElementById(\"Card\"+ Number(k)+ \"key\").innerHTML = dat[k].key;                 \r\n                 }\r\n-\r\n             }\r\n-\r\n-\r\n-            \r\n-\r\n-        };  \r\n-     \r\n+        };       \r\n         if (dat.length == 0)\r\n         {search_not_found()}\r\n- \r\n-\r\n     });\r\n-\r\n-\r\n }\r\n \r\n function onMapClick(e) {\r\n     popup\r\n@@ -136,34 +123,27 @@\n {\r\n     data = []\r\n     mark = []\r\n     marker = []\r\n-\r\n-\r\n     $.get(\"https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_\",function(response)\r\n     {\r\n         for (var i = 0; i < response.length; i++)\r\n         {\r\n         data.push(response[i])\r\n-        }\r\n-        \r\n-        \r\n+        }       \r\n         for(var k = 0; k< data.length;k++)\r\n         {\r\n             if (\"lat\" in data[k].jsonstring)\r\n             {\r\n             mark.push(data[k].jsonstring.lat, data[k].jsonstring.lng,data[k].jsonstring.Titel)\r\n             }\r\n         }\r\n-\r\n         for (var j = 0; j < mark.length; j++){\r\n             marker[j] = L.marker([mark[3*j], mark[3*j+1]]).addTo(overview_map);\r\n             marker[j].bindPopup(mark[3*j+2]).openPopup();\r\n             overview_map.setView([51.289406, 10.008545],6);\r\n-\r\n         }\r\n-    }\r\n-    )\r\n+    })   \r\n }\r\n \r\n function addKey0()\r\n {\r\n@@ -274,8 +254,7 @@\n \r\n function search_not_found(){\r\n   var nam = String($(\"#search_term\").val())\r\n   document.getElementById(\"not_found\").removeAttribute(\"hidden\")\r\n-  document.getElementById(\"not_found_text\").innerHTML = 'Ihre Suche zu \"'+ nam + '\" hat leider keine Ergebnisse ergeben.';\r\n-\r\n+  document.getElementById(\"not_found_text\").innerHTML = 'Deine Suche zu \"'+ nam + '\" hat leider keine Ergebnisse ergeben.';\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1642110846572,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -257,4 +257,8 @@\n   document.getElementById(\"not_found\").removeAttribute(\"hidden\")\r\n   document.getElementById(\"not_found_text\").innerHTML = 'Deine Suche zu \"'+ nam + '\" hat leider keine Ergebnisse ergeben.';\r\n }\r\n \r\n+function randomise_pic(){\r\n+  pics = [\"./carrots.jpg\",\"./garlic.jpg\",\"./hand-saplings.jpg\"]\r\n+  return pics[Math.floor(Math.random() * 3)]\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642111076133,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -152,8 +152,9 @@\n   $.get(\"https://webtechlecture.appspot.com/cloudstore/add?owner=s201655_key_log&token=FZ0UtB0FSNllekE69ckUlP74oSo_&jsonstring=\"+encodeURI(jsonstring),function(response)\r\n   {\r\n     console.log(response);\r\n   });\r\n+  document.getElementById(\"pic0\").src=randomise_pic();\r\n \r\n }\r\n \r\n function addKey1()\r\n"
+                },
+                {
+                    "date": 1642111164049,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -260,6 +260,7 @@\n }\r\n \r\n function randomise_pic(){\r\n   pics = [\"./carrots.jpg\",\"./garlic.jpg\",\"./hand-saplings.jpg\"]\r\n+  console.log(\"hi\")\r\n   return pics[Math.floor(Math.random() * 3)]\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642111266827,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -106,8 +106,9 @@\n             }\r\n         };       \r\n         if (dat.length == 0)\r\n         {search_not_found()}\r\n+        document.getElementById(\"pic0\").src=randomise_pic();\r\n     });\r\n }\r\n \r\n function onMapClick(e) {\r\n@@ -152,10 +153,11 @@\n   $.get(\"https://webtechlecture.appspot.com/cloudstore/add?owner=s201655_key_log&token=FZ0UtB0FSNllekE69ckUlP74oSo_&jsonstring=\"+encodeURI(jsonstring),function(response)\r\n   {\r\n     console.log(response);\r\n   });\r\n-  document.getElementById(\"pic0\").src=randomise_pic();\r\n \r\n+\r\n+\r\n }\r\n \r\n function addKey1()\r\n {\r\n@@ -261,6 +263,7 @@\n \r\n function randomise_pic(){\r\n   pics = [\"./carrots.jpg\",\"./garlic.jpg\",\"./hand-saplings.jpg\"]\r\n   console.log(\"hi\")\r\n+  console.log\r\n   return pics[Math.floor(Math.random() * 3)]\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642111358060,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -261,9 +261,9 @@\n   document.getElementById(\"not_found_text\").innerHTML = 'Deine Suche zu \"'+ nam + '\" hat leider keine Ergebnisse ergeben.';\r\n }\r\n \r\n function randomise_pic(){\r\n-  pics = [\"./carrots.jpg\",\"./garlic.jpg\",\"./hand-saplings.jpg\"]\r\n+  pics = [\"./Design-Ressourcen/Bilder/carrots.jpg\",\"../Design-Ressourcen/Bilder/garlic.jpg\",\"./Design-Ressourcen/Bilder/hand-saplings.jpg\"]\r\n   console.log(\"hi\")\r\n   console.log\r\n   return pics[Math.floor(Math.random() * 3)]\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642111376657,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -261,9 +261,9 @@\n   document.getElementById(\"not_found_text\").innerHTML = 'Deine Suche zu \"'+ nam + '\" hat leider keine Ergebnisse ergeben.';\r\n }\r\n \r\n function randomise_pic(){\r\n-  pics = [\"./Design-Ressourcen/Bilder/carrots.jpg\",\"../Design-Ressourcen/Bilder/garlic.jpg\",\"./Design-Ressourcen/Bilder/hand-saplings.jpg\"]\r\n+  pics = [\"./Design-Ressourcen/Bilder/carrots.jpg\",\"./Design-Ressourcen/Bilder/garlic.jpg\",\"./Design-Ressourcen/Bilder/hand-saplings.jpg\"]\r\n   console.log(\"hi\")\r\n   console.log\r\n   return pics[Math.floor(Math.random() * 3)]\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642111506375,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -100,15 +100,16 @@\n                 document.getElementById(\"Card\"+ Number(k)+ \"title\").innerHTML = dat[k].jsonstring.Titel;\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"price\").innerHTML = dat[k].jsonstring.Preis + \"€\";\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"text\").innerHTML = dat[k].jsonstring.Beschreibung;\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"contact\").innerHTML = dat[k].jsonstring.Kontaktmöglichkeit;\r\n-                document.getElementById(\"Card\"+ Number(k)+ \"key\").innerHTML = dat[k].key;                 \r\n+                document.getElementById(\"Card\"+ Number(k)+ \"key\").innerHTML = dat[k].key;   \r\n+                document.getElementById(\"pic\" + Number(k)).src=randomise_pic();              \r\n                 }\r\n             }\r\n         };       \r\n         if (dat.length == 0)\r\n         {search_not_found()}\r\n-        document.getElementById(\"pic0\").src=randomise_pic();\r\n+        \r\n     });\r\n }\r\n \r\n function onMapClick(e) {\r\n"
                 }
             ],
             "date": 1640256408490,
