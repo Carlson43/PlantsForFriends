@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 114,
+            "activePatchIndex": 127,
             "patches": [
                 {
                     "date": 1640249105761,
@@ -464,6 +464,58 @@
                 {
                     "date": 1641562028568,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -78,9 +78,9 @@\n             <!-- Preis -->\r\n             <div>\r\n                 <label for=\"Ad_price\" class=\"form-label\">Preis</label>\r\n                 <input type=\"text\" class=\"form-control\" id=\"Ad_price\" placeholder=\"Preis in €, VB möglich\" required>\r\n-                <div id=\"Ad_contac_helper\" class=\"form-text\">Deine Angabe wird öffentlich für alle Interessenten zu sehen sein.</div>\r\n+                <div id=\"Ad_contac_helper\" class=\"form-text\">Du kannst angeben, was du dir vorstellst. Gratis Sachen zu verschenken ist natürlich auch möglich.</div>\r\n                 <div class=\"invalid-feedback\">Pflichtfeld</div>\r\n             </div>\r\n             <p></p>\r\n             <!-- Beschreibung -->\r\n"
+                },
+                {
+                    "date": 1642111793851,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n   </head>\r\n   <body>\r\n \r\n     <!-- Navbar -->\r\n-    <nav class=\"navbar navbar-light bg-light\">\r\n+    <nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\r\n         <div class=\"container fluid\">\r\n             <!-- Navabr Logo and Brandname -->\r\n             <a class=\"navbar-brand\" href=\"index.html\">\r\n                 <img src=\"./Design-Ressourcen/logo.svg\" alt=\"\" width=\"30\" height=\"24\" class=\"d-inline-block align-text-top\">\r\n@@ -108,9 +108,9 @@\n             <p></p>\r\n             <!-- Ortsangabe/Koordinaten -->\r\n             <div>\r\n                 <label class=\"form-label\">Ort der Anzeige</label>\r\n-                <input class=\"form-control\" type=\"text\" value=\"Die Position deiner Anzeige\" aria-label=\"Ad_location_box\" readonly>\r\n+                <input class=\"form-control\" type=\"text\" value=\"Die Position deiner Anzeige\"+ lat[0].lng aria-label=\"Ad_location_box\" readonly>\r\n                 <p></p>\r\n                 <div onclick = \"onMapClick();\" id=\"pointMap\"></div>\r\n             </div>\r\n             <p></p>\r\n"
+                },
+                {
+                    "date": 1642112030841,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -108,9 +108,9 @@\n             <p></p>\r\n             <!-- Ortsangabe/Koordinaten -->\r\n             <div>\r\n                 <label class=\"form-label\">Ort der Anzeige</label>\r\n-                <input class=\"form-control\" type=\"text\" value=\"Die Position deiner Anzeige\"+ lat[0].lng aria-label=\"Ad_location_box\" readonly>\r\n+                <input class=\"form-control\" type=\"text\" value=\"Die Position deiner Anzeige\" aria-label=\"Ad_location_box\" id =\"position\" readonly>\r\n                 <p></p>\r\n                 <div onclick = \"onMapClick();\" id=\"pointMap\"></div>\r\n             </div>\r\n             <p></p>\r\n@@ -186,10 +186,11 @@\n         }\r\n \r\n         // Run Function -> Show Click-Location in Popup\r\n         create_map.on('click', onMapClick);\r\n+        document.getElementById(\"position\").innerHTML =e.latlng.toString());\r\n+        \r\n \r\n-\r\n     </script>\r\n     \r\n   </body>\r\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642112039041,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -186,9 +186,9 @@\n         }\r\n \r\n         // Run Function -> Show Click-Location in Popup\r\n         create_map.on('click', onMapClick);\r\n-        document.getElementById(\"position\").innerHTML =e.latlng.toString());\r\n+        document.getElementById(\"position\").innerHTML =e.latlng.toString();\r\n         \r\n \r\n     </script>\r\n     \r\n"
+                },
+                {
+                    "date": 1642112094362,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -107,10 +107,10 @@\n             </div>\r\n             <p></p>\r\n             <!-- Ortsangabe/Koordinaten -->\r\n             <div>\r\n-                <label class=\"form-label\">Ort der Anzeige</label>\r\n-                <input class=\"form-control\" type=\"text\" value=\"Die Position deiner Anzeige\" aria-label=\"Ad_location_box\" id =\"position\" readonly>\r\n+                <label id =\"position\" class=\"form-label\">Ort der Anzeige</label>\r\n+                <input class=\"form-control\" type=\"text\" value=\"Die Position deiner Anzeige\" aria-label=\"Ad_location_box\"  readonly>\r\n                 <p></p>\r\n                 <div onclick = \"onMapClick();\" id=\"pointMap\"></div>\r\n             </div>\r\n             <p></p>\r\n"
+                },
+                {
+                    "date": 1642112112615,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -182,13 +182,14 @@\n             popup\r\n                 .setLatLng(e.latlng)\r\n                 .setContent(\"Die Position deiner Anzeige: \" + e.latlng.toString())\r\n                 .openOn(create_map);\r\n+                document.getElementById(\"position\").innerHTML =e.latlng.toString();\r\n         }\r\n \r\n         // Run Function -> Show Click-Location in Popup\r\n         create_map.on('click', onMapClick);\r\n-        document.getElementById(\"position\").innerHTML =e.latlng.toString();\r\n+       \r\n         \r\n \r\n     </script>\r\n     \r\n"
+                },
+                {
+                    "date": 1642112135142,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -107,10 +107,10 @@\n             </div>\r\n             <p></p>\r\n             <!-- Ortsangabe/Koordinaten -->\r\n             <div>\r\n-                <label id =\"position\" class=\"form-label\">Ort der Anzeige</label>\r\n-                <input class=\"form-control\" type=\"text\" value=\"Die Position deiner Anzeige\" aria-label=\"Ad_location_box\"  readonly>\r\n+                <label  class=\"form-label\">Ort der Anzeige</label>\r\n+                <input class=\"form-control\" type=\"text\" value=\"Die Position deiner Anzeige\" aria-label=\"Ad_location_box\" id =\"position\"  readonly>\r\n                 <p></p>\r\n                 <div onclick = \"onMapClick();\" id=\"pointMap\"></div>\r\n             </div>\r\n             <p></p>\r\n"
+                },
+                {
+                    "date": 1642112185142,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -182,9 +182,9 @@\n             popup\r\n                 .setLatLng(e.latlng)\r\n                 .setContent(\"Die Position deiner Anzeige: \" + e.latlng.toString())\r\n                 .openOn(create_map);\r\n-                document.getElementById(\"position\").innerHTML =e.latlng.toString();\r\n+                document.getElementById(\"position\").value =e.latlng.toString();\r\n         }\r\n \r\n         // Run Function -> Show Click-Location in Popup\r\n         create_map.on('click', onMapClick);\r\n"
+                },
+                {
+                    "date": 1642112200147,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -182,9 +182,9 @@\n             popup\r\n                 .setLatLng(e.latlng)\r\n                 .setContent(\"Die Position deiner Anzeige: \" + e.latlng.toString())\r\n                 .openOn(create_map);\r\n-                document.getElementById(\"position\").value =e.latlng.toString();\r\n+                document.getElementById(\"position\").value =e.latlng[0].toString();\r\n         }\r\n \r\n         // Run Function -> Show Click-Location in Popup\r\n         create_map.on('click', onMapClick);\r\n"
+                },
+                {
+                    "date": 1642112209627,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -182,9 +182,9 @@\n             popup\r\n                 .setLatLng(e.latlng)\r\n                 .setContent(\"Die Position deiner Anzeige: \" + e.latlng.toString())\r\n                 .openOn(create_map);\r\n-                document.getElementById(\"position\").value =e.latlng[0].toString();\r\n+                document.getElementById(\"position\").value =e.latlng.toString();\r\n         }\r\n \r\n         // Run Function -> Show Click-Location in Popup\r\n         create_map.on('click', onMapClick);\r\n"
+                },
+                {
+                    "date": 1642112260228,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -182,9 +182,9 @@\n             popup\r\n                 .setLatLng(e.latlng)\r\n                 .setContent(\"Die Position deiner Anzeige: \" + e.latlng.toString())\r\n                 .openOn(create_map);\r\n-                document.getElementById(\"position\").value =e.latlng.toString();\r\n+                document.getElementById(\"position\").value = \"Die Position deiner Anzeige: \" + e.latlng.toString();\r\n         }\r\n \r\n         // Run Function -> Show Click-Location in Popup\r\n         create_map.on('click', onMapClick);\r\n"
+                },
+                {
+                    "date": 1642112274489,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -180,9 +180,9 @@\n         // Generate Popup with current location in Event of Click on create_map\r\n         function onMapClick(e) {\r\n             popup\r\n                 .setLatLng(e.latlng)\r\n-                .setContent(\"Die Position deiner Anzeige: \" + e.latlng.toString())\r\n+                // .setContent(\"Die Position deiner Anzeige: \" + e.latlng.toString())\r\n                 .openOn(create_map);\r\n                 document.getElementById(\"position\").value = \"Die Position deiner Anzeige: \" + e.latlng.toString();\r\n         }\r\n \r\n"
+                },
+                {
+                    "date": 1642112310104,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -180,9 +180,9 @@\n         // Generate Popup with current location in Event of Click on create_map\r\n         function onMapClick(e) {\r\n             popup\r\n                 .setLatLng(e.latlng)\r\n-                // .setContent(\"Die Position deiner Anzeige: \" + e.latlng.toString())\r\n+                .setContent(\"Hier wird dein Angebot erscheinen\")\r\n                 .openOn(create_map);\r\n                 document.getElementById(\"position\").value = \"Die Position deiner Anzeige: \" + e.latlng.toString();\r\n         }\r\n \r\n"
+                },
+                {
+                    "date": 1642112319310,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -180,9 +180,9 @@\n         // Generate Popup with current location in Event of Click on create_map\r\n         function onMapClick(e) {\r\n             popup\r\n                 .setLatLng(e.latlng)\r\n-                .setContent(\"Hier wird dein Angebot erscheinen\")\r\n+                .setContent(\"Hier wird dein Angebot erscheinen!\")\r\n                 .openOn(create_map);\r\n                 document.getElementById(\"position\").value = \"Die Position deiner Anzeige: \" + e.latlng.toString();\r\n         }\r\n \r\n"
                 }
             ],
             "date": 1640249105761,

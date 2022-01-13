@@ -108,8 +108,8 @@
             <p></p>
             <!-- Ortsangabe/Koordinaten -->
             <div>
-                <label  class="form-label">Ort der Anzeige</label>
-                <input class="form-control" type="text" value="Die Position deiner Anzeige" aria-label="Ad_location_box" id ="position"  readonly>
+                <label id ="position" class="form-label">Ort der Anzeige</label>
+                <input class="form-control" type="text" value="Die Position deiner Anzeige" aria-label="Ad_location_box"  readonly>
                 <p></p>
                 <div onclick = "onMapClick();" id="pointMap"></div>
             </div>
@@ -181,14 +181,13 @@
         function onMapClick(e) {
             popup
                 .setLatLng(e.latlng)
-                .setContent("Hier wird dein Angebot erscheinen!")
+                .setContent("Die Position deiner Anzeige: " + e.latlng.toString())
                 .openOn(create_map);
-                document.getElementById("position").value = "Die Position deiner Anzeige: " + e.latlng.toString();
         }
 
         // Run Function -> Show Click-Location in Popup
         create_map.on('click', onMapClick);
-       
+        document.getElementById("position").innerHTML =e.latlng.toString();
         
 
     </script>

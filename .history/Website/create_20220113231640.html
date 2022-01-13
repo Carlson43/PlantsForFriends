@@ -181,9 +181,9 @@
         function onMapClick(e) {
             popup
                 .setLatLng(e.latlng)
-                .setContent("Hier wird dein Angebot erscheinen!")
+                .setContent("Die Position deiner Anzeige: " + e.latlng.toString())
                 .openOn(create_map);
-                document.getElementById("position").value = "Die Position deiner Anzeige: " + e.latlng.toString();
+                document.getElementById("position").value =e.latlng[0].toString();
         }
 
         // Run Function -> Show Click-Location in Popup
