@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 460,
+            "activePatchIndex": 490,
             "patches": [
                 {
                     "date": 1640256408490,
@@ -1848,6 +1848,126 @@
                 {
                     "date": 1642072035326,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -258,4 +258,7 @@\n function myURL(){\r\n             window.location.replace('details.html');\r\n }\r\n \r\n+function alert(){\r\n+  document.getElementById(\"alert\").removeAttribute(\"hidden\")\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642074541946,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -92,20 +92,24 @@\n             {\r\n                 dat.push(data[i]);\r\n                \r\n \r\n-                for (var k = 0; k < dat.length; k++){\r\n+                for (var k = 0; k < dat.length; k++)\r\n+                {\r\n                 document.getElementById(\"Card\"+ Number(k)).removeAttribute(\"hidden\");\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"title\").innerHTML = dat[k].jsonstring.Titel;\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"price\").innerHTML = dat[k].jsonstring.Preis + \"€\";\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"text\").innerHTML = dat[k].jsonstring.Beschreibung;\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"contact\").innerHTML = dat[k].jsonstring.Kontaktmöglichkeit;\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"key\").innerHTML = dat[k].key;\r\n \r\n-                }\r\n+               }\r\n                 \r\n             }\r\n             \r\n+            else {\r\n+              document.getElementById(\"not_found\").removeAttribute(\"hidden\")\r\n+            }\r\n         };  \r\n      \r\n \r\n \r\n@@ -260,5 +264,59 @@\n }\r\n \r\n function alert(){\r\n   document.getElementById(\"alert\").removeAttribute(\"hidden\")\r\n+}\r\n+\r\n+function search_and_display()\r\n+{\r\n+    var nam = String($(\"#search_term\").val())\r\n+    var dat = []\r\n+    var data = []\r\n+\r\n+    for (var h = 0; h < 8; h++){\r\n+        document.getElementById(\"Card\"+ Number(h)).setAttribute(\"hidden\",true);\r\n+    }\r\n+\r\n+\r\n+    $.get(\"https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_\",function(response)\r\n+    { \r\n+        for (var i = 0; i < response.length; i++)\r\n+        data.push(response[i]);\r\n+\r\n+        for (var i = 0; i < data.length; i++)\r\n+        {\r\n+            if (data[i].jsonstring.Pflanzenart == nam\r\n+                ||data[i].jsonstring.Email == nam\r\n+                ||data[i].jsonstring.Beschreibung == nam\r\n+                ||data[i].jsonstring.Pflanzeart == nam\r\n+                ||data[i].jsonstring.Titel == nam)\r\n+            {\r\n+                dat.push(data[i]);\r\n+               \r\n+\r\n+                for (var k = 0; k < dat.length; k++){\r\n+                document.getElementById(\"Card\"+ Number(k)).removeAttribute(\"hidden\");\r\n+                document.getElementById(\"Card\"+ Number(k)+ \"title\").innerHTML = dat[k].jsonstring.Titel;\r\n+                document.getElementById(\"Card\"+ Number(k)+ \"price\").innerHTML = dat[k].jsonstring.Preis + \"€\";\r\n+                document.getElementById(\"Card\"+ Number(k)+ \"text\").innerHTML = dat[k].jsonstring.Beschreibung;\r\n+                document.getElementById(\"Card\"+ Number(k)+ \"contact\").innerHTML = dat[k].jsonstring.Kontaktmöglichkeit;\r\n+                document.getElementById(\"Card\"+ Number(k)+ \"key\").innerHTML = dat[k].key;\r\n+\r\n+                }\r\n+                \r\n+            }\r\n+            \r\n+        };  \r\n+     \r\n+\r\n+\r\n+    });\r\n+\r\n+\r\n+    \r\n+}\r\n+\r\n+function search_not_found(){\r\n+  document.getElementById(\"alert\").removeAttribute(\"hidden\")\r\n+\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642074712158,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -107,8 +107,9 @@\n             }\r\n             \r\n             else {\r\n               document.getElementById(\"not_found\").removeAttribute(\"hidden\")\r\n+              console.log(\"Hi\")\r\n             }\r\n         };  \r\n      \r\n \r\n"
+                },
+                {
+                    "date": 1642074911538,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -101,24 +101,25 @@\n                 document.getElementById(\"Card\"+ Number(k)+ \"text\").innerHTML = dat[k].jsonstring.Beschreibung;\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"contact\").innerHTML = dat[k].jsonstring.Kontaktmöglichkeit;\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"key\").innerHTML = dat[k].key;\r\n \r\n-               }\r\n+                }\r\n                 \r\n             }\r\n             \r\n-            else {\r\n-              document.getElementById(\"not_found\").removeAttribute(\"hidden\")\r\n-              console.log(\"Hi\")\r\n-            }\r\n+\r\n         };  \r\n      \r\n \r\n \r\n     });\r\n \r\n-\r\n+  if (data == dat){\r\n+      document.getElementById(\"not_found\").removeAttribute(\"hidden\")\r\n+      console.log(\"Hi\")\r\n     \r\n+  }\r\n+    \r\n }\r\n \r\n function onMapClick(e) {\r\n     popup\r\n"
+                },
+                {
+                    "date": 1642074950571,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -112,9 +112,9 @@\n \r\n \r\n     });\r\n \r\n-  if (data == dat){\r\n+  if (dat.length() == 0){\r\n       document.getElementById(\"not_found\").removeAttribute(\"hidden\")\r\n       console.log(\"Hi\")\r\n     \r\n   }\r\n"
+                },
+                {
+                    "date": 1642074969997,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -108,17 +108,17 @@\n             \r\n \r\n         };  \r\n      \r\n-\r\n-\r\n-    });\r\n-\r\n   if (dat.length() == 0){\r\n       document.getElementById(\"not_found\").removeAttribute(\"hidden\")\r\n       console.log(\"Hi\")\r\n     \r\n   }\r\n+\r\n+    });\r\n+\r\n+\r\n     \r\n }\r\n \r\n function onMapClick(e) {\r\n"
+                },
+                {
+                    "date": 1642074980522,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -105,17 +105,17 @@\n                 }\r\n                 \r\n             }\r\n             \r\n-\r\n-        };  \r\n-     \r\n   if (dat.length() == 0){\r\n       document.getElementById(\"not_found\").removeAttribute(\"hidden\")\r\n       console.log(\"Hi\")\r\n     \r\n   }\r\n+        };  \r\n+     \r\n \r\n+\r\n     });\r\n \r\n \r\n     \r\n"
+                },
+                {
+                    "date": 1642074991950,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -102,14 +102,14 @@\n                 document.getElementById(\"Card\"+ Number(k)+ \"contact\").innerHTML = dat[k].jsonstring.Kontaktmöglichkeit;\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"key\").innerHTML = dat[k].key;\r\n \r\n                 }\r\n-                \r\n+                            \r\n+  if (dat.length() == 0){\r\n+    document.getElementById(\"not_found\").removeAttribute(\"hidden\")\r\n+    console.log(\"Hi\")\r\n             }\r\n-            \r\n-  if (dat.length() == 0){\r\n-      document.getElementById(\"not_found\").removeAttribute(\"hidden\")\r\n-      console.log(\"Hi\")\r\n+\r\n     \r\n   }\r\n         };  \r\n      \r\n"
+                },
+                {
+                    "date": 1642075003848,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -101,14 +101,15 @@\n                 document.getElementById(\"Card\"+ Number(k)+ \"text\").innerHTML = dat[k].jsonstring.Beschreibung;\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"contact\").innerHTML = dat[k].jsonstring.Kontaktmöglichkeit;\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"key\").innerHTML = dat[k].key;\r\n \r\n+                if (dat.length() == 0){\r\n+                  document.getElementById(\"not_found\").removeAttribute(\"hidden\")\r\n+                  console.log(\"Hi\")\r\n+                          \r\n                 }\r\n                             \r\n-  if (dat.length() == 0){\r\n-    document.getElementById(\"not_found\").removeAttribute(\"hidden\")\r\n-    console.log(\"Hi\")\r\n-            }\r\n+ }\r\n \r\n     \r\n   }\r\n         };  \r\n"
+                },
+                {
+                    "date": 1642075052340,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -101,26 +101,25 @@\n                 document.getElementById(\"Card\"+ Number(k)+ \"text\").innerHTML = dat[k].jsonstring.Beschreibung;\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"contact\").innerHTML = dat[k].jsonstring.Kontaktmöglichkeit;\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"key\").innerHTML = dat[k].key;\r\n \r\n-                if (dat.length() == 0){\r\n-                  document.getElementById(\"not_found\").removeAttribute(\"hidden\")\r\n-                  console.log(\"Hi\")\r\n-                          \r\n                 }\r\n-                            \r\n- }\r\n+                \r\n+            }\r\n+            \r\n \r\n-    \r\n-  }\r\n         };  \r\n      \r\n \r\n \r\n     });\r\n \r\n-\r\n+  if (dat.length == 0 ){\r\n+      document.getElementById(\"not_found\").removeAttribute(\"hidden\")\r\n+      console.log(\"Hi\")\r\n     \r\n+  }\r\n+    \r\n }\r\n \r\n function onMapClick(e) {\r\n     popup\r\n"
+                },
+                {
+                    "date": 1642075064905,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -109,14 +109,14 @@\n \r\n         };  \r\n      \r\n \r\n+        if (dat.length == 0 ){\r\n+          document.getElementById(\"not_found\").removeAttribute(\"hidden\")\r\n+          console.log(\"Hi\")\r\n \r\n     });\r\n \r\n-  if (dat.length == 0 ){\r\n-      document.getElementById(\"not_found\").removeAttribute(\"hidden\")\r\n-      console.log(\"Hi\")\r\n     \r\n   }\r\n     \r\n }\r\n"
+                },
+                {
+                    "date": 1642075100673,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -108,18 +108,16 @@\n             \r\n \r\n         };  \r\n      \r\n-\r\n         if (dat.length == 0 ){\r\n           document.getElementById(\"not_found\").removeAttribute(\"hidden\")\r\n-          console.log(\"Hi\")\r\n+          console.log(\"Hi\")}\r\n \r\n     });\r\n \r\n+\r\n     \r\n-  }\r\n-    \r\n }\r\n \r\n function onMapClick(e) {\r\n     popup\r\n"
+                },
+                {
+                    "date": 1642075110558,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -105,15 +105,15 @@\n                 }\r\n                 \r\n             }\r\n             \r\n-\r\n+            if (dat.length == 0 ){\r\n+              document.getElementById(\"not_found\").removeAttribute(\"hidden\")\r\n+              console.log(\"Hi\")}\r\n         };  \r\n      \r\n-        if (dat.length == 0 ){\r\n-          document.getElementById(\"not_found\").removeAttribute(\"hidden\")\r\n-          console.log(\"Hi\")}\r\n \r\n+\r\n     });\r\n \r\n \r\n     \r\n"
+                },
+                {
+                    "date": 1642075120009,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -102,14 +102,14 @@\n                 document.getElementById(\"Card\"+ Number(k)+ \"contact\").innerHTML = dat[k].jsonstring.Kontaktmöglichkeit;\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"key\").innerHTML = dat[k].key;\r\n \r\n                 }\r\n-                \r\n+                if (dat.length == 0 ){\r\n+                  document.getElementById(\"not_found\").removeAttribute(\"hidden\")\r\n+                  console.log(\"Hi\")}\r\n             }\r\n             \r\n-            if (dat.length == 0 ){\r\n-              document.getElementById(\"not_found\").removeAttribute(\"hidden\")\r\n-              console.log(\"Hi\")}\r\n+\r\n         };  \r\n      \r\n \r\n \r\n"
+                },
+                {
+                    "date": 1642075136277,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -100,13 +100,13 @@\n                 document.getElementById(\"Card\"+ Number(k)+ \"price\").innerHTML = dat[k].jsonstring.Preis + \"€\";\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"text\").innerHTML = dat[k].jsonstring.Beschreibung;\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"contact\").innerHTML = dat[k].jsonstring.Kontaktmöglichkeit;\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"key\").innerHTML = dat[k].key;\r\n-\r\n-                }\r\n                 if (dat.length == 0 ){\r\n                   document.getElementById(\"not_found\").removeAttribute(\"hidden\")\r\n                   console.log(\"Hi\")}\r\n+                }\r\n+\r\n             }\r\n             \r\n \r\n         };  \r\n"
+                },
+                {
+                    "date": 1642075161798,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -100,11 +100,11 @@\n                 document.getElementById(\"Card\"+ Number(k)+ \"price\").innerHTML = dat[k].jsonstring.Preis + \"€\";\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"text\").innerHTML = dat[k].jsonstring.Beschreibung;\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"contact\").innerHTML = dat[k].jsonstring.Kontaktmöglichkeit;\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"key\").innerHTML = dat[k].key;\r\n-                if (dat.length == 0 ){\r\n+                \r\n                   document.getElementById(\"not_found\").removeAttribute(\"hidden\")\r\n-                  console.log(\"Hi\")}\r\n+                 \r\n                 }\r\n \r\n             }\r\n             \r\n"
+                },
+                {
+                    "date": 1642078872800,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -316,7 +316,7 @@\n     \r\n }\r\n \r\n function search_not_found(){\r\n-  document.getElementById(\"alert\").removeAttribute(\"hidden\")\r\n+  document.getElementById(\"not_found\").removeAttribute(\"hidden\")\r\n \r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642078918314,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -101,9 +101,9 @@\n                 document.getElementById(\"Card\"+ Number(k)+ \"text\").innerHTML = dat[k].jsonstring.Beschreibung;\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"contact\").innerHTML = dat[k].jsonstring.Kontaktmöglichkeit;\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"key\").innerHTML = dat[k].key;\r\n                 \r\n-                  document.getElementById(\"not_found\").removeAttribute(\"hidden\")\r\n+                search_not_found()\r\n                  \r\n                 }\r\n \r\n             }\r\n"
+                },
+                {
+                    "date": 1642078974794,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -71,8 +71,11 @@\n     var nam = String($(\"#search_term\").val())\r\n     var dat = []\r\n     var data = []\r\n \r\n+\r\n+    search_not_found()\r\n+    \r\n     for (var h = 0; h < 8; h++){\r\n         document.getElementById(\"Card\"+ Number(h)).setAttribute(\"hidden\",true);\r\n     }\r\n \r\n@@ -101,9 +104,9 @@\n                 document.getElementById(\"Card\"+ Number(k)+ \"text\").innerHTML = dat[k].jsonstring.Beschreibung;\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"contact\").innerHTML = dat[k].jsonstring.Kontaktmöglichkeit;\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"key\").innerHTML = dat[k].key;\r\n                 \r\n-                search_not_found()\r\n+               \r\n                  \r\n                 }\r\n \r\n             }\r\n@@ -115,9 +118,8 @@\n \r\n     });\r\n \r\n \r\n-    \r\n }\r\n \r\n function onMapClick(e) {\r\n     popup\r\n@@ -317,6 +319,5 @@\n }\r\n \r\n function search_not_found(){\r\n   document.getElementById(\"not_found\").removeAttribute(\"hidden\")\r\n-\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642079093420,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -72,10 +72,10 @@\n     var dat = []\r\n     var data = []\r\n \r\n \r\n-    search_not_found()\r\n-    \r\n+    search_not_found();\r\n+\r\n     for (var h = 0; h < 8; h++){\r\n         document.getElementById(\"Card\"+ Number(h)).setAttribute(\"hidden\",true);\r\n     }\r\n \r\n"
+                },
+                {
+                    "date": 1642079183063,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -73,8 +73,9 @@\n     var data = []\r\n \r\n \r\n     search_not_found();\r\n+    alert();\r\n \r\n     for (var h = 0; h < 8; h++){\r\n         document.getElementById(\"Card\"+ Number(h)).setAttribute(\"hidden\",true);\r\n     }\r\n"
+                },
+                {
+                    "date": 1642079210091,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -269,56 +269,8 @@\n function alert(){\r\n   document.getElementById(\"alert\").removeAttribute(\"hidden\")\r\n }\r\n \r\n-function search_and_display()\r\n-{\r\n-    var nam = String($(\"#search_term\").val())\r\n-    var dat = []\r\n-    var data = []\r\n \r\n-    for (var h = 0; h < 8; h++){\r\n-        document.getElementById(\"Card\"+ Number(h)).setAttribute(\"hidden\",true);\r\n-    }\r\n-\r\n-\r\n-    $.get(\"https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_\",function(response)\r\n-    { \r\n-        for (var i = 0; i < response.length; i++)\r\n-        data.push(response[i]);\r\n-\r\n-        for (var i = 0; i < data.length; i++)\r\n-        {\r\n-            if (data[i].jsonstring.Pflanzenart == nam\r\n-                ||data[i].jsonstring.Email == nam\r\n-                ||data[i].jsonstring.Beschreibung == nam\r\n-                ||data[i].jsonstring.Pflanzeart == nam\r\n-                ||data[i].jsonstring.Titel == nam)\r\n-            {\r\n-                dat.push(data[i]);\r\n-               \r\n-\r\n-                for (var k = 0; k < dat.length; k++){\r\n-                document.getElementById(\"Card\"+ Number(k)).removeAttribute(\"hidden\");\r\n-                document.getElementById(\"Card\"+ Number(k)+ \"title\").innerHTML = dat[k].jsonstring.Titel;\r\n-                document.getElementById(\"Card\"+ Number(k)+ \"price\").innerHTML = dat[k].jsonstring.Preis + \"€\";\r\n-                document.getElementById(\"Card\"+ Number(k)+ \"text\").innerHTML = dat[k].jsonstring.Beschreibung;\r\n-                document.getElementById(\"Card\"+ Number(k)+ \"contact\").innerHTML = dat[k].jsonstring.Kontaktmöglichkeit;\r\n-                document.getElementById(\"Card\"+ Number(k)+ \"key\").innerHTML = dat[k].key;\r\n-\r\n-                }\r\n-                \r\n-            }\r\n-            \r\n-        };  \r\n-     \r\n-\r\n-\r\n-    });\r\n-\r\n-\r\n-    \r\n-}\r\n-\r\n function search_not_found(){\r\n   document.getElementById(\"not_found\").removeAttribute(\"hidden\")\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642079254611,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -71,12 +71,8 @@\n     var nam = String($(\"#search_term\").val())\r\n     var dat = []\r\n     var data = []\r\n \r\n-\r\n-    search_not_found();\r\n-    alert();\r\n-\r\n     for (var h = 0; h < 8; h++){\r\n         document.getElementById(\"Card\"+ Number(h)).setAttribute(\"hidden\",true);\r\n     }\r\n \r\n@@ -110,9 +106,12 @@\n                  \r\n                 }\r\n \r\n             }\r\n-            \r\n+         \r\n+            else {\r\n+              search_not_found()\r\n+            }\r\n \r\n         };  \r\n      \r\n \r\n"
+                },
+                {
+                    "date": 1642079468517,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -270,6 +270,9 @@\n }\r\n \r\n \r\n function search_not_found(){\r\n+  var nam = String($(\"#search_term\").val())\r\n   document.getElementById(\"not_found\").removeAttribute(\"hidden\")\r\n+  document.getElementById(\"not_found_text\").innerHTML = \"Ihre Suche zu : \"+ nam + \"hat leider keine Ergebnisse ergeben.\";\r\n+\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642079513427,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -272,7 +272,7 @@\n \r\n function search_not_found(){\r\n   var nam = String($(\"#search_term\").val())\r\n   document.getElementById(\"not_found\").removeAttribute(\"hidden\")\r\n-  document.getElementById(\"not_found_text\").innerHTML = \"Ihre Suche zu : \"+ nam + \"hat leider keine Ergebnisse ergeben.\";\r\n+  document.getElementById(\"not_found_text\").innerHTML = 'Ihre Suche zu : \"'+ nam + '\"hat leider keine Ergebnisse ergeben.';\r\n \r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642079549340,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -272,7 +272,7 @@\n \r\n function search_not_found(){\r\n   var nam = String($(\"#search_term\").val())\r\n   document.getElementById(\"not_found\").removeAttribute(\"hidden\")\r\n-  document.getElementById(\"not_found_text\").innerHTML = 'Ihre Suche zu : \"'+ nam + '\"hat leider keine Ergebnisse ergeben.';\r\n+  document.getElementById(\"not_found_text\").innerHTML = 'Ihre Suche zu : \"'+ nam + '\" hat leider keine Ergebnisse ergeben.';\r\n \r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642079616331,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -107,11 +107,12 @@\n                 }\r\n \r\n             }\r\n          \r\n-            else {\r\n-              search_not_found()\r\n+            if (dat.length == 0){\r\n+              search_not_found\r\n             }\r\n+            \r\n \r\n         };  \r\n      \r\n \r\n"
+                },
+                {
+                    "date": 1642079671384,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -104,14 +104,14 @@\n                 \r\n                \r\n                  \r\n                 }\r\n-\r\n+                if (dat.length == 0){\r\n+                  search_not_found\r\n+                }\r\n             }\r\n          \r\n-            if (dat.length == 0){\r\n-              search_not_found\r\n-            }\r\n+\r\n             \r\n \r\n         };  \r\n      \r\n"
+                },
+                {
+                    "date": 1642079689229,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -105,9 +105,9 @@\n                \r\n                  \r\n                 }\r\n                 if (dat.length == 0){\r\n-                  search_not_found\r\n+                  search_not_found()\r\n                 }\r\n             }\r\n          \r\n \r\n"
+                },
+                {
+                    "date": 1642079700165,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -104,11 +104,12 @@\n                 \r\n                \r\n                  \r\n                 }\r\n+\r\n+                }\r\n                 if (dat.length == 0){\r\n                   search_not_found()\r\n-                }\r\n             }\r\n          \r\n \r\n             \r\n"
+                },
+                {
+                    "date": 1642079740203,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -105,20 +105,19 @@\n                \r\n                  \r\n                 }\r\n \r\n-                }\r\n-                if (dat.length == 0){\r\n-                  search_not_found()\r\n             }\r\n-         \r\n \r\n+\r\n             \r\n \r\n         };  \r\n      \r\n+        if (dat.length == 0)\r\n+        {search_not_found()}\r\n+ \r\n \r\n-\r\n     });\r\n \r\n \r\n }\r\n"
                 }
             ],
             "date": 1640256408490,

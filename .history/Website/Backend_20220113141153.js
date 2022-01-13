@@ -107,15 +107,14 @@ function search_and_display()
                 }
 
             }
-
-
-            
+         
+            else {
+              search_not_found()
+            }
 
         };  
      
-        if (dat.length == 0)
-        {search_not_found()}
- 
+
 
     });
 
@@ -274,6 +273,6 @@ function alert(){
 function search_not_found(){
   var nam = String($("#search_term").val())
   document.getElementById("not_found").removeAttribute("hidden")
-  document.getElementById("not_found_text").innerHTML = 'Ihre Suche zu : "'+ nam + '" hat leider keine Ergebnisse ergeben.';
+  document.getElementById("not_found_text").innerHTML = 'Ihre Suche zu : "'+ nam + '"hat leider keine Ergebnisse ergeben.';
 
 }

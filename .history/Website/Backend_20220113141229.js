@@ -107,15 +107,14 @@ function search_and_display()
                 }
 
             }
-
-
-            
+         
+            else {
+              search_not_found()
+            }
 
         };  
      
-        if (dat.length == 0)
-        {search_not_found()}
- 
+
 
     });
 

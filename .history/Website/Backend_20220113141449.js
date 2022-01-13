@@ -105,17 +105,17 @@ function search_and_display()
                
                  
                 }
-
+                if (dat.length == 0){
+                  search_not_found()
+                }
             }
-
+         
 
             
 
         };  
      
-        if (dat.length == 0)
-        {search_not_found()}
- 
+
 
     });
 
