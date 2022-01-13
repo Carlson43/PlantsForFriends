@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 516,
+            "activePatchIndex": 517,
             "patches": [
                 {
                     "date": 1640256408490,
@@ -2072,6 +2072,10 @@
                 {
                     "date": 1642114828492,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -269,6 +269,6 @@\n   return pics[Math.floor(Math.random() * 3)]\r\n }\r\n \r\n function scroll_to(){\r\n-  document.getElementById(\"Hero1\").scrollIntoView({block: 'start'});\r\n+  document.getElementById(\"Hero1\").scrollIntoView({block: 'start', behavior: \"smooth\"});\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642115238214,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,4 @@\n-function add()\r\n-{\r\n-    var jsonstring=  '{\"Pflanze\":\"'+$(\"#jsonstring\").val()+'\"}';\r\n-    console.log(\"add\"+ jsonstring);\r\n-    $.get(\"https://webtechlecture.appspot.com/cloudstore/add?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_&jsonstring=\"+encodeURI(jsonstring),function(response)\r\n-    {\r\n-    console.log(response);\r\n-    });\r\n-}\r\n-\r\n function listAllData()\r\n {\r\n     var jsonstring=$(\"#jsonstring\").val();\r\n     console.log(\"Hi!\");\r\n@@ -254,9 +244,8 @@\n function alert(){\r\n   document.getElementById(\"alert\").removeAttribute(\"hidden\")\r\n }\r\n \r\n-\r\n function search_not_found(){\r\n   var nam = String($(\"#search_term\").val())\r\n   document.getElementById(\"not_found\").removeAttribute(\"hidden\")\r\n   document.getElementById(\"not_found_text\").innerHTML = 'Deine Suche zu \"'+ nam + '\" hat leider keine Ergebnisse ergeben.';\r\n"
                 }
             ],
             "date": 1640256408490,
