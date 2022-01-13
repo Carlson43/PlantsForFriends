@@ -3,11 +3,19 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 2,
             "patches": [
                 {
                     "date": 1641304800754,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1642109034809,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,5 @@\n {\r\n     \"python.pythonPath\": \"C:\\\\Users\\\\thielkat\\\\AppData\\\\Local\\\\Continuum\\\\anaconda3\\\\envs\\\\Fallstudie\\\\python.exe\",\r\n-    \"local-history.browser.descending\": false\r\n-}\n\\ No newline at end of file\n+    \"local-history.browser.descending\": false,\r\n+    \"deno.enable\": true\r\n+}\r\n"
+                },
+                {
+                    "date": 1642109457614,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n {\r\n+    \r\n     \"python.pythonPath\": \"C:\\\\Users\\\\thielkat\\\\AppData\\\\Local\\\\Continuum\\\\anaconda3\\\\envs\\\\Fallstudie\\\\python.exe\",\r\n     \"local-history.browser.descending\": false,\r\n     \"deno.enable\": true\r\n }\r\n"
                 }
             ],
             "date": 1641304800754,
