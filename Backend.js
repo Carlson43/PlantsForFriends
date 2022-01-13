@@ -101,26 +101,13 @@ function search_and_display()
                 document.getElementById("Card"+ Number(k)+ "price").innerHTML = dat[k].jsonstring.Preis + "€";
                 document.getElementById("Card"+ Number(k)+ "text").innerHTML = dat[k].jsonstring.Beschreibung;
                 document.getElementById("Card"+ Number(k)+ "contact").innerHTML = dat[k].jsonstring.Kontaktmöglichkeit;
-                document.getElementById("Card"+ Number(k)+ "key").innerHTML = dat[k].key;
-                
-               
-                 
+                document.getElementById("Card"+ Number(k)+ "key").innerHTML = dat[k].key;                 
                 }
-
             }
-
-
-            
-
-        };  
-     
+        };       
         if (dat.length == 0)
         {search_not_found()}
- 
-
     });
-
-
 }
 
 function onMapClick(e) {
@@ -137,16 +124,12 @@ function marker()
     data = []
     mark = []
     marker = []
-
-
     $.get("https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_",function(response)
     {
         for (var i = 0; i < response.length; i++)
         {
         data.push(response[i])
-        }
-        
-        
+        }       
         for(var k = 0; k< data.length;k++)
         {
             if ("lat" in data[k].jsonstring)
@@ -154,15 +137,12 @@ function marker()
             mark.push(data[k].jsonstring.lat, data[k].jsonstring.lng,data[k].jsonstring.Titel)
             }
         }
-
         for (var j = 0; j < mark.length; j++){
             marker[j] = L.marker([mark[3*j], mark[3*j+1]]).addTo(overview_map);
             marker[j].bindPopup(mark[3*j+2]).openPopup();
             overview_map.setView([51.289406, 10.008545],6);
-
         }
-    }
-    )
+    })   
 }
 
 function addKey0()
@@ -275,6 +255,6 @@ function alert(){
 function search_not_found(){
   var nam = String($("#search_term").val())
   document.getElementById("not_found").removeAttribute("hidden")
-  document.getElementById("not_found_text").innerHTML = 'Ihre Suche zu : "'+ nam + '" hat leider keine Ergebnisse ergeben.';
-
+  document.getElementById("not_found_text").innerHTML = 'Deine Suche zu "'+ nam + '" hat leider keine Ergebnisse ergeben.';
 }
+
