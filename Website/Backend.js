@@ -278,3 +278,4 @@ function search_not_found(){
   document.getElementById("not_found_text").innerHTML = 'Ihre Suche zu : "'+ nam + '" hat leider keine Ergebnisse ergeben.';
 
 }
+
