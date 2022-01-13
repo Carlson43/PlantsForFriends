@@ -1,5 +1,3 @@
-
-
 function add()
 {
     var jsonstring=  '{"Pflanze":"'+$("#jsonstring").val()+'"}';
@@ -63,12 +61,9 @@ function display_details()
     console.log(data[0].Titel)
     
     detail_map.setView([data[0].lat, data[0].lng],8);
-    anzeige_marker.bindPopup(data[0].Titel).openPopup();
-   
-
+    anzeige_marker.bindPopup(data[0].Titel).openPopup();   
     });
     }) 
-
 }
 
 function search_and_display()
@@ -79,6 +74,7 @@ function search_and_display()
 
     for (var h = 0; h < 8; h++){
         document.getElementById("Card"+ Number(h)).setAttribute("hidden",true);
+        document.getElementById("not_found").setAttribute("hidden",true)
     }
 
 
@@ -98,29 +94,33 @@ function search_and_display()
                 dat.push(data[i]);
                
 
-                for (var k = 0; k < dat.length; k++){
+                for (var k = 0; k < dat.length; k++)
+                {
                 document.getElementById("Card"+ Number(k)).removeAttribute("hidden");
                 document.getElementById("Card"+ Number(k)+ "title").innerHTML = dat[k].jsonstring.Titel;
                 document.getElementById("Card"+ Number(k)+ "price").innerHTML = dat[k].jsonstring.Preis + "€";
                 document.getElementById("Card"+ Number(k)+ "text").innerHTML = dat[k].jsonstring.Beschreibung;
                 document.getElementById("Card"+ Number(k)+ "contact").innerHTML = dat[k].jsonstring.Kontaktmöglichkeit;
                 document.getElementById("Card"+ Number(k)+ "key").innerHTML = dat[k].key;
-
-                }
                 
+               
+                 
+                }
+
             }
+
+
             
+
         };  
      
-
+        if (dat.length == 0)
+        {search_not_found()}
+ 
 
     });
 
 
-    
-}
-
-function addElement(){ 
 }
 
 function onMapClick(e) {
@@ -132,7 +132,7 @@ function onMapClick(e) {
         console.log(lat[0].lat)
 }
 
-function Marker()
+function marker()
 {
     data = []
     mark = []
@@ -164,7 +164,6 @@ function Marker()
     }
     )
 }
-
 
 function addKey0()
 {
@@ -265,6 +264,17 @@ window.onload = function() {
 }
 
 function myURL(){
-            window.open('details.html');
-         }
+            window.location.replace('details.html');
+}
 
+function alert(){
+  document.getElementById("alert").removeAttribute("hidden")
+}
+
+
+function search_not_found(){
+  var nam = String($("#search_term").val())
+  document.getElementById("not_found").removeAttribute("hidden")
+  document.getElementById("not_found_text").innerHTML = 'Ihre Suche zu : "'+ nam + '" hat leider keine Ergebnisse ergeben.';
+
+}
