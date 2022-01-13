@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 501,
+            "activePatchIndex": 516,
             "patches": [
                 {
                     "date": 1640256408490,
@@ -2012,6 +2012,66 @@
                 {
                     "date": 1642111506375,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -100,15 +100,16 @@\n                 document.getElementById(\"Card\"+ Number(k)+ \"title\").innerHTML = dat[k].jsonstring.Titel;\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"price\").innerHTML = dat[k].jsonstring.Preis + \"€\";\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"text\").innerHTML = dat[k].jsonstring.Beschreibung;\r\n                 document.getElementById(\"Card\"+ Number(k)+ \"contact\").innerHTML = dat[k].jsonstring.Kontaktmöglichkeit;\r\n-                document.getElementById(\"Card\"+ Number(k)+ \"key\").innerHTML = dat[k].key;                 \r\n+                document.getElementById(\"Card\"+ Number(k)+ \"key\").innerHTML = dat[k].key;   \r\n+                document.getElementById(\"pic\" + Number(k)).src=randomise_pic();              \r\n                 }\r\n             }\r\n         };       \r\n         if (dat.length == 0)\r\n         {search_not_found()}\r\n-        document.getElementById(\"pic0\").src=randomise_pic();\r\n+        \r\n     });\r\n }\r\n \r\n function onMapClick(e) {\r\n"
+                },
+                {
+                    "date": 1642113556561,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -266,5 +266,10 @@\n   pics = [\"./Design-Ressourcen/Bilder/carrots.jpg\",\"./Design-Ressourcen/Bilder/garlic.jpg\",\"./Design-Ressourcen/Bilder/hand-saplings.jpg\"]\r\n   console.log(\"hi\")\r\n   console.log\r\n   return pics[Math.floor(Math.random() * 3)]\r\n+}\r\n+\r\n+function scroll(){\r\n+  element = document.getElementById(\"Hero1\")\r\n+  element.scrollIntoView({block: \"end\", behavior: \"smooth\"})\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642113827298,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -270,6 +270,6 @@\n }\r\n \r\n function scroll(){\r\n   element = document.getElementById(\"Hero1\")\r\n-  element.scrollIntoView({block: \"end\", behavior: \"smooth\"})\r\n+  element.scrollIntoView()\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642113879267,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -269,7 +269,6 @@\n   return pics[Math.floor(Math.random() * 3)]\r\n }\r\n \r\n function scroll(){\r\n-  element = document.getElementById(\"Hero1\")\r\n-  element.scrollIntoView()\r\n+  document.getElementById(\"Hero1\").scrollIntoView()\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642114005716,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -269,6 +269,6 @@\n   return pics[Math.floor(Math.random() * 3)]\r\n }\r\n \r\n function scroll(){\r\n-  document.getElementById(\"Hero1\").scrollIntoView()\r\n+  document.getElementById(\"Hero1\").scrollIntoView(true)\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642114227640,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -269,6 +269,6 @@\n   return pics[Math.floor(Math.random() * 3)]\r\n }\r\n \r\n function scroll(){\r\n-  document.getElementById(\"Hero1\").scrollIntoView(true)\r\n+  document.getElementById(\"Hero1\").scrollIntoView(true);\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642114307077,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -269,6 +269,6 @@\n   return pics[Math.floor(Math.random() * 3)]\r\n }\r\n \r\n function scroll(){\r\n-  document.getElementById(\"Hero1\").scrollIntoView(true);\r\n+  document.getElementById(\"Hero1\").scrollIntoView({block: 'center'});\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642114396664,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -269,6 +269,6 @@\n   return pics[Math.floor(Math.random() * 3)]\r\n }\r\n \r\n function scroll(){\r\n-  document.getElementById(\"Hero1\").scrollIntoView({block: 'center'});\r\n+  window.scrollTo(0,document.body.scrollHeight);\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642114496361,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -269,6 +269,6 @@\n   return pics[Math.floor(Math.random() * 3)]\r\n }\r\n \r\n function scroll(){\r\n-  window.scrollTo(0,document.body.scrollHeight);\r\n+  window.scrollTo(0, document.body.scrollHeight || document.documentElement.scrollHeight);\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642114623922,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -268,7 +268,7 @@\n   console.log\r\n   return pics[Math.floor(Math.random() * 3)]\r\n }\r\n \r\n-function scroll(){\r\n+function scroll_to(){\r\n   window.scrollTo(0, document.body.scrollHeight || document.documentElement.scrollHeight);\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642114697338,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -268,7 +268,7 @@\n   console.log\r\n   return pics[Math.floor(Math.random() * 3)]\r\n }\r\n \r\n-function scroll_to(){\r\n-  window.scrollTo(0, document.body.scrollHeight || document.documentElement.scrollHeight);\r\n+function scroll(){\r\n+  document.getElementById(\"Hero1\").scrollIntoView({block: 'center'});\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642114711579,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -268,7 +268,7 @@\n   console.log\r\n   return pics[Math.floor(Math.random() * 3)]\r\n }\r\n \r\n-function scroll(){\r\n+function scroll_to(){\r\n   document.getElementById(\"Hero1\").scrollIntoView({block: 'center'});\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642114735704,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -269,6 +269,6 @@\n   return pics[Math.floor(Math.random() * 3)]\r\n }\r\n \r\n function scroll_to(){\r\n-  document.getElementById(\"Hero1\").scrollIntoView({block: 'center'});\r\n+  document.getElementById(\"Hero1\").scrollIntoView({block: 'top'});\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642114786297,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -269,6 +269,6 @@\n   return pics[Math.floor(Math.random() * 3)]\r\n }\r\n \r\n function scroll_to(){\r\n-  document.getElementById(\"Hero1\").scrollIntoView({block: 'top'});\r\n+  document.getElementById(\"Hero1\").scrollIntoView({block: 'end'});\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642114802951,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -269,6 +269,6 @@\n   return pics[Math.floor(Math.random() * 3)]\r\n }\r\n \r\n function scroll_to(){\r\n-  document.getElementById(\"Hero1\").scrollIntoView({block: 'end'});\r\n+  document.getElementById(\"Hero1\").scrollIntoView({block: 'start'});\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642114828492,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -269,6 +269,6 @@\n   return pics[Math.floor(Math.random() * 3)]\r\n }\r\n \r\n function scroll_to(){\r\n-  document.getElementById(\"Hero1\").scrollIntoView({block: 'start'});\r\n+  document.getElementById(\"Hero1\").scrollIntoView({block: 'start', behavior: \"smooth\"});\r\n }\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1640256408490,

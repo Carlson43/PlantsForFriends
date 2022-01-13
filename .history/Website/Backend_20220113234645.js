@@ -269,6 +269,6 @@ function randomise_pic(){
   return pics[Math.floor(Math.random() * 3)]
 }
 
-function scroll_to(){
-  document.getElementById("Hero1").scrollIntoView({block: 'start', behavior: "smooth"});
+function scroll(){
+  document.getElementById("Hero1").scrollIntoView(true)
 }

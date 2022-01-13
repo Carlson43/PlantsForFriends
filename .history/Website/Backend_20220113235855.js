@@ -270,5 +270,5 @@ function randomise_pic(){
 }
 
 function scroll_to(){
-  document.getElementById("Hero1").scrollIntoView({block: 'start', behavior: "smooth"});
+  document.getElementById("Hero1").scrollIntoView({block: 'top'});
 }
