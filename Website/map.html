@@ -24,6 +24,9 @@
     <!-- Map Locate CSS -->
     <link rel="stylesheet" href="./leaflet-locatecontrol-gh-pages/leaflet-locatecontrol-gh-pages/dist/L.Control.Locate.min.css" />
 
+    <!-- Custom Divider CSS -->
+    <link rel="stylesheet" href="divider.css">
+
     <title>Karte @ Plants4Friends</title>
 
     <!-- Favicon -->
@@ -57,8 +60,8 @@
     <p></p>
 
     <!-- Titel -->
-    <div class="container-md">
-        <h4>Übersicht der Angebote in deiner Nähe</h4>
+    <div class="container-md text-center">
+        <h4 class="display-7 fw-bold">Übersicht der Angebote in deiner Nähe</h4>
     </div>
 
     <!-- Custom Map Location -->
@@ -66,25 +69,36 @@
         <div id="pointMap"></div>
     </div>
     
+    <div class="h-divider"></div>
 
-        <!-- Input / Search Group -->
-        <div class="container-md">
-          <div class="input-group">
-            <!-- General Search Input -->
-            <input type="text" placeholder="Suchbegriff eingeben" aria-label="search_term" id="search_term" class="form-control">
-            <!-- Location Search Input - Diabled due to no working implementation -->
-            <input type="text" placeholder="Ort" aria-label="search_loc" id="search_loc" class="form-control" disabled>
-            <!-- Search Button -->
-            <button onclick= "search_and_display();" class="btn btn-success" type="button" id="search_btn">Suchen</button>          
-          </div>
+    <!-- Small Text -->
+    <div class="container-md text-center">
+      <h5 class="display-7 fw-bold">Oder suche nach einer passenden Anzeige.</h5>
+      <img src="./Design-Ressourcen/expand_more.svg" class="mx-auto d-block" alt="" style="height: 40px" >
+    </div>
+
+    <div class="h-divider"></div>
+
+    <!-- Input / Search Group -->
+    <div class="container-md">
+      <div class="input-group">
+        <!-- General Search Input -->
+        <input type="text" placeholder="Suchbegriff eingeben" aria-label="search_term" id="search_term" class="form-control">
+        <!-- Location Search Input - Diabled due to no working implementation -->
+        <input type="text" placeholder="Ort" aria-label="search_loc" id="search_loc" class="form-control" disabled>
+        <!-- Search Button -->
+        <button onclick= "search_and_display();" class="btn btn-success" type="button" id="search_btn">Suchen</button>          
       </div>
+  </div>
+
+  <div class="h-divider"></div>
 
       
-    <!-- Alert Forward-->
-    <div class="alert alert-success"  role="alert" id = "alert" hidden>
-      <p class="text-center">
-       <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>Einen Moment bitte, Sie werden weitergeleitet.
-      </p>
+  <!-- Alert Forward-->
+  <div class="alert alert-success"  role="alert" id = "alert" hidden>
+    <p class="text-center">
+      <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>Einen Moment bitte, du wirst weitergeleitet.
+    </p>
   </div> 
 
   <!-- Alert Empty Search -->
@@ -92,162 +106,162 @@
     <p class="text-center"  id = "not_found_text">
      sdf
     </p>
-</div> 
+  </div> 
 
 
 
-       <!-- Container Layout Demo -->
-    <div class="container-md">
-      <div class="row">
-        <div class="col">
-              <!-- Card Element 1-->
-              <div class="card" style="width: 18rem;" id = "Card0" hidden>
-                <!-- Heading image -->
-                <img src="./Design-Ressourcen/Bilder/carrots.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title" id = "Card0title">Überschrift</h5>
-                    <h5 class="card-title" id = "Card0key" hidden>f</h5>
-                    <h6 class="card-subtitle mb-2 text-muted" id = "Card0price">Preis in €</h6>
-                    <h6 class="card-subtitle mb-2 text-muted" id = "Card0contact">Kontaktmöglichkeit</h6>
-                    <p class="card-text" id = "Card0text">Die Beschreibung der Anzeige soll hier dann erscheinen. Vielleicht ist die Größe aber ein Limit. Naja, das lässt sich bestimmt irgendiwe Lösen</p>
-                     <!-- Detail Button -->
-                    <a  class="btn btn-primary" onclick = "alert();addKey0();setTimeout(myURL, 4000);">Details ></a>
-                </div>
-              </div>  
-        </div>
-        <div class="col">
-          <!-- Card Element 2-->
-          <div class="card" style="width: 18rem;" id = "Card1" hidden>
-            <!-- Heading image -->
-            <img src="./Design-Ressourcen/Bilder/carrots.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title" id = "Card1title">Überschrift</h5>
-                <h5 class="card-title" id = "Card1key" hidden>f</h5>
-                <h6 class="card-subtitle mb-2 text-muted" id = "Card1price">Preis in €</h6>
-                <h6 class="card-subtitle mb-2 text-muted" id = "Card1contact">Kontaktmöglichkeit</h6>
-                <p class="card-text" id = "Card1text">Die Beschreibung der Anzeige soll hier dann erscheinen. Vielleicht ist die Größe aber ein Limit. Naja, das lässt sich bestimmt irgendiwe Lösen</p>
-                <!-- Detail Button -->
-                <a class="btn btn-primary" onclick = "alert();addKey1();setTimeout(myURL, 4000);">Details ></a>
-            </div>
-          </div>  
-        </div>
-        <div class="col">
-          <!-- Card Element 3-->
-          <div class="card" style="width: 18rem;" id = "Card2" hidden>
-            <!-- Heading image -->
-            <img src="./Design-Ressourcen/Bilder/carrots.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title" id = "Card2title">Überschrift</h5>
-                <h5 class="card-title" id = "Card2key" hidden>f</h5>
-                <h6 class="card-subtitle mb-2 text-muted" id = "Card2price">Preis in €</h6>
-                <h6 class="card-subtitle mb-2 text-muted" id = "Card2contact">Kontaktmöglichkeit</h6>
-                <p class="card-text" id = "Card2text">Die Beschreibung der Anzeige soll hier dann erscheinen. Vielleicht ist die Größe aber ein Limit. Naja, das lässt sich bestimmt irgendiwe Lösen</p>
-                <!-- Detail Button -->
-                <a class="btn btn-primary" onclick = "alert();addKey2();setTimeout(myURL, 4000);">Details ></a>
-            </div>
-          </div>  
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-              <!-- Card Element 4-->
-              <div class="card" style="width: 18rem;" id = "Card3" hidden>
-                <!-- Heading image -->
-                <img src="./Design-Ressourcen/Bilder/carrots.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title" id = "Card3title">Überschrift</h5>
-                    <h5 class="card-title" id = "Card3key" hidden></h5>
-                    <h6 class="card-subtitle mb-2 text-muted" id = "Card3price">Preis in €</h6>
-                    <h6 class="card-subtitle mb-2 text-muted" id = "Card3contact">Kontaktmöglichkeit</h6>
-                    <p class="card-text" id = "Card3text">Die Beschreibung der Anzeige soll hier dann erscheinen. Vielleicht ist die Größe aber ein Limit. Naja, das lässt sich bestimmt irgendiwe Lösen</p>
+  <!-- Card Layout -->
+  <div class="container-md">
+    <div class="row">
+      <div class="col">
+            <!-- Card Element 1-->
+            <div class="card" style="width: 18rem;" id = "Card0" hidden>
+              <!-- Heading image -->
+              <img src="./Design-Ressourcen/Bilder/carrots.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                  <h5 class="card-title" id = "Card0title">Überschrift</h5>
+                  <h5 class="card-title" id = "Card0key" hidden>f</h5>
+                  <h6 class="card-subtitle mb-2 text-muted" id = "Card0price">Preis in €</h6>
+                  <h6 class="card-subtitle mb-2 text-muted" id = "Card0contact">Kontaktmöglichkeit</h6>
+                  <p class="card-text" id = "Card0text">Die Beschreibung der Anzeige soll hier dann erscheinen. Vielleicht ist die Größe aber ein Limit. Naja, das lässt sich bestimmt irgendiwe Lösen</p>
                     <!-- Detail Button -->
-                    <a  class="btn btn-primary" onclick = "alert();addKey3();setTimeout(myURL, 4000);">Details ></a>
-                </div>
-              </div>  
-        </div>
-        <div class="col">
-          <!-- Card Element 5-->
-          <div class="card" style="width: 18rem;" id = "Card4" hidden>
-            <!-- Heading image -->
-            <img src="./Design-Ressourcen/Bilder/carrots.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title" id = "Card4title">Überschrift</h5>
-                <h5 class="card-title" id = "Card4key" hidden></h5>
-                <h6 class="card-subtitle mb-2 text-muted" id = "Card4price">Preis in €</h6>
-                <h6 class="card-subtitle mb-2 text-muted" id = "Card4contact">Kontaktmöglichkeit</h6>
-                <p class="card-text" id = "Card4text">Die Beschreibung der Anzeige soll hier dann erscheinen. Vielleicht ist die Größe aber ein Limit. Naja, das lässt sich bestimmt irgendiwe Lösen</p>
-                <!-- Detail Button -->
-                <a class="btn btn-primary" onclick = "alert();addKey4();setTimeout(myURL, 4000);">Details ></a>
-            </div>
-          </div>  
-        </div>
-        <div class="col">
-          <!-- Card Element 6-->
-          <div class="card" style="width: 18rem;" id = "Card5" hidden>
-            <!-- Heading image -->
-            <img src="./Design-Ressourcen/Bilder/carrots.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title" id = "Card0title">Überschrift</h5>
-                <h5 class="card-title" id = "Card5key" hidden></h5>
-                <h6 class="card-subtitle mb-2 text-muted" id = "Card5price">Preis in €</h6>
-                <h6 class="card-subtitle mb-2 text-muted" id = "Card5contact">Kontaktmöglichkeit</h6>
-                <p class="card-text" id = "Card5text">Die Beschreibung der Anzeige soll hier dann erscheinen. Vielleicht ist die Größe aber ein Limit. Naja, das lässt sich bestimmt irgendiwe Lösen</p>
-                <!-- Detail Button -->
-                <a class="btn btn-primary" onclick = "alert();addKey5();setTimeout(myURL, 4000);">Details ></a>
-            </div>
-          </div>  
-        </div>
+                  <a  class="btn btn-primary" onclick = "alert();addKey0();setTimeout(myURL, 4000);">Details ></a>
+              </div>
+            </div>  
       </div>
-      <div class="row">
-        <div class="col">
-              <!-- Card Element 7-->
-              <div class="card" style="width: 18rem;" id = "Card6" hidden>
-                <!-- Heading image -->
-                <img src="./Design-Ressourcen/Bilder/carrots.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title" id = "Card6title">Überschrift</h5>
-                    <h5 class="card-title" id = "Card6key" hidden></h5>
-                    <h6 class="card-subtitle mb-2 text-muted" id = "Card6price">Preis in €</h6>
-                    <h6 class="card-subtitle mb-2 text-muted" id = "Card6contact">Kontaktmöglichkeit</h6>
-                    <p class="card-text" id = "Card6text">Die Beschreibung der Anzeige soll hier dann erscheinen. Vielleicht ist die Größe aber ein Limit. Naja, das lässt sich bestimmt irgendiwe Lösen</p>
-                    <!-- Detail Button -->
-                    <a  class="btn btn-primary" onclick = "alert();addKey6();setTimeout(myURL, 4000);">Details ></a>
-                </div>
-              </div>  
-        </div>
-        <div class="col">
-          <!-- Card Element 8-->
-          <div class="card" style="width: 18rem;" id = "Card7" hidden>
-            <!-- Heading image -->
-            <img src="./Design-Ressourcen/Bilder/carrots.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title" id = "Card7title">Überschrift</h5>
-                <h5 class="card-title" id = "Card7key" hidden></h5>
-                <h6 class="card-subtitle mb-2 text-muted" id = "Card7price">Preis in €</h6>
-                <h6 class="card-subtitle mb-2 text-muted" id = "Card7contact">Kontaktmöglichkeit</h6>
-                <p class="card-text" id = "Card7text">Die Beschreibung der Anzeige soll hier dann erscheinen. Vielleicht ist die Größe aber ein Limit. Naja, das lässt sich bestimmt irgendiwe Lösen</p>
-                <!-- Detail Button -->
-                <a class="btn btn-primary" onclick = "alert();addKey7();setTimeout(myURL, 4000);">Details ></a>
-            </div>
-          </div>  
-        </div>
-        <div class="col">
-          <!-- Card Element 9 -->
-          <div class="card" style="width: 18rem;" id = "Card8" hidden>
-            <!-- Heading image -->
-            <img src="./Design-Ressourcen/Bilder/carrots.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title" id = "Card8title">Überschrift</h5>
-                <h5 class="card-title" id = "Card8key" hidden></h5>
-                <h6 class="card-subtitle mb-2 text-muted" id = "Card8price">Preis in €</h6>
-                <h6 class="card-subtitle mb-2 text-muted" id = "Card8contact">Kontaktmöglichkeit</h6>
-                <p class="card-text" id = "Card8text">Die Beschreibung der Anzeige soll hier dann erscheinen. Vielleicht ist die Größe aber ein Limit. Naja, das lässt sich bestimmt irgendiwe Lösen</p>
-                <!-- Detail Button -->
-                <a class="btn btn-primary" onclick = "alert();addKey8();setTimeout(myURL, 4000);">Details ></a>
-            </div>
-          </div>  
-        </div>
+      <div class="col">
+        <!-- Card Element 2-->
+        <div class="card" style="width: 18rem;" id = "Card1" hidden>
+          <!-- Heading image -->
+          <img src="./Design-Ressourcen/Bilder/carrots.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+              <h5 class="card-title" id = "Card1title">Überschrift</h5>
+              <h5 class="card-title" id = "Card1key" hidden>f</h5>
+              <h6 class="card-subtitle mb-2 text-muted" id = "Card1price">Preis in €</h6>
+              <h6 class="card-subtitle mb-2 text-muted" id = "Card1contact">Kontaktmöglichkeit</h6>
+              <p class="card-text" id = "Card1text">Die Beschreibung der Anzeige soll hier dann erscheinen. Vielleicht ist die Größe aber ein Limit. Naja, das lässt sich bestimmt irgendiwe Lösen</p>
+              <!-- Detail Button -->
+              <a class="btn btn-primary" onclick = "alert();addKey1();setTimeout(myURL, 4000);">Details ></a>
+          </div>
+        </div>  
       </div>
+      <div class="col">
+        <!-- Card Element 3-->
+        <div class="card" style="width: 18rem;" id = "Card2" hidden>
+          <!-- Heading image -->
+          <img src="./Design-Ressourcen/Bilder/carrots.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+              <h5 class="card-title" id = "Card2title">Überschrift</h5>
+              <h5 class="card-title" id = "Card2key" hidden>f</h5>
+              <h6 class="card-subtitle mb-2 text-muted" id = "Card2price">Preis in €</h6>
+              <h6 class="card-subtitle mb-2 text-muted" id = "Card2contact">Kontaktmöglichkeit</h6>
+              <p class="card-text" id = "Card2text">Die Beschreibung der Anzeige soll hier dann erscheinen. Vielleicht ist die Größe aber ein Limit. Naja, das lässt sich bestimmt irgendiwe Lösen</p>
+              <!-- Detail Button -->
+              <a class="btn btn-primary" onclick = "alert();addKey2();setTimeout(myURL, 4000);">Details ></a>
+          </div>
+        </div>  
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+            <!-- Card Element 4-->
+            <div class="card" style="width: 18rem;" id = "Card3" hidden>
+              <!-- Heading image -->
+              <img src="./Design-Ressourcen/Bilder/carrots.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                  <h5 class="card-title" id = "Card3title">Überschrift</h5>
+                  <h5 class="card-title" id = "Card3key" hidden></h5>
+                  <h6 class="card-subtitle mb-2 text-muted" id = "Card3price">Preis in €</h6>
+                  <h6 class="card-subtitle mb-2 text-muted" id = "Card3contact">Kontaktmöglichkeit</h6>
+                  <p class="card-text" id = "Card3text">Die Beschreibung der Anzeige soll hier dann erscheinen. Vielleicht ist die Größe aber ein Limit. Naja, das lässt sich bestimmt irgendiwe Lösen</p>
+                  <!-- Detail Button -->
+                  <a  class="btn btn-primary" onclick = "alert();addKey3();setTimeout(myURL, 4000);">Details ></a>
+              </div>
+            </div>  
+      </div>
+      <div class="col">
+        <!-- Card Element 5-->
+        <div class="card" style="width: 18rem;" id = "Card4" hidden>
+          <!-- Heading image -->
+          <img src="./Design-Ressourcen/Bilder/carrots.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+              <h5 class="card-title" id = "Card4title">Überschrift</h5>
+              <h5 class="card-title" id = "Card4key" hidden></h5>
+              <h6 class="card-subtitle mb-2 text-muted" id = "Card4price">Preis in €</h6>
+              <h6 class="card-subtitle mb-2 text-muted" id = "Card4contact">Kontaktmöglichkeit</h6>
+              <p class="card-text" id = "Card4text">Die Beschreibung der Anzeige soll hier dann erscheinen. Vielleicht ist die Größe aber ein Limit. Naja, das lässt sich bestimmt irgendiwe Lösen</p>
+              <!-- Detail Button -->
+              <a class="btn btn-primary" onclick = "alert();addKey4();setTimeout(myURL, 4000);">Details ></a>
+          </div>
+        </div>  
+      </div>
+      <div class="col">
+        <!-- Card Element 6-->
+        <div class="card" style="width: 18rem;" id = "Card5" hidden>
+          <!-- Heading image -->
+          <img src="./Design-Ressourcen/Bilder/carrots.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+              <h5 class="card-title" id = "Card0title">Überschrift</h5>
+              <h5 class="card-title" id = "Card5key" hidden></h5>
+              <h6 class="card-subtitle mb-2 text-muted" id = "Card5price">Preis in €</h6>
+              <h6 class="card-subtitle mb-2 text-muted" id = "Card5contact">Kontaktmöglichkeit</h6>
+              <p class="card-text" id = "Card5text">Die Beschreibung der Anzeige soll hier dann erscheinen. Vielleicht ist die Größe aber ein Limit. Naja, das lässt sich bestimmt irgendiwe Lösen</p>
+              <!-- Detail Button -->
+              <a class="btn btn-primary" onclick = "alert();addKey5();setTimeout(myURL, 4000);">Details ></a>
+          </div>
+        </div>  
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+            <!-- Card Element 7-->
+            <div class="card" style="width: 18rem;" id = "Card6" hidden>
+              <!-- Heading image -->
+              <img src="./Design-Ressourcen/Bilder/carrots.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                  <h5 class="card-title" id = "Card6title">Überschrift</h5>
+                  <h5 class="card-title" id = "Card6key" hidden></h5>
+                  <h6 class="card-subtitle mb-2 text-muted" id = "Card6price">Preis in €</h6>
+                  <h6 class="card-subtitle mb-2 text-muted" id = "Card6contact">Kontaktmöglichkeit</h6>
+                  <p class="card-text" id = "Card6text">Die Beschreibung der Anzeige soll hier dann erscheinen. Vielleicht ist die Größe aber ein Limit. Naja, das lässt sich bestimmt irgendiwe Lösen</p>
+                  <!-- Detail Button -->
+                  <a  class="btn btn-primary" onclick = "alert();addKey6();setTimeout(myURL, 4000);">Details ></a>
+              </div>
+            </div>  
+      </div>
+      <div class="col">
+        <!-- Card Element 8-->
+        <div class="card" style="width: 18rem;" id = "Card7" hidden>
+          <!-- Heading image -->
+          <img src="./Design-Ressourcen/Bilder/carrots.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+              <h5 class="card-title" id = "Card7title">Überschrift</h5>
+              <h5 class="card-title" id = "Card7key" hidden></h5>
+              <h6 class="card-subtitle mb-2 text-muted" id = "Card7price">Preis in €</h6>
+              <h6 class="card-subtitle mb-2 text-muted" id = "Card7contact">Kontaktmöglichkeit</h6>
+              <p class="card-text" id = "Card7text">Die Beschreibung der Anzeige soll hier dann erscheinen. Vielleicht ist die Größe aber ein Limit. Naja, das lässt sich bestimmt irgendiwe Lösen</p>
+              <!-- Detail Button -->
+              <a class="btn btn-primary" onclick = "alert();addKey7();setTimeout(myURL, 4000);">Details ></a>
+          </div>
+        </div>  
+      </div>
+      <div class="col">
+        <!-- Card Element 9 -->
+        <div class="card" style="width: 18rem;" id = "Card8" hidden>
+          <!-- Heading image -->
+          <img src="./Design-Ressourcen/Bilder/carrots.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+              <h5 class="card-title" id = "Card8title">Überschrift</h5>
+              <h5 class="card-title" id = "Card8key" hidden></h5>
+              <h6 class="card-subtitle mb-2 text-muted" id = "Card8price">Preis in €</h6>
+              <h6 class="card-subtitle mb-2 text-muted" id = "Card8contact">Kontaktmöglichkeit</h6>
+              <p class="card-text" id = "Card8text">Die Beschreibung der Anzeige soll hier dann erscheinen. Vielleicht ist die Größe aber ein Limit. Naja, das lässt sich bestimmt irgendiwe Lösen</p>
+              <!-- Detail Button -->
+              <a class="btn btn-primary" onclick = "alert();addKey8();setTimeout(myURL, 4000);">Details ></a>
+          </div>
+        </div>  
+      </div>
+    </div>
   </div>
     
     <!-- Footer -->
