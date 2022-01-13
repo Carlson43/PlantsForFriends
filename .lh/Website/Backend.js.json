@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 490,
+            "activePatchIndex": 491,
             "patches": [
                 {
                     "date": 1640256408490,
@@ -1968,6 +1968,10 @@
                 {
                     "date": 1642079740203,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -105,20 +105,19 @@\n                \r\n                  \r\n                 }\r\n \r\n-                }\r\n-                if (dat.length == 0){\r\n-                  search_not_found()\r\n             }\r\n-         \r\n \r\n+\r\n             \r\n \r\n         };  \r\n      \r\n+        if (dat.length == 0)\r\n+        {search_not_found()}\r\n+ \r\n \r\n-\r\n     });\r\n \r\n \r\n }\r\n"
+                },
+                {
+                    "date": 1642080390123,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -73,8 +73,9 @@\n     var data = []\r\n \r\n     for (var h = 0; h < 8; h++){\r\n         document.getElementById(\"Card\"+ Number(h)).setAttribute(\"hidden\",true);\r\n+        document.getElementById(\"not_found\").setAttribute(\"hidden\",true)\r\n     }\r\n \r\n \r\n     $.get(\"https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_\",function(response)\r\n"
                 }
             ],
             "date": 1640256408490,
