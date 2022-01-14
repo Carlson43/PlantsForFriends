@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 519,
+            "activePatchIndex": 522,
             "patches": [
                 {
                     "date": 1640256408490,
@@ -2084,6 +2084,18 @@
                 {
                     "date": 1642157044631,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,9 +45,9 @@\n     document.getElementById(\"Anzeigen_Name\").innerHTML = data[0].Titel;\r\n     document.getElementById(\"Anzeigen_Preis\").innerHTML = data[0].Preis + \"€\";\r\n     document.getElementById(\"Anzeigen_Beschreibung\").innerHTML = data[0].Beschreibung;\r\n     document.getElementById(\"Anzeigen_Kontakt\").innerHTML = data[0].Kontaktmöglichkeit;\r\n-    document.getElementById(\"pic_detail\").src=randomise_pic();\r\n+    document.getElementById(\"pic_details\").src=randomise_pic();\r\n \r\n     anzeige_marker = L.marker([data[0].lat, data[0].lng]).addTo(detail_map);\r\n     console.log(data[0].Titel)\r\n     \r\n"
+                },
+                {
+                    "date": 1642158430533,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -252,10 +252,10 @@\n   document.getElementById(\"not_found_text\").innerHTML = 'Deine Suche zu \"'+ nam + '\" hat leider keine Ergebnisse ergeben.';\r\n }\r\n \r\n function randomise_pic(){\r\n-  pics = [\"./Design-Ressourcen/Bilder/carrots.jpg\",\"./Design-Ressourcen/Bilder/garlic.jpg\",\"./Design-Ressourcen/Bilder/hand-saplings.jpg\"]\r\n-  return pics[Math.floor(Math.random() * 3)]\r\n+  pics = [\"./Design-Ressourcen/Bilder/carrots.jpg\",\"./Design-Ressourcen/Bilder/garlic.jpg\",\"./Design-Ressourcen/Bilder/hand-saplings.jpg\",\"./Design-Ressourcen/Bilder/mangold.jpg\",\"./Design-Ressourcen/Bilder/carousel06.jpg\"]\r\n+  return pics[Math.floor(Math.random() * 5)]\r\n }\r\n \r\n function scroll_to(){\r\n   document.getElementById(\"Hero1\").scrollIntoView({block: 'start', behavior: \"smooth\"});\r\n"
+                },
+                {
+                    "date": 1642158438506,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -253,9 +253,9 @@\n }\r\n \r\n function randomise_pic(){\r\n   pics = [\"./Design-Ressourcen/Bilder/carrots.jpg\",\"./Design-Ressourcen/Bilder/garlic.jpg\",\"./Design-Ressourcen/Bilder/hand-saplings.jpg\",\"./Design-Ressourcen/Bilder/mangold.jpg\",\"./Design-Ressourcen/Bilder/carousel06.jpg\"]\r\n-  return pics[Math.floor(Math.random() * 5)]\r\n+  return pics[Math.floor(Math.random() * 4)]\r\n }\r\n \r\n function scroll_to(){\r\n   document.getElementById(\"Hero1\").scrollIntoView({block: 'start', behavior: \"smooth\"});\r\n"
+                },
+                {
+                    "date": 1642158468158,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -253,9 +253,9 @@\n }\r\n \r\n function randomise_pic(){\r\n   pics = [\"./Design-Ressourcen/Bilder/carrots.jpg\",\"./Design-Ressourcen/Bilder/garlic.jpg\",\"./Design-Ressourcen/Bilder/hand-saplings.jpg\",\"./Design-Ressourcen/Bilder/mangold.jpg\",\"./Design-Ressourcen/Bilder/carousel06.jpg\"]\r\n-  return pics[Math.floor(Math.random() * 4)]\r\n+  return pics[Math.floor(Math.random() * 5)]\r\n }\r\n \r\n function scroll_to(){\r\n   document.getElementById(\"Hero1\").scrollIntoView({block: 'start', behavior: \"smooth\"});\r\n"
                 }
             ],
             "date": 1640256408490,

@@ -254,7 +254,7 @@ function search_not_found(){
 
 function randomise_pic(){
   pics = ["./Design-Ressourcen/Bilder/carrots.jpg","./Design-Ressourcen/Bilder/garlic.jpg","./Design-Ressourcen/Bilder/hand-saplings.jpg","./Design-Ressourcen/Bilder/mangold.jpg","./Design-Ressourcen/Bilder/carousel06.jpg"]
-  return pics[Math.floor(Math.random() * 5)]
+  return pics[Math.floor(Math.random() * 4)]
 }
 
 function scroll_to(){
