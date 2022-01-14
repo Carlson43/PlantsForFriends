@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 83,
+            "activePatchIndex": 84,
             "patches": [
                 {
                     "date": 1641392022048,
@@ -340,6 +340,10 @@
                 {
                     "date": 1641910976652,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -140,8 +140,9 @@\n         const tiles = L.tileLayer(tileUrl, { attribution });\r\n         tiles.addTo(detail_map);\r\n         // Add Control Buttons\r\n         L.control.locate().addTo(detail_map);\r\n+\r\n         \r\n \r\n         // Load all Ad-Locattions from Backend.js\r\n         display_details();\r\n"
+                },
+                {
+                    "date": 1642156957882,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,9 +60,9 @@\n         <!-- Überschrift -->\r\n         <h4 id = \"Anzeigen_Name\">Anzeigen Name</h5>\r\n         <!-- Bild (eingebettet in Container) -->\r\n         <div class=\"col-md-7\">\r\n-            <img src=\"./Design-Ressourcen/Bilder/garlic.jpg\" class=\"img-fluid rounded\" alt=\"\">\r\n+            <img src=\"./Design-Ressourcen/Bilder/garlic.jpg\" class=\"img-fluid rounded\" alt=\"\" id = \"pic_details\">\r\n         </div>\r\n         <p></p>\r\n         <!-- Boxen unter dem Bild -->\r\n         <div class=\"row\">\r\n@@ -143,9 +143,9 @@\n         L.control.locate().addTo(detail_map);\r\n \r\n         \r\n \r\n-        // Load all Ad-Locattions from Backend.js\r\n+        // Load Ad-Locattions from Backend.js\r\n         display_details();\r\n \r\n         // window.onload\r\n \r\n"
                 }
             ],
             "date": 1641392022048,

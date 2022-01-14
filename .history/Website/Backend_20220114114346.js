@@ -46,7 +46,7 @@ function display_details()
     document.getElementById("Anzeigen_Preis").innerHTML = data[0].Preis + "€";
     document.getElementById("Anzeigen_Beschreibung").innerHTML = data[0].Beschreibung;
     document.getElementById("Anzeigen_Kontakt").innerHTML = data[0].Kontaktmöglichkeit;
-    document.getElementById("pic_details").src=randomise_pic();
+    document.getElementById("pic_detail").src=randomise_pic();
 
     anzeige_marker = L.marker([data[0].lat, data[0].lng]).addTo(detail_map);
     console.log(data[0].Titel)

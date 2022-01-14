@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 517,
+            "activePatchIndex": 519,
             "patches": [
                 {
                     "date": 1640256408490,
@@ -2076,6 +2076,14 @@
                 {
                     "date": 1642115238214,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,4 @@\n-function add()\r\n-{\r\n-    var jsonstring=  '{\"Pflanze\":\"'+$(\"#jsonstring\").val()+'\"}';\r\n-    console.log(\"add\"+ jsonstring);\r\n-    $.get(\"https://webtechlecture.appspot.com/cloudstore/add?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_&jsonstring=\"+encodeURI(jsonstring),function(response)\r\n-    {\r\n-    console.log(response);\r\n-    });\r\n-}\r\n-\r\n function listAllData()\r\n {\r\n     var jsonstring=$(\"#jsonstring\").val();\r\n     console.log(\"Hi!\");\r\n@@ -254,9 +244,8 @@\n function alert(){\r\n   document.getElementById(\"alert\").removeAttribute(\"hidden\")\r\n }\r\n \r\n-\r\n function search_not_found(){\r\n   var nam = String($(\"#search_term\").val())\r\n   document.getElementById(\"not_found\").removeAttribute(\"hidden\")\r\n   document.getElementById(\"not_found_text\").innerHTML = 'Deine Suche zu \"'+ nam + '\" hat leider keine Ergebnisse ergeben.';\r\n"
+                },
+                {
+                    "date": 1642156994549,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,8 +45,9 @@\n     document.getElementById(\"Anzeigen_Name\").innerHTML = data[0].Titel;\r\n     document.getElementById(\"Anzeigen_Preis\").innerHTML = data[0].Preis + \"€\";\r\n     document.getElementById(\"Anzeigen_Beschreibung\").innerHTML = data[0].Beschreibung;\r\n     document.getElementById(\"Anzeigen_Kontakt\").innerHTML = data[0].Kontaktmöglichkeit;\r\n+    document.getElementById(\"pic_detail\").src=randomise_pic();\r\n \r\n     anzeige_marker = L.marker([data[0].lat, data[0].lng]).addTo(detail_map);\r\n     console.log(data[0].Titel)\r\n     \r\n@@ -252,10 +253,8 @@\n }\r\n \r\n function randomise_pic(){\r\n   pics = [\"./Design-Ressourcen/Bilder/carrots.jpg\",\"./Design-Ressourcen/Bilder/garlic.jpg\",\"./Design-Ressourcen/Bilder/hand-saplings.jpg\"]\r\n-  console.log(\"hi\")\r\n-  console.log\r\n   return pics[Math.floor(Math.random() * 3)]\r\n }\r\n \r\n function scroll_to(){\r\n"
+                },
+                {
+                    "date": 1642157044631,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,9 +45,9 @@\n     document.getElementById(\"Anzeigen_Name\").innerHTML = data[0].Titel;\r\n     document.getElementById(\"Anzeigen_Preis\").innerHTML = data[0].Preis + \"€\";\r\n     document.getElementById(\"Anzeigen_Beschreibung\").innerHTML = data[0].Beschreibung;\r\n     document.getElementById(\"Anzeigen_Kontakt\").innerHTML = data[0].Kontaktmöglichkeit;\r\n-    document.getElementById(\"pic_detail\").src=randomise_pic();\r\n+    document.getElementById(\"pic_details\").src=randomise_pic();\r\n \r\n     anzeige_marker = L.marker([data[0].lat, data[0].lng]).addTo(detail_map);\r\n     console.log(data[0].Titel)\r\n     \r\n"
                 }
             ],
             "date": 1640256408490,
