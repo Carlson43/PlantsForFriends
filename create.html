@@ -108,8 +108,8 @@
             <p></p>
             <!-- Ortsangabe/Koordinaten -->
             <div>
-                <label class="form-label">Ort der Anzeige</label>
-                <input class="form-control" type="text" value="Die Position deiner Anzeige" aria-label="Ad_location_box" readonly>
+                <label  class="form-label">Ort der Anzeige</label>
+                <input class="form-control" type="text" value="Die Position deiner Anzeige" aria-label="Ad_location_box" id ="position"  readonly>
                 <p></p>
                 <div onclick = "onMapClick();" id="pointMap"></div>
             </div>
@@ -117,13 +117,10 @@
             <!-- Button "Erstellen" -->
             <div>
                 <a href="success.html" onclick= "addAll();" type="submit" class="btn btn-success">Anzeige erstellen</a>
-                <a href="success.html" type="submit" class="btn btn-success">Anzeige erstellen (ohne anktion) </a>
             </div>      
             <p></p>
             <!-- Button "Alle anzeigen" -->
-            <div>
-                <button onclick="listAllData();" class="btn btn-success"> List all Data</button>
-            </div>
+
             <p></p>
         </form>
     </div>
@@ -181,13 +178,15 @@
         function onMapClick(e) {
             popup
                 .setLatLng(e.latlng)
-                .setContent("Die Position deiner Anzeige: " + e.latlng.toString())
+                .setContent("Hier wird dein Angebot erscheinen!")
                 .openOn(create_map);
+                document.getElementById("position").value = "Die Position deiner Anzeige: " + e.latlng.toString();
         }
 
         // Run Function -> Show Click-Location in Popup
         create_map.on('click', onMapClick);
-
+       
+        
 
     </script>
     

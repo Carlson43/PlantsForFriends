@@ -1,13 +1,3 @@
-function add()
-{
-    var jsonstring=  '{"Pflanze":"'+$("#jsonstring").val()+'"}';
-    console.log("add"+ jsonstring);
-    $.get("https://webtechlecture.appspot.com/cloudstore/add?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_&jsonstring="+encodeURI(jsonstring),function(response)
-    {
-    console.log(response);
-    });
-}
-
 function listAllData()
 {
     var jsonstring=$("#jsonstring").val();
@@ -56,6 +46,7 @@ function display_details()
     document.getElementById("Anzeigen_Preis").innerHTML = data[0].Preis + "€";
     document.getElementById("Anzeigen_Beschreibung").innerHTML = data[0].Beschreibung;
     document.getElementById("Anzeigen_Kontakt").innerHTML = data[0].Kontaktmöglichkeit;
+    document.getElementById("pic_details").src=randomise_pic();
 
     anzeige_marker = L.marker([data[0].lat, data[0].lng]).addTo(detail_map);
     console.log(data[0].Titel)
@@ -101,12 +92,14 @@ function search_and_display()
                 document.getElementById("Card"+ Number(k)+ "price").innerHTML = dat[k].jsonstring.Preis + "€";
                 document.getElementById("Card"+ Number(k)+ "text").innerHTML = dat[k].jsonstring.Beschreibung;
                 document.getElementById("Card"+ Number(k)+ "contact").innerHTML = dat[k].jsonstring.Kontaktmöglichkeit;
-                document.getElementById("Card"+ Number(k)+ "key").innerHTML = dat[k].key;                 
+                document.getElementById("Card"+ Number(k)+ "key").innerHTML = dat[k].key;   
+                document.getElementById("pic" + Number(k)).src=randomise_pic();              
                 }
             }
         };       
         if (dat.length == 0)
         {search_not_found()}
+        
     });
 }
 
@@ -153,6 +146,8 @@ function addKey0()
   {
     console.log(response);
   });
+
+
 
 }
 
@@ -251,10 +246,17 @@ function alert(){
   document.getElementById("alert").removeAttribute("hidden")
 }
 
-
 function search_not_found(){
   var nam = String($("#search_term").val())
   document.getElementById("not_found").removeAttribute("hidden")
   document.getElementById("not_found_text").innerHTML = 'Deine Suche zu "'+ nam + '" hat leider keine Ergebnisse ergeben.';
 }
 
+function randomise_pic(){
+  pics = ["./Design-Ressourcen/Bilder/carrots.jpg","./Design-Ressourcen/Bilder/garlic.jpg","./Design-Ressourcen/Bilder/hand-saplings.jpg","./Design-Ressourcen/Bilder/mangold.jpg","./Design-Ressourcen/Bilder/carousel06.jpg"]
+  return pics[Math.floor(Math.random() * 5)]
+}
+
+function scroll_to(){
+  document.getElementById("Hero1").scrollIntoView({block: 'start', behavior: "smooth"});
+}

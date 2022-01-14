@@ -68,8 +68,8 @@
             <img src="./Design-Ressourcen/Bilder/carousel02-cut.jpg" class="d-block w-100" alt="...">
             <!-- Text / Content Box -->
             <div class="carousel-caption d-none d-sm-block">
-                <h5>First slide label</h5>
-                <p>Some representative placeholder content for the first slide.</p>
+                <h5>Deutschlandweit Pflanzenliebhaber</h5>
+                <p>Sieh auf unsere Karte nach und finde deine Lieblingspflanzen</p>
                 <a href="./map.html" role="button" class="btn btn-outline-success">Karte ansehen</a>
             </div>
           </div>
@@ -78,8 +78,8 @@
             <img src="./Design-Ressourcen/Bilder/carousel03-cut.jpg" class="d-block w-100" alt="...">
             <!-- Text / Content Box -->
             <div class="carousel-caption d-none d-sm-block">
-                <h5>Second slide label</h5>
-                <p>Some representative placeholder content for the second slide.</p>
+                <h5>Pflanzen abgeben</h5>
+                <p>Gib übrige Pflanzen so leicht wie noch nie ab mit unserem Anzeigetool</p>
                 <a href="./create.html" role="button" class="btn btn-outline-success">Anzeige erstellen</a>
             </div>
           </div>
@@ -88,9 +88,9 @@
             <img src="./Design-Ressourcen/Bilder/carousel04-cut.jpg" class="d-block w-100" alt="...">
             <!-- Text / Content Box -->
             <div class="carousel-caption d-none d-sm-block">
-                <h5>Third slide label</h5>
-                <p>Some representative placeholder content for the third slide.</p>
-                <a href="#" role="button" class="btn btn-outline-success">Mehr</a>
+                <h5>Was ist Plants4Friends?</h5>
+                <p>Klicke hier, um mehr über uns zu erfahren</p>
+                <a  role="button" class="btn btn-outline-success" onclick= scroll_to(); >Mehr</a>
             </div>
           </div>
         </div>
@@ -132,15 +132,21 @@
 
 
     <!-- Input / Search Group -->
-      <div class="container-md">
-        <div class="input-group">
-          <!-- General Search Input -->
-          <input type="text" placeholder="Suchbegriff eingeben" aria-label="search_term" id="search_term" class="form-control">
-          <!-- Location Search Input - Diabled due to no working implementation -->
-          <input type="text" placeholder="Ort" aria-label="search_loc" id="search_loc" class="form-control" disabled>
-          <!-- Search Button -->
-          <button onclick= "search_and_display();" class="btn btn-success" type="button" id="search_btn">Suchen</button>          
+    <div class="container-md">
+      <div class="row">
+        <div class="col"></div>
+        <div class="col-6">
+          <div class="input-group">
+            <!-- General Search Input -->
+            <input type="text" placeholder="Suchbegriff eingeben" aria-label="search_term" id="search_term" class="form-control">
+            <!-- Location Search Input - Diabled due to no working implementation -->
+            <!-- <input type="text" placeholder="Ort" aria-label="search_loc" id="search_loc" class="form-control" disabled> -->
+            <!-- Search Button -->
+            <button onclick= "search_and_display();" class="btn btn-success" type="button" id="search_btn">Suchen</button>          
+          </div>
         </div>
+        <div class="col"></div>
+      </div>
     </div>
     
     <div class="h-divider"></div>
@@ -153,7 +159,7 @@
                 <!-- Card Element 1-->
                 <div class="card" style="width: 18rem;" id = "Card0" hidden>
                   <!-- Heading image -->
-                  <img src="./Design-Ressourcen/Bilder/carrots.jpg" class="card-img-top" alt="...">
+                  <img src="./Design-Ressourcen/Bilder/carrots.jpg" class="card-img-top" alt="..." id= "pic0">
                   <div class="card-body">
                       <h5 class="card-title" id = "Card0title">Überschrift</h5>
                       <h5 class="card-title" id = "Card0key" hidden>f</h5>
@@ -169,7 +175,7 @@
             <!-- Card Element 2-->
             <div class="card" style="width: 18rem;" id = "Card1" hidden>
               <!-- Heading image -->
-              <img src="./Design-Ressourcen/Bilder/carrots.jpg" class="card-img-top" alt="...">
+              <img src="./Design-Ressourcen/Bilder/carrots.jpg" class="card-img-top" alt="..." id= "pic1">
               <div class="card-body">
                   <h5 class="card-title" id = "Card1title">Überschrift</h5>
                   <h5 class="card-title" id = "Card1key" hidden>f</h5>
@@ -185,7 +191,7 @@
             <!-- Card Element 3-->
             <div class="card" style="width: 18rem;" id = "Card2" hidden>
               <!-- Heading image -->
-              <img src="./Design-Ressourcen/Bilder/carrots.jpg" class="card-img-top" alt="...">
+              <img src="./Design-Ressourcen/Bilder/carrots.jpg" class="card-img-top" alt="..." id= "pic2">
               <div class="card-body">
                   <h5 class="card-title" id = "Card2title">Überschrift</h5>
                   <h5 class="card-title" id = "Card2key" hidden>f</h5>
@@ -203,7 +209,7 @@
                 <!-- Card Element 4-->
                 <div class="card" style="width: 18rem;" id = "Card3" hidden>
                   <!-- Heading image -->
-                  <img src="./Design-Ressourcen/Bilder/carrots.jpg" class="card-img-top" alt="...">
+                  <img src="./Design-Ressourcen/Bilder/carrots.jpg" class="card-img-top" alt="..." id= "pic3">
                   <div class="card-body">
                       <h5 class="card-title" id = "Card3title">Überschrift</h5>
                       <h5 class="card-title" id = "Card3key" hidden></h5>
@@ -219,7 +225,7 @@
             <!-- Card Element 5-->
             <div class="card" style="width: 18rem;" id = "Card4" hidden>
               <!-- Heading image -->
-              <img src="./Design-Ressourcen/Bilder/carrots.jpg" class="card-img-top" alt="...">
+              <img src="./Design-Ressourcen/Bilder/carrots.jpg" class="card-img-top" alt="..." id= "pic4">
               <div class="card-body">
                   <h5 class="card-title" id = "Card4title">Überschrift</h5>
                   <h5 class="card-title" id = "Card4key" hidden></h5>
@@ -235,7 +241,7 @@
             <!-- Card Element 6-->
             <div class="card" style="width: 18rem;" id = "Card5" hidden>
               <!-- Heading image -->
-              <img src="./Design-Ressourcen/Bilder/carrots.jpg" class="card-img-top" alt="...">
+              <img src="./Design-Ressourcen/Bilder/carrots.jpg" class="card-img-top" alt="..." id= "pic5">
               <div class="card-body">
                   <h5 class="card-title" id = "Card0title">Überschrift</h5>
                   <h5 class="card-title" id = "Card5key" hidden></h5>
@@ -253,7 +259,7 @@
                 <!-- Card Element 7-->
                 <div class="card" style="width: 18rem;" id = "Card6" hidden>
                   <!-- Heading image -->
-                  <img src="./Design-Ressourcen/Bilder/carrots.jpg" class="card-img-top" alt="...">
+                  <img src="./Design-Ressourcen/Bilder/carrots.jpg" class="card-img-top" alt="..." id= "pic6">
                   <div class="card-body">
                       <h5 class="card-title" id = "Card6title">Überschrift</h5>
                       <h5 class="card-title" id = "Card6key" hidden></h5>
@@ -269,7 +275,7 @@
             <!-- Card Element 8-->
             <div class="card" style="width: 18rem;" id = "Card7" hidden>
               <!-- Heading image -->
-              <img src="./Design-Ressourcen/Bilder/carrots.jpg" class="card-img-top" alt="...">
+              <img src="./Design-Ressourcen/Bilder/carrots.jpg" class="card-img-top" alt="..." id= "pic7">
               <div class="card-body">
                   <h5 class="card-title" id = "Card7title">Überschrift</h5>
                   <h5 class="card-title" id = "Card7key" hidden></h5>
@@ -285,7 +291,7 @@
             <!-- Card Element 9 -->
             <div class="card" style="width: 18rem;" id = "Card8" hidden>
               <!-- Heading image -->
-              <img src="./Design-Ressourcen/Bilder/carrots.jpg" class="card-img-top" alt="...">
+              <img src="./Design-Ressourcen/Bilder/carrots.jpg" class="card-img-top" alt="..." id= "pic8">
               <div class="card-body">
                   <h5 class="card-title" id = "Card8title">Überschrift</h5>
                   <h5 class="card-title" id = "Card8key" hidden></h5>
@@ -301,14 +307,14 @@
     </div>
 
     <!-- Hero 1 -->
-    <div class="container col-xxl-8 px-4 py-5">
+    <div class="container col-xxl-8 px-4 py-5" >
       <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
         <div class="col-10 col-sm-8 col-lg-6">
           <img src="./Design-Ressourcen/Bilder/carousel05.jpg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
         </div>
         <div class="col-lg-6">
           <!-- Hero Heading -->
-          <h1 class="display-5 fw-bold lh-1 mb-3">Was kannst du hier finden?</h1>
+          <h1 class="display-5 fw-bold lh-1 mb-3" id = "Hero1" >Was kannst du hier finden?</h1>
           <!-- Hero Text -->
           <p class="lead">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
         </div>
