@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 522,
+            "activePatchIndex": 524,
             "patches": [
                 {
                     "date": 1640256408490,
@@ -2096,6 +2096,14 @@
                 {
                     "date": 1642158468158,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -253,9 +253,9 @@\n }\r\n \r\n function randomise_pic(){\r\n   pics = [\"./Design-Ressourcen/Bilder/carrots.jpg\",\"./Design-Ressourcen/Bilder/garlic.jpg\",\"./Design-Ressourcen/Bilder/hand-saplings.jpg\",\"./Design-Ressourcen/Bilder/mangold.jpg\",\"./Design-Ressourcen/Bilder/carousel06.jpg\"]\r\n-  return pics[Math.floor(Math.random() * 4)]\r\n+  return pics[Math.floor(Math.random() * 5)]\r\n }\r\n \r\n function scroll_to(){\r\n   document.getElementById(\"Hero1\").scrollIntoView({block: 'start', behavior: \"smooth\"});\r\n"
+                },
+                {
+                    "date": 1642161001610,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -105,9 +105,9 @@\n \r\n function onMapClick(e) {\r\n     popup\r\n         .setLatLng(e.latlng)\r\n-        .setContent(\"Kooridnaten deiner Anzeige:\" + e.latlng.toString())\r\n+        .setContent( e.latlng.toString())\r\n         .openOn(mymap);\r\n         lat[0] = e.latlng\r\n         console.log(lat[0].lat)\r\n }\r\n"
+                },
+                {
+                    "date": 1642161061494,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -105,9 +105,9 @@\n \r\n function onMapClick(e) {\r\n     popup\r\n         .setLatLng(e.latlng)\r\n-        .setContent( e.latlng.toString())\r\n+        .setContent(\"Kooridnaten deiner Anzeige:\" + e.latlng.toString())\r\n         .openOn(mymap);\r\n         lat[0] = e.latlng\r\n         console.log(lat[0].lat)\r\n }\r\n"
                 }
             ],
             "date": 1640256408490,

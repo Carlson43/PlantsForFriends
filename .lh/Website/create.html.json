@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 132,
+            "activePatchIndex": 133,
             "patches": [
                 {
                     "date": 1640249105761,
@@ -536,6 +536,10 @@
                 {
                     "date": 1642157240580,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -116,15 +116,12 @@\n             <p></p>\r\n             <!-- Button \"Erstellen\" -->\r\n             <div>\r\n                 <a href=\"success.html\" onclick= \"addAll();\" type=\"submit\" class=\"btn btn-success\">Anzeige erstellen</a>\r\n-                <a href=\"success.html\" type=\"submit\" class=\"btn btn-success\">Anzeige erstellen (ohne anktion) </a>\r\n             </div>      \r\n             <p></p>\r\n             <!-- Button \"Alle anzeigen\" -->\r\n-            <div>\r\n-                <button onclick=\"listAllData();\" class=\"btn btn-success\"> List all Data</button>\r\n-            </div>\r\n+\r\n             <p></p>\r\n         </form>\r\n     </div>\r\n \r\n"
+                },
+                {
+                    "date": 1642161038322,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -179,9 +179,9 @@\n             popup\r\n                 .setLatLng(e.latlng)\r\n                 .setContent(\"Hier wird dein Angebot erscheinen!\")\r\n                 .openOn(create_map);\r\n-                document.getElementById(\"position\").value = \"Die Position deiner Anzeige: \" + e.latlng.toString();\r\n+                document.getElementById(\"position\").value =  e.latlng.toString();\r\n         }\r\n \r\n         // Run Function -> Show Click-Location in Popup\r\n         create_map.on('click', onMapClick);\r\n"
                 }
             ],
             "date": 1640249105761,
