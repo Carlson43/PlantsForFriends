@@ -79,7 +79,7 @@
             <div>
                 <label for="Ad_price" class="form-label">Preis</label>
                 <input type="text" class="form-control" id="Ad_price" placeholder="Preis in €, VB möglich" required>
-                <div id="Ad_contac_helper" class="form-text">Du kannst angeben, was du dir vorstellst. Gratis Sachen zu verschenken ist natürlich auch möglich.</div>
+                <div id="Ad_contac_helper" class="form-text">Du kannst angeben, was du dir vorstellst. Sachen zu verschenken ist natürlich auch möglich.</div>
                 <div class="invalid-feedback">Pflichtfeld</div>
             </div>
             <p></p>
@@ -116,7 +116,7 @@
             <p></p>
             <!-- Button "Erstellen" -->
             <div>
-                <a href="success.html" onclick= "addAll();" type="submit" class="btn btn-success">Anzeige erstellen</a>
+                <a  onclick= "addAll();" type="submit" class="btn btn-success">Anzeige erstellen</a>
             </div>      
             <p></p>
             <!-- Button "Alle anzeigen" -->
@@ -181,6 +181,7 @@
                 .setContent("Hier wird dein Angebot erscheinen!")
                 .openOn(create_map);
                 document.getElementById("position").value =  e.latlng.toString();
+                lat[0] = e.latlng;
         }
 
         // Run Function -> Show Click-Location in Popup
