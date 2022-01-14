@@ -132,15 +132,21 @@
 
 
     <!-- Input / Search Group -->
-      <div class="container-md">
-        <div class="input-group">
-          <!-- General Search Input -->
-          <input type="text" placeholder="Suchbegriff eingeben" aria-label="search_term" id="search_term" class="form-control">
-          <!-- Location Search Input - Diabled due to no working implementation -->
-          <input type="text" placeholder="Ort" aria-label="search_loc" id="search_loc" class="form-control" disabled>
-          <!-- Search Button -->
-          <button onclick= "search_and_display();" class="btn btn-success" type="button" id="search_btn">Suchen</button>          
+    <div class="container-md">
+      <div class="row">
+        <div class="col"></div>
+        <div class="col-6">
+          <div class="input-group">
+            <!-- General Search Input -->
+            <input type="text" placeholder="Suchbegriff eingeben" aria-label="search_term" id="search_term" class="form-control">
+            <!-- Location Search Input - Diabled due to no working implementation -->
+            <!-- <input type="text" placeholder="Ort" aria-label="search_loc" id="search_loc" class="form-control" disabled> -->
+            <!-- Search Button -->
+            <button onclick= "search_and_display();" class="btn btn-success" type="button" id="search_btn">Suchen</button>          
+          </div>
         </div>
+        <div class="col"></div>
+      </div>
     </div>
     
     <div class="h-divider"></div>
