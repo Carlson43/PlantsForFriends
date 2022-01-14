@@ -120,6 +120,9 @@
             </div>      
             <p></p>
             <!-- Button "Alle anzeigen" -->
+            <div>
+                <a  onclick= "console.log(create_map.latlng);" type="submit" class="btn btn-success">Koordinaten</a>
+            </div> 
 
             <p></p>
         </form>
@@ -178,10 +181,10 @@
         function onMapClick(e) {
             popup
                 .setLatLng(e.latlng)
+                // lat[0] = e.latlng
                 .setContent("Hier wird dein Angebot erscheinen!")
                 .openOn(create_map);
                 document.getElementById("position").value =  e.latlng.toString();
-                lat[0] = e.latlng;
         }
 
         // Run Function -> Show Click-Location in Popup

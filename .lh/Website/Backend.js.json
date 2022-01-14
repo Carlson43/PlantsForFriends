@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 524,
+            "activePatchIndex": 530,
             "patches": [
                 {
                     "date": 1640256408490,
@@ -2104,6 +2104,30 @@
                 {
                     "date": 1642161061494,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -105,9 +105,9 @@\n \r\n function onMapClick(e) {\r\n     popup\r\n         .setLatLng(e.latlng)\r\n-        .setContent( e.latlng.toString())\r\n+        .setContent(\"Kooridnaten deiner Anzeige:\" + e.latlng.toString())\r\n         .openOn(mymap);\r\n         lat[0] = e.latlng\r\n         console.log(lat[0].lat)\r\n }\r\n"
+                },
+                {
+                    "date": 1642161823917,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     '{\"Titel\":\"'+$(\"#Ad_heading\").val()+'\",'+\r\n     '\"Pflanzenart\":\"'+$(\"#Ad_species\").val()+'\",'+\r\n     '\"Beschreibung\":\"'+$(\"#Ad_description\").val()+'\",'+\r\n     '\"Email\":\"'+$(\"#Ad_email\").val()+'\",'+\r\n-    '\"lat\":\"'+lat[0].lat+'\",'+\r\n+    '\"lat\":\"'+e.latlng.lng+'\",'+\r\n     '\"lng\":\"'+lat[0].lng+\r\n \r\n     '\"}';\r\n     console.log(\"add\"+ jsonstring);\r\n"
+                },
+                {
+                    "date": 1642161841203,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     '{\"Titel\":\"'+$(\"#Ad_heading\").val()+'\",'+\r\n     '\"Pflanzenart\":\"'+$(\"#Ad_species\").val()+'\",'+\r\n     '\"Beschreibung\":\"'+$(\"#Ad_description\").val()+'\",'+\r\n     '\"Email\":\"'+$(\"#Ad_email\").val()+'\",'+\r\n-    '\"lat\":\"'+e.latlng.lng+'\",'+\r\n+    '\"lat\":\"'+latlng.lng+'\",'+\r\n     '\"lng\":\"'+lat[0].lng+\r\n \r\n     '\"}';\r\n     console.log(\"add\"+ jsonstring);\r\n"
+                },
+                {
+                    "date": 1642162278576,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,14 +10,15 @@\n \r\n function addAll()\r\n {\r\n     var jsonstring=  \r\n+    console.log(e.latlng)\r\n     \r\n     '{\"Titel\":\"'+$(\"#Ad_heading\").val()+'\",'+\r\n     '\"Pflanzenart\":\"'+$(\"#Ad_species\").val()+'\",'+\r\n     '\"Beschreibung\":\"'+$(\"#Ad_description\").val()+'\",'+\r\n     '\"Email\":\"'+$(\"#Ad_email\").val()+'\",'+\r\n-    '\"lat\":\"'+latlng.lng+'\",'+\r\n+    '\"lat\":\"'+lat[0].lng+'\",'+\r\n     '\"lng\":\"'+lat[0].lng+\r\n \r\n     '\"}';\r\n     console.log(\"add\"+ jsonstring);\r\n"
+                },
+                {
+                    "date": 1642162303099,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,8 @@\n \r\n function addAll()\r\n {\r\n     var jsonstring=  \r\n-    console.log(e.latlng)\r\n     \r\n     '{\"Titel\":\"'+$(\"#Ad_heading\").val()+'\",'+\r\n     '\"Pflanzenart\":\"'+$(\"#Ad_species\").val()+'\",'+\r\n     '\"Beschreibung\":\"'+$(\"#Ad_description\").val()+'\",'+\r\n"
+                },
+                {
+                    "date": 1642162637615,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,11 +14,11 @@\n     \r\n     '{\"Titel\":\"'+$(\"#Ad_heading\").val()+'\",'+\r\n     '\"Pflanzenart\":\"'+$(\"#Ad_species\").val()+'\",'+\r\n     '\"Beschreibung\":\"'+$(\"#Ad_description\").val()+'\",'+\r\n-    '\"Email\":\"'+$(\"#Ad_email\").val()+'\",'+\r\n+    '\"Email\":\"'+$(\"#Ad_contact\").val()+'\",'+\r\n     '\"lat\":\"'+lat[0].lng+'\",'+\r\n-    '\"lng\":\"'+lat[0].lng+\r\n+    '\"lng\":\"'+lat[0].lat+\r\n \r\n     '\"}';\r\n     console.log(\"add\"+ jsonstring);\r\n     $.get(\"https://webtechlecture.appspot.com/cloudstore/add?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_&jsonstring=\"+encodeURI(jsonstring),function(response)\r\n"
+                },
+                {
+                    "date": 1642162804504,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,10 +15,10 @@\n     '{\"Titel\":\"'+$(\"#Ad_heading\").val()+'\",'+\r\n     '\"Pflanzenart\":\"'+$(\"#Ad_species\").val()+'\",'+\r\n     '\"Beschreibung\":\"'+$(\"#Ad_description\").val()+'\",'+\r\n     '\"Email\":\"'+$(\"#Ad_contact\").val()+'\",'+\r\n-    '\"lat\":\"'+lat[0].lng+'\",'+\r\n-    '\"lng\":\"'+lat[0].lat+\r\n+    '\"lat\":\"'+lat[0].lat+'\",'+\r\n+    '\"lng\":\"'+lat[0].lng+\r\n \r\n     '\"}';\r\n     console.log(\"add\"+ jsonstring);\r\n     $.get(\"https://webtechlecture.appspot.com/cloudstore/add?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_&jsonstring=\"+encodeURI(jsonstring),function(response)\r\n"
                 }
             ],
             "date": 1640256408490,

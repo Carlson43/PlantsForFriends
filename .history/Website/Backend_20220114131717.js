@@ -16,8 +16,8 @@ function addAll()
     '"Pflanzenart":"'+$("#Ad_species").val()+'",'+
     '"Beschreibung":"'+$("#Ad_description").val()+'",'+
     '"Email":"'+$("#Ad_contact").val()+'",'+
-    '"lat":"'+lat[0].lat+'",'+
-    '"lng":"'+lat[0].lng+
+    '"lat":"'+lat[0].lng+'",'+
+    '"lng":"'+lat[0].lat+
 
     '"}';
     console.log("add"+ jsonstring);

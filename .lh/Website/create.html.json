@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 133,
+            "activePatchIndex": 148,
             "patches": [
                 {
                     "date": 1640249105761,
@@ -540,6 +540,66 @@
                 {
                     "date": 1642161038322,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -179,9 +179,9 @@\n             popup\r\n                 .setLatLng(e.latlng)\r\n                 .setContent(\"Hier wird dein Angebot erscheinen!\")\r\n                 .openOn(create_map);\r\n-                document.getElementById(\"position\").value = \"Die Position deiner Anzeige: \" + e.latlng.toString();\r\n+                document.getElementById(\"position\").value =  e.latlng.toString();\r\n         }\r\n \r\n         // Run Function -> Show Click-Location in Popup\r\n         create_map.on('click', onMapClick);\r\n"
+                },
+                {
+                    "date": 1642161282785,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -78,9 +78,9 @@\n             <!-- Preis -->\r\n             <div>\r\n                 <label for=\"Ad_price\" class=\"form-label\">Preis</label>\r\n                 <input type=\"text\" class=\"form-control\" id=\"Ad_price\" placeholder=\"Preis in €, VB möglich\" required>\r\n-                <div id=\"Ad_contac_helper\" class=\"form-text\">Du kannst angeben, was du dir vorstellst. Gratis Sachen zu verschenken ist natürlich auch möglich.</div>\r\n+                <div id=\"Ad_contac_helper\" class=\"form-text\">Du kannst angeben, was du dir vorstellst. Sachen zu verschenken ist natürlich auch möglich.</div>\r\n                 <div class=\"invalid-feedback\">Pflichtfeld</div>\r\n             </div>\r\n             <p></p>\r\n             <!-- Beschreibung -->\r\n"
+                },
+                {
+                    "date": 1642161715086,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -115,9 +115,9 @@\n             </div>\r\n             <p></p>\r\n             <!-- Button \"Erstellen\" -->\r\n             <div>\r\n-                <a href=\"success.html\" onclick= \"addAll();\" type=\"submit\" class=\"btn btn-success\">Anzeige erstellen</a>\r\n+                <a  onclick= \"addAll();\" type=\"submit\" class=\"btn btn-success\">Anzeige erstellen</a>\r\n             </div>      \r\n             <p></p>\r\n             <!-- Button \"Alle anzeigen\" -->\r\n \r\n"
+                },
+                {
+                    "date": 1642161946230,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -119,8 +119,11 @@\n                 <a  onclick= \"addAll();\" type=\"submit\" class=\"btn btn-success\">Anzeige erstellen</a>\r\n             </div>      \r\n             <p></p>\r\n             <!-- Button \"Alle anzeigen\" -->\r\n+            <div>\r\n+                <a  onclick= \"console.log(e.latlng);\" type=\"submit\" class=\"btn btn-success\">Koordinaten</a>\r\n+            </div> \r\n \r\n             <p></p>\r\n         </form>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1642161963623,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -120,9 +120,9 @@\n             </div>      \r\n             <p></p>\r\n             <!-- Button \"Alle anzeigen\" -->\r\n             <div>\r\n-                <a  onclick= \"console.log(e.latlng);\" type=\"submit\" class=\"btn btn-success\">Koordinaten</a>\r\n+                <a  onclick= \"console.log(create_map.latlng);\" type=\"submit\" class=\"btn btn-success\">Koordinaten</a>\r\n             </div> \r\n \r\n             <p></p>\r\n         </form>\r\n"
+                },
+                {
+                    "date": 1642161981453,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -120,9 +120,9 @@\n             </div>      \r\n             <p></p>\r\n             <!-- Button \"Alle anzeigen\" -->\r\n             <div>\r\n-                <a  onclick= \"console.log(create_map.latlng);\" type=\"submit\" class=\"btn btn-success\">Koordinaten</a>\r\n+                <a  onclick= \"console.log(create_map.e.latlng);\" type=\"submit\" class=\"btn btn-success\">Koordinaten</a>\r\n             </div> \r\n \r\n             <p></p>\r\n         </form>\r\n"
+                },
+                {
+                    "date": 1642161988757,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -120,9 +120,9 @@\n             </div>      \r\n             <p></p>\r\n             <!-- Button \"Alle anzeigen\" -->\r\n             <div>\r\n-                <a  onclick= \"console.log(create_map.e.latlng);\" type=\"submit\" class=\"btn btn-success\">Koordinaten</a>\r\n+                <a  onclick= \"console.log(create_map.latlng);\" type=\"submit\" class=\"btn btn-success\">Koordinaten</a>\r\n             </div> \r\n \r\n             <p></p>\r\n         </form>\r\n"
+                },
+                {
+                    "date": 1642162049123,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -180,8 +180,9 @@\n         // Generate Popup with current location in Event of Click on create_map\r\n         function onMapClick(e) {\r\n             popup\r\n                 .setLatLng(e.latlng)\r\n+                console.log(e.latlng)\r\n                 .setContent(\"Hier wird dein Angebot erscheinen!\")\r\n                 .openOn(create_map);\r\n                 document.getElementById(\"position\").value =  e.latlng.toString();\r\n         }\r\n"
+                },
+                {
+                    "date": 1642162113751,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -180,9 +180,9 @@\n         // Generate Popup with current location in Event of Click on create_map\r\n         function onMapClick(e) {\r\n             popup\r\n                 .setLatLng(e.latlng)\r\n-                console.log(e.latlng)\r\n+                lat[0] = e.latlng\r\n                 .setContent(\"Hier wird dein Angebot erscheinen!\")\r\n                 .openOn(create_map);\r\n                 document.getElementById(\"position\").value =  e.latlng.toString();\r\n         }\r\n"
+                },
+                {
+                    "date": 1642162178418,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -180,9 +180,9 @@\n         // Generate Popup with current location in Event of Click on create_map\r\n         function onMapClick(e) {\r\n             popup\r\n                 .setLatLng(e.latlng)\r\n-                lat[0] = e.latlng\r\n+                // lat[0] = e.latlng\r\n                 .setContent(\"Hier wird dein Angebot erscheinen!\")\r\n                 .openOn(create_map);\r\n                 document.getElementById(\"position\").value =  e.latlng.toString();\r\n         }\r\n"
+                },
+                {
+                    "date": 1642162195405,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -179,10 +179,10 @@\n         var popup = L.popup();\r\n         // Generate Popup with current location in Event of Click on create_map\r\n         function onMapClick(e) {\r\n             popup\r\n-                .setLatLng(e.latlng)\r\n-                // lat[0] = e.latlng\r\n+                .setLatLng(e.latlng);\r\n+                lat[0] = e.latlng;\r\n                 .setContent(\"Hier wird dein Angebot erscheinen!\")\r\n                 .openOn(create_map);\r\n                 document.getElementById(\"position\").value =  e.latlng.toString();\r\n         }\r\n"
+                },
+                {
+                    "date": 1642162208661,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -180,12 +180,13 @@\n         // Generate Popup with current location in Event of Click on create_map\r\n         function onMapClick(e) {\r\n             popup\r\n                 .setLatLng(e.latlng);\r\n-                lat[0] = e.latlng;\r\n+\r\n                 .setContent(\"Hier wird dein Angebot erscheinen!\")\r\n                 .openOn(create_map);\r\n                 document.getElementById(\"position\").value =  e.latlng.toString();\r\n+                lat[0] = e.latlng;\r\n         }\r\n \r\n         // Run Function -> Show Click-Location in Popup\r\n         create_map.on('click', onMapClick);\r\n"
+                },
+                {
+                    "date": 1642162216311,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -179,9 +179,9 @@\n         var popup = L.popup();\r\n         // Generate Popup with current location in Event of Click on create_map\r\n         function onMapClick(e) {\r\n             popup\r\n-                .setLatLng(e.latlng);\r\n+                .setLatLng(e.latlng)\r\n \r\n                 .setContent(\"Hier wird dein Angebot erscheinen!\")\r\n                 .openOn(create_map);\r\n                 document.getElementById(\"position\").value =  e.latlng.toString();\r\n"
+                },
+                {
+                    "date": 1642162449627,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -122,8 +122,11 @@\n             <!-- Button \"Alle anzeigen\" -->\r\n             <div>\r\n                 <a  onclick= \"console.log(create_map.latlng);\" type=\"submit\" class=\"btn btn-success\">Koordinaten</a>\r\n             </div> \r\n+            <div>\r\n+                <a  onclick= \"listAllData();\" type=\"submit\" class=\"btn btn-success\">Koordinaten</a>\r\n+            </div> \r\n \r\n             <p></p>\r\n         </form>\r\n     </div>\r\n@@ -180,9 +183,8 @@\n         // Generate Popup with current location in Event of Click on create_map\r\n         function onMapClick(e) {\r\n             popup\r\n                 .setLatLng(e.latlng)\r\n-\r\n                 .setContent(\"Hier wird dein Angebot erscheinen!\")\r\n                 .openOn(create_map);\r\n                 document.getElementById(\"position\").value =  e.latlng.toString();\r\n                 lat[0] = e.latlng;\r\n"
+                },
+                {
+                    "date": 1642162460962,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -123,9 +123,9 @@\n             <div>\r\n                 <a  onclick= \"console.log(create_map.latlng);\" type=\"submit\" class=\"btn btn-success\">Koordinaten</a>\r\n             </div> \r\n             <div>\r\n-                <a  onclick= \"listAllData();\" type=\"submit\" class=\"btn btn-success\">Koordinaten</a>\r\n+                <a  onclick= \"listAllData();\" type=\"submit\" class=\"btn btn-success\">Data</a>\r\n             </div> \r\n \r\n             <p></p>\r\n         </form>\r\n"
+                },
+                {
+                    "date": 1642162905867,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -119,14 +119,8 @@\n                 <a  onclick= \"addAll();\" type=\"submit\" class=\"btn btn-success\">Anzeige erstellen</a>\r\n             </div>      \r\n             <p></p>\r\n             <!-- Button \"Alle anzeigen\" -->\r\n-            <div>\r\n-                <a  onclick= \"console.log(create_map.latlng);\" type=\"submit\" class=\"btn btn-success\">Koordinaten</a>\r\n-            </div> \r\n-            <div>\r\n-                <a  onclick= \"listAllData();\" type=\"submit\" class=\"btn btn-success\">Data</a>\r\n-            </div> \r\n \r\n             <p></p>\r\n         </form>\r\n     </div>\r\n"
                 }
             ],
             "date": 1640249105761,

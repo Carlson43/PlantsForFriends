@@ -15,8 +15,8 @@ function addAll()
     '{"Titel":"'+$("#Ad_heading").val()+'",'+
     '"Pflanzenart":"'+$("#Ad_species").val()+'",'+
     '"Beschreibung":"'+$("#Ad_description").val()+'",'+
-    '"Email":"'+$("#Ad_contact").val()+'",'+
-    '"lat":"'+lat[0].lat+'",'+
+    '"Email":"'+$("#Ad_email").val()+'",'+
+    '"lat":"'+e.latlng.lng+'",'+
     '"lng":"'+lat[0].lng+
 
     '"}';
