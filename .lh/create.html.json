@@ -3,11 +3,15 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 1,
             "patches": [
                 {
                     "date": 1642361979021,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1642362581378,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -101,9 +101,9 @@\n             <!-- Kontaktmöglichkeit -->\r\n             <div>\r\n                 <label for=\"Ad_contact\" class=\"form-label\">Kontaktmöglichkeit</label>\r\n                 <input type=\"text\" class=\"form-control\" id=\"Ad_contact\" aria-describedby=\"emailHelp\" placeholder=\"z.B. Tel. oder E-Mail\" required>\r\n-                <div id=\"Ad_contac_helper\" class=\"form-text\">Deine Angabe wird öffentlich für alle Interessierten zu sehen sein.</div>\r\n+                <div  class=\"form-text\">Deine Angabe wird öffentlich für alle Interessierten zu sehen sein.</div>\r\n                 <div class=\"invalid-feedback\">Pflichtfeld</div>\r\n             </div>\r\n             <p></p>\r\n             <!-- Ortsangabe/Koordinaten -->\r\n"
                 }
             ],
             "date": 1642361979021,
