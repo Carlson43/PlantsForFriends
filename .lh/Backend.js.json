@@ -3,11 +3,15 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 1,
             "patches": [
                 {
                     "date": 1642361933825,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1642363890342,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,9 +45,9 @@\n \r\n     document.getElementById(\"Anzeigen_Name\").innerHTML = data[0].Titel;\r\n     document.getElementById(\"Anzeigen_Preis\").innerHTML = data[0].Preis + \"€\";\r\n     document.getElementById(\"Anzeigen_Beschreibung\").innerHTML = data[0].Beschreibung;\r\n-    document.getElementById(\"Anzeigen_Kontakt\").innerHTML = data[0].Kontaktmöglichkeit;\r\n+    document.getElementById(\"Anzeigen_Kontakt\").innerHTML = data[0].Email;\r\n     document.getElementById(\"pic_details\").src=randomise_pic();\r\n \r\n     anzeige_marker = L.marker([data[0].lat, data[0].lng]).addTo(detail_map);\r\n     console.log(data[0].Titel)\r\n"
                 }
             ],
             "date": 1642361933825,
