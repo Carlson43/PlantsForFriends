@@ -22,10 +22,10 @@ function addAll()
 
     '"}';
     console.log("add"+ jsonstring);
-    $.get("https://webtechlecture.appspot.com/cloudstore/add?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_&jsonstring="+encodeURI(jsonstring),function(response)
-    {
-    console.log(response);
-    });
+    // $.get("https://webtechlecture.appspot.com/cloudstore/add?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_&jsonstring="+encodeURI(jsonstring),function(response)
+    // {
+    // console.log(response);
+    // });
 }
 
 function display_details()

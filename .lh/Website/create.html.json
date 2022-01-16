@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 148,
+            "activePatchIndex": 151,
             "patches": [
                 {
                     "date": 1640249105761,
@@ -600,6 +600,18 @@
                 {
                     "date": 1642162905867,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -119,14 +119,8 @@\n                 <a  onclick= \"addAll();\" type=\"submit\" class=\"btn btn-success\">Anzeige erstellen</a>\r\n             </div>      \r\n             <p></p>\r\n             <!-- Button \"Alle anzeigen\" -->\r\n-            <div>\r\n-                <a  onclick= \"console.log(create_map.latlng);\" type=\"submit\" class=\"btn btn-success\">Koordinaten</a>\r\n-            </div> \r\n-            <div>\r\n-                <a  onclick= \"listAllData();\" type=\"submit\" class=\"btn btn-success\">Data</a>\r\n-            </div> \r\n \r\n             <p></p>\r\n         </form>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1642361268721,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -78,9 +78,9 @@\n             <!-- Preis -->\r\n             <div>\r\n                 <label for=\"Ad_price\" class=\"form-label\">Preis</label>\r\n                 <input type=\"text\" class=\"form-control\" id=\"Ad_price\" placeholder=\"Preis in €, VB möglich\" required>\r\n-                <div id=\"Ad_contac_helper\" class=\"form-text\">Du kannst angeben, was du dir vorstellst. Sachen zu verschenken ist natürlich auch möglich.</div>\r\n+                <div  class=\"form-text\">Du kannst angeben, was du dir vorstellst. Sachen zu verschenken ist natürlich auch möglich.</div>\r\n                 <div class=\"invalid-feedback\">Pflichtfeld</div>\r\n             </div>\r\n             <p></p>\r\n             <!-- Beschreibung -->\r\n@@ -115,14 +115,11 @@\n             </div>\r\n             <p></p>\r\n             <!-- Button \"Erstellen\" -->\r\n             <div>\r\n-                <a  onclick= \"addAll();\" type=\"submit\" class=\"btn btn-success\">Anzeige erstellen</a>\r\n+                <a href=\"./success.html\" onclick= \"addAll();\" type=\"submit\" class=\"btn btn-success\">Anzeige erstellen</a>\r\n             </div>      \r\n             <p></p>\r\n-            <!-- Button \"Alle anzeigen\" -->\r\n-\r\n-            <p></p>\r\n         </form>\r\n     </div>\r\n \r\n     <div class=\"h-divider\"></div>\r\n"
+                },
+                {
+                    "date": 1642361386032,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -115,9 +115,9 @@\n             </div>\r\n             <p></p>\r\n             <!-- Button \"Erstellen\" -->\r\n             <div>\r\n-                <a href=\"./success.html\" onclick= \"addAll();\" type=\"submit\" class=\"btn btn-success\">Anzeige erstellen</a>\r\n+                <a onclick= \"addAll();\" type=\"submit\" class=\"btn btn-success\">Anzeige erstellen</a>\r\n             </div>      \r\n             <p></p>\r\n         </form>\r\n     </div>\r\n"
+                },
+                {
+                    "date": 1642361560017,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -115,9 +115,9 @@\n             </div>\r\n             <p></p>\r\n             <!-- Button \"Erstellen\" -->\r\n             <div>\r\n-                <a onclick= \"addAll();\" type=\"submit\" class=\"btn btn-success\">Anzeige erstellen</a>\r\n+                <a href=\"./success.html\" onclick= \"addAll();\" type=\"submit\" class=\"btn btn-success\">Anzeige erstellen</a>\r\n             </div>      \r\n             <p></p>\r\n         </form>\r\n     </div>\r\n"
                 }
             ],
             "date": 1640249105761,

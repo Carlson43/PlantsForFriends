@@ -1,0 +1,18 @@
+{
+    "sourceFile": "Deno-Antoine/.vscode/settings.json",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1642344420026,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1642344420026,
+            "name": "Commit-0",
+            "content": "{\r\n    \r\n    \"python.pythonPath\": \"C:\\\\Users\\\\thielkat\\\\AppData\\\\Local\\\\Continuum\\\\anaconda3\\\\envs\\\\Fallstudie\\\\python.exe\",\r\n    \"local-history.browser.descending\": false,\r\n    \"deno.enable\": true,\r\n    \"[svelte]\": {\r\n        \"editor.defaultFormatter\": \"svelte.svelte-vscode\"\r\n      },\r\n}\r\n"
+        }
+    ]
+}
