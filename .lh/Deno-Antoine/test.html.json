@@ -1,0 +1,18 @@
+{
+    "sourceFile": "Deno-Antoine/test.html",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1642344198843,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1642344198843,
+            "name": "Commit-0",
+            "content": "<script>\r\n\tlet scoops = 1;\r\n\tlet flavours = ['Mint choc chip'];\r\n\r\n\tlet menu = [\r\n\t\t'Cookies and cream',\r\n\t\t'Mint choc chip',\r\n\t\t'Raspberry ripple'\r\n\t];\r\n\r\n\tfunction join(flavours) {\r\n\t\tif (flavours.length === 1) return flavours[0];\r\n\t\treturn `${flavours.slice(0, -1).join(', ')} and ${flavours[flavours.length - 1]}`;\r\n\t}\r\n</script>\r\n\r\n<h2>Size</h2>\r\n\r\n<label>\r\n\t<input type=radio bind:group={scoops} value={1}>\r\n\tOne scoop\r\n</label>\r\n\r\n<label>\r\n\t<input type=radio bind:group={scoops} value={2}>\r\n\tTwo scoops\r\n</label>\r\n\r\n<label>\r\n\t<input type=radio bind:group={scoops} value={3}>\r\n\tThree scoops\r\n</label>\r\n\r\n<h2>Flavours</h2>\r\n\r\n{#each menu as flavour}\r\n\t<label>\r\n\t\t<input type=checkbox bind:group={flavours} value={flavour}>\r\n\t\t{flavour}\r\n\t</label>\r\n{/each}\r\n\r\n{#if flavours.length === 0}\r\n\t<p>Please select at least one flavour</p>\r\n{:else if flavours.length > scoops}\r\n\t<p>Can't order more flavours than scoops!</p>\r\n{:else}\r\n\t<p>\r\n\t\tYou ordered {scoops} {scoops === 1 ? 'scoop' : 'scoops'}\r\n\t\tof {join(flavours)}\r\n\t</p>\r\n{/if}\r\n"
+        }
+    ]
+}
