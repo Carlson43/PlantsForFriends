@@ -1,0 +1,18 @@
+{
+    "sourceFile": "Deno-Antoine/.vscode/Database.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1642502366973,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1642502366973,
+            "name": "Commit-0",
+            "content": "\r\nimport { Persistence } from \"https://deno.land/x/persistence@1.1.0/persistence.ts\"\r\n\r\nconst projectPathForData = `${Deno.cwd()}/persistence-example-project-folder`\r\nconsole.log(projectPathForData)\r\n\r\n/*************      Remote Mode - using GitHub as database      *************/\r\n// const userName = \"plants-for friend\"\r\n// import { password } from './Deno-Antoine/topsecret.ts'\r\n// const org = \"plants-for-friends\"\r\n// const repo = \"persistence-example-project-folder\"\r\n// await Persistence.commitAndPush(projectPathForData, userName, password, org, repo) // commented out as I should not publish my password\r\n\r\n// const linkToExampleDataRemote = \"https://raw.githubusercontent.com/michael-spengler/persistence-example-project-folder/master/example-file.json\"\r\n// console.log(`remote file content: ${await Persistence.readFromRemoteFile(linkToExampleDataRemote)}`) \r\n\r\n"
+        }
+    ]
+}
