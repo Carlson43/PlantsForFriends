@@ -2,19 +2,23 @@
 	import MovieInput from './MovieInput.svelte';
 	import MovieList from './MovieList.svelte';
 	import Search from './Search.svelte';
+
 	let movies = localStorage.getItem('movies') ? 
 	  JSON.parse(localStorage.getItem('movies')) : 
 	  [];
+
 	const submitMovie = movie => {
 	  const updatedMovies = [ ...movies, movie ];
 	  localStorage.setItem('movies', JSON.stringify(updatedMovies));
 	  movies = updatedMovies;
 	}
+
 	const clearSearch = () => {
 	  movies = localStorage.getItem('movies') ? 
 		JSON.parse(localStorage.getItem('movies')) : 
 		[];
 	};
+
 	const search = searchTerm => {
 	  const tempMovies = localStorage.getItem('movies') ? 
 		JSON.parse(localStorage.getItem('movies')) : 
@@ -41,10 +45,11 @@
 	  margin: auto;
 	  text-align: center;
 	}
-	  h1 {
-		  color: #ff3e00;
-		  text-transform: uppercase;
-		  font-size: 4em;
-		  font-weight: 100;
-	  }
+	
+	h1 {
+		color: #ff3e00;
+		text-transform: uppercase;
+		font-size: 4em;
+		font-weight: 100;
+	}
   </style>

@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 18,
+            "activePatchIndex": 19,
             "patches": [
                 {
                     "date": 1642502499444,
@@ -80,6 +80,10 @@
                 {
                     "date": 1642512006384,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,35 +1,50 @@\n <script>\n-import { detach } from 'svelte/internal';\n \timport MovieInput from './MovieInput.svelte';\n \timport MovieList from './MovieList.svelte';\n-\n-\tlet movies = localStorage.getItem('movies') ?\n-\t\tJSON.parse(localStorage.getItem('movies')) :\n+\timport Search from './Search.svelte';\n+\tlet movies = localStorage.getItem('movies') ? \n+\t  JSON.parse(localStorage.getItem('movies')) : \n+\t  [];\n+\tconst submitMovie = movie => {\n+\t  const updatedMovies = [ ...movies, movie ];\n+\t  localStorage.setItem('movies', JSON.stringify(updatedMovies));\n+\t  movies = updatedMovies;\n+\t}\n+\tconst clearSearch = () => {\n+\t  movies = localStorage.getItem('movies') ? \n+\t\tJSON.parse(localStorage.getItem('movies')) : \n \t\t[];\n-\n-\tconst submitMovie = movie => {\n-    \tconst updatedMovies = [ ...movies, movie ];\n-    \tlocalStorage.setItem('movies', JSON.stringify(updatedMovies));\n-    \tmovies = updatedMovies;\n-  \t}\n-</script>\n-\n-<dir class=\"main\">\n+\t};\n+\tconst search = searchTerm => {\n+\t  const tempMovies = localStorage.getItem('movies') ? \n+\t\tJSON.parse(localStorage.getItem('movies')) : \n+\t\t[];\n+   \n\\ No newline at end of file\n+\t  movies = tempMovies.filter(m => \n+\t\tm.title.toLowerCase().includes(searchTerm.toLowerCase()));\n+\t};\n+  </script>\n+  \n+  <div class='main'>\n \t<h1>Movie Journal</h1>\n-\n+  \n+\t<Search on:search={event => search(event.detail.searchTerm)} on:clearSearch={clearSearch} />\n \t<MovieInput on:submitMovie={event => submitMovie(event.detail.movie)} />\n \t<MovieList movies={movies} />\n-</dir>\n-\n-<style>\n-\t.main{\n-\n+  </div>\n+  \n+  <style>\n+\t  .main {\n+\t  width: 500px;\n+\t  max-width: 100%;\n+\t  padding: 1em;\n+\t  margin: auto;\n+\t  text-align: center;\n \t}\n-\n-\th1 {\n-\t\tcolor: #ff3e00;\n-\t\ttext-transform: uppercase;\n-\t\tfont-size: 4em;\n-\t\tfont-weight: 100;\n-\t}\n-</style>\n+\t  h1 {\n+\t\t  color: #ff3e00;\n+\t\t  text-transform: uppercase;\n+\t\t  font-size: 4em;\n+\t\t  font-weight: 100;\n+\t  }\n+  </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642514303800,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,21 +1,25 @@\n <script>\n \timport MovieInput from './MovieInput.svelte';\n \timport MovieList from './MovieList.svelte';\n \timport Search from './Search.svelte';\n+\n \tlet movies = localStorage.getItem('movies') ? \n \t  JSON.parse(localStorage.getItem('movies')) : \n \t  [];\n+\n \tconst submitMovie = movie => {\n \t  const updatedMovies = [ ...movies, movie ];\n \t  localStorage.setItem('movies', JSON.stringify(updatedMovies));\n \t  movies = updatedMovies;\n \t}\n+\n \tconst clearSearch = () => {\n \t  movies = localStorage.getItem('movies') ? \n \t\tJSON.parse(localStorage.getItem('movies')) : \n \t\t[];\n \t};\n+\n \tconst search = searchTerm => {\n \t  const tempMovies = localStorage.getItem('movies') ? \n \t\tJSON.parse(localStorage.getItem('movies')) : \n \t\t[];\n@@ -40,11 +44,12 @@\n \t  padding: 1em;\n \t  margin: auto;\n \t  text-align: center;\n \t}\n-\t  h1 {\n-\t\t  color: #ff3e00;\n-\t\t  text-transform: uppercase;\n-\t\t  font-size: 4em;\n-\t\t  font-weight: 100;\n-\t  }\n+\t\n+\th1 {\n+\t\tcolor: #ff3e00;\n+\t\ttext-transform: uppercase;\n+\t\tfont-size: 4em;\n+\t\tfont-weight: 100;\n+\t}\n   </style>\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1642502499444,
