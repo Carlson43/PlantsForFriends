@@ -8,7 +8,7 @@ Name: Echter Name \
 Geburstag: 15.6.1995
 
 ## InfinityFree Hosting:
-Email: plants4firends@google.com \
+Email: plant4firends@google.com \
 Password: appeasing1-endurable-rectal
 
 
