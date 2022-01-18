@@ -1,0 +1,74 @@
+{
+    "sourceFile": "Svelte-Demo/movie-journal/src/App.svelte",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 14,
+            "patches": [
+                {
+                    "date": 1642502499444,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1642502539566,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n </script>\n \n <main>\n \t<h1>Hello {name}!</h1>\n+\t<h3>{newProp}</h3>\n \t<p>Visit the <a href=\"https://svelte.dev/tutorial\">Svelte tutorial</a> to learn how to build Svelte apps.</p>\n </main>\n \n <style>\n"
+                },
+                {
+                    "date": 1642502705639,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,11 +22,5 @@\n \t\ttext-transform: uppercase;\n \t\tfont-size: 4em;\n \t\tfont-weight: 100;\n \t}\n-\n-\t@media (min-width: 640px) {\n-\t\tmain {\n-\t\t\tmax-width: none;\n-\t\t}\n-\t}\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642502778295,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,20 +2,15 @@\n \texport let name;\n \texport let newProp;\n </script>\n \n-<main>\n-\t<h1>Hello {name}!</h1>\n-\t<h3>{newProp}</h3>\n-\t<p>Visit the <a href=\"https://svelte.dev/tutorial\">Svelte tutorial</a> to learn how to build Svelte apps.</p>\n-</main>\n+<dir class=\"main\">\n+\t<h1>Movie Journal</h1>\n+</dir>\n \n <style>\n-\tmain {\n-\t\ttext-align: center;\n-\t\tpadding: 1em;\n-\t\tmax-width: 240px;\n-\t\tmargin: 0 auto;\n+\t.main{\n+\n \t}\n \n \th1 {\n \t\tcolor: #ff3e00;\n"
+                },
+                {
+                    "date": 1642503354045,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n <script>\n+\timport{MovieInput.svelte}\n \texport let name;\n \texport let newProp;\n </script>\n \n"
+                },
+                {
+                    "date": 1642503379646,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <script>\n-\timport{MovieInput.svelte}\n+\timport{MovieInput} from './MovieInput.svelte'\n \texport let name;\n \texport let newProp;\n </script>\n \n"
+                },
+                {
+                    "date": 1642503396546,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <script>\n-\timport{MovieInput} from './MovieInput.svelte'\n+\timport MovieInput from './MovieInput.svelte';\n \texport let name;\n \texport let newProp;\n </script>\n \n"
+                },
+                {
+                    "date": 1642503460901,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,10 @@\n </script>\n \n <dir class=\"main\">\n \t<h1>Movie Journal</h1>\n+\n+\t<MovieInput/>\n </dir>\n \n <style>\n \t.main{\n"
+                },
+                {
+                    "date": 1642504126568,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,18 @@\n <script>\n \timport MovieInput from './MovieInput.svelte';\n \texport let name;\n \texport let newProp;\n+\n+\tconst submitMovie = movie => {\n+\t\tconsole.log(movie)\n+\t}\n </script>\n \n <dir class=\"main\">\n \t<h1>Movie Journal</h1>\n \n-\t<MovieInput/>\n+\t<MovieInput on:submitMovie={submitMovie} />\n </dir>\n \n <style>\n \t.main{\n"
+                },
+                {
+                    "date": 1642504273988,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,7 @@\n <script>\n+import { detach } from 'svelte/internal';\n+\n \timport MovieInput from './MovieInput.svelte';\n \texport let name;\n \texport let newProp;\n \n@@ -10,9 +12,9 @@\n \n <dir class=\"main\">\n \t<h1>Movie Journal</h1>\n \n-\t<MovieInput on:submitMovie={submitMovie} />\n+\t<MovieInput on:submitMovie={event => submitMovie(event.detail.movie)} />\n </dir>\n \n <style>\n \t.main{\n"
+                },
+                {
+                    "date": 1642510066343,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,12 @@\n \timport MovieInput from './MovieInput.svelte';\n \texport let name;\n \texport let newProp;\n \n+\tlet movies = localStorage.getItem('movies') ?\n+\t\tJSON.parse(localStorage.getItem('movies')) :\n+\t\t[];\n+\n \tconst submitMovie = movie => {\n \t\tconsole.log(movie)\n \t}\n </script>\n"
+                },
+                {
+                    "date": 1642510219790,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n \t\tJSON.parse(localStorage.getItem('movies')) :\n \t\t[];\n \n \tconst submitMovie = movie => {\n-\t\tconsole.log(movie)\n+\t\tconst updateMovies = [ ...movie, movie]\n \t}\n </script>\n \n <dir class=\"main\">\n"
+                },
+                {
+                    "date": 1642510379310,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,10 @@\n \t\tJSON.parse(localStorage.getItem('movies')) :\n \t\t[];\n \n \tconst submitMovie = movie => {\n-\t\tconst updateMovies = [ ...movie, movie]\n+\t\tconst updateMovies = [ ...movie, movie];\n+\t\tlocalStorage.setItem('movies', JSON.stringify(updateMovies))\n \t}\n </script>\n \n <dir class=\"main\">\n"
+                },
+                {
+                    "date": 1642510412705,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,10 +9,11 @@\n \t\tJSON.parse(localStorage.getItem('movies')) :\n \t\t[];\n \n \tconst submitMovie = movie => {\n-\t\tconst updateMovies = [ ...movie, movie];\n-\t\tlocalStorage.setItem('movies', JSON.stringify(updateMovies))\n+\t\tconst updatedMovies = [ ...movie, movie];\n+\t\tlocalStorage.setItem('movies', JSON.stringify(updatedMovies));\n+\t\tmovies = updatedMovies;\n \t}\n </script>\n \n <dir class=\"main\">\n"
+                },
+                {
+                    "date": 1642510510430,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,12 +9,12 @@\n \t\tJSON.parse(localStorage.getItem('movies')) :\n \t\t[];\n \n \tconst submitMovie = movie => {\n-\t\tconst updatedMovies = [ ...movie, movie];\n-\t\tlocalStorage.setItem('movies', JSON.stringify(updatedMovies));\n-\t\tmovies = updatedMovies;\n-\t}\n+    \tconst updatedMovies = [ ...movies, movie ];\n+    \tlocalStorage.setItem('movies', JSON.stringify(updatedMovies));\n+    \tmovies = updatedMovies;\n+  \t}\n </script>\n \n <dir class=\"main\">\n \t<h1>Movie Journal</h1>\n"
+                }
+            ],
+            "date": 1642502499444,
+            "name": "Commit-0",
+            "content": "<script>\n\texport let name;\n\texport let newProp;\n</script>\n\n<main>\n\t<h1>Hello {name}!</h1>\n\t<p>Visit the <a href=\"https://svelte.dev/tutorial\">Svelte tutorial</a> to learn how to build Svelte apps.</p>\n</main>\n\n<style>\n\tmain {\n\t\ttext-align: center;\n\t\tpadding: 1em;\n\t\tmax-width: 240px;\n\t\tmargin: 0 auto;\n\t}\n\n\th1 {\n\t\tcolor: #ff3e00;\n\t\ttext-transform: uppercase;\n\t\tfont-size: 4em;\n\t\tfont-weight: 100;\n\t}\n\n\t@media (min-width: 640px) {\n\t\tmain {\n\t\t\tmax-width: none;\n\t\t}\n\t}\n</style>"
+        }
+    ]
+}
