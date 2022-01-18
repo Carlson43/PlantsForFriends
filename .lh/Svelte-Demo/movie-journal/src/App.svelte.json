@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 19,
+            "activePatchIndex": 21,
             "patches": [
                 {
                     "date": 1642502499444,
@@ -84,6 +84,14 @@
                 {
                     "date": 1642514303800,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,21 +1,25 @@\n <script>\n \timport MovieInput from './MovieInput.svelte';\n \timport MovieList from './MovieList.svelte';\n \timport Search from './Search.svelte';\n+\n \tlet movies = localStorage.getItem('movies') ? \n \t  JSON.parse(localStorage.getItem('movies')) : \n \t  [];\n+\n \tconst submitMovie = movie => {\n \t  const updatedMovies = [ ...movies, movie ];\n \t  localStorage.setItem('movies', JSON.stringify(updatedMovies));\n \t  movies = updatedMovies;\n \t}\n+\n \tconst clearSearch = () => {\n \t  movies = localStorage.getItem('movies') ? \n \t\tJSON.parse(localStorage.getItem('movies')) : \n \t\t[];\n \t};\n+\n \tconst search = searchTerm => {\n \t  const tempMovies = localStorage.getItem('movies') ? \n \t\tJSON.parse(localStorage.getItem('movies')) : \n \t\t[];\n@@ -40,11 +44,12 @@\n \t  padding: 1em;\n \t  margin: auto;\n \t  text-align: center;\n \t}\n-\t  h1 {\n-\t\t  color: #ff3e00;\n-\t\t  text-transform: uppercase;\n-\t\t  font-size: 4em;\n-\t\t  font-weight: 100;\n-\t  }\n+\t\n+\th1 {\n+\t\tcolor: #ff3e00;\n+\t\ttext-transform: uppercase;\n+\t\tfont-size: 4em;\n+\t\tfont-weight: 100;\n+\t}\n   </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642517683131,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,8 +30,9 @@\n   </script>\n   \n   <div class='main'>\n \t<h1>Movie Journal</h1>\n+\t<h3>featuring Bootsrap!</h3>\n   \n \t<Search on:search={event => search(event.detail.searchTerm)} on:clearSearch={clearSearch} />\n \t<MovieInput on:submitMovie={event => submitMovie(event.detail.movie)} />\n \t<MovieList movies={movies} />\n@@ -44,9 +45,9 @@\n \t  padding: 1em;\n \t  margin: auto;\n \t  text-align: center;\n \t}\n-\t\n+\n \th1 {\n \t\tcolor: #ff3e00;\n \t\ttext-transform: uppercase;\n \t\tfont-size: 4em;\n"
+                },
+                {
+                    "date": 1642517724390,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,8 @@\n   </script>\n   \n   <div class='main'>\n \t<h1>Movie Journal</h1>\n-\t<h3>featuring Bootsrap!</h3>\n   \n \t<Search on:search={event => search(event.detail.searchTerm)} on:clearSearch={clearSearch} />\n \t<MovieInput on:submitMovie={event => submitMovie(event.detail.movie)} />\n \t<MovieList movies={movies} />\n"
                 }
             ],
             "date": 1642502499444,

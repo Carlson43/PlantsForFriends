@@ -45,7 +45,7 @@
 	  margin: auto;
 	  text-align: center;
 	}
-	
+
 	h1 {
 		color: #ff3e00;
 		text-transform: uppercase;

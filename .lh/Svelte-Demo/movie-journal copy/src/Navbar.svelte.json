@@ -1,0 +1,38 @@
+{
+    "sourceFile": "Svelte-Demo/movie-journal copy/src/Navbar.svelte",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1642518567697,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1642518590296,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,19 +6,16 @@\n       </button>\r\n       <div class=\"collapse navbar-collapse\" id=\"navbarNav\">\r\n         <ul class=\"navbar-nav\">\r\n           <li class=\"nav-item\">\r\n-            <a class=\"nav-link active\" aria-current=\"page\" href=\"#\">Home</a>\r\n+            <a class=\"nav-link\" href=\"#\">Home</a>\r\n           </li>\r\n           <li class=\"nav-item\">\r\n             <a class=\"nav-link\" href=\"#\">Features</a>\r\n           </li>\r\n           <li class=\"nav-item\">\r\n             <a class=\"nav-link\" href=\"#\">Pricing</a>\r\n           </li>\r\n-          <li class=\"nav-item\">\r\n-            <a class=\"nav-link disabled\" href=\"#\" tabindex=\"-1\" aria-disabled=\"true\">Disabled</a>\r\n-          </li>\r\n         </ul>\r\n       </div>\r\n     </div>\r\n   </nav>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642518667139,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\r\n     <div class=\"container-fluid\">\r\n-      <a class=\"navbar-brand\" href=\"#\">Moviejournal</a>\r\n+      <a class=\"navbar-brand\" href=\"#\">Movie Journal</a>\r\n       <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarNav\" aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n         <span class=\"navbar-toggler-icon\"></span>\r\n       </button>\r\n       <div class=\"collapse navbar-collapse\" id=\"navbarNav\">\r\n"
+                },
+                {
+                    "date": 1642519568544,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,21 +1,22 @@\n+<!-- Navbar -->\r\n <nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\r\n-    <div class=\"container-fluid\">\r\n-      <a class=\"navbar-brand\" href=\"#\">Movie Journal</a>\r\n-      <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarNav\" aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n-        <span class=\"navbar-toggler-icon\"></span>\r\n-      </button>\r\n-      <div class=\"collapse navbar-collapse\" id=\"navbarNav\">\r\n-        <ul class=\"navbar-nav\">\r\n-          <li class=\"nav-item\">\r\n-            <a class=\"nav-link\" href=\"#\">Home</a>\r\n-          </li>\r\n-          <li class=\"nav-item\">\r\n-            <a class=\"nav-link\" href=\"#\">Features</a>\r\n-          </li>\r\n-          <li class=\"nav-item\">\r\n-            <a class=\"nav-link\" href=\"#\">Pricing</a>\r\n-          </li>\r\n-        </ul>\r\n-      </div>\r\n+    <div class=\"container fluid\">\r\n\\ No newline at end of file\n+        <!-- Navabr Logo and Brandname -->\r\n+        <a class=\"navbar-brand\" href=\"index.html\">\r\n+            <img src=\"./icons/logo.svg\" alt=\"\" width=\"30\" height=\"24\" class=\"d-inline-block align-text-top\">\r\n+            Plants4Friends\r\n+        </a>\r\n+        <!-- Toggler for Expandsion -->\r\n+        <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarNav\" aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n+            <span class=\"navbar-toggler-icon\"></span>\r\n+        </button>\r\n+        <!-- Navigation Links -->\r\n+        <div class=\"collapse navbar-collapse\" id=\"navbarNav\">\r\n+            <div class=\"navbar-nav\">\r\n+                <a class=\"nav-link\" href=\"index.html\">Home</a>\r\n+                <a class=\"nav-link active\" aria-current=\"page\" href=\"#\">Anzeige erstellen</a>\r\n+                <a class=\"nav-link\" href=\"map.html\">Karte</a>\r\n+            </div>\r\n+        </div>\r\n     </div>\r\n-  </nav>\n+</nav>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642519639892,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,11 +12,11 @@\n         </button>\r\n         <!-- Navigation Links -->\r\n         <div class=\"collapse navbar-collapse\" id=\"navbarNav\">\r\n             <div class=\"navbar-nav\">\r\n-                <a class=\"nav-link\" href=\"index.html\">Home</a>\r\n-                <a class=\"nav-link active\" aria-current=\"page\" href=\"#\">Anzeige erstellen</a>\r\n-                <a class=\"nav-link\" href=\"map.html\">Karte</a>\r\n+                <a class=\"nav-link\" href=\"#\">Home</a>\r\n+                <a class=\"nav-link\" href=\"#\"> Anzeige erstellen</a>\r\n+                <a class=\"nav-link\" href=\"#\">Karte</a>\r\n             </div>\r\n         </div>\r\n     </div>\r\n </nav>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642519657305,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n         <!-- Navigation Links -->\r\n         <div class=\"collapse navbar-collapse\" id=\"navbarNav\">\r\n             <div class=\"navbar-nav\">\r\n                 <a class=\"nav-link\" href=\"#\">Home</a>\r\n-                <a class=\"nav-link\" href=\"#\"> Anzeige erstellen</a>\r\n+                <a class=\"nav-link\" href=\"#\">Anzeige erstellen</a>\r\n                 <a class=\"nav-link\" href=\"#\">Karte</a>\r\n             </div>\r\n         </div>\r\n     </div>\r\n"
+                }
+            ],
+            "date": 1642518567697,
+            "name": "Commit-0",
+            "content": "<nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\r\n    <div class=\"container-fluid\">\r\n      <a class=\"navbar-brand\" href=\"#\">Moviejournal</a>\r\n      <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarNav\" aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n        <span class=\"navbar-toggler-icon\"></span>\r\n      </button>\r\n      <div class=\"collapse navbar-collapse\" id=\"navbarNav\">\r\n        <ul class=\"navbar-nav\">\r\n          <li class=\"nav-item\">\r\n            <a class=\"nav-link active\" aria-current=\"page\" href=\"#\">Home</a>\r\n          </li>\r\n          <li class=\"nav-item\">\r\n            <a class=\"nav-link\" href=\"#\">Features</a>\r\n          </li>\r\n          <li class=\"nav-item\">\r\n            <a class=\"nav-link\" href=\"#\">Pricing</a>\r\n          </li>\r\n          <li class=\"nav-item\">\r\n            <a class=\"nav-link disabled\" href=\"#\" tabindex=\"-1\" aria-disabled=\"true\">Disabled</a>\r\n          </li>\r\n        </ul>\r\n      </div>\r\n    </div>\r\n  </nav>"
+        }
+    ]
+}
