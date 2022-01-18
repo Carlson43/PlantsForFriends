@@ -1,0 +1,30 @@
+{
+    "sourceFile": "Deno-Antoine/database-code.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1642502561546,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1642502762097,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,13 +4,15 @@\n const projectPathForData = `${Deno.cwd()}/Deno-Antoine/database.json`\r\n console.log(projectPathForData)\r\n \r\n /*************      Remote Mode - using GitHub as database      *************/\r\n-// const userName = \"plants-for friend\"\r\n-// import { password } from './Deno-Antoine/topsecret.ts'\r\n-// const org = \"plants-for-friends\"\r\n-// const repo = \"persistence-example-project-folder\"\r\n-// await Persistence.commitAndPush(projectPathForData, userName, password, org, repo) // commented out as I should not publish my password\r\n+const userName = \"plants-for-friends\"\r\n \r\n-// const linkToExampleDataRemote = \"https://raw.githubusercontent.com/michael-spengler/persistence-example-project-folder/master/example-file.json\"\r\n-// console.log(`remote file content: ${await Persistence.readFromRemoteFile(linkToExampleDataRemote)}`) \r\n \r\n+const password = 'dreadful-fame9-presuming'\r\n+const org = \"plants-for-friends\"\r\n+const repo = \"plants-for-friends\"\r\n+await Persistence.commitAndPush(projectPathForData, userName, password, org, repo) // commented out as I should not publish my password\r\n+\r\n+const linkToExampleDataRemote = \"https://raw.githubusercontent.com/michael-spengler/persistence-example-project-folder/master/example-file.json\"\r\n+console.log(`remote file content: ${await Persistence.readFromRemoteFile(linkToExampleDataRemote)}`) \r\n+\r\n"
+                },
+                {
+                    "date": 1642502819664,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,7 +12,7 @@\n const org = \"plants-for-friends\"\r\n const repo = \"plants-for-friends\"\r\n await Persistence.commitAndPush(projectPathForData, userName, password, org, repo) // commented out as I should not publish my password\r\n \r\n-const linkToExampleDataRemote = \"https://raw.githubusercontent.com/michael-spengler/persistence-example-project-folder/master/example-file.json\"\r\n+const linkToExampleDataRemote = \"https://raw.githubusercontent.com/Carlson43/PlantsForFriends/blob/Web-Dev/Deno-Antoine/database.json\"\r\n console.log(`remote file content: ${await Persistence.readFromRemoteFile(linkToExampleDataRemote)}`) \r\n \r\n"
+                },
+                {
+                    "date": 1642503086711,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,13 +5,11 @@\n console.log(projectPathForData)\r\n \r\n /*************      Remote Mode - using GitHub as database      *************/\r\n const userName = \"plants-for-friends\"\r\n-\r\n-\r\n const password = 'dreadful-fame9-presuming'\r\n const org = \"plants-for-friends\"\r\n-const repo = \"plants-for-friends\"\r\n+const repo = \"PlantsForFriends\"\r\n await Persistence.commitAndPush(projectPathForData, userName, password, org, repo) // commented out as I should not publish my password\r\n \r\n const linkToExampleDataRemote = \"https://raw.githubusercontent.com/Carlson43/PlantsForFriends/blob/Web-Dev/Deno-Antoine/database.json\"\r\n console.log(`remote file content: ${await Persistence.readFromRemoteFile(linkToExampleDataRemote)}`) \r\n"
+                }
+            ],
+            "date": 1642502561546,
+            "name": "Commit-0",
+            "content": "\r\nimport { Persistence } from \"https://deno.land/x/persistence@1.1.0/persistence.ts\"\r\n\r\nconst projectPathForData = `${Deno.cwd()}/Deno-Antoine/database.json`\r\nconsole.log(projectPathForData)\r\n\r\n/*************      Remote Mode - using GitHub as database      *************/\r\n// const userName = \"plants-for friend\"\r\n// import { password } from './Deno-Antoine/topsecret.ts'\r\n// const org = \"plants-for-friends\"\r\n// const repo = \"persistence-example-project-folder\"\r\n// await Persistence.commitAndPush(projectPathForData, userName, password, org, repo) // commented out as I should not publish my password\r\n\r\n// const linkToExampleDataRemote = \"https://raw.githubusercontent.com/michael-spengler/persistence-example-project-folder/master/example-file.json\"\r\n// console.log(`remote file content: ${await Persistence.readFromRemoteFile(linkToExampleDataRemote)}`) \r\n\r\n"
+        }
+    ]
+}
