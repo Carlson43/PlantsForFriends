@@ -1,23 +1,44 @@
 <script>
-  import { Router, Route } from "svelte-routing";
-  import NavLink from "./components/NavLink.svelte";
-  import Home from "./routes/Home.svelte";
-  import About from "./routes/About.svelte";
-  import Blog from "./routes/Blog.svelte";
+	import MovieInput from './MovieInput.svelte';
+	import MovieList from './MovieList.svelte';
+	import Search from './Search.svelte';
+	import Navbar from './Navbar.svelte'
 
-  // Used for SSR. A falsy value is ignored by the Router.
-  export let url = "";
-</script>
+	let movies = localStorage.getItem('movies') ? 
+	  JSON.parse(localStorage.getItem('movies')) : 
+	  [];
 
-<Router url="{url}">
-  <nav>
-    <NavLink to="/">Home</NavLink>
-    <NavLink to="about">About</NavLink>
-    <NavLink to="blog">Blog</NavLink>
-  </nav>
-  <div>
-    <Route path="about" component="{About}" />
-    <Route path="blog/*" component="{Blog}" />
-    <Route path="/" component="{Home}" />
+	const submitMovie = movie => {
+	  const updatedMovies = [ ...movies, movie ];
+	  localStorage.setItem('movies', JSON.stringify(updatedMovies));
+	  movies = updatedMovies;
+	}
+
+	const clearSearch = () => {
+	  movies = localStorage.getItem('movies') ? 
+		JSON.parse(localStorage.getItem('movies')) : 
+		[];
+	};
+
+	const search = searchTerm => {
+	  const tempMovies = localStorage.getItem('movies') ? 
+		JSON.parse(localStorage.getItem('movies')) : 
+		[];
+   
+	  movies = tempMovies.filter(m => 
+		m.title.toLowerCase().includes(searchTerm.toLowerCase()));
+	};
+  </script>
+  
+  <Navbar/>
+  <div class='container-md text-center'>
+	<h1>Movie Journal</h1>
+	<h3>featuring Bootsrap!</h3>
+  
+	<Search on:search={event => search(event.detail.searchTerm)} on:clearSearch={clearSearch} />
+	<p></p>
+	<MovieInput on:submitMovie={event => submitMovie(event.detail.movie)} />
+	<p></p>
+	<MovieList movies={movies} />
   </div>
-</Router>
+  
