@@ -1,0 +1,22 @@
+{
+    "sourceFile": "Svelte-Demo/svelte-routing-master/svelte-routing-master/example/src/routes/Home.svelte",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1642584164577,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1642584194709,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,8 @@\n+<script>\n+      import Navbar from \"../components/Navbar.svelte\";\n+</script>\n+\n <h1>Home</h1>\n <p>Welcome to my website</p>\n \n <Navbar></Navbar>\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1642584164577,
+            "name": "Commit-0",
+            "content": "<h1>Home</h1>\n<p>Welcome to my website</p>\n\n<Navbar></Navbar>"
+        }
+    ]
+}

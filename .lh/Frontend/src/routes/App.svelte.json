@@ -1,0 +1,22 @@
+{
+    "sourceFile": "Frontend/src/routes/App.svelte",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1642582856580,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1642582886040,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n \t\t<Link to=\"blog\">Blog</Link>\n \t\t<Link to=\"movies\">Movies</Link>\n \t</nav>\n \t<div>\n-\t\t<Route path=\"blog/:id\" component=\"{BlogPost}\" />\n+\t\t<!-- <Route path=\"blog/:id\" component=\"{BlogPost}\" /> -->\n \t\t<Route path=\"blog\" component=\"{Blog}\" />\n \t\t<Route path=\"about\" component=\"{About}\" />\n \t\t<Route path=\"movies\" components=\"{Movies}\"/>\n \t\t<Route path=\"/\"><Home /></Route>\n"
+                }
+            ],
+            "date": 1642582856580,
+            "name": "Commit-0",
+            "content": "<script>\n\timport { Router, Link, Route } from \"svelte-routing\";\n\timport Home from \"../routes/Home.svelte\";\n\timport About from \"../routes/About.svelte\";\n\timport Blog from \"../routes/Blog.svelte\";\n\timport Movies from \"../routes/Movies.svelte\";\n\n\texport let url = \"\";\n</script>\n\n<Router url=\"{url}\">\n\t<nav>\n\t\t<Link to=\"/\">Home</Link>\n\t\t<Link to=\"about\">About</Link>\n\t\t<Link to=\"blog\">Blog</Link>\n\t\t<Link to=\"movies\">Movies</Link>\n\t</nav>\n\t<div>\n\t\t<Route path=\"blog/:id\" component=\"{BlogPost}\" />\n\t\t<Route path=\"blog\" component=\"{Blog}\" />\n\t\t<Route path=\"about\" component=\"{About}\" />\n\t\t<Route path=\"movies\" components=\"{Movies}\"/>\n\t\t<Route path=\"/\"><Home /></Route>\n\t</div>\n</Router> "
+        }
+    ]
+}
