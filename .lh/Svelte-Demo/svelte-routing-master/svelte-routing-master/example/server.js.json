@@ -1,0 +1,22 @@
+{
+    "sourceFile": "Svelte-Demo/svelte-routing-master/svelte-routing-master/example/server.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1642584747054,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1642584782489,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,4 @@\n-import \"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js\"\n-\n const path = require(\"path\");\n const express = require(\"express\");\n const app = require(\"./public/App.js\");\n \n"
+                }
+            ],
+            "date": 1642584747054,
+            "name": "Commit-0",
+            "content": "import \"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js\"\n\nconst path = require(\"path\");\nconst express = require(\"express\");\nconst app = require(\"./public/App.js\");\n\nconst server = express();\n\nserver.use(express.static(path.join(__dirname, \"public\")));\n\nserver.get(\"*\", function(req, res) {\n  const { html } = app.render({ url: req.url });\n\n  res.write(`\n    <!DOCTYPE html>\n    <link rel='stylesheet' href='/global.css'>\n    <link rel='stylesheet' href='/bundle.css'>\n    <div id=\"app\">${html}</div>\n    <script src=\"/bundle.js\"></script>\n  `);\n\n  res.end();\n});\n\nconst port = 3000;\nserver.listen(port, () => console.log(`Listening on port ${port}`));\n"
+        }
+    ]
+}

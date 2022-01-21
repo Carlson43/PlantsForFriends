@@ -1,0 +1,22 @@
+{
+    "sourceFile": "Svelte-Demo/movie-journal/src/main.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1642502376836,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1642502436761,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,10 @@\n \n const app = new App({\n \ttarget: document.body,\n \tprops: {\n-\t\tname: 'Internet'\n+\t\tname: 'Internet',\n+\t\tnewProp: 'Hi'\n \t}\n });\n \n export default app;\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1642502376836,
+            "name": "Commit-0",
+            "content": "import App from './App.svelte';\n\nconst app = new App({\n\ttarget: document.body,\n\tprops: {\n\t\tname: 'Internet'\n\t}\n});\n\nexport default app;"
+        }
+    ]
+}

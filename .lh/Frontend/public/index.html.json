@@ -1,0 +1,22 @@
+{
+    "sourceFile": "Frontend/public/index.html",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1642583137662,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1642583177772,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n \t<meta name='viewport' content='width=device-width,initial-scale=1'>\n \n \t<title>Svelte app</title>\n \n-\t<link rel='icon' type='image/svg' href='/favicon.svg'>\n+\t<link rel='icon' type='image/png' href='/favicon.svg'>\n \t<link rel='stylesheet' href='/global.css'>\n \t<link rel='stylesheet' href='/build/bundle.css'>\n \n \t<script defer src='/build/bundle.js'></script>\n"
+                }
+            ],
+            "date": 1642583137662,
+            "name": "Commit-0",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n\t<meta charset='utf-8'>\n\t<meta name='viewport' content='width=device-width,initial-scale=1'>\n\n\t<title>Svelte app</title>\n\n\t<link rel='icon' type='image/svg' href='/favicon.svg'>\n\t<link rel='stylesheet' href='/global.css'>\n\t<link rel='stylesheet' href='/build/bundle.css'>\n\n\t<script defer src='/build/bundle.js'></script>\n\n\t<!-- Bootstrap -->\n\t<link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC\" crossorigin=\"anonymous\">\n\t<script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM\" crossorigin=\"anonymous\"></script>\n</head>\n\n<body>\n</body>\n</html>\n"
+        }
+    ]
+}

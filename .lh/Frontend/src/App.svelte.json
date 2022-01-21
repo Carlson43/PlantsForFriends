@@ -1,0 +1,34 @@
+{
+    "sourceFile": "Frontend/src/App.svelte",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 4,
+            "patches": [
+                {
+                    "date": 1642582123738,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1642582251425,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,10 +2,22 @@\n \timport { Router, Link, Route } from \"svelte-routing\";\n \timport Home from \"./routes/Home.svelte\";\n \timport About from \"./routes/About.svelte\";\n \timport Blog from \"./routes/Blog.svelte\";\n-\timport Movies from \n+\timport Movies from \"./routes/Movies.svelte\";\n \n \texport let url = \"\";\n-  </script>\n-  \n\\ No newline at end of file\n- \n+</script>\n+\n+<Router url=\"{url}\">\n+\t<nav>\n+\t\t<Link to=\"/\">Home</Link>\n+\t\t<Link to=\"about\">About</Link>\n+\t\t<Link to=\"blog\">Blog</Link>\n+\t</nav>\n+\t<div>\n+\t\t<Route path=\"blog/:id\" component=\"{BlogPost}\" />\n+\t\t<Route path=\"blog\" component=\"{Blog}\" />\n+\t\t<Route path=\"about\" component=\"{About}\" />\n+\t\t<Route path=\"/\"><Home /></Route>\n+\t</div>\n+</Router>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642582342125,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,12 +12,14 @@\n \t<nav>\n \t\t<Link to=\"/\">Home</Link>\n \t\t<Link to=\"about\">About</Link>\n \t\t<Link to=\"blog\">Blog</Link>\n+\t\t<Link to=\"movies\">Movies</Link>\n \t</nav>\n \t<div>\n \t\t<Route path=\"blog/:id\" component=\"{BlogPost}\" />\n \t\t<Route path=\"blog\" component=\"{Blog}\" />\n \t\t<Route path=\"about\" component=\"{About}\" />\n+\t\t<Route path=\"movies\" components=\"{Movies}\"\n \t\t<Route path=\"/\"><Home /></Route>\n \t</div>\n </Router>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642582397632,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,8 @@\n \t<div>\n \t\t<Route path=\"blog/:id\" component=\"{BlogPost}\" />\n \t\t<Route path=\"blog\" component=\"{Blog}\" />\n \t\t<Route path=\"about\" component=\"{About}\" />\n-\t\t<Route path=\"movies\" components=\"{Movies}\"\n+\t\t<Route path=\"movies\" components=\"{Movies}\"/>\n \t\t<Route path=\"/\"><Home /></Route>\n \t</div>\n </Router>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642582827934,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n <script>\n \timport { Router, Link, Route } from \"svelte-routing\";\n-\timport Home from \"./routes/Home.svelte\";\n-\timport About from \"./routes/About.svelte\";\n-\timport Blog from \"./routes/Blog.svelte\";\n-\timport Movies from \"./routes/Movies.svelte\";\n+\timport Home from \"../routes/Home.svelte\";\n+\timport About from \"../routes/About.svelte\";\n+\timport Blog from \"../routes/Blog.svelte\";\n+\timport Movies from \"../routes/Movies.svelte\";\n \n \texport let url = \"\";\n </script>\n \n"
+                }
+            ],
+            "date": 1642582123737,
+            "name": "Commit-0",
+            "content": "<script>\n\timport { Router, Link, Route } from \"svelte-routing\";\n\timport Home from \"./routes/Home.svelte\";\n\timport About from \"./routes/About.svelte\";\n\timport Blog from \"./routes/Blog.svelte\";\n\timport Movies from \n\n\texport let url = \"\";\n  </script>\n  \n "
+        }
+    ]
+}

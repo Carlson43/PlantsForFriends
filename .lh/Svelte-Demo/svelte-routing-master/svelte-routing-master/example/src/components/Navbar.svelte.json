@@ -1,0 +1,34 @@
+{
+    "sourceFile": "Svelte-Demo/svelte-routing-master/svelte-routing-master/example/src/components/Navbar.svelte",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 4,
+            "patches": [
+                {
+                    "date": 1642584242495,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1642584387016,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-<script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p\" crossorigin=\"anonymous\"></script>\r\n+<scriptsrc=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p\" crossorigin=\"anonymous\"></script>\r\n \r\n \r\n <!-- Navbar -->\r\n <nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\r\n@@ -21,5 +21,10 @@\n                 <a class=\"nav-link\" href=\"#\">Karte</a>\r\n             </div>\r\n         </div>\r\n     </div>\r\n-</nav>\n\\ No newline at end of file\n+</nav>\r\n+\r\n+<style>\r\n+     @Import url(https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css)\r\n+</style>\r\n+/* <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3\" crossorigin=\"anonymous\"> */\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642584408494,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,7 +24,7 @@\n     </div>\r\n </nav>\r\n \r\n <style>\r\n-     @Import url(https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css)\r\n+     @import url(https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css)\r\n </style>\r\n /* <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3\" crossorigin=\"anonymous\"> */\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642584569166,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n-<scriptsrc=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p\" crossorigin=\"anonymous\"></script>\r\n+<script>\r\n+    import \"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js\"\r\n+</script>\r\n \r\n-\r\n <!-- Navbar -->\r\n <nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\r\n     <div class=\"container fluid\">\r\n         <!-- Navabr Logo and Brandname -->\r\n"
+                },
+                {
+                    "date": 1642584749221,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,5 @@\n <script>\r\n-    import \"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js\"\r\n </script>\r\n \r\n <!-- Navbar -->\r\n <nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\r\n"
+                }
+            ],
+            "date": 1642584242495,
+            "name": "Commit-0",
+            "content": "<script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p\" crossorigin=\"anonymous\"></script>\r\n\r\n\r\n<!-- Navbar -->\r\n<nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\r\n    <div class=\"container fluid\">\r\n        <!-- Navabr Logo and Brandname -->\r\n        <a class=\"navbar-brand\" href=\"index.html\">\r\n            <img src=\"./icons/logo.svg\" alt=\"\" width=\"30\" height=\"24\" class=\"d-inline-block align-text-top\">\r\n            Plants4Friends\r\n        </a>\r\n        <!-- Toggler for Expandsion -->\r\n        <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarNav\" aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n            <span class=\"navbar-toggler-icon\"></span>\r\n        </button>\r\n        <!-- Navigation Links -->\r\n        <div class=\"collapse navbar-collapse\" id=\"navbarNav\">\r\n            <div class=\"navbar-nav\">\r\n                <a class=\"nav-link\" href=\"#\">Home</a>\r\n                <a class=\"nav-link\" href=\"#\">Anzeige erstellen</a>\r\n                <a class=\"nav-link\" href=\"#\">Karte</a>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</nav>"
+        }
+    ]
+}

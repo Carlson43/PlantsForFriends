@@ -1,0 +1,78 @@
+{
+    "sourceFile": "Svelte-Demo/movie-journal/src/MovieInput.svelte",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 15,
+            "patches": [
+                {
+                    "date": 1642503070674,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1642503084631,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <script>\r\n-    let title =''\r\n+    let title ='';\r\n \r\n     const onTitleChange = e => {\r\n         titel = e.target.value\r\n     }\r\n"
+                },
+                {
+                    "date": 1642503121968,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,14 @@\n <script>\r\n     let title ='';\r\n \r\n     const onTitleChange = e => {\r\n-        titel = e.target.value\r\n+        title = e.target.value\r\n     }\r\n </script>\r\n \r\n <input\r\n     placeholder=\"Movie Titel\"\r\n     type=\"text\"\r\n-    value={titel}\r\n+    value={title}\r\n     on:keyup={onTitleChange}\r\n />\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642503175259,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n <script>\r\n     let title ='';\r\n+    let rating = 1;\r\n \r\n     const onTitleChange = e => {\r\n         title = e.target.value\r\n     }\r\n"
+                },
+                {
+                    "date": 1642503305319,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,5 +11,13 @@\n     placeholder=\"Movie Titel\"\r\n     type=\"text\"\r\n     value={title}\r\n     on:keyup={onTitleChange}\r\n-/>\n\\ No newline at end of file\n+/>\r\n+\r\n+<select>\r\n+    <option value={1}>1</option>\r\n+    <option value={2}>2</option>\r\n+    <option value={3}>3</option>\r\n+    <option value={4}>4</option>\r\n+    <option value={5}>5</option>\r\n+</select>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642503546887,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,12 @@\n \r\n     const onTitleChange = e => {\r\n         title = e.target.value\r\n     }\r\n+\r\n+    const onRatingSelect = e => {\r\n+        rating = e.target.value;\r\n+    }\r\n </script>\r\n \r\n <input\r\n     placeholder=\"Movie Titel\"\r\n"
+                },
+                {
+                    "date": 1642503594378,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n     value={title}\r\n     on:keyup={onTitleChange}\r\n />\r\n \r\n-<select>\r\n+<select value={rating} on:change={onRatingSelect}>\r\n     <option value={1}>1</option>\r\n     <option value={2}>2</option>\r\n     <option value={3}>3</option>\r\n     <option value={4}>4</option>\r\n"
+                },
+                {
+                    "date": 1642503707634,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,5 +23,7 @@\n     <option value={2}>2</option>\r\n     <option value={3}>3</option>\r\n     <option value={4}>4</option>\r\n     <option value={5}>5</option>\r\n-</select>\n\\ No newline at end of file\n+</select>\r\n+\r\n+<button disabled={!title}>Submit</button>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642503857830,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,7 @@\n <script>\r\n+    import { createEventDispatcher } from 'svelte';\r\n+\r\n     let title ='';\r\n     let rating = 1;\r\n \r\n     const onTitleChange = e => {\r\n@@ -8,8 +10,12 @@\n \r\n     const onRatingSelect = e => {\r\n         rating = e.target.value;\r\n     }\r\n+\r\n+    const submitMovie = () => {\r\n+\r\n+    }\r\n </script>\r\n \r\n <input\r\n     placeholder=\"Movie Titel\"\r\n"
+                },
+                {
+                    "date": 1642503895511,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n <script>\r\n     import { createEventDispatcher } from 'svelte';\r\n+    const dispatch = createEventDispatcher();\r\n \r\n     let title ='';\r\n     let rating = 1;\r\n \r\n"
+                },
+                {
+                    "date": 1642504039669,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,19 @@\n         rating = e.target.value;\r\n     }\r\n \r\n     const submitMovie = () => {\r\n+        if (title) {\r\n+            dispatch('submitMovie', {\r\n+                movie: {\r\n+                    title,\r\n+                    rating,\r\n+                }\r\n+            })\r\n \r\n+            title = '';\r\n+            rating = 1;\r\n+        }\r\n     }\r\n </script>\r\n \r\n <input\r\n"
+                },
+                {
+                    "date": 1642504174932,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,5 +42,5 @@\n     <option value={4}>4</option>\r\n     <option value={5}>5</option>\r\n </select>\r\n \r\n-<button disabled={!title}>Submit</button>\n\\ No newline at end of file\n+<button on:click={submitMovie} disabled={!title}>Submit</button>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642504546502,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n     let title ='';\r\n     let rating = 1;\r\n \r\n     const onTitleChange = e => {\r\n-        title = e.target.value\r\n+        title = e.target.value;\r\n     }\r\n \r\n     const onRatingSelect = e => {\r\n         rating = e.target.value;\r\n"
+                },
+                {
+                    "date": 1642510558588,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,17 +14,16 @@\n     }\r\n \r\n     const submitMovie = () => {\r\n         if (title) {\r\n-            dispatch('submitMovie', {\r\n-                movie: {\r\n-                    title,\r\n-                    rating,\r\n-                }\r\n-            })\r\n-\r\n-            title = '';\r\n-            rating = 1;\r\n+        dispatch('submitMovie', {\r\n+            movie: {\r\n+            title,\r\n+            rating,\r\n+            }\r\n+        });\r\n+        title = '';\r\n+        rating = 1;\r\n         }\r\n     }\r\n </script>\r\n \r\n"
+                },
+                {
+                    "date": 1642510575519,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,20 +26,41 @@\n         }\r\n     }\r\n </script>\r\n \r\n-<input\r\n-    placeholder=\"Movie Titel\"\r\n-    type=\"text\"\r\n-    value={title}\r\n-    on:keyup={onTitleChange}\r\n-/>\r\n-\r\n-<select value={rating} on:change={onRatingSelect}>\r\n-    <option value={1}>1</option>\r\n-    <option value={2}>2</option>\r\n-    <option value={3}>3</option>\r\n-    <option value={4}>4</option>\r\n-    <option value={5}>5</option>\r\n-</select>\r\n-\r\n-<button on:click={submitMovie} disabled={!title}>Submit</button>\n\\ No newline at end of file\n+<div class='main'>\r\n+    <input \r\n+      placeholder=\"Movie Title\" \r\n+      type='text' \r\n+      value={title}\r\n+      on:keyup={onTitleChange}\r\n+    />\r\n+  \r\n+    <!-- svelte-ignore a11y-no-onchange -->\r\n+    <select value={rating} on:change={onRatingSelect}>\r\n+      <option value={1}>1</option>\r\n+      <option value={2}>2</option>\r\n+      <option value={3}>3</option>\r\n+      <option value={4}>4</option>\r\n+      <option value={5}>5</option>\r\n+    </select>\r\n+  \r\n+    <button on:click={submitMovie} disabled={!title}>Submit</button>\r\n+  </div>\r\n+  \r\n+  <style>\r\n+    .main {\r\n+      width: 100%;\r\n+      display: flex;\r\n+    }\r\n+    .main input {\r\n+      flex: 1;\r\n+    }\r\n+    .main select {\r\n+      width: 75px;\r\n+      margin-right: 10px;\r\n+      margin-left: 10px;\r\n+    }\r\n+    .main button {\r\n+      width: 75px;\r\n+    }\r\n+  </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642510650440,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,8 @@\n       value={title}\r\n       on:keyup={onTitleChange}\r\n     />\r\n   \r\n-    <!-- svelte-ignore a11y-no-onchange -->\r\n     <select value={rating} on:change={onRatingSelect}>\r\n       <option value={1}>1</option>\r\n       <option value={2}>2</option>\r\n       <option value={3}>3</option>\r\n"
+                }
+            ],
+            "date": 1642503070674,
+            "name": "Commit-0",
+            "content": "<script>\r\n    let title =''\r\n\r\n    const onTitleChange = e => {\r\n        titel = e.target.value\r\n    }\r\n</script>\r\n\r\n<input\r\n    placeholder=\"Movie Titel\"\r\n    type=\"text\"\r\n    value={titel}\r\n    on:keyup={onTitleChange}\r\n/>"
+        }
+    ]
+}

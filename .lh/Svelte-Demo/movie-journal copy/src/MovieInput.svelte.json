@@ -1,0 +1,26 @@
+{
+    "sourceFile": "Svelte-Demo/movie-journal copy/src/MovieInput.svelte",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1642518245373,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1642518280043,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,9 +42,9 @@\n       <option value={4}>4</option>\r\n       <option value={5}>5</option>\r\n     </select>\r\n   \r\n-    <button type=\"btn-success\" on:click={submitMovie} disabled={!title}>Submit</button>\r\n+    <button type='button' class=\"btn-success\" on:click={submitMovie} disabled={!title}>Submit</button>\r\n   </div>\r\n   \r\n   <style>\r\n     .main {\r\n"
+                },
+                {
+                    "date": 1642518382375,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,9 +42,9 @@\n       <option value={4}>4</option>\r\n       <option value={5}>5</option>\r\n     </select>\r\n   \r\n-    <button type='button' class=\"btn-success\" on:click={submitMovie} disabled={!title}>Submit</button>\r\n+    <button type='button' class=\"btn btn-success\" on:click={submitMovie} disabled={!title}>Submit</button>\r\n   </div>\r\n   \r\n   <style>\r\n     .main {\r\n"
+                }
+            ],
+            "date": 1642518245373,
+            "name": "Commit-0",
+            "content": "<script>\r\n    import { createEventDispatcher } from 'svelte';\r\n    const dispatch = createEventDispatcher();\r\n\r\n    let title ='';\r\n    let rating = 1;\r\n\r\n    const onTitleChange = e => {\r\n        title = e.target.value;\r\n    }\r\n\r\n    const onRatingSelect = e => {\r\n        rating = e.target.value;\r\n    }\r\n\r\n    const submitMovie = () => {\r\n        if (title) {\r\n        dispatch('submitMovie', {\r\n            movie: {\r\n            title,\r\n            rating,\r\n            }\r\n        });\r\n        title = '';\r\n        rating = 1;\r\n        }\r\n    }\r\n</script>\r\n\r\n<div class='main'>\r\n    <input \r\n      placeholder=\"Movie Title\" \r\n      type='text' \r\n      value={title}\r\n      on:keyup={onTitleChange}\r\n    />\r\n  \r\n    <select value={rating} on:change={onRatingSelect}>\r\n      <option value={1}>1</option>\r\n      <option value={2}>2</option>\r\n      <option value={3}>3</option>\r\n      <option value={4}>4</option>\r\n      <option value={5}>5</option>\r\n    </select>\r\n  \r\n    <button type=\"btn-success\" on:click={submitMovie} disabled={!title}>Submit</button>\r\n  </div>\r\n  \r\n  <style>\r\n    .main {\r\n      width: 100%;\r\n      display: flex;\r\n    }\r\n    .main input {\r\n      flex: 1;\r\n    }\r\n    .main select {\r\n      width: 75px;\r\n      margin-right: 10px;\r\n      margin-left: 10px;\r\n    }\r\n    .main button {\r\n      width: 75px;\r\n    }\r\n  </style>"
+        }
+    ]
+}

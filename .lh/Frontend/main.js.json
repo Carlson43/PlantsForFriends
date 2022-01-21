@@ -1,0 +1,18 @@
+{
+    "sourceFile": "Frontend/main.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1642583737704,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1642583737704,
+            "name": "Commit-0",
+            "content": "// import App from './App.svelte';\n\n// const app = new App({\n// \ttarget: document.body,\n// \tprops: {\n// \t\tname: 'Internet',\n// \t\tnewProp: 'Hi'\n// \t}\n// });\n\n// export default app;\n\nimport App from \"./App.svelte\";\n\nconst app = new App({\n  target: document.getElementById(\"app\"),\n  hydrate: true\n});"
+        }
+    ]
+}

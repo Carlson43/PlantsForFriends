@@ -1,0 +1,18 @@
+{
+    "sourceFile": "Frontend/server.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1642583286462,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1642583286462,
+            "name": "Commit-0",
+            "content": "const { createServer } = require(\"http\");\r\nconst app = require(\"./dist/App.js\");\r\n\r\ncreateServer((req, res) => {\r\n  const { html } = app.render({ url: req.url });\r\n\r\n  res.write(`\r\n    <!DOCTYPE html>\r\n    <div id=\"app\">${html}</div>\r\n    <script src=\"/dist/bundle.js\"></script>\r\n  `);\r\n\r\n  res.end();\r\n}).listen(3000);"
+        }
+    ]
+}

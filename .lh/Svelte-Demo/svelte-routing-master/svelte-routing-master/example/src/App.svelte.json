@@ -1,0 +1,34 @@
+{
+    "sourceFile": "Svelte-Demo/svelte-routing-master/svelte-routing-master/example/src/App.svelte",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 4,
+            "patches": [
+                {
+                    "date": 1642583910756,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1642583924445,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n   import NavLink from \"./components/NavLink.svelte\";\n   import Home from \"./routes/Home.svelte\";\n   import About from \"./routes/About.svelte\";\n   import Blog from \"./routes/Blog.svelte\";\n-  import Navbar from \"../src/components/Navbar.svelte\";\n+  import Navbar from \"../components/Navbar.svelte\";\n \n   // Used for SSR. A falsy value is ignored by the Router.\n   export let url = \"\";\n </script>\n"
+                },
+                {
+                    "date": 1642583952515,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,4 +21,6 @@\n     <Route path=\"blog/*\" component=\"{Blog}\" />\n     <Route path=\"/\" component=\"{Home}\" />\n   </div>\n </Router>\n+\n+<Navbar>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642583962604,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,5 +22,5 @@\n     <Route path=\"/\" component=\"{Home}\" />\n   </div>\n </Router>\n \n-<Navbar>\n\\ No newline at end of file\n+<Navbar></Navbar>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642584199724,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,8 @@\n   import NavLink from \"./components/NavLink.svelte\";\n   import Home from \"./routes/Home.svelte\";\n   import About from \"./routes/About.svelte\";\n   import Blog from \"./routes/Blog.svelte\";\n-  import Navbar from \"../components/Navbar.svelte\";\n \n   // Used for SSR. A falsy value is ignored by the Router.\n   export let url = \"\";\n </script>\n@@ -22,5 +21,4 @@\n     <Route path=\"/\" component=\"{Home}\" />\n   </div>\n </Router>\n \n-<Navbar></Navbar>\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1642583910756,
+            "name": "Commit-0",
+            "content": "<script>\n  import { Router, Route } from \"svelte-routing\";\n  import NavLink from \"./components/NavLink.svelte\";\n  import Home from \"./routes/Home.svelte\";\n  import About from \"./routes/About.svelte\";\n  import Blog from \"./routes/Blog.svelte\";\n  import Navbar from \"../src/components/Navbar.svelte\";\n\n  // Used for SSR. A falsy value is ignored by the Router.\n  export let url = \"\";\n</script>\n\n<Router url=\"{url}\">\n  <nav>\n    <NavLink to=\"/\">Home</NavLink>\n    <NavLink to=\"about\">About</NavLink>\n    <NavLink to=\"blog\">Blog</NavLink>\n  </nav>\n  <div>\n    <Route path=\"about\" component=\"{About}\" />\n    <Route path=\"blog/*\" component=\"{Blog}\" />\n    <Route path=\"/\" component=\"{Home}\" />\n  </div>\n</Router>\n"
+        }
+    ]
+}
