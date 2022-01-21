@@ -1,0 +1,78 @@
+{
+    "sourceFile": "Deno-Antoine/DB-Neu/mongo.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 15,
+            "patches": [
+                {
+                    "date": 1642622741402,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1642622762516,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import {\r\n     Bson,\r\n     MongoClient,\r\n-  } from \"https://deno.land/x/mongo@0.29.0/mod.ts\";\r\n+  } from \"https://deno.land/x/mongo@v0.29.0/mod.ts\";\r\n \r\n   const client = new MongoClient();\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1642622802881,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n   db: \"Deno\",\r\n   tls: true,\r\n   servers: [\r\n     {\r\n-      host: \"mongodb+srv://PlantsForFriends:<password>@cluster0.jjpui.mongodb.net/myFirstDatabase?retryWrites=true&w=majority\",\r\n+      host: \"https://cloud.mongodb.com/v2/61e86d7ab7cdf94f4af33ecc#clusters\",\r\n       port: 27017,\r\n     },\r\n   ],\r\n   credential: {\r\n"
+                },
+                {
+                    "date": 1642623572923,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n   db: \"Deno\",\r\n   tls: true,\r\n   servers: [\r\n     {\r\n-      host: \"https://cloud.mongodb.com/v2/61e86d7ab7cdf94f4af33ecc#clusters\",\r\n+      host: \"mongodb+srv://PlantsForFriends:laptop-omen-viselike@cluster0.jjpui.mongodb.net/Cluster0?retryWrites=true&w=majority\",\r\n       port: 27017,\r\n     },\r\n   ],\r\n   credential: {\r\n"
+                },
+                {
+                    "date": 1642623625829,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n   db: \"Deno\",\r\n   tls: true,\r\n   servers: [\r\n     {\r\n-      host: \"mongodb+srv://PlantsForFriends:laptop-omen-viselike@cluster0.jjpui.mongodb.net/Cluster0?retryWrites=true&w=majority\",\r\n+      host: \"mongodb+srv://PlantsForFriends:laptop-omen-viselike@cluster0.jjpui.mongodb.net/Deno?retryWrites=true&w=majority\",\r\n       port: 27017,\r\n     },\r\n   ],\r\n   credential: {\r\n"
+                },
+                {
+                    "date": 1642623913238,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,6 @@\n+//uTyAZp11kktRh3YH\r\n+\r\n import {\r\n     Bson,\r\n     MongoClient,\r\n   } from \"https://deno.land/x/mongo@v0.29.0/mod.ts\";\r\n@@ -12,9 +14,9 @@\n   db: \"Deno\",\r\n   tls: true,\r\n   servers: [\r\n     {\r\n-      host: \"mongodb+srv://PlantsForFriends:laptop-omen-viselike@cluster0.jjpui.mongodb.net/Deno?retryWrites=true&w=majority\",\r\n+      host: \"mongodb+srv://Test:uTyAZp11kktRh3YH@cluster0.jjpui.mongodb.net/Deno?retryWrites=true&w=majority\",\r\n       port: 27017,\r\n     },\r\n   ],\r\n   credential: {\r\n"
+                },
+                {
+                    "date": 1642623972192,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,18 +5,18 @@\n     MongoClient,\r\n   } from \"https://deno.land/x/mongo@v0.29.0/mod.ts\";\r\n \r\n   const client = new MongoClient();\r\n+const db = client.database(\"Database\")\r\n \r\n \r\n-\r\n // Connecting to a Mongo Atlas Database\r\n await client.connect({\r\n   db: \"Deno\",\r\n   tls: true,\r\n   servers: [\r\n     {\r\n-      host: \"mongodb+srv://Test:uTyAZp11kktRh3YH@cluster0.jjpui.mongodb.net/Deno?retryWrites=true&w=majority\",\r\n+      host: \"mongodb+srv://Test:uTyAZp11kktRh3YH@cluster0.jjpui.mongodb.net/Database?retryWrites=true&w=majority\",\r\n       port: 27017,\r\n     },\r\n   ],\r\n   credential: {\r\n"
+                },
+                {
+                    "date": 1642624099768,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,22 +7,28 @@\n \r\n   const client = new MongoClient();\r\n const db = client.database(\"Database\")\r\n \r\n+await client.connect(\r\n+    \"mongodb+srv://Test:uTyAZp11kktRh3YH@cluster0/Deno?authMechanism=SCRAM-SHA-1\",\r\n+  );\r\n+  \r\n \r\n+\r\n+\r\n // Connecting to a Mongo Atlas Database\r\n-await client.connect({\r\n-  db: \"Deno\",\r\n-  tls: true,\r\n-  servers: [\r\n-    {\r\n-      host: \"mongodb+srv://Test:uTyAZp11kktRh3YH@cluster0.jjpui.mongodb.net/Database?retryWrites=true&w=majority\",\r\n-      port: 27017,\r\n-    },\r\n-  ],\r\n-  credential: {\r\n-    username: \"PlantsForFriends\",\r\n-    password: \"laptop-omen-viselike\",\r\n-    db: \"Deno\",\r\n-    mechanism: \"SCRAM-SHA-1\",\r\n-  },\r\n-});\r\n+// await client.connect({\r\n+//   db: \"Deno\",\r\n+//   tls: true,\r\n+//   servers: [\r\n+//     {\r\n+//       host: \"mongodb+srv://Test:uTyAZp11kktRh3YH@cluster0.jjpui.mongodb.net/Database?retryWrites=true&w=majority\",\r\n+//       port: 27017,\r\n+//     },\r\n+//   ],\r\n+//   credential: {\r\n+//     username: \"PlantsForFriends\",\r\n+//     password: \"laptop-omen-viselike\",\r\n+//     db: \"Deno\",\r\n+//     mechanism: \"SCRAM-SHA-1\",\r\n+//   },\r\n+// });\r\n"
+                },
+                {
+                    "date": 1642624654326,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,31 +4,25 @@\n     Bson,\r\n     MongoClient,\r\n   } from \"https://deno.land/x/mongo@v0.29.0/mod.ts\";\r\n \r\n-  const client = new MongoClient();\r\n-const db = client.database(\"Database\")\r\n \r\n-await client.connect(\r\n-    \"mongodb+srv://Test:uTyAZp11kktRh3YH@cluster0/Deno?authMechanism=SCRAM-SHA-1\",\r\n-  );\r\n-  \r\n \r\n \r\n \r\n // Connecting to a Mongo Atlas Database\r\n-// await client.connect({\r\n-//   db: \"Deno\",\r\n-//   tls: true,\r\n-//   servers: [\r\n-//     {\r\n-//       host: \"mongodb+srv://Test:uTyAZp11kktRh3YH@cluster0.jjpui.mongodb.net/Database?retryWrites=true&w=majority\",\r\n-//       port: 27017,\r\n-//     },\r\n-//   ],\r\n-//   credential: {\r\n-//     username: \"PlantsForFriends\",\r\n-//     password: \"laptop-omen-viselike\",\r\n-//     db: \"Deno\",\r\n-//     mechanism: \"SCRAM-SHA-1\",\r\n-//   },\r\n-// });\r\n+await client.connect({\r\n+  db: \"Deno\",\r\n+  tls: true,\r\n+  servers: [\r\n+    {\r\n+      host: \"mongodb+srv://Test:uTyAZp11kktRh3YH@cluster0.jjpui.mongodb.net/Deno?retryWrites=true&w=majority\",\r\n+      port: 27017,\r\n+    },\r\n+  ],\r\n+  credential: {\r\n+    username: \"PlantsForFriends\",\r\n+    password: \"laptop-omen-viselike\",\r\n+    db: \"Deno\",\r\n+    mechanism: \"SCRAM-SHA-1\",\r\n+  },\r\n+});\r\n"
+                },
+                {
+                    "date": 1642624705812,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,20 +9,20 @@\n \r\n \r\n \r\n // Connecting to a Mongo Atlas Database\r\n-await client.connect({\r\n-  db: \"Deno\",\r\n-  tls: true,\r\n-  servers: [\r\n-    {\r\n-      host: \"mongodb+srv://Test:uTyAZp11kktRh3YH@cluster0.jjpui.mongodb.net/Deno?retryWrites=true&w=majority\",\r\n-      port: 27017,\r\n-    },\r\n-  ],\r\n-  credential: {\r\n-    username: \"PlantsForFriends\",\r\n-    password: \"laptop-omen-viselike\",\r\n-    db: \"Deno\",\r\n-    mechanism: \"SCRAM-SHA-1\",\r\n-  },\r\n-});\r\n+// await client.connect({\r\n+//   db: \"Deno\",\r\n+//   tls: true,\r\n+//   servers: [\r\n+//     {\r\n+//       host: \"mongodb+srv://Test:uTyAZp11kktRh3YH@cluster0.jjpui.mongodb.net/Deno?retryWrites=true&w=majority\",\r\n+//       port: 27017,\r\n+//     },\r\n+//   ],\r\n+//   credential: {\r\n+//     username: \"PlantsForFriends\",\r\n+//     password: \"laptop-omen-viselike\",\r\n+//     db: \"Deno\",\r\n+//     mechanism: \"SCRAM-SHA-1\",\r\n+//   },\r\n+// });\r\n"
+                },
+                {
+                    "date": 1642624744833,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \r\n import {\r\n     Bson,\r\n     MongoClient,\r\n-  } from \"https://deno.land/x/mongo@v0.29.0/mod.ts\";\r\n+  } from \"https://deno.land/x/mongo@v0.29.0\";\r\n \r\n \r\n \r\n \r\n"
+                },
+                {
+                    "date": 1642624758852,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \r\n import {\r\n     Bson,\r\n     MongoClient,\r\n-  } from \"https://deno.land/x/mongo@v0.29.0\";\r\n+  } from \"https://deno.land/x/mongo@v0.29.0/mod.ts\";\r\n \r\n \r\n \r\n \r\n"
+                },
+                {
+                    "date": 1642624960435,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,20 +9,20 @@\n \r\n \r\n \r\n // Connecting to a Mongo Atlas Database\r\n-// await client.connect({\r\n-//   db: \"Deno\",\r\n-//   tls: true,\r\n-//   servers: [\r\n-//     {\r\n-//       host: \"mongodb+srv://Test:uTyAZp11kktRh3YH@cluster0.jjpui.mongodb.net/Deno?retryWrites=true&w=majority\",\r\n-//       port: 27017,\r\n-//     },\r\n-//   ],\r\n-//   credential: {\r\n-//     username: \"PlantsForFriends\",\r\n-//     password: \"laptop-omen-viselike\",\r\n-//     db: \"Deno\",\r\n-//     mechanism: \"SCRAM-SHA-1\",\r\n-//   },\r\n-// });\r\n+await client.connect({\r\n+  db: \"Deno\",\r\n+  tls: true,\r\n+  servers: [\r\n+    {\r\n+      host: \"mongodb+srv://Test:uTyAZp11kktRh3YH@cluster0.jjpui.mongodb.net/Deno?retryWrites=true&w=majority\",\r\n+      port: 27017,\r\n+    },\r\n+  ],\r\n+  credential: {\r\n+    username: \"PlantsForFriends\",\r\n+    password: \"laptop-omen-viselike\",\r\n+    db: \"Deno\",\r\n+    mechanism: \"SCRAM-SHA-1\",\r\n+  },\r\n+});\r\n"
+                },
+                {
+                    "date": 1642624988527,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,9 @@\n     MongoClient,\r\n   } from \"https://deno.land/x/mongo@v0.29.0/mod.ts\";\r\n \r\n \r\n+  import { Client } from \"https://deno.land/x/mysql/mod.ts\";\r\n \r\n \r\n \r\n // Connecting to a Mongo Atlas Database\r\n"
+                },
+                {
+                    "date": 1642625001024,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n \r\n \r\n \r\n // Connecting to a Mongo Atlas Database\r\n-await client.connect({\r\n+await Client.connect({\r\n   db: \"Deno\",\r\n   tls: true,\r\n   servers: [\r\n     {\r\n"
+                },
+                {
+                    "date": 1642625095861,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,4 @@\n-//uTyAZp11kktRh3YH\r\n-\r\n import {\r\n     Bson,\r\n     MongoClient,\r\n   } from \"https://deno.land/x/mongo@v0.29.0/mod.ts\";\r\n@@ -10,9 +8,9 @@\n \r\n \r\n \r\n // Connecting to a Mongo Atlas Database\r\n-await Client.connect({\r\n+await MongoClient.connect({\r\n   db: \"Deno\",\r\n   tls: true,\r\n   servers: [\r\n     {\r\n@@ -26,4 +24,7 @@\n     db: \"Deno\",\r\n     mechanism: \"SCRAM-SHA-1\",\r\n   },\r\n });\r\n+\r\n+\r\n+//uTyAZp11kktRh3YH\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1642622741402,
+            "name": "Commit-0",
+            "content": "import {\r\n    Bson,\r\n    MongoClient,\r\n  } from \"https://deno.land/x/mongo@0.29.0/mod.ts\";\r\n\r\n  const client = new MongoClient();\r\n\r\n\r\n\r\n// Connecting to a Mongo Atlas Database\r\nawait client.connect({\r\n  db: \"Deno\",\r\n  tls: true,\r\n  servers: [\r\n    {\r\n      host: \"mongodb+srv://PlantsForFriends:<password>@cluster0.jjpui.mongodb.net/myFirstDatabase?retryWrites=true&w=majority\",\r\n      port: 27017,\r\n    },\r\n  ],\r\n  credential: {\r\n    username: \"PlantsForFriends\",\r\n    password: \"laptop-omen-viselike\",\r\n    db: \"Deno\",\r\n    mechanism: \"SCRAM-SHA-1\",\r\n  },\r\n});\r\n"
+        }
+    ]
+}

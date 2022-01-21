@@ -1,0 +1,30 @@
+{
+    "sourceFile": "Deno-Antoine/DB-Neu/test.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1642624405236,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1642624433146,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-const { MongoClient } = require('mongodb');\r\n+//const { MongoClient } = require('mongodb');\r\n const uri = \"mongodb+srv://Test:uTyAZp11kktRh3YH@cluster0.jjpui.mongodb.net/myFirstDatabase?retryWrites=true&w=majority\";\r\n const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });\r\n client.connect(err => {\r\n   const collection = client.db(\"test\").collection(\"devices\");\r\n"
+                },
+                {
+                    "date": 1642624471276,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,8 @@\n-//const { MongoClient } = require('mongodb');\r\n+\r\n+import { Client } from \"https://deno.land/x/mysql/mod.ts\";\r\n+\r\n+const { MongoClient } = require('mongodb');\r\n const uri = \"mongodb+srv://Test:uTyAZp11kktRh3YH@cluster0.jjpui.mongodb.net/myFirstDatabase?retryWrites=true&w=majority\";\r\n const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });\r\n client.connect(err => {\r\n   const collection = client.db(\"test\").collection(\"devices\");\r\n"
+                },
+                {
+                    "date": 1642624488172,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,9 @@\n \r\n-import { Client } from \"https://deno.land/x/mysql/mod.ts\";\r\n+import {\r\n+    Bson,\r\n+    MongoClient,\r\n+  } from \"https://deno.land/x/mongo@v0.29.0/mod.ts\";\r\n \r\n const { MongoClient } = require('mongodb');\r\n const uri = \"mongodb+srv://Test:uTyAZp11kktRh3YH@cluster0.jjpui.mongodb.net/myFirstDatabase?retryWrites=true&w=majority\";\r\n const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });\r\n"
+                }
+            ],
+            "date": 1642624405235,
+            "name": "Commit-0",
+            "content": "const { MongoClient } = require('mongodb');\r\nconst uri = \"mongodb+srv://Test:uTyAZp11kktRh3YH@cluster0.jjpui.mongodb.net/myFirstDatabase?retryWrites=true&w=majority\";\r\nconst client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });\r\nclient.connect(err => {\r\n  const collection = client.db(\"test\").collection(\"devices\");\r\n  // perform actions on the collection object\r\n  client.close();\r\n});"
+        }
+    ]
+}

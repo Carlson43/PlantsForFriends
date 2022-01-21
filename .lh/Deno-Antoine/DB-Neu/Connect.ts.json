@@ -1,0 +1,38 @@
+{
+    "sourceFile": "Deno-Antoine/DB-Neu/Connect.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1642621476297,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1642621539498,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,5 +6,10 @@\n   username: \"PlantsForFriends\",\r\n   password: \"laptop-omen-viselike\",\r\n });\r\n \r\n-console.log(client)\n\\ No newline at end of file\n+console.log(client)\r\n+\r\n+async function createDatabase(dbname: Data) {\r\n+    console.log(\"Creating database\");\r\n+    await client.execute(`CREATE DATABASE IF NOT EXISTS ${dbname}`);\r\n+  }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642621555248,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,8 @@\n });\r\n \r\n console.log(client)\r\n \r\n-async function createDatabase(dbname: Data) {\r\n+async function createDatabase(dbname: \"Data\") {\r\n     console.log(\"Creating database\");\r\n     await client.execute(`CREATE DATABASE IF NOT EXISTS ${dbname}`);\r\n   }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642621653667,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,10 +6,10 @@\n   username: \"PlantsForFriends\",\r\n   password: \"laptop-omen-viselike\",\r\n });\r\n \r\n-console.log(client)\r\n-\r\n async function createDatabase(dbname: \"Data\") {\r\n     console.log(\"Creating database\");\r\n     await client.execute(`CREATE DATABASE IF NOT EXISTS ${dbname}`);\r\n-  }\n\\ No newline at end of file\n+  }\r\n+\r\n+  await createDatabase(\"Data\");\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642621739153,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,5 +11,6 @@\n     console.log(\"Creating database\");\r\n     await client.execute(`CREATE DATABASE IF NOT EXISTS ${dbname}`);\r\n   }\r\n \r\n-  await createDatabase(\"Data\");\n\\ No newline at end of file\n+\r\n+  await createDatabase(\"blogs\");\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1642621810740,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,5 +12,5 @@\n     await client.execute(`CREATE DATABASE IF NOT EXISTS ${dbname}`);\r\n   }\r\n \r\n \r\n-  await createDatabase(\"blogs\");\n\\ No newline at end of file\n+  await createDatabase(\"Data\");\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1642621476297,
+            "name": "Commit-0",
+            "content": "\r\nimport { Client } from \"https://deno.land/x/mysql/mod.ts\";\r\n\r\nconst client = await new Client().connect({\r\n  hostname: \"127.0.0.1\",\r\n  username: \"PlantsForFriends\",\r\n  password: \"laptop-omen-viselike\",\r\n});\r\n\r\nconsole.log(client)"
+        }
+    ]
+}
