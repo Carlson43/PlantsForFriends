@@ -14,7 +14,7 @@ Password: appeasing1-endurable-rectal
 
 ## Github
 Email:  plant4friends@gmail.com \
-Password: dreadful-fame9-presuming \
+Password: dreadful-fame9-presuming
 
 ## MongoDB
 wie google hehe
