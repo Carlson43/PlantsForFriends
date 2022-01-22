@@ -1,7 +1,6 @@
 # Logins
 
 ## Google:
-
 Email: plant4friends@gmail.com \
 Password: laptop-omen-viselike \
 Name: Echter Name \
@@ -18,3 +17,7 @@ Password: dreadful-fame9-presuming
 
 ## MongoDB
 wie google hehe
+
+## Vercel.com
+Email: plant4friends@gmail.com \
+Telefon: Felix (0176 66526640)
