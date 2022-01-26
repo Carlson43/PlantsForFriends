@@ -4,15 +4,20 @@
 
     let searchTerm = '';
     const search = event => {
-        searchTerm = event.target.value;
         
-        if (searchTerm) {
-        dispatch('search', {
-            searchTerm,
-        });
-        } else {
-        dispatch('clearSearch', {});
-        }
+        if (!searchTerm){
+            alert('Enter a search term first.')
+        }else{
+            searchTerm = event.target.value;
+        
+            if (searchTerm) {
+                dispatch('search', {
+                searchTerm,
+            });
+            } else {
+                dispatch('clearSearch', {});
+            }
+        }     
     }
 </script>
 

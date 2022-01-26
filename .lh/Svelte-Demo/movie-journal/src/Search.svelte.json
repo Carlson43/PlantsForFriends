@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 3,
+            "activePatchIndex": 4,
             "patches": [
                 {
                     "date": 1642513748785,
@@ -20,6 +20,10 @@
                 {
                     "date": 1642514462984,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,27 +1,30 @@\n <script>\r\n+    import { createEventDispatcher } from 'svelte';\r\n+    const dispatch = createEventDispatcher();\r\n+\r\n     let searchTerm = '';\r\n-\r\n     const search = event => {\r\n         searchTerm = event.target.value;\r\n-\r\n+        \r\n         if (searchTerm) {\r\n-            dispatchEvent('search', {\r\n-                searchTerm\r\n-            });\r\n+        dispatch('search', {\r\n+            searchTerm,\r\n+        });\r\n         } else {\r\n-            dispatch('clearSearch', {});\r\n+        dispatch('clearSearch', {});\r\n         }\r\n     }\r\n </script>\r\n \r\n-<input\r\n+\r\n+<input \r\n     placeholder=\"Search Your Movies\" \r\n     value={searchTerm}\r\n     on:keyup={search}\r\n />\r\n \r\n <style>\r\n-    input{\r\n+    input {\r\n         width: 100%;\r\n     }\r\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1643212869932,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,17 +3,22 @@\n     const dispatch = createEventDispatcher();\r\n \r\n     let searchTerm = '';\r\n     const search = event => {\r\n-        searchTerm = event.target.value;\r\n         \r\n-        if (searchTerm) {\r\n-        dispatch('search', {\r\n-            searchTerm,\r\n-        });\r\n-        } else {\r\n-        dispatch('clearSearch', {});\r\n-        }\r\n+        if (!searchTerm){\r\n+            alert('Enter a search term first.')\r\n+        }else{\r\n+            searchTerm = event.target.value;\r\n+        \r\n+            if (searchTerm) {\r\n+                dispatch('search', {\r\n+                searchTerm,\r\n+            });\r\n+            } else {\r\n+                dispatch('clearSearch', {});\r\n+            }\r\n+        }     \r\n     }\r\n </script>\r\n \r\n \r\n"
                 }
             ],
             "date": 1642513748785,
