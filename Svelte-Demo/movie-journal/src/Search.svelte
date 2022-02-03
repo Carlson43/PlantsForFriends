@@ -5,9 +5,9 @@
     let searchTerm = '';
     const search = event => {
         
-        if (!searchTerm){
-            alert('Enter a search term first.')
-        }else{
+        // if (!searchTerm){
+        //     alert('Enter a search term first.')
+        // }else{
             searchTerm = event.target.value;
         
             if (searchTerm) {
@@ -17,7 +17,7 @@
             } else {
                 dispatch('clearSearch', {});
             }
-        }     
+        // }     
     }
 </script>
 

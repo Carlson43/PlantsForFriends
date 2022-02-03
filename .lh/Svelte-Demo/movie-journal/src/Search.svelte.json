@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 4,
+            "activePatchIndex": 6,
             "patches": [
                 {
                     "date": 1642513748785,
@@ -24,6 +24,14 @@
                 {
                     "date": 1643212869932,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,17 +3,22 @@\n     const dispatch = createEventDispatcher();\r\n \r\n     let searchTerm = '';\r\n     const search = event => {\r\n-        searchTerm = event.target.value;\r\n         \r\n-        if (searchTerm) {\r\n-        dispatch('search', {\r\n-            searchTerm,\r\n-        });\r\n-        } else {\r\n-        dispatch('clearSearch', {});\r\n-        }\r\n+        if (!searchTerm){\r\n+            alert('Enter a search term first.')\r\n+        }else{\r\n+            searchTerm = event.target.value;\r\n+        \r\n+            if (searchTerm) {\r\n+                dispatch('search', {\r\n+                searchTerm,\r\n+            });\r\n+            } else {\r\n+                dispatch('clearSearch', {});\r\n+            }\r\n+        }     \r\n     }\r\n </script>\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1643213923582,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,10 +5,10 @@\n     let searchTerm = '';\r\n     const search = event => {\r\n         \r\n         if (!searchTerm){\r\n-            alert('Enter a search term first.')\r\n-        }else{\r\n+        //     alert('Enter a search term first.')\r\n+        // }else{\r\n             searchTerm = event.target.value;\r\n         \r\n             if (searchTerm) {\r\n                 dispatch('search', {\r\n@@ -16,9 +16,9 @@\n             });\r\n             } else {\r\n                 dispatch('clearSearch', {});\r\n             }\r\n-        }     \r\n+        // }     \r\n     }\r\n </script>\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1643213989823,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \r\n     let searchTerm = '';\r\n     const search = event => {\r\n         \r\n-        if (!searchTerm){\r\n+        // if (!searchTerm){\r\n         //     alert('Enter a search term first.')\r\n         // }else{\r\n             searchTerm = event.target.value;\r\n         \r\n"
                 }
             ],
             "date": 1642513748785,
