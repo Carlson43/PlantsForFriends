@@ -1,12 +1,11 @@
 <script>
-    import { data } from 'data.example.js'  
-    import { Datatable } from 'svelte-simple-datatables'
-
+    import json from './MOCK_DATA.json'; 
+    // import { JSONEditor } from 'svelte-jsoneditor'
     const settings = { columnFilter: true }
     let rows
 </script>
 
-<Datatable settings={settings} data={data} bind:dataRows={rows}>
+<!-- <Datatable settings={settings} data={data} bind:dataRows={rows}>
     <thead>
         <th data-key="first_name">First Name</th>
         <th data-key="last_name">Last Name</th>
@@ -23,8 +22,8 @@
         {/each}
     {/if}
     </tbody>
-</Datatable>
+</Datatable> -->
 
 <style>
-    td{text-align:center;padding:4px 0}
+    /* td{text-align:center;padding:4px 0} */
 </style>
