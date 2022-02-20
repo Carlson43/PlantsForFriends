@@ -40,6 +40,7 @@ Die verschiedenen Funktionen (Suchen, Objekt hinzufügen und Anzeigen der vorhan
 - Deno-Module
 - Node.js
 - Svelte-Module
+- Tailwind und CSS
 
 Nachzusehen unter:
 - https://github.com/plants-for-friends/movie-ratings
