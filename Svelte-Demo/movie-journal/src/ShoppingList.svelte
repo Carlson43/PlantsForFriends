@@ -7,7 +7,7 @@
   <!-- List Element -->
   <div>
     <h3>{shopping.title}</h3>
-    <p>Your Rating: {shopping.quantity}</p>
+    <p>Your Quantity: {shopping.quantity}</p>
   </div>
 {/each}
 

@@ -12,7 +12,7 @@
     }
 
     // update number
-    const onRatingSelect = e => {
+    const onQuantitySelect = e => {
         quantity = e.target.value;
     }
 
@@ -43,7 +43,7 @@
     />
   
     <!-- Add number -->
-    <input class="num_input" type="number" value={quantity} on:change={onRatingSelect}>
+    <input class="num_input" type="number" value={quantity} on:change={onQuantitySelect}>
   
     <!-- Submit values and execut function to create new object -->
     <button on:click={submitShopping} disabled={!title}>Submit</button>
