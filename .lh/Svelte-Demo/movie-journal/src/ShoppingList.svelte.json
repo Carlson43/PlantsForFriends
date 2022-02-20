@@ -1,0 +1,18 @@
+{
+    "sourceFile": "Svelte-Demo/movie-journal/src/ShoppingList.svelte",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1645357765651,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1645357765651,
+            "name": "Commit-0",
+            "content": "<script>\r\n  export let shoppings;\r\n</script>\r\n\r\n<!-- Diplay for every object -->\r\n{#each shoppings as shopping (shopping.title)}\r\n  <!-- List Element -->\r\n  <div>\r\n    <h3>{shopping.title}</h3>\r\n    <p>Quantity: {shopping.quantity}</p>\r\n  </div>\r\n{/each}\r\n\r\n<!-- Styling -->\r\n<style>\r\n  div {\r\n    text-align: left;\r\n    padding-bottom: 10px;\r\n    border-bottom: 1px solid black;\r\n  }\r\n</style>"
+        }
+    ]
+}
