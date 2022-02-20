@@ -11,7 +11,8 @@ Führe folgende Commandlineaufrufe durch:
 npm install
 npm run dev
 ```
-Die Webseite wird angezeigt.
+Über Local-Host wird die Webseite gestartet.
+Nach Klick auf die Host-Adresse wird die Webseite angezeigt.
 
 # Interagieren mit dem Programm:
 Mit der Suchleiste kann nach Elementen der Einkaufsliste gesucht werden.
@@ -20,9 +21,9 @@ Mit dem Klicken auf dem Button hinzufügen wird dieses im Cloud-Storage gespeich
 Unten werden immer alle Elemente der Einkaufsliste angezeigt.
 
 # Support:
-Sollte etwas nicht funktionieren, bitte einen Issue öffen,
-um den wir uns kümmern können.
+Sollte etwas nicht funktionieren, bitte ein Issue öffen,
+um das wir uns kümmern können.
 
 # Funktionsweise:
-Mit Svelte wurde die Ansicht und die Funktionen, die die Cloud-Datenbank callen erstellt.
+Mit Svelte wurde die Ansicht und die Funktionen, die eine lokal gespeicherte json-Datei steuern, erstellt.
 Die verschiedenen Funktionen (Suchen, Objekt hinzufügen und Anzeigen der vorhandenen Objekte) sind in .Svelte Modulen untergebracht, welche über die Hauptapp gesteuert werden.
