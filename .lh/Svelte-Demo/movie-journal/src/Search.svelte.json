@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 6,
+            "activePatchIndex": 10,
             "patches": [
                 {
                     "date": 1642513748785,
@@ -32,6 +32,22 @@
                 {
                     "date": 1643213989823,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \r\n     let searchTerm = '';\r\n     const search = event => {\r\n         \r\n-        if (!searchTerm){\r\n+        // if (!searchTerm){\r\n         //     alert('Enter a search term first.')\r\n         // }else{\r\n             searchTerm = event.target.value;\r\n         \r\n"
+                },
+                {
+                    "date": 1645356497636,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,12 +3,8 @@\n     const dispatch = createEventDispatcher();\r\n \r\n     let searchTerm = '';\r\n     const search = event => {\r\n-        \r\n-        // if (!searchTerm){\r\n-        //     alert('Enter a search term first.')\r\n-        // }else{\r\n             searchTerm = event.target.value;\r\n         \r\n             if (searchTerm) {\r\n                 dispatch('search', {\r\n"
+                },
+                {
+                    "date": 1645356552683,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,16 +1,19 @@\n <script>\r\n     import { createEventDispatcher } from 'svelte';\r\n     const dispatch = createEventDispatcher();\r\n \r\n+    // define search term\r\n     let searchTerm = '';\r\n     const search = event => {\r\n             searchTerm = event.target.value;\r\n-        \r\n+\r\n+            // If term exists, search\r\n             if (searchTerm) {\r\n                 dispatch('search', {\r\n                 searchTerm,\r\n             });\r\n+            // Else clearSearch\r\n             } else {\r\n                 dispatch('clearSearch', {});\r\n             }\r\n         // }     \r\n@@ -18,9 +21,9 @@\n </script>\r\n \r\n \r\n <input \r\n-    placeholder=\"Search Your Movies\" \r\n+    placeholder=\"Search Your Items\" \r\n     value={searchTerm}\r\n     on:keyup={search}\r\n />\r\n \r\n"
+                },
+                {
+                    "date": 1645356680727,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n         // }     \r\n     }\r\n </script>\r\n \r\n-\r\n+<!-- Search Input -->\r\n <input \r\n     placeholder=\"Search Your Items\" \r\n     value={searchTerm}\r\n     on:keyup={search}\r\n"
+                },
+                {
+                    "date": 1645356751739,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,8 +26,9 @@\n     value={searchTerm}\r\n     on:keyup={search}\r\n />\r\n \r\n+<!-- Styling -->\r\n <style>\r\n     input {\r\n         width: 100%;\r\n     }\r\n"
                 }
             ],
             "date": 1642513748785,

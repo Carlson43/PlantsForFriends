@@ -2,18 +2,17 @@
     import { createEventDispatcher } from 'svelte';
     const dispatch = createEventDispatcher();
 
+    // define search term
     let searchTerm = '';
     const search = event => {
-        
-        // if (!searchTerm){
-        //     alert('Enter a search term first.')
-        // }else{
             searchTerm = event.target.value;
-        
+
+            // If term exists, search
             if (searchTerm) {
                 dispatch('search', {
                 searchTerm,
             });
+            // Else clearSearch
             } else {
                 dispatch('clearSearch', {});
             }
@@ -21,13 +20,14 @@
     }
 </script>
 
-
+<!-- Search Input -->
 <input 
-    placeholder="Search Your Movies" 
+    placeholder="Search Your Items" 
     value={searchTerm}
     on:keyup={search}
 />
 
+<!-- Styling -->
 <style>
     input {
         width: 100%;

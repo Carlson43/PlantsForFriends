@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 5,
+            "activePatchIndex": 7,
             "patches": [
                 {
                     "date": 1642511485726,
@@ -28,6 +28,14 @@
                 {
                     "date": 1642511914499,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,18 +1,18 @@\n <script>\r\n-    export let movies;\r\n-  </script>\r\n-  \r\n-  {#each movies as movie (movie.title)}\r\n-    <div>\r\n-      <h3>{movie.title}</h3>\r\n-      <p>Your Rating: {movie.rating}</p>\r\n-    </div>\r\n-  {/each}\r\n-  \r\n-  <style>\r\n-    div {\r\n-      text-align: left;\r\n-      padding-bottom: 10px;\r\n-      border-bottom: 1px solid black;\r\n-    }\r\n-  </style>\n\\ No newline at end of file\n+  export let movies;\r\n+</script>\r\n+\r\n+{#each movies as movie (movie.title)}\r\n+  <div>\r\n+    <h3>{movie.title}</h3>\r\n+    <p>Your Rating: {movie.rating}</p>\r\n+  </div>\r\n+{/each}\r\n+\r\n+<style>\r\n+  div {\r\n+    text-align: left;\r\n+    padding-bottom: 10px;\r\n+    border-bottom: 1px solid black;\r\n+  }\r\n+</style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1645356266551,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,15 +1,17 @@\n <script>\r\n   export let movies;\r\n </script>\r\n \r\n+<!-- Diplay for every object -->\r\n {#each movies as movie (movie.title)}\r\n   <div>\r\n     <h3>{movie.title}</h3>\r\n     <p>Your Rating: {movie.rating}</p>\r\n   </div>\r\n {/each}\r\n \r\n+<!-- Styling -->\r\n <style>\r\n   div {\r\n     text-align: left;\r\n     padding-bottom: 10px;\r\n"
+                },
+                {
+                    "date": 1645356325712,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,9 @@\n </script>\r\n \r\n <!-- Diplay for every object -->\r\n {#each movies as movie (movie.title)}\r\n+  <!-- List Element -->\r\n   <div>\r\n     <h3>{movie.title}</h3>\r\n     <p>Your Rating: {movie.rating}</p>\r\n   </div>\r\n"
                 }
             ],
             "date": 1642511485726,
