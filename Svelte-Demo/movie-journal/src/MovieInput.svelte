@@ -35,13 +35,7 @@
       on:keyup={onTitleChange}
     />
   
-    <select value={rating} on:change={onRatingSelect}>
-      <option value={1}>1</option>
-      <option value={2}>2</option>
-      <option value={3}>3</option>
-      <option value={4}>4</option>
-      <option value={5}>5</option>
-    </select>
+    <input type="number" value={rating} on:change={onRatingSelect}>
   
     <button on:click={submitMovie} disabled={!title}>Submit</button>
   </div>
