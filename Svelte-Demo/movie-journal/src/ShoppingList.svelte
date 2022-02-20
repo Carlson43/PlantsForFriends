@@ -4,8 +4,8 @@
 
 {#each movies as movie (movie.title)}
   <div>
-    <h3>{movie.title}</h3>
-    <p>Your Rating: {movie.rating}</p>
+    <h3>{shopping.title}</h3>
+    <p>Quantity: {shopping.quantity}</p>
   </div>
 {/each}
 
