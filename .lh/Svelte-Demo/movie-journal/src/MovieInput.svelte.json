@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 17,
+            "activePatchIndex": 21,
             "patches": [
                 {
                     "date": 1642503070674,
@@ -76,6 +76,22 @@
                 {
                     "date": 1645352907198,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,16 +34,8 @@\n       value={title}\r\n       on:keyup={onTitleChange}\r\n     />\r\n   \r\n-    <!-- <select value={rating} on:change={onRatingSelect}>\r\n-      <option value={1}>1</option>\r\n-      <option value={2}>2</option>\r\n-      <option value={3}>3</option>\r\n-      <option value={4}>4</option>\r\n-      <option value={5}>5</option>\r\n-    </select> -->\r\n-\r\n     <input type=\"number\" value={rating} on:change={onRatingSelect}>\r\n   \r\n     <button on:click={submitMovie} disabled={!title}>Submit</button>\r\n   </div>\r\n"
+                },
+                {
+                    "date": 1645353026625,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n       value={title}\r\n       on:keyup={onTitleChange}\r\n     />\r\n   \r\n-    <input type=\"number\" value={rating} on:change={onRatingSelect}>\r\n+    <input class=\"num-input\" type=\"number\" value={rating} on:change={onRatingSelect}>\r\n   \r\n     <button on:click={submitMovie} disabled={!title}>Submit</button>\r\n   </div>\r\n   \r\n@@ -47,9 +47,9 @@\n     }\r\n     .main input {\r\n       flex: 1;\r\n     }\r\n-    .main select {\r\n+    .main num-input {\r\n       width: 75px;\r\n       margin-right: 10px;\r\n       margin-left: 10px;\r\n     }\r\n"
+                },
+                {
+                    "date": 1645353083767,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n       value={title}\r\n       on:keyup={onTitleChange}\r\n     />\r\n   \r\n-    <input class=\"num-input\" type=\"number\" value={rating} on:change={onRatingSelect}>\r\n+    <input class=\"num_input\" type=\"number\" value={rating} on:change={onRatingSelect}>\r\n   \r\n     <button on:click={submitMovie} disabled={!title}>Submit</button>\r\n   </div>\r\n   \r\n@@ -47,9 +47,9 @@\n     }\r\n     .main input {\r\n       flex: 1;\r\n     }\r\n-    .main num-input {\r\n+    .main num_input {\r\n       width: 75px;\r\n       margin-right: 10px;\r\n       margin-left: 10px;\r\n     }\r\n"
+                },
+                {
+                    "date": 1645353168474,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,9 +47,9 @@\n     }\r\n     .main input {\r\n       flex: 1;\r\n     }\r\n-    .main num_input {\r\n+    .main.num_input {\r\n       width: 75px;\r\n       margin-right: 10px;\r\n       margin-left: 10px;\r\n     }\r\n"
+                },
+                {
+                    "date": 1645353197190,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,9 +47,9 @@\n     }\r\n     .main input {\r\n       flex: 1;\r\n     }\r\n-    .main.num_input {\r\n+    .main input.num_input {\r\n       width: 75px;\r\n       margin-right: 10px;\r\n       margin-left: 10px;\r\n     }\r\n"
                 }
             ],
             "date": 1642503070674,

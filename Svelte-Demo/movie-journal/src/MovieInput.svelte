@@ -35,7 +35,7 @@
       on:keyup={onTitleChange}
     />
   
-    <input type="number" value={rating} on:change={onRatingSelect}>
+    <input class="num_input" type="number" value={rating} on:change={onRatingSelect}>
   
     <button on:click={submitMovie} disabled={!title}>Submit</button>
   </div>
@@ -48,7 +48,7 @@
     .main input {
       flex: 1;
     }
-    .main select {
+    .main input.num_input {
       width: 75px;
       margin-right: 10px;
       margin-left: 10px;
