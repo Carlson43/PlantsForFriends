@@ -1,36 +1,3 @@
-<!-- <script>
-	function listAllData()
-{
-    var jsonstring=$("#jsonstring").val();
-    console.log("Hi!");
-    $.get("https://webtechlecture.appspot.com/cloudstore/listobjects?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_",function(response)
-    {
-    console.log(response);
-    });
-}
-
-function addAll()
-{
-    var jsonstring=  
-    
-    '{"Titel":"'+$("#Ad_heading").val()+'",'+
-    '"Pflanzenart":"'+$("#Ad_species").val()+'",'+
-    '"Beschreibung":"'+$("#Ad_description").val()+'",'+
-    '"Email":"'+$("#Ad_contact").val()+'",'+
-    '"Preis":"'+$("#Ad_price").val()+'",'+
-    '"lat":"'+lat[0].lat+'",'+
-    '"lng":"'+lat[0].lng+
-
-    '"}';
-    console.log("add"+ jsonstring);
-    $.get("https://webtechlecture.appspot.com/cloudstore/add?owner=s201655&token=dMinmYeldeDsBbu0iiEIPGTPws0_&jsonstring="+encodeURI(jsonstring),function(response)
-    {
-    console.log(response);
-    });
-}
-
-</script> -->
-
 <script>
 	import MovieInput from './MovieInput.svelte';
 	import MovieList from './MovieList.svelte';
