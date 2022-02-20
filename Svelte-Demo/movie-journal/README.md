@@ -17,7 +17,7 @@ Nach Klick auf die Host-Adresse wird die Webseite angezeigt.
 # Interagieren mit dem Programm:
 Mit der Suchleiste kann nach Elementen der Einkaufsliste gesucht werden.
 Mit dem Feldern Artikel und Anzahl kann ein Element erstellt werden.
-Mit dem Klicken auf dem Button hinzufügen wird dieses im Cloud-Storage gespeichert.
+Mit dem Klicken auf den Button hinzufügen wird dieses in einer lokalen JSON-Datei gespeichert.
 Unten werden immer alle Elemente der Einkaufsliste angezeigt.
 
 # Support:
