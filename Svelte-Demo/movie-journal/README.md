@@ -27,3 +27,22 @@ um das wir uns kümmern können.
 # Funktionsweise:
 Mit Svelte wurde die Ansicht und die Funktionen, die eine lokal gespeicherte json-Datei steuern, erstellt.
 Die verschiedenen Funktionen (Suchen, Objekt hinzufügen und Anzeigen der vorhandenen Objekte) sind in .Svelte Modulen untergebracht, welche über die Hauptapp gesteuert werden.
+
+# Ansätze:
+- Svelte
+- Sveltekit
+- Deno
+- Snel
+- local Storage
+- MongoDB (Deno und Svelte)
+- cloudstore
+- SQLite
+- Deno-Module
+- Node.js
+- Svelte-Module
+- Tailwind und CSS
+
+Nachzusehen unter:
+- https://github.com/plants-for-friends/movie-ratings
+- https://github.com/plants-for-friends/plant-exchange
+- alle Branches in diesem Repo
