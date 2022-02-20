@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 7,
+            "activePatchIndex": 8,
             "patches": [
                 {
                     "date": 1642511485726,
@@ -36,6 +36,10 @@
                 {
                     "date": 1645356325712,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,9 @@\n </script>\r\n \r\n <!-- Diplay for every object -->\r\n {#each movies as movie (movie.title)}\r\n+  <!-- List Element -->\r\n   <div>\r\n     <h3>{movie.title}</h3>\r\n     <p>Your Rating: {movie.rating}</p>\r\n   </div>\r\n"
+                },
+                {
+                    "date": 1645357476633,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,14 @@\n <script>\r\n-  export let movies;\r\n+  export let shoppings;\r\n </script>\r\n \r\n <!-- Diplay for every object -->\r\n-{#each movies as movie (movie.title)}\r\n+{#each shoppings as shopping (shopping.title)}\r\n   <!-- List Element -->\r\n   <div>\r\n-    <h3>{movie.title}</h3>\r\n-    <p>Your Rating: {movie.rating}</p>\r\n+    <h3>{shopping.title}</h3>\r\n+    <p>Your Rating: {shopping.quantity}</p>\r\n   </div>\r\n {/each}\r\n \r\n <!-- Styling -->\r\n"
                 }
             ],
             "date": 1642511485726,

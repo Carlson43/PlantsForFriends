@@ -1,13 +1,13 @@
 <script>
-  export let movies;
+  export let shoppings;
 </script>
 
 <!-- Diplay for every object -->
-{#each movies as movie (movie.title)}
+{#each shoppings as shopping (shopping.title)}
   <!-- List Element -->
   <div>
-    <h3>{movie.title}</h3>
-    <p>Your Rating: {movie.rating}</p>
+    <h3>{shopping.title}</h3>
+    <p>Your Rating: {shopping.quantity}</p>
   </div>
 {/each}
 

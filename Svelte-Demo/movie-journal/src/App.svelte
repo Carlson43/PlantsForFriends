@@ -1,48 +1,48 @@
 <script>
-	import MovieInput from './MovieInput.svelte';
-	import MovieList from './MovieList.svelte';
+	import ShoppingInput from './ShoppingInput.svelte';
+	import ShoppingList from './ShoppingList.svelte';
 	import Search from './Search.svelte';
 
 	// create local storage
-	let movies = localStorage.getItem('movies') ? 
-	  JSON.parse(localStorage.getItem('movies')) : 
+	let shoppings = localStorage.getItem('shoppings') ? 
+	  JSON.parse(localStorage.getItem('shoppings')) : 
 	  [];
 
 	// add new entrie
-	const submitMovie = movie => {
-	  const updatedMovies = [ ...movies, movie ];
-	  localStorage.setItem('movies', JSON.stringify(updatedMovies));
-	  movies = updatedMovies;
+	const submitShopping = shopping => {
+	  const updatedShoppings = [ ...shoppings, shopping ];
+	  localStorage.setItem('shoppings', JSON.stringify(updatedShoppings));
+	  shoppings = updatedShoppings;
 	}
 
-	// reset movies when search is cleared
+	// reset shoppings when search is cleared
 	const clearSearch = () => {
-	  movies = localStorage.getItem('movies') ? 
-		JSON.parse(localStorage.getItem('movies')) : 
+	  shoppings = localStorage.getItem('shoppings') ? 
+		JSON.parse(localStorage.getItem('shoppings')) : 
 		[];
 	};
 
 	// search
 	// Create copy of all entries
 	const search = searchTerm => {
-	  const tempMovies = localStorage.getItem('movies') ? 
-		JSON.parse(localStorage.getItem('movies')) : 
+	  const tempShoppings = localStorage.getItem('shoppings') ? 
+		JSON.parse(localStorage.getItem('shoppings')) : 
 		[];
    
 	// Search trough copy with filter method
-	  movies = tempMovies.filter(m => 
+	  shoppings = tempShoppings.filter(m => 
 		m.title.toLowerCase().includes(searchTerm.toLowerCase()));
 	};
   </script>
   
   <!-- Create main body of application -->
   <div class='main'>
-	<h1>Movie Journal</h1>
+	<h1>Shopping List</h1>
   
 	<!-- external Components -->
 	<Search on:search={event => search(event.detail.searchTerm)} on:clearSearch={clearSearch} />	<!--  -->
-	<MovieInput on:submitMovie={event => submitMovie(event.detail.movie)} />	<!-- Create new entries, with data from Input element -->
-	<MovieList movies={movies} />	<!-- Display list with entries from variable -->
+	<ShoppingInput on:submitShopping={event => submitShopping(event.detail.shopping)} />	<!-- Create new entries, with data from Input element -->
+	<ShoppingList shoppings={shoppings} />	<!-- Display list with entries from variable -->
   </div>
   
   <!-- Sytling -->

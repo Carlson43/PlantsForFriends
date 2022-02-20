@@ -4,7 +4,7 @@
 
     // create variables
     let title ='';
-    let rating = 1;
+    let quantity = 1;
 
     // update title
     const onTitleChange = e => {
@@ -13,21 +13,21 @@
 
     // update number
     const onRatingSelect = e => {
-        rating = e.target.value;
+        quantity = e.target.value;
     }
 
     // create new object to be added
-    const submitMovie = () => {
+    const submitShopping = () => {
         if (title) {
-        dispatch('submitMovie', {
-            movie: {
+        dispatch('submitShopping', {
+            shopping: {
             title,
-            rating,
+            quantity,
             }
         });
         // reset variables
         title = '';
-        rating = 1;
+        quantity = 1;
         }
     }
 </script>
@@ -43,10 +43,10 @@
     />
   
     <!-- Add number -->
-    <input class="num_input" type="number" value={rating} on:change={onRatingSelect}>
+    <input class="num_input" type="number" value={quantity} on:change={onRatingSelect}>
   
     <!-- Submit values and execut function to create new object -->
-    <button on:click={submitMovie} disabled={!title}>Submit</button>
+    <button on:click={submitShopping} disabled={!title}>Submit</button>
   </div>
   
   <!-- Styling -->
