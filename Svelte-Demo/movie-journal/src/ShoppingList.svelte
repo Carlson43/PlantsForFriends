@@ -1,14 +1,17 @@
 <script>
-  export let movies;
+  export let shoppings;
 </script>
 
-{#each movies as movie (movie.title)}
+<!-- Diplay for every object -->
+{#each shoppings as shopping (shopping.title)}
+  <!-- List Element -->
   <div>
     <h3>{shopping.title}</h3>
     <p>Quantity: {shopping.quantity}</p>
   </div>
 {/each}
 
+<!-- Styling -->
 <style>
   div {
     text-align: left;
