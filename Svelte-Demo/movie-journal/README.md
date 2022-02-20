@@ -40,3 +40,8 @@ Die verschiedenen Funktionen (Suchen, Objekt hinzufügen und Anzeigen der vorhan
 - Deno-Module
 - Node.js
 - Svelte-Module
+
+Nachzusehen unter:
+- https://github.com/plants-for-friends/movie-ratings
+- https://github.com/plants-for-friends/plant-exchange
+- alle Branches in diesem Repo
