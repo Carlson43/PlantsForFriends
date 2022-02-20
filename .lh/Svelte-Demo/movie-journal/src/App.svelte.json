@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 24,
+            "activePatchIndex": 25,
             "patches": [
                 {
                     "date": 1642502499444,
@@ -104,6 +104,10 @@
                 {
                     "date": 1645355589162,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \timport MovieInput from './MovieInput.svelte';\r\n \timport MovieList from './MovieList.svelte';\r\n \timport Search from './Search.svelte';\r\n \r\n-\t// \r\n+\t// create local storage\r\n \tlet movies = localStorage.getItem('movies') ? \r\n \t  JSON.parse(localStorage.getItem('movies')) : \r\n \t  [];\r\n \r\n"
+                },
+                {
+                    "date": 1645355956770,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,11 +39,11 @@\n   <div class='main'>\r\n \t<h1>Movie Journal</h1>\r\n   \r\n \t<!-- external Components -->\r\n-\t<Search on:search={event => search(event.detail.searchTerm)} on:clearSearch={clearSearch} />\r\n-\t<MovieInput on:submitMovie={event => submitMovie(event.detail.movie)} />\r\n-\t<MovieList movies={movies} />\r\n+\t<Search on:search={event => search(event.detail.searchTerm)} on:clearSearch={clearSearch} />\t<!--  -->\r\n+\t<MovieInput on:submitMovie={event => submitMovie(event.detail.movie)} />\t<!-- Create new entries, with data from Input element -->\r\n+\t<MovieList movies={movies} />\t<!-- Display list with entries from variable -->\r\n   </div>\r\n   \r\n   <!-- Sytling -->\r\n   <style>\r\n"
                 }
             ],
             "date": 1642502499444,

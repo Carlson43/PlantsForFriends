@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 21,
+            "activePatchIndex": 23,
             "patches": [
                 {
                     "date": 1642503070674,
@@ -92,6 +92,14 @@
                 {
                     "date": 1645353197190,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,9 +47,9 @@\n     }\r\n     .main input {\r\n       flex: 1;\r\n     }\r\n-    .main.num_input {\r\n+    .main input.num_input {\r\n       width: 75px;\r\n       margin-right: 10px;\r\n       margin-left: 10px;\r\n     }\r\n"
+                },
+                {
+                    "date": 1645355802965,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,36 +1,43 @@\n <script>\r\n     import { createEventDispatcher } from 'svelte';\r\n     const dispatch = createEventDispatcher();\r\n \r\n+    // create variables\r\n     let title ='';\r\n     let rating = 1;\r\n \r\n+    // update title\r\n     const onTitleChange = e => {\r\n         title = e.target.value;\r\n     }\r\n \r\n+    // update number\r\n     const onRatingSelect = e => {\r\n         rating = e.target.value;\r\n     }\r\n \r\n+    // create new object to be added\r\n     const submitMovie = () => {\r\n         if (title) {\r\n         dispatch('submitMovie', {\r\n             movie: {\r\n             title,\r\n             rating,\r\n             }\r\n         });\r\n+        // reset variables\r\n         title = '';\r\n         rating = 1;\r\n         }\r\n     }\r\n </script>\r\n \r\n+<!-- Body of element -->\r\n <div class='main'>\r\n+    <!-- Input Title -->\r\n     <input \r\n-      placeholder=\"Movie Title\" \r\n+      placeholder=\"Item Title\" \r\n       type='text' \r\n       value={title}\r\n       on:keyup={onTitleChange}\r\n     />\r\n@@ -39,8 +46,9 @@\n   \r\n     <button on:click={submitMovie} disabled={!title}>Submit</button>\r\n   </div>\r\n   \r\n+  <!-- Styling -->\r\n   <style>\r\n     .main {\r\n       width: 100%;\r\n       display: flex;\r\n"
+                },
+                {
+                    "date": 1645355857571,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,10 +41,12 @@\n       value={title}\r\n       on:keyup={onTitleChange}\r\n     />\r\n   \r\n+    <!-- Add number -->\r\n     <input class=\"num_input\" type=\"number\" value={rating} on:change={onRatingSelect}>\r\n   \r\n+    <!-- Submit values and execut function to create new object -->\r\n     <button on:click={submitMovie} disabled={!title}>Submit</button>\r\n   </div>\r\n   \r\n   <!-- Styling -->\r\n"
                 }
             ],
             "date": 1642503070674,

@@ -40,9 +40,9 @@
 	<h1>Movie Journal</h1>
   
 	<!-- external Components -->
-	<Search on:search={event => search(event.detail.searchTerm)} on:clearSearch={clearSearch} />
-	<MovieInput on:submitMovie={event => submitMovie(event.detail.movie)} />
-	<MovieList movies={movies} />
+	<Search on:search={event => search(event.detail.searchTerm)} on:clearSearch={clearSearch} />	<!--  -->
+	<MovieInput on:submitMovie={event => submitMovie(event.detail.movie)} />	<!-- Create new entries, with data from Input element -->
+	<MovieList movies={movies} />	<!-- Display list with entries from variable -->
   </div>
   
   <!-- Sytling -->

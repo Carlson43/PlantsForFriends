@@ -2,17 +2,21 @@
     import { createEventDispatcher } from 'svelte';
     const dispatch = createEventDispatcher();
 
+    // create variables
     let title ='';
     let rating = 1;
 
+    // update title
     const onTitleChange = e => {
         title = e.target.value;
     }
 
+    // update number
     const onRatingSelect = e => {
         rating = e.target.value;
     }
 
+    // create new object to be added
     const submitMovie = () => {
         if (title) {
         dispatch('submitMovie', {
@@ -21,25 +25,31 @@
             rating,
             }
         });
+        // reset variables
         title = '';
         rating = 1;
         }
     }
 </script>
 
+<!-- Body of element -->
 <div class='main'>
+    <!-- Input Title -->
     <input 
-      placeholder="Movie Title" 
+      placeholder="Item Title" 
       type='text' 
       value={title}
       on:keyup={onTitleChange}
     />
   
+    <!-- Add number -->
     <input class="num_input" type="number" value={rating} on:change={onRatingSelect}>
   
+    <!-- Submit values and execut function to create new object -->
     <button on:click={submitMovie} disabled={!title}>Submit</button>
   </div>
   
+  <!-- Styling -->
   <style>
     .main {
       width: 100%;
